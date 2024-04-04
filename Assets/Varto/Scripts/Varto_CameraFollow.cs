@@ -5,7 +5,7 @@ namespace Varto.Examples.Camera
     public class Varto_CameraFollow : MonoBehaviour
     {
         [SerializeField] private Transform _target;
-        [SerializeField] private float _smoothness;
+        [SerializeField] private float _speed;
         [Space]
         [SerializeField] private bool _followByX;
         [SerializeField] private bool _followByY;
@@ -19,7 +19,7 @@ namespace Varto.Examples.Camera
                 _followByZ ? _target.position.z : transform.position.z
                 );
 
-            transform.position = Vector3.Lerp(transform.position, targetPosition, _smoothness);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, _speed * Time.deltaTime);
         }
     }
 }
