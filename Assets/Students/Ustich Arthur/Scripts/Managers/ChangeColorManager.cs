@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Ustich.Arthur.Player
+namespace Ustich.Arthur.DoodleJump
 {
     public class ChangeColorManager : MonoBehaviour
     {

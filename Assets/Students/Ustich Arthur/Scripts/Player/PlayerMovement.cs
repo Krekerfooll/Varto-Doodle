@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Ustich.Arthur.Player
+namespace Ustich.Arthur.DoodleJump
 {
     public class PlayerMovement : MonoBehaviour
     {

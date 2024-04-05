@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Ustich.Arthur.Player
+namespace Ustich.Arthur.DoodleJump
 {
     public class TargetFollow : MonoBehaviour
     {
