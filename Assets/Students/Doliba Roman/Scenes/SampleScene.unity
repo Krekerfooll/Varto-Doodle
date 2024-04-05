@@ -267,7 +267,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 606808198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -283,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 2018299485}
-  _speed: 0.01
+  _speed: 2
   _followByX: 0
   _followByY: 1
   _followByZ: 0
@@ -381,16 +382,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606808195}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.678653, y: -0.5230614, z: 0.97965956}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.678653, y: -0.5230614, z: 10.97966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1845978358}
   - {fileID: 1138125437}
   - {fileID: 1461076172}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1007530762 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6708946031683280451, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+  m_PrefabInstance: {fileID: 807572157025439466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1138125435
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,12 +711,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5181835172149153946, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: _lookLeftRight
+      value: 
+      objectReference: {fileID: 1007530762}
     - target: {fileID: 6339130485375415960, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
       propertyPath: backgoundChange
       value: 
       objectReference: {fileID: 606808196}
     - target: {fileID: 6708946031683280451, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
       propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6708946031683280451, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -869,5 +883,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 293502911}
-  - {fileID: 606808198}
   - {fileID: 807572157025439466}

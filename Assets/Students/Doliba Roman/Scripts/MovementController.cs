@@ -10,6 +10,12 @@ public class MovementController : MonoBehaviour
     [SerializeField] private Rigidbody2D _playerRigidbody;
     [SerializeField] private LayerMask _groundMask;
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private SpriteRenderer _lookLeftRight;
+
+    private void Start()
+    {
+        _lookLeftRight.flipX = true;
+    }
     
     private void FixedUpdate()
     {
@@ -26,6 +32,15 @@ public class MovementController : MonoBehaviour
         else if(!_isGrounded)
         {
             Move();
+
+            if (inputManager.MoveInput < 0f)
+            {
+                _lookLeftRight.flipX = false;
+            }
+            else if (inputManager.MoveInput > 0f)
+            {
+                _lookLeftRight.flipX = true;
+            }
         }
     }
 
