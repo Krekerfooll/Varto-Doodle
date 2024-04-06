@@ -1,3 +1,4 @@
+using System;
 using PVitaliy.Colors;
 using UnityEngine;
 
@@ -25,11 +26,18 @@ namespace PVitaliy.Platform
         private void Update()
         {
             if (!_initialized) return;
-            _collider.enabled = ColliderEnabled;
             OnUpdate();
         }
-        
+
+        private void FixedUpdate()
+        {
+            if (!_initialized) return;
+            _collider.enabled = ColliderEnabled;
+            OnFixedUpdate();
+        }
+
         protected virtual void AfterInit() {}
         protected virtual void OnUpdate() {}
+        protected virtual void OnFixedUpdate() {}
     }
 }

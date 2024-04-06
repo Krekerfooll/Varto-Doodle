@@ -12,11 +12,14 @@ namespace PVitaliy.Platform
             if (!Globals.IsPlayer(other.gameObject)) return;
 
             var playerController = other.gameObject.GetComponent<PlayerMovement>(); // Щось ще придумаю (тряска камери?)
-            if (playerController.IsGrounded)
-            {
-                spriteColorController.ChangeTargetColor(Random.ColorHSV(0, 1, .2f, 1, .4f, 1));
-                playerController.AfterLandedOnPlatform(this);
-            }
+            if (!playerController.IsGrounded) return;
+            OnPlayerLanded(playerController);
+            playerController.AfterLandedOnPlatform(this);
+        }
+
+        protected virtual void OnPlayerLanded(PlayerMovement player)
+        {
+            spriteColorController.ChangeTargetColor(Random.ColorHSV(0, 1, .2f, 1, .4f, 1));
         }
     }
 }
