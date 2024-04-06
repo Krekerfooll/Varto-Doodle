@@ -5425,9 +5425,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3718054025156239197, guid: 145119980427e4a40b392b85be7cc14e, type: 3}
-      propertyPath: jumpPower
-      value: 8.5
+    - target: {fileID: 3652477444240205889, guid: 145119980427e4a40b392b85be7cc14e, type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3718054025156239197, guid: 145119980427e4a40b392b85be7cc14e, type: 3}
       propertyPath: gameController

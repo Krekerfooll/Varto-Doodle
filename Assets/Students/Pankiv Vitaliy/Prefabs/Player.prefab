@@ -5169,7 +5169,7 @@ MonoBehaviour:
   colorChanger: {fileID: 7841845049931290555}
   viewController: {fileID: 1797249851244542716}
   rayCastingOffsetY: -0.61
-  jumpPower: 7
+  jumpPower: 8.5
   moveSpeed: 3
   raycastDistance: 0.11
 --- !u!114 &1797249851244542716
@@ -5185,8 +5185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 3718054025156239197}
-  viewContainer: {fileID: 0}
-  directionLerpPower: 0
+  viewContainer: {fileID: 5833546029739232254}
+  directionLerpPower: 0.25
 --- !u!1 &3652477444240205889
 GameObject:
   m_ObjectHideFlags: 0
