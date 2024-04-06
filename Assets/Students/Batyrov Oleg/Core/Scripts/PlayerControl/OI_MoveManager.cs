@@ -14,6 +14,7 @@ namespace OIMOD.Core.GameMech
         [Header("Jump Setup")]
         [Space]
         [SerializeField] GameObject rayPosLeft;
+        [SerializeField] GameObject rayPosCenter;
         [SerializeField] GameObject rayPosRight;
         [SerializeField] private float _jumpRayDist;
         [SerializeField] private LayerMask _layerMask;
@@ -21,7 +22,7 @@ namespace OIMOD.Core.GameMech
         [Header("Movement Setup")]
         [Space]
         [SerializeField] private float _speed;
-        [SerializeField] private float _jumpPower;
+        [SerializeField] public float _jumpPower;
         [Space]
         [Header("Movement Setup")]
         [Space]
@@ -53,12 +54,14 @@ namespace OIMOD.Core.GameMech
         }
         private void RayCheckGround()   {
             RaycastHit2D hitGroundLeft = Physics2D.Raycast(rayPosLeft.transform.position, Vector2.down, _jumpRayDist, _layerMask);
+            RaycastHit2D hitGroundCenter = Physics2D.Raycast(rayPosCenter.transform.position, Vector2.down, _jumpRayDist, _layerMask);
             RaycastHit2D hitGroundRight = Physics2D.Raycast(rayPosRight.transform.position, Vector2.down, _jumpRayDist, _layerMask);
 
             Debug.DrawRay(rayPosLeft.transform.position, Vector2.down * hitGroundLeft.distance, Color.green);
+            Debug.DrawRay(rayPosCenter.transform.position, Vector2.down * hitGroundCenter.distance, Color.red);
             Debug.DrawRay(rayPosRight.transform.position, Vector2.down * hitGroundRight.distance, Color.blue);
 
-            if (hitGroundLeft.collider || hitGroundRight.collider) {
+            if (hitGroundLeft.collider || hitGroundRight.collider || hitGroundCenter.collider) {
                 _canJump = true;
                 animator.SetBool("InAir", false);
             }

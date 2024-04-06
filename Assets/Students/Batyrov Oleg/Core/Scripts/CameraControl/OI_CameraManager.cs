@@ -5,9 +5,9 @@ namespace OIMOD.Core.GameMech
     public class OI_CameraManager : MonoBehaviour
     {
         [Header("Camera Setup")]
-        [SerializeField] private Camera _camera;
-        [SerializeField] private GameObject _cameraTarget;
-        [SerializeField] private GameObject _background;
+        [SerializeField] private Transform _camera;
+        [SerializeField] private Transform _cameraTarget;
+        [SerializeField] private Transform _background;
         [Space]
         [SerializeField] private float _cameraSmooth;
         void Update()
@@ -17,20 +17,19 @@ namespace OIMOD.Core.GameMech
         private void CameraFollowTarget()
         {
             var targetCameraPos = new Vector3
-                (_camera.transform.position.x,
-                _cameraTarget.transform.position.y,
-                _camera.transform.position.z);
+                (_camera.position.x,
+                _cameraTarget.position.y,
+                _camera.position.z);
             var targeBackgroundPos = new Vector3
-                (_background.transform.position.x,
-                _cameraTarget.transform.position.y,
-                _background.transform.position.z);
-            _camera.transform.position = Vector3.Lerp
-                (_camera.transform.position, targetCameraPos,
-                _cameraSmooth*Time.deltaTime);
-            _background.transform.position = Vector3.Lerp
-                (_background.transform.position, targeBackgroundPos,
-                _cameraSmooth * Time.deltaTime);
+                (_background.position.x,
+                _camera.position.y,
+                _background.position.z);
 
+            _camera.position = Vector3.Lerp
+                (_camera.position, targetCameraPos,
+                _cameraSmooth*Time.deltaTime);
+
+            _background.position = targeBackgroundPos;
         }
     }
 }
