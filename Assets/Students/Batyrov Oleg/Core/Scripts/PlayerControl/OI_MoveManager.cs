@@ -23,6 +23,7 @@ namespace OIMOD.Core.GameMech
         [Space]
         [SerializeField] private float _speed;
         [SerializeField] public float _jumpPower;
+        [SerializeField] private float _maxVelocity;
         [Space]
         [Header("Movement Setup")]
         [Space]
@@ -39,6 +40,7 @@ namespace OIMOD.Core.GameMech
         }
         private void FixedUpdate() { 
             CheckMove(); 
+            SpeedLimit();
         }
         private void CheckJump() {
             if (_canJump && JumpInput) {
@@ -51,6 +53,10 @@ namespace OIMOD.Core.GameMech
             _rb.velocity = new Vector2(MoveInput * _speed, _rb.velocity.y);
             if (MoveInput > 0) playerRender.transform.localScale = new Vector3(-1,1,1);
             else if (MoveInput < 0) playerRender.transform.localScale = new Vector3(1,1,1);
+        }
+        private void SpeedLimit()
+        {
+            _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, _maxVelocity);
         }
         private void RayCheckGround()   {
             RaycastHit2D hitGroundLeft = Physics2D.Raycast(rayPosLeft.transform.position, Vector2.down, _jumpRayDist, _layerMask);

@@ -10,9 +10,15 @@ namespace OIMOD.Core.GameMech
         [SerializeField] private Transform _background;
         [Space]
         [SerializeField] private float _cameraSmooth;
+
+        private void Awake()
+        {
+            Application.targetFrameRate = 60;
+        }
         void Update()
         {
-            CameraFollowTarget();
+            if (_camera.position.y <= _cameraTarget.position.y)
+                CameraFollowTarget();
         }
         private void CameraFollowTarget()
         {
@@ -25,11 +31,12 @@ namespace OIMOD.Core.GameMech
                 _camera.position.y,
                 _background.position.z);
 
+            _background.position = targeBackgroundPos;
+
             _camera.position = Vector3.Lerp
                 (_camera.position, targetCameraPos,
                 _cameraSmooth*Time.deltaTime);
 
-            _background.position = targeBackgroundPos;
         }
     }
 }
