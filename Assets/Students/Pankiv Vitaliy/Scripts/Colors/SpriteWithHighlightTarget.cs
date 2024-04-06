@@ -22,7 +22,7 @@ namespace PVitaliy.Colors
         protected override void Update()
         {
             base.Update();
-            highlightRenderer.color = Color.Lerp(highlightRenderer.color, _targetHighlightColor, interpolationPower * Time.deltaTime);
+            highlightRenderer.color = Color.Lerp(highlightRenderer.color, _targetHighlightColor, interpolationPower * Time.deltaTime * 60);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace PVitaliy.Utils
         private void Update()
         {
             var position = transform.position;
-            var newY = Mathf.Lerp(position.y, target.position.y, followingSpeed * Time.deltaTime);
+            var newY = Mathf.Lerp(position.y, target.position.y, followingSpeed * Time.deltaTime * 60);
             transform.position = new Vector3(position.x, newY, position.z);
         }
     }

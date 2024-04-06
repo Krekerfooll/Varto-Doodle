@@ -4,7 +4,7 @@ namespace PVitaliy.Colors
 {
     public abstract class ColorTarget : MonoBehaviour
     {
-        [SerializeField][Range(0, 1)] protected float interpolationPower = .15f;
+        [SerializeField] protected float interpolationPower = .15f;
         [SerializeField] private bool addOnAwake = false;
         private Color _targetColor;
         public Color TargetColor => _targetColor;
@@ -27,7 +27,7 @@ namespace PVitaliy.Colors
 
         protected virtual void Update()
         {
-            MainColor = Color.Lerp(MainColor, _targetColor, interpolationPower * Time.deltaTime);
+            MainColor = Color.Lerp(MainColor, _targetColor, interpolationPower * Time.deltaTime * 60);
         }
     }
 }
