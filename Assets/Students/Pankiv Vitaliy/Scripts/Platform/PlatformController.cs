@@ -11,16 +11,11 @@ namespace PVitaliy.Platform
         [SerializeField] private GameController gameController;
         [SerializeField] private Transform container;
         [SerializeField] private Vector2 startPlatformPosition;
-        [SerializeField] private PlatformBase startingPlatform;
         [Header("Action Points")]
         [SerializeField] private Transform removeAtPoint;
         [SerializeField] private Transform collisionStartTarget;
         [SerializeField] private Transform movingPlatformsBoundsLeft;
         [SerializeField] private Transform movingPlatformsBoundsRight;
-        [Header("Generation Limits Min-Max")]
-        [SerializeField] private Vector2 verticalDistance;
-        [SerializeField] private Vector2 horizontalDistance;
-        [SerializeField] [Min(2)] private int maxPlatformCount = 8;
         [Space]
         [SerializeField] private bool drawGizmos; // Знаю що можна вимкнути в редакторі, просто щоб не забивало інші гізмозм коли показуються
         private Queue<PlatformBase> _platformQueue;
@@ -32,9 +27,9 @@ namespace PVitaliy.Platform
 
         public void Init()
         {
-            _platformQueue = new Queue<PlatformBase>(maxPlatformCount);
-            SpawnPlatformAt(startingPlatform, startPlatformPosition);
-            for (int i = 0; i < maxPlatformCount - 1; i++)
+            _platformQueue = new Queue<PlatformBase>(factory.maxPlatformCount);
+            SpawnPlatformAt(factory.startingPlatform, startPlatformPosition);
+            for (int i = 0; i < factory.maxPlatformCount - 1; i++)
             {
                 SpawnNewPlatform();
             }
@@ -77,8 +72,8 @@ namespace PVitaliy.Platform
 
         private Vector2 GetNewPlatformPosition()
         {
-            var distance = Random.Range(verticalDistance.x, verticalDistance.y);
-            var x = Random.Range(horizontalDistance.x, horizontalDistance.y);
+            var distance = Random.Range(factory.verticalDistance.x, factory.verticalDistance.y);
+            var x = Random.Range(factory.horizontalDistance.x, factory.horizontalDistance.y);
             return new Vector2(x, _lastPlacedPlatformPosition.y + distance);
         }
 
@@ -89,15 +84,18 @@ namespace PVitaliy.Platform
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(startPlatformPosition, .1f);
             
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.blue;
             var transformPosition = transform.position;
             // Горизонтальні ліміти генерації платформ
-            Gizmos.DrawLine(new Vector3(horizontalDistance.x, verticalDistance.x) + transformPosition,
-                new Vector3(horizontalDistance.y, verticalDistance.x) + transformPosition);
+            Gizmos.DrawLine(new Vector3(factory.horizontalDistance.x, factory.verticalDistance.x) + transformPosition,
+                new Vector3(factory.horizontalDistance.y, factory.verticalDistance.x) + transformPosition);
             
             // Вертикальні ліміти генерації платформ
-            var avgX = (horizontalDistance.x + horizontalDistance.y) / 2;
-            Gizmos.DrawLine(new Vector3(avgX, verticalDistance.x) + transformPosition, new Vector3(avgX, verticalDistance.y) + transformPosition);
+            var avgX = (factory.horizontalDistance.x + factory.horizontalDistance.y) / 2;
+            var startPoint = new Vector3(avgX, factory.verticalDistance.x) + transformPosition;
+            Gizmos.DrawLine(startPoint, new Vector3(avgX, factory.verticalDistance.y) + transformPosition);
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(startPoint, new Vector3(avgX, 0) + transformPosition);
         }
     }
 }

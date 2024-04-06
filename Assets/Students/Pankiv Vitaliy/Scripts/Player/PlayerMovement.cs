@@ -70,7 +70,7 @@ namespace PVitaliy.Player
         public void AfterLandedOnPlatform(PlatformBase platform)
         {
             colorChanger.ChangeTargetColor(Random.ColorHSV(0, 1, 0, 1, .5f, 1));
-            
+            if (!platform.EmitParticlesOnLanding) return;
             var main = landingAnimation.main;
             var lowerVelocityY = _previousVelocity.y / 10;
             main.startSpeedMultiplier = lowerVelocityY * lowerVelocityY * 4;

@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platforms:
   - {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
+  verticalDistance: {x: 1.5, y: 3.5}
+  horizontalDistance: {x: -2.3, y: 2.3}
+  maxPlatformCount: 8
+  startingPlatform: {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}

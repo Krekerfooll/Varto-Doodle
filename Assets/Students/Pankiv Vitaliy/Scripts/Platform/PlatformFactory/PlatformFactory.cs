@@ -6,9 +6,13 @@ using Random = UnityEngine.Random;
 namespace PVitaliy.Platform
 {
     [CreateAssetMenu(fileName = "Platform", menuName = "Platform Factory")]
-    public class PlatformFactory : ScriptableObject // Запас на майбутнє, щоб потім не рефакторити ініціалізацію та різні типи платформ для сцен :P
+    public class PlatformFactory : ScriptableObject
     {
-        [SerializeField] public List<PlatformBase> platforms;
+        public List<PlatformBase> platforms;
+        public Vector2 verticalDistance;
+        public Vector2 horizontalDistance;
+        [Min(2)] public int maxPlatformCount = 8;
+        public PlatformBase startingPlatform;
 
         public PlatformType GetRandomPlatformType()
         {

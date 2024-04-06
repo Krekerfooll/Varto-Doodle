@@ -1,4 +1,3 @@
-using System;
 using PVitaliy.Colors;
 using UnityEngine;
 
@@ -8,11 +7,13 @@ namespace PVitaliy.Platform
     {
         [SerializeField] protected ColorTarget spriteColorController;
         [SerializeField] protected Collider2D _collider;
-        private bool _initialized = false;
+        [SerializeField] private bool emitParticlesOnLanding = true;
+        private bool _initialized;
         public Color TargetColor => spriteColorController.TargetColor;
+        public bool EmitParticlesOnLanding => emitParticlesOnLanding;
         public abstract PlatformType Type { get; }
         private Transform _collisionEnablingPoint;
-        protected PlatformController Controller; // ну десь же точно знадобиться... мабуть
+        protected PlatformController Controller;
         protected virtual bool ColliderEnabled => transform.position.y <= _collisionEnablingPoint.position.y;
 
         public void Init(PlatformController controller)
