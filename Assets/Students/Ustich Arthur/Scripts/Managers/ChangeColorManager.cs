@@ -8,7 +8,7 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private Animator _playerAnimator;
         [SerializeField] private SpriteRenderer _blocksSpriteRenderer;
         [SerializeField] private List<RuntimeAnimatorController> _playerIdleAnimation = new List<RuntimeAnimatorController>();
-        [SerializeField] private List<SpriteRenderer> _blocks = new List<SpriteRenderer>();
+        [SerializeField] private PlatformSpawner _spawner;
         [SerializeField] private List<Sprite> _blockSprites = new List<Sprite>();
 
 
@@ -23,9 +23,10 @@ namespace Ustich.Arthur.DoodleJump
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 _playerAnimator.runtimeAnimatorController = _playerIdleAnimation[randColor];
-                foreach (SpriteRenderer sprite in _blocks)
+                foreach (GameObject _platforms in _spawner.Platforms)
                 {
-                    sprite.sprite = _blockSprites[randColor];
+                    SpriteRenderer _sprite = _platforms.GetComponent<SpriteRenderer>();
+                    _sprite.sprite = _blockSprites[randColor];
                 }
             }  
         }
