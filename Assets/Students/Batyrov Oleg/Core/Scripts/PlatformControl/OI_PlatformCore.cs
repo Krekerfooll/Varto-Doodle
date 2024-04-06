@@ -26,10 +26,8 @@ namespace OIMOD.Core.GameMech
             _playerJumpForce = _jumpPower * _jumpMultiplier;
             _init = true;
         }
-        private void Update()
-        {
-            if (_init)
-            {
+        private void Update() {
+            if (_init) {
                 CollisionOnCheck();
                 PlatformDestroyCheck();
             }

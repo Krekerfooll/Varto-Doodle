@@ -41,22 +41,15 @@ namespace OIMOD.Core.GameMech
         private int platformID;
 
 
-        private void Start()
-        {
+        private void Start() {
             CreatePlatform();
-            //TODO!!!!! ќ—№ “ј  ÷я ’”…Ќя Ѕ”ƒ≈ ѕ–ј÷ё¬ј“»!
-            //через вар задаЇмо скрипт ≥ вручну д≥стаЇмо кожен
-            //дал≥ можливо через св≥тч кейс будемо повертати значенн€ в вар
-            var platformID = _platformType[0].GetComponent<OI_PlatformHighJump>();
         }
-        private void Update()
-        {
+        private void Update() {
             CountDistance();
             if (_canSpawn)
                 CreatePlatform();
         }
-        private void CountDistance()
-        {
+        private void CountDistance() {
             var playerPos = _playerTarget.position.y;
             var targetPos = _spawnTarget.position.y;
             _distanceFromPlayerToSpawner = playerPos - targetPos;
@@ -66,51 +59,45 @@ namespace OIMOD.Core.GameMech
             else 
                 _canSpawn = false;
         }
-        private void CreatePlatform()
-        {
+        private void CreatePlatform() {
             var playerHight = _playerTarget.position.y;
             var platformTypeID = _platformType[platformID].GetComponent<OI_PlatformCore>();
             var colorChangeList = ColorManager.GetComponent<OI_ColorManager>().layerToChangeColor;
 
-            for (int i = 0; i < _spawnCount; i++)
-            {
-                var spawnPosX = Random.Range(_borderLeft.position.x, _borderRight.position.x);
-                var spawnPosY = _spawnDistance + spawnRangeY + _spawnTarget.position.y;
-                var spawnPos = new Vector3(spawnPosX, spawnPosY, 0f);
+            for (int i = 0; i < _spawnCount; i++) {
 
-                if (playerHight is >= 0 and < 50)
-                {
+                if (playerHight is >= 0 and < 25)  {
                     spawnRangeY = Random.Range(-2f, -1f);
                     spawnOnLineCount = Random.Range(1, 2);
                     platformID = 0;
                 }
-                else if (playerHight is >= 50 and < 150)
-                {
+                else if (playerHight is >= 25 and < 50) {
                     spawnRangeY = Random.Range(-2f, 0f);
                     spawnOnLineCount = Random.Range(0, 1);
                     platformID = Random.Range(0, 2);
                 }
-                else if (playerHight is >= 150 and < 300)
-                {
+                else if (playerHight is >= 50 and < 100) {
                     spawnRangeY = Random.Range(-1f, 0f);
                     spawnOnLineCount = Random.Range(0, 1);
                     platformID = Random.Range(0, 3);
                 }
-                else if (playerHight is >= 300 and < 500)
-                {
+                else if (playerHight is >= 100 and < 150) {
                     spawnRangeY = Random.Range(0.5f, 0f);
                     spawnOnLineCount = 0;
                     platformID = Random.Range(1, 3);
                 }
-                else if (playerHight is >= 500 and < 1000)
-                {
+                else if (playerHight is >= 150 and < 200) {
                     spawnRangeY = Random.Range(0.5f, 0f);
                     spawnOnLineCount = 0;
                     platformID = Random.Range(2, 3);
                 }
-
-                switch (platformID)
+                else if (playerHight is >= 200 and < 1000)
                 {
+                    spawnRangeY = Random.Range(0.5f, 0f);
+                    spawnOnLineCount = 0;
+                    platformID = Random.Range(0, 3);
+                }
+                switch (platformID) {
                     case 0:
                         platformTypeID = _platformType[platformID].GetComponent<OI_PlatformSimple>();
                         break;
@@ -122,13 +109,14 @@ namespace OIMOD.Core.GameMech
                         break;
                 }
 
+                var spawnPosX = Random.Range(_borderLeft.position.x+0.5f, _borderRight.position.x-0.5f);
+                var spawnPosY = _spawnDistance + spawnRangeY + _spawnTarget.position.y;
+                var spawnPos = new Vector3(spawnPosX, spawnPosY, 0f);
                 _spawnTarget.position = spawnPos;
 
-                if (spawnOnLineCount > 0)
-                {
-                    for (int j = 0; j < spawnOnLineCount; j++)
-                    {
-                        spawnPosX = spawnPosX+(Random.Range(-3f, 3f));
+                if (spawnOnLineCount > 0) {
+                    for (int j = 0; j < spawnOnLineCount; j++) {
+                        spawnPosX = spawnPosX+(Random.Range(-3, 3));
                         var spawnedAddPlatform = Instantiate(platformTypeID, new Vector3(spawnPosX, spawnPos.y, spawnPos.z), Quaternion.identity, _spawnParent);
                         spawnedAddPlatform.Init(_playerTarget, _destroyBorder, _playerRb, _playerJumpForce, _jumpMultiplier);
                         colorChangeList.Add(spawnedAddPlatform.GetComponentInChildren<SpriteRenderer>());

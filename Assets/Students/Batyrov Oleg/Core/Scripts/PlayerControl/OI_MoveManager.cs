@@ -21,6 +21,7 @@ namespace OIMOD.Core.GameMech
         [Space]
         [Header("Movement Setup")]
         [Space]
+        [SerializeField] private bool _autoJumpOn;
         [SerializeField] private float _speed;
         [SerializeField] public float _jumpPower;
         [SerializeField] private float _maxVelocity;
@@ -31,9 +32,11 @@ namespace OIMOD.Core.GameMech
         [SerializeField] GameObject _boundRight;
         
         private bool _canJump;
+        private bool _activateAutoJump;
         public int colorIndex {  get; private set; }
 
         private void Update() {
+            if (JumpInput) _activateAutoJump = true;
             RayCheckGround();
             CheckJump();
             BorderCheck();
@@ -43,11 +46,19 @@ namespace OIMOD.Core.GameMech
             SpeedLimit();
         }
         private void CheckJump() {
-            if (_canJump && JumpInput) {
-                _rb.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-                colorIndex = Random.Range(0, 10);
-                _canJump = false;
+            if (_canJump && JumpInput && !_autoJumpOn && (_rb.velocity.y <= 0)) {
+                Jump();
             }
+            else if (_autoJumpOn && _activateAutoJump && _canJump && (_rb.velocity.y <= 0)) {
+                Jump();
+            }
+        }
+        private void Jump()
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x,0);
+            _rb.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+            colorIndex = Random.Range(0, 10);
+            _canJump = false;
         }
         private void CheckMove() {
             _rb.velocity = new Vector2(MoveInput * _speed, _rb.velocity.y);
