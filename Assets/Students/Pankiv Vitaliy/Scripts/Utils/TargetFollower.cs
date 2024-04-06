@@ -7,11 +7,11 @@ namespace PVitaliy.Utils
         [SerializeField] private Transform target;
         [SerializeField] private float followingSpeed = 0.2f;
 
-        private void Update()
+        private void FixedUpdate()
         {
-            var position = transform.position;
-            var newY = Mathf.Lerp(position.y, target.position.y, followingSpeed * Time.deltaTime * 60);
-            transform.position = new Vector3(position.x, newY, position.z);
+            var initialPosition = transform.position;
+            var newY = Mathf.Lerp(initialPosition.y, target.position.y, followingSpeed);
+            transform.position = new Vector3(initialPosition.x, newY, initialPosition.z);
         }
     }
 }

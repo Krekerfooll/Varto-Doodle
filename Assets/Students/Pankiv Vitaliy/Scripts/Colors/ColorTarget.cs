@@ -5,7 +5,6 @@ namespace PVitaliy.Colors
     public abstract class ColorTarget : MonoBehaviour
     {
         [SerializeField] protected float interpolationPower = .15f;
-        [SerializeField] private bool addOnAwake = false;
         private Color _targetColor;
         public Color TargetColor => _targetColor;
 
@@ -14,7 +13,6 @@ namespace PVitaliy.Colors
         private void Awake()
         {
             _targetColor = MainColor;
-            if (addOnAwake) ColorManager.Targets.Add(this);
             AfterAwake();
         }
 

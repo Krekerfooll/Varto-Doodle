@@ -1557,7 +1557,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
+      scalar: -0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5165,8 +5165,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   gameController: {fileID: 0}
-  playerViewTransform: {fileID: 5833546029739232254}
   landingAnimation: {fileID: 1755137113454450948}
+  colorChanger: {fileID: 7841845049931290555}
+  viewController: {fileID: 1797249851244542716}
   rayCastingOffsetY: -0.61
   jumpPower: 7
   moveSpeed: 3
@@ -5184,6 +5185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 3718054025156239197}
+  viewContainer: {fileID: 0}
+  directionLerpPower: 0
 --- !u!1 &3652477444240205889
 GameObject:
   m_ObjectHideFlags: 0
@@ -5347,5 +5350,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interpolationPower: 0.15
-  addOnAwake: 1
   mainRenderer: {fileID: 7489046136246098863}

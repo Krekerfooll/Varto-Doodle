@@ -2,6 +2,8 @@ namespace PVitaliy.Platform
 {
     public enum PlatformType
     {
-        Static
+        Static,
+        Falling,
+        HorizontalMoving
     }
 }

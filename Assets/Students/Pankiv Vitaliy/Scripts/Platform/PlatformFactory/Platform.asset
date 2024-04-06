@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platforms:
   - {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
+  - {fileID: 8952298720305993626, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
