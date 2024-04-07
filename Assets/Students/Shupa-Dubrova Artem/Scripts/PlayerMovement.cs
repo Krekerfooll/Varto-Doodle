@@ -6,13 +6,14 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D _player;
+        [SerializeField] private GameObject _spriteIdle;
+        [SerializeField] private GameObject _spriteJump;
         [SerializeField] private float _playerSpeed;
         [SerializeField] private float _jumpPower;
         
         
         private Vector3 _lookLeft;
         private Vector3 _lookRight;
-        private Vector3 _animJump;
 
         private float _moveDirection;
         private float _transformX;
@@ -25,13 +26,14 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         }
         private void Update()
         {
-            CalculateJump();
+            Jump();
             HorizontalMove();
         }
 
         private void FixedUpdate()
         {
             SideTeleport();
+            SpriteSwitch();
         }
 
         private void HorizontalMove()
@@ -43,9 +45,9 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
             else if (_moveDirection > 0f)
                 _player.transform.localScale = _lookRight;
         }        
-        private void CalculateJump()
+        private void Jump()
         {
-            if (_player.velocity.y > _playerSpeed)
+            if (_player.velocity.y > _jumpPower)
                 _isGrounded = false;
                 
             if (_isGrounded)
@@ -56,16 +58,31 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         }
         private void OnTriggerStay2D(Collider2D other)
         {
-            if (_player.velocity.y <= _playerSpeed / 3)
+            if (_player.velocity.y <= _jumpPower / 3)
                 _isGrounded = true;
         }
 
         private void SideTeleport()
         {
             _transformX = _player.transform.position.x;
+            
             if (_transformX is >= 3f or <= -3f)
             {
                 transform.Translate(-_transformX * 2, 0, 0);
+            }
+        }
+
+        private void SpriteSwitch()
+        {
+            if (_player.velocity.y <= _jumpPower / 3)
+            {
+                _spriteIdle.SetActive(true);
+                _spriteJump.SetActive(false);
+            }
+            else
+            {
+                _spriteIdle.SetActive(false);
+                _spriteJump.SetActive(true);
             }
         }
 

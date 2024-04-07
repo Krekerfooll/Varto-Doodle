@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a1de9b3bc8d8640a3bf72e130fc4ad84
+guid: 501a09ced8cb1429c9ce9a7c042bc222
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Platform_1x2_damaged_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 548
+        width: 236
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbf46a9c295a40f4ad3645d091e3998
+      internalID: 1964829231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_1x2_damaged_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 411
+        width: 236
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ddaeac8fac24b9cb15937c9c83b94c
+      internalID: 1066081985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_1x2_damaged_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 274
+        width: 236
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e01d065e30c4f90a0c7e66cfb77abc
+      internalID: 917443934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_1x2_damaged_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 137
+        width: 236
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb72b537d8ff4d46a786e6c288d9187
+      internalID: 776698766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_1x2_damaged_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 236
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2e58ae17a724df1a6ab637074817dc
+      internalID: -893476420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +237,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Platform_1x2_damaged_Sheet_0: 1964829231
+      Platform_1x2_damaged_Sheet_1: 1066081985
+      Platform_1x2_damaged_Sheet_2: 917443934
+      Platform_1x2_damaged_Sheet_3: 776698766
+      Platform_1x2_damaged_Sheet_4: -893476420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
