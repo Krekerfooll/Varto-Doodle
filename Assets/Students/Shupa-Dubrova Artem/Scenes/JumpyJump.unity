@@ -241,6 +241,7 @@ MonoBehaviour:
   - {fileID: -2222711435224738641, guid: ed63da925e1fb4ee7bbbd4f3f1de429a, type: 3}
   - {fileID: 2396788886845373341, guid: bb9262408d2004dffb3a0c69d88fc126, type: 3}
   - {fileID: 671718281725221263, guid: cebc9b44341eb5042b68f89586a6b3c4, type: 3}
+  - {fileID: 6289201244831051553, guid: cf49b5871dae14ea5b695967b28a04a8, type: 3}
   _platformsSpawnedPerStepCount: {x: 1, y: 2}
   _stepsCountToSpawn: 7
   _stepsCountToDelete: 5
@@ -479,6 +480,10 @@ PrefabInstance:
     - target: {fileID: 1723461509887156698, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_GravityScale
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238151210313245227, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5194641704645959004, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_LocalPosition.y
