@@ -244,7 +244,7 @@ MonoBehaviour:
   _platformsSpawnedPerStepCount: {x: 1, y: 2}
   _stepsCountToSpawn: 7
   _stepsCountToDelete: 5
-  _stepHeight: 2.5
+  _stepHeight: 2
   _bounds: {x: -2.2, y: 2.2}
 --- !u!4 &9289421
 Transform:
@@ -318,6 +318,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb9262408d2004dffb3a0c69d88fc126, type: 3}
+--- !u!1 &692797144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692797145}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &692797145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692797144}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.85, y: 5.33858, z: -0.080094956}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &938038386
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6740311156654191577, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.074821234
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6740311156654191577, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_LocalPosition.y
@@ -528,3 +559,4 @@ SceneRoots:
   - {fileID: 938038389}
   - {fileID: 1056072316}
   - {fileID: 185302144}
+  - {fileID: 692797145}

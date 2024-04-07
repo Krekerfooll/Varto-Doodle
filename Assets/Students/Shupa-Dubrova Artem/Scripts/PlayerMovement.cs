@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts
@@ -14,6 +15,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         private Vector3 _animJump;
 
         private float _moveDirection;
+        private float _transformX;
         private bool _isGrounded;
         
         private void Start()
@@ -26,6 +28,12 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
             CalculateJump();
             HorizontalMove();
         }
+
+        private void FixedUpdate()
+        {
+            SideTeleport();
+        }
+
         private void HorizontalMove()
         {
             _moveDirection = Input.GetAxis("Horizontal");
@@ -37,7 +45,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         }        
         private void CalculateJump()
         {
-            if (_player.velocity.y >= _playerSpeed)
+            if (_player.velocity.y > _playerSpeed)
                 _isGrounded = false;
                 
             if (_isGrounded)
@@ -48,9 +56,18 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         }
         private void OnTriggerStay2D(Collider2D other)
         {
-            _isGrounded = true;
+            if (_player.velocity.y <= _playerSpeed / 3)
+                _isGrounded = true;
         }
-        
+
+        private void SideTeleport()
+        {
+            _transformX = _player.transform.position.x;
+            if (_transformX is >= 3f or <= -3f)
+            {
+                transform.Translate(-_transformX * 2, 0, 0);
+            }
+        }
 
     }
 }
