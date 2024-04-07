@@ -4,6 +4,7 @@ namespace PVitaliy.Platform
     {
         Static,
         Falling,
-        HorizontalMoving
+        HorizontalMoving,
+        HorizontalMovingFalling
     }
 }

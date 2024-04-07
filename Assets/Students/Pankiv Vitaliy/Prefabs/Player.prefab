@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1755137113454450948}
   - component: {fileID: 6199417867274926763}
   m_Layer: 0
-  m_Name: JumpEffect
+  m_Name: LandingEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5165,8 +5165,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   gameController: {fileID: 0}
-  landingAnimation: {fileID: 1755137113454450948}
-  colorChanger: {fileID: 7841845049931290555}
   viewController: {fileID: 1797249851244542716}
   rayCastingOffsetY: -0.61
   jumpPower: 8.5
@@ -5187,6 +5185,8 @@ MonoBehaviour:
   playerMovement: {fileID: 3718054025156239197}
   viewContainer: {fileID: 5833546029739232254}
   directionLerpPower: 0.25
+  colorChanger: {fileID: 7841845049931290555}
+  landingAnimation: {fileID: 1755137113454450948}
 --- !u!1 &3652477444240205889
 GameObject:
   m_ObjectHideFlags: 0

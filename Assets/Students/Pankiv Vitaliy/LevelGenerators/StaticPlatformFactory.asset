@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29f3fe6d15fe412d81f0705857e5669e, type: 3}
-  m_Name: NoMistakesAllowed
+  m_Name: StaticPlatformFactory
   m_EditorClassIdentifier: 
   platforms:
-  - {fileID: 8952298720305993626, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
-  verticalDistance: {x: 3.5, y: 3.5}
+  - {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
+  startingPlatform: {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
+  verticalDistance: {x: 1.5, y: 3.5}
   horizontalDistance: {x: -2.3, y: 2.3}
-  maxPlatformCount: 4
-  startingPlatform: {fileID: 6096099500834720225, guid: 4210c6d6d573c1c4190a39f3254724e8, type: 3}
+  maxPlatformCount: 8
+  scoreMultiplier: 0.75

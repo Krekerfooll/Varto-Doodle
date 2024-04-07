@@ -1,8 +1,5 @@
-using System;
-using PVitaliy.Colors;
 using PVitaliy.Platform;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace PVitaliy.Player
 {
@@ -11,8 +8,6 @@ namespace PVitaliy.Player
         [SerializeField] private Rigidbody2D rigidBody;
         [SerializeField] private LayerMask groundMask;
         [SerializeField] private GameController gameController;
-        [SerializeField] private ParticleSystem landingAnimation;
-        [SerializeField] private ColorTarget colorChanger;
         [SerializeField] private PlayerView viewController;
         [SerializeField] private float rayCastingOffsetY = 0;
         [SerializeField] private float jumpPower = 7;
@@ -24,9 +19,10 @@ namespace PVitaliy.Player
             rigidBody.transform.position + Vector3.left * transform.localScale.x / 2 + Vector3.up * rayCastingOffsetY;
         public Vector3 RightRayStartPoint =>
             rigidBody.transform.position + Vector3.right * transform.localScale.x / 2 + Vector3.up * rayCastingOffsetY;
-        public bool IsGrounded => rigidBody.velocity.y <= 0 &&
-            (Physics2D.Raycast(LeftRayStartPoint, Vector2.down, raycastDistance, groundMask) ||
-            Physics2D.Raycast(RightRayStartPoint, Vector2.down, raycastDistance, groundMask));
+        public bool IsGrounded => rigidBody.velocity.y <= 0 && (
+            Physics2D.Raycast(LeftRayStartPoint, Vector2.down, raycastDistance, groundMask) ||
+            Physics2D.Raycast(RightRayStartPoint, Vector2.down, raycastDistance, groundMask)
+            );
         public float RaycastDistance => raycastDistance;
 
         private void Update()
@@ -69,16 +65,9 @@ namespace PVitaliy.Player
 
         public void AfterLandedOnPlatform(PlatformBase platform)
         {
-            colorChanger.ChangeTargetColor(Random.ColorHSV(0, 1, 0, 1, .5f, 1));
+            viewController.ChangeColor();
             if (!platform.EmitParticlesOnLanding) return;
-            var main = landingAnimation.main;
-            var lowerVelocityY = _previousVelocity.y / 10;
-            main.startSpeedMultiplier = lowerVelocityY * lowerVelocityY * 4;
-            if (main.startSpeedMultiplier >= .3)
-            {
-                main.startColor = platform.TargetColor * Color.gray;
-                landingAnimation.Emit(Mathf.RoundToInt(-_previousVelocity.y));
-            }
+            viewController.EmitLandingParticles(_previousVelocity.y, platform.TargetColor);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace PVitaliy.Platform
         private Collider2D _standingPlayerCollider2D;
         private float _previousPositionX;
         private float _speed;
-        private int _currentDirectionX;
+        protected int CurrentDirectionX;
         public override PlatformType Type => PlatformType.HorizontalMoving;
 
         protected override void AfterInit()
@@ -28,24 +28,23 @@ namespace PVitaliy.Platform
         private void Awake()
         {
             _speed = Random.Range(minSpeed, maxSpeed);
-            _currentDirectionX = Random.value > .5 ? -1 : 1;
+            CurrentDirectionX = Random.value > .5 ? -1 : 1;
         }
 
         protected override void OnUpdate()
         {
             base.OnUpdate();
-            rigidBody.velocity =
-                new Vector2(_currentDirectionX * _speed, 0); //TODO: зробити анімацією (мабуть)
+            rigidBody.velocity = new Vector2(CurrentDirectionX * _speed, 0); //TODO: зробити анімацією (мабуть)
             ChangeDirectionIfCan();
         }
 
         private void ChangeDirectionIfCan()
         {
-            if (_currentDirectionX == -1)
+            if (CurrentDirectionX == -1)
             {
                 if (transform.position.x <= _leftPoint.position.x)
                 {
-                    _currentDirectionX = 1;
+                    CurrentDirectionX = 1;
                 }
 
                 return;
@@ -53,7 +52,7 @@ namespace PVitaliy.Platform
 
             if (transform.position.x >= _rightPoint.position.x)
             {
-                _currentDirectionX = -1;
+                CurrentDirectionX = -1;
             }
         }
 
@@ -64,7 +63,7 @@ namespace PVitaliy.Platform
             _previousPositionX = transform.position.x;
         }
 
-        private void MoveStandingPlayer()
+        protected virtual void MoveStandingPlayer()
         {
             if (!_standingPlayerCollider2D) return;
             if (!_collider.IsTouching(_standingPlayerCollider2D))

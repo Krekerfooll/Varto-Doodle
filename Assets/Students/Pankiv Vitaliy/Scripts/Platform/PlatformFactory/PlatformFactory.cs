@@ -5,16 +5,20 @@ using Random = UnityEngine.Random;
 
 namespace PVitaliy.Platform
 {
-    [CreateAssetMenu(fileName = "Platform", menuName = "Platform Factory")]
+    
+    [CreateAssetMenu(fileName = "Platform", menuName = "Platform/Factory")]
     public class PlatformFactory : ScriptableObject
     {
+        [Header("Platform Factory")]
         public List<PlatformBase> platforms;
+        public PlatformBase startingPlatform;
         public Vector2 verticalDistance;
         public Vector2 horizontalDistance;
         [Min(2)] public int maxPlatformCount = 8;
-        public PlatformBase startingPlatform;
-
-        public PlatformType GetRandomPlatformType()
+        [Min(0)] public float scoreMultiplier = 1;
+        
+        public virtual void Init() {}
+        public virtual PlatformType GetRandomPlatformType()
         {
             return platforms[Random.Range(0, platforms.Count)].Type;
         }

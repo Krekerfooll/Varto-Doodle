@@ -8,7 +8,6 @@ namespace PVitaliy.Platform
     {
         [SerializeField] private PlatformFactory factory;
         [Space]
-        [SerializeField] private GameController gameController;
         [SerializeField] private Transform container;
         [SerializeField] private Vector2 startPlatformPosition;
         [Header("Action Points")]
@@ -24,10 +23,12 @@ namespace PVitaliy.Platform
         public Transform CollisionStartTarget => collisionStartTarget;
         public Transform MovingPlatformsBoundsLeft => movingPlatformsBoundsLeft;
         public Transform MovingPlatformsBoundsRight => movingPlatformsBoundsRight;
+        public float GameScoreMultiplier => factory.scoreMultiplier;
 
         public void Init()
         {
             _platformQueue = new Queue<PlatformBase>(factory.maxPlatformCount);
+            factory.Init();
             SpawnPlatformAt(factory.startingPlatform, startPlatformPosition);
             for (int i = 0; i < factory.maxPlatformCount - 1; i++)
             {
