@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts
