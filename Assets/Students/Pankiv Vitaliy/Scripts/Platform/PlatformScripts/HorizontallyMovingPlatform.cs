@@ -12,14 +12,12 @@ namespace PVitaliy.Platform
         private Transform _leftPoint;
         private Transform _rightPoint;
         private Collider2D _standingPlayerCollider2D;
-        private float _previousPositionX;
         private float _speed;
         protected int CurrentDirectionX;
         public override PlatformType Type => PlatformType.HorizontalMoving;
 
         protected override void AfterInit()
         {
-            _previousPositionX = transform.position.x;
             _leftPoint = Controller.MovingPlatformsBoundsLeft;
             _rightPoint = Controller.MovingPlatformsBoundsRight;
             base.AfterInit();
@@ -60,7 +58,6 @@ namespace PVitaliy.Platform
         {
             base.OnFixedUpdate();
             MoveStandingPlayer();
-            _previousPositionX = transform.position.x;
         }
 
         protected virtual void MoveStandingPlayer()
@@ -72,8 +69,8 @@ namespace PVitaliy.Platform
                 return;
             }
 
-            var distance = transform.position.x - _previousPositionX;
-            _standingPlayerCollider2D.transform.position += Vector3.right * distance;
+            var playerVelocity = _standingPlayerCollider2D.attachedRigidbody.velocity;
+            _standingPlayerCollider2D.attachedRigidbody.velocity = new Vector2(playerVelocity.x == 0 ? rigidBody.velocity.x : playerVelocity.x, playerVelocity.y);
         }
 
         protected override void OnPlayerLanded(PlayerMovement player)
