@@ -16,7 +16,9 @@ MonoBehaviour:
   - {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
   - {fileID: 8952298720305993626, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
   - {fileID: 6096099500834720225, guid: 4210c6d6d573c1c4190a39f3254724e8, type: 3}
+  - {fileID: 5616287437761241186, guid: 69f052b155386f8458e0cea4cd0a110f, type: 3}
+  startingPlatform: {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
   verticalDistance: {x: 1.5, y: 3.5}
   horizontalDistance: {x: -2.3, y: 2.3}
   maxPlatformCount: 8
-  startingPlatform: {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
+  scoreMultiplier: 1
