@@ -31,7 +31,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
             }
             else
             {
-                _collider.SetActive(false);
+                _collider.SetActive(true); // !!! debug! set to false!
             }
         }
     }

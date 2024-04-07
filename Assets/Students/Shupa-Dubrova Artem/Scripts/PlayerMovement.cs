@@ -14,7 +14,6 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         private Vector3 _animJump;
 
         private float _moveDirection;
-        private bool _isJump;
         private bool _isGrounded;
         
         private void Start()
@@ -25,10 +24,9 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         private void Update()
         {
             CalculateJump();
-            CalculateSpeed();
+            HorizontalMove();
         }
-
-        private void CalculateSpeed()
+        private void HorizontalMove()
         {
             _moveDirection = Input.GetAxis("Horizontal");
             _player.velocity = new Vector2(_moveDirection * _playerSpeed, _player.velocity.y);
@@ -39,6 +37,9 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         }        
         private void CalculateJump()
         {
+            if (_player.velocity.y >= _playerSpeed)
+                _isGrounded = false;
+                
             if (_isGrounded)
             {
                 _player.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
@@ -49,6 +50,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         {
             _isGrounded = true;
         }
+        
 
     }
 }
