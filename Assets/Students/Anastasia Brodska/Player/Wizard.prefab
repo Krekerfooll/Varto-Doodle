@@ -146,9 +146,9 @@ MonoBehaviour:
   _jumpPower: 5
   _moveSpeed: 5
   _castLength: 0.7
-  _groundLayer:
+  _groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!114 &4818593569052095565
 MonoBehaviour:
   m_ObjectHideFlags: 0

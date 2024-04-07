@@ -17,7 +17,7 @@ namespace Doodle.Core
             anim = GetComponent<Animator>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             _isGrounded = Physics2D.Raycast(transform.position, Vector2.down, _castLength, _groundMask);
             Debug.DrawLine(_rigidbody.transform.position, _rigidbody.transform.position + Vector3.down * _castLength, Color.green);
