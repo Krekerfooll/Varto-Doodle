@@ -241,10 +241,10 @@ MonoBehaviour:
   - {fileID: -2222711435224738641, guid: ed63da925e1fb4ee7bbbd4f3f1de429a, type: 3}
   - {fileID: 2396788886845373341, guid: bb9262408d2004dffb3a0c69d88fc126, type: 3}
   - {fileID: 671718281725221263, guid: cebc9b44341eb5042b68f89586a6b3c4, type: 3}
-  _platformsSpawnedPerStepCount: {x: 1, y: 1}
-  _stepsCountToSpawn: 10
-  _stepsCountToDelete: 10
-  _stepHeight: 1.8
+  _platformsSpawnedPerStepCount: {x: 1, y: 2}
+  _stepsCountToSpawn: 7
+  _stepsCountToDelete: 5
+  _stepHeight: 2.5
   _bounds: {x: -2.2, y: 2.2}
 --- !u!4 &9289421
 Transform:
@@ -279,7 +279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960364812456837902, guid: bb9262408d2004dffb3a0c69d88fc126, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 8960364812456837902, guid: bb9262408d2004dffb3a0c69d88fc126, type: 3}
       propertyPath: m_LocalPosition.z
@@ -437,6 +437,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 352320371124777615, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723461509887156698, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1723461509887156698, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_GravityScale
       value: 2
@@ -459,7 +467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6740311156654191577, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 6740311156654191577, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_LocalPosition.z
