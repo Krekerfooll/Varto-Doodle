@@ -8,8 +8,12 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private Transform _targetTransform;
         [SerializeField] private float _spawnStep;
         [SerializeField] private GameObject _backGroundPrefab;
-        private Vector3 _spawnPosition = new Vector3(0, 0, 0);
+
+        [Space]
+        [Header("FOR DEBUGING")]
         [SerializeField] private List<GameObject> _backGrounds = new List<GameObject>();
+
+        private Vector3 _spawnPosition = new Vector3(0, 0, 0);
 
         private void Awake()
         {

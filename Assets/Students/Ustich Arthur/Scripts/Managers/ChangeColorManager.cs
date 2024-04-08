@@ -5,11 +5,13 @@ namespace Ustich.Arthur.DoodleJump
 {
     public class ChangeColorManager : MonoBehaviour
     {
+        [Header("Color settings:")]
         [SerializeField] private Animator _playerAnimator;
-        [SerializeField] private SpriteRenderer _blocksSpriteRenderer;
         [SerializeField] private List<RuntimeAnimatorController> _playerIdleAnimation = new List<RuntimeAnimatorController>();
-        [SerializeField] private PlatformSpawner _spawner;
         [SerializeField] private List<Sprite> _blockSprites = new List<Sprite>();
+        [Space]
+        [Header("Additional component:")]
+        [SerializeField] private PlatformSpawner _spawner;
         [SerializeField] private PlayerMovement _playerMoveMovement;
         private int _currentColor = 0;
         int _randColor = 0;
