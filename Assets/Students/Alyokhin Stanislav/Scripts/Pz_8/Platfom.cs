@@ -10,18 +10,16 @@ namespace Alokhin.Stanislav.Platform
 
         void Start()
         {
-            objectRender = GetComponent<Renderer>();
+            objectRender = GetComponentInChildren<Renderer>();
         }
 
-        private void OnCollisionEnter(Collision other)
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            Debug.Log("hi nub");
 
             if (other.gameObject.CompareTag("Player"))
             {
-                Debug.Log("hello world");
-                Color randomColor = Random.ColorHSV();
-                objectRender.material.color = randomColor;
+                //Color randomColor = Random.Color();
+                //objectRender.material.color = randomColor;
             }
 
         }
