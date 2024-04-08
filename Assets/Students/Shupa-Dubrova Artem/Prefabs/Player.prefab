@@ -415,3 +415,4 @@ MonoBehaviour:
   _spriteJump: {fileID: 5037044672223758986}
   _playerSpeed: 5
   _jumpPower: 10
+  _jumpPowerSpring: 20
