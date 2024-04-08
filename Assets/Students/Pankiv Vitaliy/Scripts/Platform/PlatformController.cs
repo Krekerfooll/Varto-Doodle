@@ -19,6 +19,7 @@ namespace PVitaliy.Platform
         [SerializeField] private bool drawGizmos; // Знаю що можна вимкнути в редакторі, просто щоб не забивало інші гізмозм коли показуються
         private Queue<PlatformBase> _platformQueue;
         private Vector3 _highestPlatformPosition;
+        private int _nonDuplicatesCount;
 
         public Transform CollisionStartTarget => collisionStartTarget;
         public Transform MovingPlatformsBoundsLeft => movingPlatformsBoundsLeft;
@@ -29,9 +30,15 @@ namespace PVitaliy.Platform
         {
             _platformQueue = new Queue<PlatformBase>(factory.maxPlatformCount);
             factory.Init();
+            GeneratedStartingPlatforms();
+        }
+
+        private void GeneratedStartingPlatforms()
+        {
+            _nonDuplicatesCount = 0;
             _highestPlatformPosition = transform.position + startPlatformPosition;
             SpawnPlatformAt(factory.startingPlatform, _highestPlatformPosition);
-            for (int i = 0; i < factory.preferredPlatformAmount - 1; i++)
+            for (var i = 0; i < factory.preferredPlatformAmount - 1; i++)
             {
                 SpawnNewPlatform();
             }
@@ -42,28 +49,28 @@ namespace PVitaliy.Platform
             var newPlatform = SpawnPlatformAt(factory.GetRandomPlatformType(), GetNewPlatformPosition());
             if (newPlatform && Random.Range(0, 1f) <= factory.duplicateChance * newPlatform.DuplicateChanceMultiplier)
             {
-                var duplicatePosition = GetNewPlatformPosition(newPlatform.transform.position + Vector3.down * factory.verticalDistance.y);
-                SpawnPlatformAt(factory.GetRandomPlatformType(), duplicatePosition, false);
+                var duplicatePosition = GetNewPlatformPosition(newPlatform.transform.position + Vector3.down * factory.verticalDistance.x);
+                SpawnPlatformAt(factory.GetRandomPlatformType(), duplicatePosition, true);
             }
         }
 
-        private PlatformBase SpawnPlatformAt(PlatformType type, Vector2 position, bool replaceWhenDestroyed = true)
+        private PlatformBase SpawnPlatformAt(PlatformType type, Vector2 position, bool isDuplicated = false)
+        {
+            var platform = factory.CreatePlatform(type);
+            return SpawnPlatformAt(platform, position, isDuplicated);
+        }
+
+        private PlatformBase SpawnPlatformAt(PlatformBase platform, Vector2 position, bool isDuplicated = false)
         {
             if (container.childCount == factory.maxPlatformCount)
             {
                 Debug.LogWarning("[Platform Controller]. Platform limit is reached");
                 return null;
             }
-            var platform = factory.CreatePlatform(type);
-            return SpawnPlatformAt(platform, position, replaceWhenDestroyed);
-        }
-
-        private PlatformBase SpawnPlatformAt(PlatformBase platform, Vector2 position, bool replaceWhenDestroyed = true)
-        {
             var instance = Instantiate(platform, position, Quaternion.identity, container);
-            instance.Init(this, replaceWhenDestroyed);
-            if (instance.transform.position.y > _highestPlatformPosition.y)
-                _highestPlatformPosition = instance.transform.position;
+            instance.Init(this, isDuplicated);
+            if (instance.transform.position.y > _highestPlatformPosition.y) _highestPlatformPosition = instance.transform.position;
+            if (!isDuplicated) _nonDuplicatesCount++;
             _platformQueue.Enqueue(instance);
             return instance;
         }
@@ -80,8 +87,9 @@ namespace PVitaliy.Platform
         private void RemoveLastPlatformAndSpawnNew()
         {
             var platform = _platformQueue.Dequeue();
-            if (_platformQueue.Count < factory.preferredPlatformAmount || (platform && platform.ReplaceWithNewWhenDestroyed))
+            if (_nonDuplicatesCount <= factory.preferredPlatformAmount && (platform && platform.ReplaceWithNewWhenDestroyed))
             {
+                _nonDuplicatesCount--;
                 SpawnNewPlatform();
             }
             if (platform) Destroy(platform.gameObject);
