@@ -6,6 +6,7 @@ namespace PVitaliy.Platform
 {
     public class HorizontalMovingFallingPlatform : HorizontallyMovingPlatform
     {
+        [Header("Falling Platform")]
         [SerializeField] private ParticleSystem breakingPS;
         [SerializeField] private GameObject bodyContainer;
         private bool _isFalling;

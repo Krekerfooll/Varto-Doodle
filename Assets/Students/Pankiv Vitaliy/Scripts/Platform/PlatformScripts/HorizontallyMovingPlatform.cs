@@ -6,6 +6,7 @@ namespace PVitaliy.Platform
 {
     public class HorizontallyMovingPlatform : PlatformStatic
     {
+        [Header("Horizontal Moving Platform")]
         [SerializeField] private float minSpeed = 1f;
         [SerializeField] private float maxSpeed = 2f;
         [SerializeField] private Rigidbody2D rigidBody;

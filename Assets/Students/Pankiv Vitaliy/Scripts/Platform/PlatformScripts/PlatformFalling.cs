@@ -6,6 +6,7 @@ namespace PVitaliy.Platform
 {
     public class PlatformFalling : PlatformStatic
     {
+        [Header("Falling Platform")]
         [SerializeField] private ParticleSystem breakingPS;
         [SerializeField] private GameObject bodyContainer;
         public override PlatformType Type => PlatformType.Falling;

@@ -5,6 +5,7 @@ namespace PVitaliy.Platform
 {
     public abstract class PlatformBase : MonoBehaviour // do NEVER destroy gameObject from here again
     {
+        [Header("Platform Base")]
         [SerializeField] protected ColorTarget spriteColorController;
         [SerializeField] protected Collider2D _collider;
         [SerializeField] private bool emitParticlesOnLanding = true;

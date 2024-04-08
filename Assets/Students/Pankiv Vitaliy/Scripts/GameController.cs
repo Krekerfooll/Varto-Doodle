@@ -1,3 +1,5 @@
+using System.Collections;
+using PVitaliy.Colors;
 using PVitaliy.Platform;
 using UnityEngine;
 
@@ -9,11 +11,13 @@ namespace PVitaliy
         [SerializeField] private Transform player;
         [SerializeField] private Transform losingPoint;
         [SerializeField] private GameUI gameUI;
+        [SerializeField] private ColorTarget backgroundColor;
         private float _maxPlayerHeight;
         private void Awake()
         {
             platformController.Init();
             UpdateMaxPlayerHeight(0);
+            StartCoroutine(nameof(BackgroundChangeCoroutine));
         }
 
         private void Update()
@@ -37,6 +41,15 @@ namespace PVitaliy
         private int ConvertHeightToScore()
         {
             return Mathf.RoundToInt(_maxPlayerHeight * platformController.GameScoreMultiplier);
+        }
+
+        private IEnumerator BackgroundChangeCoroutine()
+        {
+            while (true)
+            {
+                backgroundColor.ChangeTargetColor(Random.ColorHSV(0, 1, .8f, 1, .4f, .6f));
+                yield return new WaitForSeconds(10);
+            }
         }
     }
 }
