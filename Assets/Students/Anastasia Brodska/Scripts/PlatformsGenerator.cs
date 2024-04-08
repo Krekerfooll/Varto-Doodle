@@ -3,13 +3,11 @@ using UnityEngine;
 
 public class PlatformsGenerator : MonoBehaviour
 {
-
     [Header("Global Settings:")]
-    [Space]
     [SerializeField] private Transform _target;
     [Space]
+
     [Header("Spawn Settings:")]
-    [Space]
     [SerializeField] private PlatformCollider _platformPrefab;
     [SerializeField] private int _stepsCountToSpawn;
     [SerializeField] private float _stepsCountToDelete;
@@ -29,7 +27,7 @@ public class PlatformsGenerator : MonoBehaviour
 
         for (int i = 0; i < _stepsCountToSpawn; i++)
         {
-            SpawnPlatform(i + 1);
+            SpawnPlatform();
         }
     }
 
@@ -50,15 +48,20 @@ public class PlatformsGenerator : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Нет платформ для удаления.");
+                Debug.LogWarning("No platforms to delete.");
             }
+        }
+
+        if (_target.position.y > _lastPlatformsSpawnedOnPlayerPosition)
+        {
+            SpawnPlatform();
         }
     }
 
-    private void SpawnPlatform(int stepsCount)
+    private void SpawnPlatform()
     {
         var platformPositionX = Random.Range(_bounds.x, _bounds.y);
-        var platformPositionY = _target.position.y + stepsCount * _stepHeight;
+        var platformPositionY = _lastPlatformsSpawnedOnPlayerPosition + _stepHeight;
 
         var platformPosition = new Vector3(platformPositionX, platformPositionY, transform.position.z);
 
@@ -66,6 +69,7 @@ public class PlatformsGenerator : MonoBehaviour
         spawnedPlatform.Init(_target);
 
         _spawnedPlatforms.Enqueue(spawnedPlatform);
+
+        _lastPlatformsSpawnedOnPlayerPosition = platformPositionY;
     }
 }
-
