@@ -184,6 +184,7 @@ MonoBehaviour:
   _targetTransform: {fileID: 1306796145}
   _spawnStep: 25.6
   _backGroundPrefab: {fileID: 7311981238915330787, guid: 0e2381cf10ef99340aedd6c92b0e4d38, type: 3}
+  _backGrounds: []
 --- !u!1 &223986759
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +229,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 19b6eed4b17a4b65886b7d5550712d38, type: 3}
   - {fileID: 21300000, guid: 9070c0371fd540238bfc29f9559e1b92, type: 3}
   - {fileID: 21300000, guid: 5db0fed302a04cf698ae7aa11e31f9e7, type: 3}
+  _playerMoveMovement: {fileID: 1306796147}
 --- !u!4 &223986761
 Transform:
   m_ObjectHideFlags: 0
@@ -537,6 +539,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3433032877048046995, guid: df254403676944e786502cd04e5bc31e, type: 3}
   m_PrefabInstance: {fileID: 1306796131}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1306796147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3766941472645118655, guid: df254403676944e786502cd04e5bc31e, type: 3}
+  m_PrefabInstance: {fileID: 1306796131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e6c9f164bb72c44a21177d21c80b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1841469034 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1969011324178302711, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}

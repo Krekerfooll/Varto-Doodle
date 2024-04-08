@@ -10,6 +10,9 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private List<RuntimeAnimatorController> _playerIdleAnimation = new List<RuntimeAnimatorController>();
         [SerializeField] private PlatformSpawner _spawner;
         [SerializeField] private List<Sprite> _blockSprites = new List<Sprite>();
+        [SerializeField] private PlayerMovement _playerMoveMovement;
+        private int _currentColor = 0;
+        int _randColor = 0;
 
 
         private void Update()
@@ -19,16 +22,33 @@ namespace Ustich.Arthur.DoodleJump
 
         private void ChangeGameObjColor()
         {
-            int randColor = Random.Range(0, _playerIdleAnimation.Count);
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && _playerMoveMovement.IsGrounded)
             {
-                _playerAnimator.runtimeAnimatorController = _playerIdleAnimation[randColor];
+                UniqeColor();
+                _playerAnimator.runtimeAnimatorController = _playerIdleAnimation[_currentColor];
                 foreach (GameObject _platforms in _spawner.Platforms)
                 {
                     SpriteRenderer _sprite = _platforms.GetComponent<SpriteRenderer>();
-                    _sprite.sprite = _blockSprites[randColor];
+                    _sprite.sprite = _blockSprites[_currentColor];
                 }
             }  
+        }
+
+        private void UniqeColor()
+        {
+            _randColor = Random.Range(0, _playerIdleAnimation.Count);
+            if (_randColor != _currentColor)
+                _currentColor = _randColor;
+            else if (_randColor == _currentColor && _randColor == _playerIdleAnimation.Count - 1)
+            {
+                _randColor--;
+                _currentColor = _randColor;
+            }
+            else 
+            {
+                _randColor++;
+                _currentColor = _randColor;
+            }
         }
     }
 }
