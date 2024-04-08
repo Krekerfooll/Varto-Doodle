@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,7 +10,6 @@ namespace OIMOD.Core.GameMech
         [SerializeField] Transform _deathZone;
         [SerializeField] Transform _gameOverText;
         [SerializeField] TextMeshProUGUI _scoreText;
-        [SerializeField] GameObject scoreSystem;
 
         private bool _isGameOver;
         private void Start()
@@ -35,9 +32,7 @@ namespace OIMOD.Core.GameMech
         }
         private void GameOver()
         {
-            var score = scoreSystem.GetComponent<OI_ScoreSystem>()._score;
             _gameOverText.gameObject.SetActive(true);
-
             _scoreText.alignment = TextAlignmentOptions.Midline;
 
             if (Input.GetKeyDown(KeyCode.R) || (Input.GetKeyDown(KeyCode.KeypadEnter)))

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace OIMOD.Core.GameMech
 {
-    public class OI_ColorManager : OI_InputManager
+    public class OI_ColorChange : OI_InputManager
     {
         [Header("Colorized Targets Setup")]
         [SerializeField] public List<SpriteRenderer> layerToChangeColor;

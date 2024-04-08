@@ -32,14 +32,10 @@ namespace OIMOD.Core.GameMech
                 PlatformDestroyCheck();
             }
         }
-        public virtual void CollisionOnCheck() { 
-            if (transform.position.y < _player.position.y) {
-                _platformCollider.enabled = true;
-            }
-
-            else {
-                _platformCollider.enabled = false;
-            }
+        public virtual void CollisionOnCheck() 
+        { 
+            if (transform.position.y < _player.position.y) _platformCollider.enabled = true;
+            else _platformCollider.enabled = false;
         }
         public virtual void PlatformDestroyCheck() { 
             var destroyY = _destroyDistance.position.y;

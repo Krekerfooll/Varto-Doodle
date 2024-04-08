@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,7 +8,7 @@ namespace OIMOD.Core.GameMech
         [Header("Platforms List")]
         [Space]
         [SerializeField] private GameObject[] _platformType;
-        [SerializeField] private GameObject ColorManager;
+        [SerializeField] private GameObject LevelManager;
         [Space]
         [Header("Complex Platform Setup")]
         [Space]
@@ -21,7 +18,7 @@ namespace OIMOD.Core.GameMech
         [Space]
         [Header("Spawn Setup")]
         [Space]
-        [SerializeField] private Transform _spawnTarget;
+        [SerializeField] private Transform _spawnerPosition;
         [SerializeField] private Transform _borderLeft;
         [SerializeField] private Transform _borderRight;
         [SerializeField] private int _spawnCount;
@@ -40,29 +37,26 @@ namespace OIMOD.Core.GameMech
         private int spawnOnLineCount;
         private int platformID;
 
-
-        private void Start() {
-            CreatePlatform();
+        private void Start() => CreatePlatform();
+        private void Update() 
+        {
+            CountDistancePlayerToSpawner();
+            if (_canSpawn) CreatePlatform();
         }
-        private void Update() {
-            CountDistance();
-            if (_canSpawn)
-                CreatePlatform();
-        }
-        private void CountDistance() {
+        private void CountDistancePlayerToSpawner() 
+        {
             var playerPos = _playerTarget.position.y;
-            var targetPos = _spawnTarget.position.y;
+            var targetPos = _spawnerPosition.position.y;
             _distanceFromPlayerToSpawner = playerPos - targetPos;
 
-            if ((playerPos <= targetPos) && !(_distanceFromPlayerToSpawner <= ((_spawnDistance*_spawnDistance)*-1)))
+            if ((playerPos <= targetPos) && !(_distanceFromPlayerToSpawner <= ((_spawnDistance*_spawnCount)*-1)))
                 _canSpawn = true;
-            else 
-                _canSpawn = false;
+            else  _canSpawn = false;
         }
         private void CreatePlatform() {
             var playerHight = _playerTarget.position.y;
             var platformTypeID = _platformType[platformID].GetComponent<OI_PlatformCore>();
-            var colorChangeList = ColorManager.GetComponent<OI_ColorManager>().layerToChangeColor;
+            var colorChangeList = LevelManager.GetComponent<OI_ColorChange>().layerToChangeColor;
 
             for (int i = 0; i < _spawnCount; i++) {
 
@@ -110,9 +104,9 @@ namespace OIMOD.Core.GameMech
                 }
 
                 var spawnPosX = Random.Range(_borderLeft.position.x+0.5f, _borderRight.position.x-0.5f);
-                var spawnPosY = _spawnDistance + spawnRangeY + _spawnTarget.position.y;
+                var spawnPosY = _spawnDistance + spawnRangeY + _spawnerPosition.position.y;
                 var spawnPos = new Vector3(spawnPosX, spawnPosY, 0f);
-                _spawnTarget.position = spawnPos;
+                _spawnerPosition.position = spawnPos;
 
                 if (spawnOnLineCount > 0) {
                     for (int j = 0; j < spawnOnLineCount; j++) {

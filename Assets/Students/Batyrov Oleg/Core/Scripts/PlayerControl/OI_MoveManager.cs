@@ -11,6 +11,13 @@ namespace OIMOD.Core.GameMech
         [SerializeField] Rigidbody2D _rb;
         [SerializeField] Animator animator;
         [Space]
+        [Header("Movement Setup")]
+        [Space]
+        [SerializeField] private bool _autoJumpOn;
+        [SerializeField] private float _speed;
+        [SerializeField] public float _jumpPower;
+        [SerializeField] private float _maxVelocity;
+        [Space]
         [Header("Jump Setup")]
         [Space]
         [SerializeField] GameObject rayPosLeft;
@@ -18,13 +25,6 @@ namespace OIMOD.Core.GameMech
         [SerializeField] GameObject rayPosRight;
         [SerializeField] private float _jumpRayDist;
         [SerializeField] private LayerMask _layerMask;
-        [Space]
-        [Header("Movement Setup")]
-        [Space]
-        [SerializeField] private bool _autoJumpOn;
-        [SerializeField] private float _speed;
-        [SerializeField] public float _jumpPower;
-        [SerializeField] private float _maxVelocity;
         [Space]
         [Header("Movement Setup")]
         [Space]
@@ -38,36 +38,12 @@ namespace OIMOD.Core.GameMech
         private void Update() {
             if (JumpInput) _activateAutoJump = true;
             RayCheckGround();
-            CheckJump();
             BorderCheck();
+            CheckJump();
         }
         private void FixedUpdate() { 
-            CheckMove(); 
+            Move(); 
             SpeedLimit();
-        }
-        private void CheckJump() {
-            if (_canJump && JumpInput && !_autoJumpOn && (_rb.velocity.y <= 0)) {
-                Jump();
-            }
-            else if (_autoJumpOn && _activateAutoJump && _canJump && (_rb.velocity.y <= 0)) {
-                Jump();
-            }
-        }
-        private void Jump()
-        {
-            _rb.velocity = new Vector2(_rb.velocity.x,0);
-            _rb.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-            colorIndex = Random.Range(0, 10);
-            _canJump = false;
-        }
-        private void CheckMove() {
-            _rb.velocity = new Vector2(MoveInput * _speed, _rb.velocity.y);
-            if (MoveInput > 0) playerRender.transform.localScale = new Vector3(-1,1,1);
-            else if (MoveInput < 0) playerRender.transform.localScale = new Vector3(1,1,1);
-        }
-        private void SpeedLimit()
-        {
-            _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, _maxVelocity);
         }
         private void RayCheckGround()   {
             RaycastHit2D hitGroundLeft = Physics2D.Raycast(rayPosLeft.transform.position, Vector2.down, _jumpRayDist, _layerMask);
@@ -97,6 +73,24 @@ namespace OIMOD.Core.GameMech
             else if (playerPos.x > borderRight)
                 player.transform.position = new Vector3(borderLeft, playerPos.y, 0);
         }
+        private void CheckJump() {
+            if (_canJump && JumpInput && !_autoJumpOn && (_rb.velocity.y <= 0)) Jump();
+            else if (_autoJumpOn && _activateAutoJump && _canJump && (_rb.velocity.y <= 0)) Jump();
+        }
+        private void Jump()
+        {
+            colorIndex = Random.Range(0, 10);
+
+            _rb.velocity = new Vector2(_rb.velocity.x,0);
+            _rb.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+            _canJump = false;
+        }
+        private void Move() {
+            _rb.velocity = new Vector2(MoveInput * _speed, _rb.velocity.y);
+            if (MoveInput > 0) playerRender.transform.localScale = new Vector3(-1,1,1);
+            else if (MoveInput < 0) playerRender.transform.localScale = new Vector3(1,1,1);
+        }
+        private void SpeedLimit() => _rb.velocity = Vector2.ClampMagnitude(_rb.velocity, _maxVelocity);
     }
 }
 
