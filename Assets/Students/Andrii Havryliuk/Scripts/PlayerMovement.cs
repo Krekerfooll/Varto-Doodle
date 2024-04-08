@@ -17,7 +17,6 @@ namespace Scripts
 
         private float _moveDirection;
         private bool _isJump;
-        private int _jumpIndex = 1;
         private bool _isGrounded;
 
 
@@ -45,7 +44,7 @@ namespace Scripts
             {
                 if (_isJump)
                 {
-                    _player.AddForce(Vector2.up * _jumpPower * _jumpIndex, ForceMode2D.Impulse);
+                    _player.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
                     _isJump = false;
                 }
             }
@@ -58,14 +57,6 @@ namespace Scripts
         private void PowerJump()
         {
             _isJump = true;
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                _jumpIndex = 2;
-            }
-            if (Input.GetKeyUp(KeyCode.W))
-            {
-                _jumpIndex = 1;
-            }
         }
 
         private void PowerSpeed()
