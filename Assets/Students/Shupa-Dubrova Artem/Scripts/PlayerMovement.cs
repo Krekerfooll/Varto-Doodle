@@ -86,16 +86,10 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
 
         private void SpriteSwitch()
         {
-            if (_player.velocity.y <= _jumpPower / 3)
-            {
-                _spriteIdle.SetActive(true);
-                _spriteJump.SetActive(false);
-            }
-            else
-            {
-                _spriteIdle.SetActive(false);
-                _spriteJump.SetActive(true);
-            }
+            var isSlowEnoughToIdle = _player.velocity.y <= _jumpPower / 3;
+            
+            _spriteIdle.SetActive(isSlowEnoughToIdle);
+            _spriteJump.SetActive(!isSlowEnoughToIdle);
         }
 
     }
