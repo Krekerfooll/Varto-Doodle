@@ -38,20 +38,8 @@ namespace PVitaliy.Platform
 
         private void ChangeDirectionIfCan()
         {
-            if (CurrentDirectionX == -1)
-            {
-                if (transform.position.x <= _leftPoint.position.x)
-                {
-                    CurrentDirectionX = 1;
-                }
-
-                return;
-            }
-
-            if (transform.position.x >= _rightPoint.position.x)
-            {
-                CurrentDirectionX = -1;
-            }
+            if (CurrentDirectionX == -1 && transform.position.x <= _leftPoint.position.x) CurrentDirectionX = 1; 
+            else if (transform.position.x >= _rightPoint.position.x) CurrentDirectionX = -1;
         }
 
         protected override void OnFixedUpdate()

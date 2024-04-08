@@ -9,12 +9,13 @@ namespace PVitaliy.Platform
         [SerializeField] protected Collider2D _collider;
         [SerializeField] private bool emitParticlesOnLanding = true;
         private bool _initialized;
-        public Color TargetColor => spriteColorController.TargetColor;
-        public bool EmitParticlesOnLanding => emitParticlesOnLanding;
-        public abstract PlatformType Type { get; }
         private Transform _collisionEnablingPoint;
         protected PlatformController Controller;
         protected virtual bool ColliderEnabled => transform.position.y <= _collisionEnablingPoint.position.y;
+        
+        public Color TargetColor => spriteColorController.TargetColor;
+        public bool EmitParticlesOnLanding => emitParticlesOnLanding;
+        public abstract PlatformType Type { get; }
 
         public void Init(PlatformController controller)
         {

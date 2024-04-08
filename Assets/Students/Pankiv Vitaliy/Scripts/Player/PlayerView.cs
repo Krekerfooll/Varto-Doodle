@@ -9,9 +9,9 @@ namespace PVitaliy.Player
     {
         [SerializeField] private PlayerMovement playerMovement;
         [SerializeField] private Transform viewContainer;
-        [SerializeField] [Range(0, 1)] private float directionLerpPower = .5f;
         [SerializeField] private ColorTarget colorChanger;
         [SerializeField] private ParticleSystem landingAnimation;
+        [SerializeField] [Range(0, 1)] private float directionLerpPower = .5f;
         private float _targetScaleX = 1;
         private void Awake()
         {

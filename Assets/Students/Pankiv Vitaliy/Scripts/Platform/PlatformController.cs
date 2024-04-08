@@ -9,7 +9,7 @@ namespace PVitaliy.Platform
         [SerializeField] private PlatformFactory factory;
         [Space]
         [SerializeField] private Transform container;
-        [SerializeField] private Vector2 startPlatformPosition;
+        [SerializeField] private Vector3 startPlatformPosition;
         [Header("Action Points")]
         [SerializeField] private Transform removeAtPoint;
         [SerializeField] private Transform collisionStartTarget;
@@ -29,7 +29,7 @@ namespace PVitaliy.Platform
         {
             _platformQueue = new Queue<PlatformBase>(factory.maxPlatformCount);
             factory.Init();
-            SpawnPlatformAt(factory.startingPlatform, startPlatformPosition);
+            SpawnPlatformAt(factory.startingPlatform, transform.position + startPlatformPosition);
             for (int i = 0; i < factory.maxPlatformCount - 1; i++)
             {
                 SpawnNewPlatform();
@@ -81,12 +81,12 @@ namespace PVitaliy.Platform
         private void OnDrawGizmos()
         {
             if (!drawGizmos) return;
+            var transformPosition = transform.position;
             // Точка спавну стартової платформи
             Gizmos.color = Color.green;
-            Gizmos.DrawSphere(startPlatformPosition, .1f);
+            Gizmos.DrawSphere(startPlatformPosition + transformPosition, .1f);
             
             Gizmos.color = Color.blue;
-            var transformPosition = transform.position;
             // Горизонтальні ліміти генерації платформ
             Gizmos.DrawLine(new Vector3(factory.horizontalDistance.x, factory.verticalDistance.x) + transformPosition,
                 new Vector3(factory.horizontalDistance.y, factory.verticalDistance.x) + transformPosition);

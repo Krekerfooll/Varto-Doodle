@@ -10,9 +10,9 @@ namespace PVitaliy.Player
         [SerializeField] private GameController gameController;
         [SerializeField] private PlayerView viewController;
         [SerializeField] private float rayCastingOffsetY = 0;
+        [SerializeField] private float raycastDistance = 1;
         [SerializeField] private float jumpPower = 7;
         [SerializeField] private float moveSpeed = 1;
-        [SerializeField] private float raycastDistance = 1;
         
         private Vector2 _previousVelocity;
         public Vector3 LeftRayStartPoint =>
