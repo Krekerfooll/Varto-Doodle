@@ -11,7 +11,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         [SerializeField] private bool _followByY;
         [SerializeField] private bool _followByZ;
 
-        private void Update()
+        private void FixedUpdate()
         {
             
             var targetPosition = new Vector3(
