@@ -18,7 +18,6 @@ namespace Ustich.Arthur.DoodleJump
         private void Awake()
         {
             _backGrounds.Add(Instantiate(_backGroundPrefab, _spawnPosition, Quaternion.identity, this.transform));
-            Debug.Log($"{_backGrounds[_backGrounds.Count - 1].transform.position.y}");
         }
 
         private void Update()

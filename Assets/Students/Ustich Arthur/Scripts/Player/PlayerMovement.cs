@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 namespace Ustich.Arthur.DoodleJump
 {
     public class PlayerMovement : MonoBehaviour
     {
+        [SerializeField] private GameSettingsManager _gameSettingsManager;
+
         [SerializeField] private float _jumpForce;
         [SerializeField] private float _moveSpeed;
         [SerializeField] private Rigidbody2D _playerRB2D;
@@ -22,6 +25,7 @@ namespace Ustich.Arthur.DoodleJump
         {
             Move();
             Jump();
+            TeleportOnBounde();
         }
         private void Move()
         {
@@ -36,6 +40,14 @@ namespace Ustich.Arthur.DoodleJump
             Debug.DrawLine(_playerRB2D.position, _playerRB2D.position + Vector2.down * _groundCheckDistance, Color.green);
             if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
                 _playerRB2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+        }
+
+        private void TeleportOnBounde()
+        {
+            if (transform.position.x < _gameSettingsManager.LeftBounce)
+                transform.position = new Vector2(_gameSettingsManager.RightBounce, transform.position.y);
+            if (transform.position.x > _gameSettingsManager.RightBounce)
+                transform.position = new Vector2(_gameSettingsManager.LeftBounce, transform.position.y);
         }
     }
 }
