@@ -15,15 +15,16 @@ namespace PVitaliy.Player
         [SerializeField] private float moveSpeed = 1;
         
         private Vector2 _previousVelocity;
-        public Vector3 LeftRayStartPoint =>
-            rigidBody.transform.position + Vector3.left * transform.localScale.x / 2 + Vector3.up * rayCastingOffsetY;
-        public Vector3 RightRayStartPoint =>
-            rigidBody.transform.position + Vector3.right * transform.localScale.x / 2 + Vector3.up * rayCastingOffsetY;
         public bool IsGrounded => rigidBody.velocity.y <= 0 && (
-            Physics2D.Raycast(LeftRayStartPoint, Vector2.down, raycastDistance, groundMask) ||
-            Physics2D.Raycast(RightRayStartPoint, Vector2.down, raycastDistance, groundMask)
+            Physics2D.Raycast(GetRayStartPosition(-1), Vector2.down, raycastDistance, groundMask) ||
+            Physics2D.Raycast(GetRayStartPosition(1), Vector2.down, raycastDistance, groundMask)
             );
         public float RaycastDistance => raycastDistance;
+
+        public Vector3 GetRayStartPosition(float rayDirectionX = 0)
+        {
+            return rigidBody.transform.position + Vector3.right * rayDirectionX * transform.localScale.x / 2 + Vector3.up * rayCastingOffsetY;
+        }
 
         private void Update()
         {

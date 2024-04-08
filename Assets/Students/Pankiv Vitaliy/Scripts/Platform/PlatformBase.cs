@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PVitaliy.Platform
 {
-    public abstract class PlatformBase : MonoBehaviour
+    public abstract class PlatformBase : MonoBehaviour // do NEVER destroy gameObject from here again
     {
         [SerializeField] protected ColorTarget spriteColorController;
         [SerializeField] protected Collider2D _collider;
@@ -11,13 +11,13 @@ namespace PVitaliy.Platform
         [SerializeField] private float duplicateChanceMultiplier = 1;
         private bool _initialized;
         private Transform _collisionEnablingPoint;
-        public bool ReplaceWithNewWhenDestroyed { get; private set; }
         protected PlatformController Controller;
         protected virtual bool ColliderEnabled => transform.position.y <= _collisionEnablingPoint.position.y;
         
         public Color TargetColor => spriteColorController.TargetColor;
         public bool EmitParticlesOnLanding => emitParticlesOnLanding;
         public float DuplicateChanceMultiplier => duplicateChanceMultiplier;
+        public bool ReplaceWithNewWhenDestroyed { get; private set; }
         public abstract PlatformType Type { get; }
 
         public void Init(PlatformController controller, bool replaceWithNew)

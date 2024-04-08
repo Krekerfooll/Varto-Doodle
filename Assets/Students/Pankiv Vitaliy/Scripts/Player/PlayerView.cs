@@ -31,8 +31,8 @@ namespace PVitaliy.Player
 
         private void OnDrawGizmos()
         {
-            var positionLeft = playerMovement.LeftRayStartPoint;
-            var positionRight = playerMovement.RightRayStartPoint;
+            var positionLeft = playerMovement.GetRayStartPosition(-1);
+            var positionRight = playerMovement.GetRayStartPosition(1);
             Gizmos.DrawLine(positionLeft, positionLeft + Vector3.down * playerMovement.RaycastDistance);
             Gizmos.DrawLine(positionRight, positionRight + Vector3.down * playerMovement.RaycastDistance);
         }

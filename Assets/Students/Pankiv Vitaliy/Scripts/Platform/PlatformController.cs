@@ -68,7 +68,7 @@ namespace PVitaliy.Platform
                 return null;
             }
             var instance = Instantiate(platform, position, Quaternion.identity, container);
-            instance.Init(this, isDuplicated);
+            instance.Init(this, !isDuplicated);
             if (instance.transform.position.y > _highestPlatformPosition.y) _highestPlatformPosition = instance.transform.position;
             if (!isDuplicated) _nonDuplicatesCount++;
             _platformQueue.Enqueue(instance);
@@ -78,7 +78,7 @@ namespace PVitaliy.Platform
         private void FixedUpdate()
         {
             var bottomPlatform = _platformQueue.Peek();
-            if (!bottomPlatform || bottomPlatform.transform.position.y < removeAtPoint.position.y)
+            if (bottomPlatform.transform.position.y < removeAtPoint.position.y)
             {
                 RemoveLastPlatformAndSpawnNew();
             }
@@ -87,12 +87,12 @@ namespace PVitaliy.Platform
         private void RemoveLastPlatformAndSpawnNew()
         {
             var platform = _platformQueue.Dequeue();
-            if (_nonDuplicatesCount <= factory.preferredPlatformAmount && (platform && platform.ReplaceWithNewWhenDestroyed))
+            Destroy(platform.gameObject);
+            if (_nonDuplicatesCount <= factory.preferredPlatformAmount && platform.ReplaceWithNewWhenDestroyed)
             {
                 _nonDuplicatesCount--;
                 SpawnNewPlatform();
             }
-            if (platform) Destroy(platform.gameObject);
         }
 
         private Vector2 GetNewPlatformPosition()

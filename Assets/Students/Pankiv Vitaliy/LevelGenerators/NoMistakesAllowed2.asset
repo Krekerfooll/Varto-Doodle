@@ -18,7 +18,7 @@ MonoBehaviour:
   startingPlatform: {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
   verticalDistance: {x: 3.45, y: 3.45}
   horizontalDistance: {x: -2.3, y: 2.3}
-  maxPlatformCount: 3
+  maxPlatformCount: 4
   preferredPlatformAmount: 3
   scoreMultiplier: 3
   duplicateChance: 0
