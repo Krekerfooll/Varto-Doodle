@@ -20,14 +20,16 @@ MonoBehaviour:
   startingPlatform: {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
   verticalDistance: {x: 1.5, y: 3.5}
   horizontalDistance: {x: -2.3, y: 2.3}
-  maxPlatformCount: 8
+  maxPlatformCount: 16
+  preferedPlatformAmount: 8
   scoreMultiplier: 1
+  duplicateChance: 0.2
   weights:
-  - type: 2
+  - type: 3
     weight: 0.1
+  - type: 2
+    weight: 0.2
   - type: 1
     weight: 0.4
   - type: 0
     weight: 1
-  - type: 3
-    weight: 0.1

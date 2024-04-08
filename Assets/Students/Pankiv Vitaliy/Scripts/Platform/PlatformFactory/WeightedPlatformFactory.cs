@@ -20,6 +20,7 @@ namespace PVitaliy.Platform
 
         public override void Init()
         {
+            _totalWeight = 0;
             weights.ForEach(weightData => _totalWeight += weightData.weight);
             weights.Sort((w1, w2) => w1.weight < w2.weight ? -1 : 1);
         }

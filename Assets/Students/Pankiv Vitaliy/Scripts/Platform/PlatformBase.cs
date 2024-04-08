@@ -8,19 +8,23 @@ namespace PVitaliy.Platform
         [SerializeField] protected ColorTarget spriteColorController;
         [SerializeField] protected Collider2D _collider;
         [SerializeField] private bool emitParticlesOnLanding = true;
+        [SerializeField] private float duplicateChanceMultiplier = 1;
         private bool _initialized;
         private Transform _collisionEnablingPoint;
+        public bool ReplaceWithNewWhenDestroyed { get; private set; }
         protected PlatformController Controller;
         protected virtual bool ColliderEnabled => transform.position.y <= _collisionEnablingPoint.position.y;
         
         public Color TargetColor => spriteColorController.TargetColor;
         public bool EmitParticlesOnLanding => emitParticlesOnLanding;
+        public float DuplicateChanceMultiplier => duplicateChanceMultiplier;
         public abstract PlatformType Type { get; }
 
-        public void Init(PlatformController controller)
+        public void Init(PlatformController controller, bool replaceWithNew)
         {
             Controller = controller;
             _collisionEnablingPoint = controller.CollisionStartTarget;
+            ReplaceWithNewWhenDestroyed = replaceWithNew;
             AfterInit();
             _initialized = true;
         }

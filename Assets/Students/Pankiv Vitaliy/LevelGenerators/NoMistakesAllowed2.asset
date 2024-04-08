@@ -19,7 +19,9 @@ MonoBehaviour:
   verticalDistance: {x: 3.45, y: 3.45}
   horizontalDistance: {x: -2.3, y: 2.3}
   maxPlatformCount: 3
+  preferredPlatformAmount: 3
   scoreMultiplier: 3
+  duplicateChance: 0
   weights:
   - type: 3
     weight: 0.2

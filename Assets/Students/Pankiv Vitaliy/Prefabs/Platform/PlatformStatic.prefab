@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3476869095151863406}
   - component: {fileID: 1049522473353726595}
-  - component: {fileID: 4499899631212248931}
   m_Layer: 0
   m_Name: FrontPart
   m_TagString: Untagged
@@ -85,20 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4499899631212248931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2290169779988706075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interpolationPower: 0.15
-  mainRenderer: {fileID: 1049522473353726595}
 --- !u!1 &6595282012220114911
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,8 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8766308355070873371}
   - component: {fileID: 6834081075459372580}
-  - component: {fileID: 3472266189357033963}
+  - component: {fileID: 4206281566398175968}
   - component: {fileID: 2692060347191553108}
+  - component: {fileID: 8293316454689475911}
   m_Layer: 7
   m_Name: PlatformStatic
   m_TagString: Untagged
@@ -161,8 +147,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3472266189357033963
-BoxCollider2D:
+--- !u!70 &4206281566398175968
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -194,18 +180,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.3, y: 0.8}
-  m_EdgeRadius: 0
+  m_Size: {x: 4.4000025, y: 0.85}
+  m_Direction: 1
 --- !u!114 &2692060347191553108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,5 +194,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b810765a30a466f9bd914b70b056305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteColorController: {fileID: 4499899631212248931}
-  _collider: {fileID: 3472266189357033963}
+  spriteColorController: {fileID: 8293316454689475911}
+  _collider: {fileID: 4206281566398175968}
+  emitParticlesOnLanding: 1
+  duplicateChanceMultiplier: 1
+--- !u!114 &8293316454689475911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6595282012220114911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interpolationPower: 0.15
+  mainRenderer: {fileID: 1049522473353726595}

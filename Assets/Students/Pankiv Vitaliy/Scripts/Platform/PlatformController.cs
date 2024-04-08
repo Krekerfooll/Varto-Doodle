@@ -18,7 +18,7 @@ namespace PVitaliy.Platform
         [Space]
         [SerializeField] private bool drawGizmos; // Знаю що можна вимкнути в редакторі, просто щоб не забивало інші гізмозм коли показуються
         private Queue<PlatformBase> _platformQueue;
-        private Vector3 _lastPlacedPlatformPosition;
+        private Vector3 _highestPlatformPosition;
 
         public Transform CollisionStartTarget => collisionStartTarget;
         public Transform MovingPlatformsBoundsLeft => movingPlatformsBoundsLeft;
@@ -29,8 +29,9 @@ namespace PVitaliy.Platform
         {
             _platformQueue = new Queue<PlatformBase>(factory.maxPlatformCount);
             factory.Init();
-            SpawnPlatformAt(factory.startingPlatform, transform.position + startPlatformPosition);
-            for (int i = 0; i < factory.maxPlatformCount - 1; i++)
+            _highestPlatformPosition = transform.position + startPlatformPosition;
+            SpawnPlatformAt(factory.startingPlatform, _highestPlatformPosition);
+            for (int i = 0; i < factory.preferredPlatformAmount - 1; i++)
             {
                 SpawnNewPlatform();
             }
@@ -38,21 +39,33 @@ namespace PVitaliy.Platform
 
         private void SpawnNewPlatform()
         {
-            SpawnPlatformAt(factory.GetRandomPlatformType(), GetNewPlatformPosition());
+            var newPlatform = SpawnPlatformAt(factory.GetRandomPlatformType(), GetNewPlatformPosition());
+            if (newPlatform && Random.Range(0, 1f) <= factory.duplicateChance * newPlatform.DuplicateChanceMultiplier)
+            {
+                var duplicatePosition = GetNewPlatformPosition(newPlatform.transform.position + Vector3.down * factory.verticalDistance.y);
+                SpawnPlatformAt(factory.GetRandomPlatformType(), duplicatePosition, false);
+            }
         }
 
-        private void SpawnPlatformAt(PlatformType type, Vector2 position)
+        private PlatformBase SpawnPlatformAt(PlatformType type, Vector2 position, bool replaceWhenDestroyed = true)
         {
+            if (container.childCount == factory.maxPlatformCount)
+            {
+                Debug.LogWarning("[Platform Controller]. Platform limit is reached");
+                return null;
+            }
             var platform = factory.CreatePlatform(type);
-            SpawnPlatformAt(platform, position);
+            return SpawnPlatformAt(platform, position, replaceWhenDestroyed);
         }
 
-        private void SpawnPlatformAt(PlatformBase platform, Vector2 position)
+        private PlatformBase SpawnPlatformAt(PlatformBase platform, Vector2 position, bool replaceWhenDestroyed = true)
         {
             var instance = Instantiate(platform, position, Quaternion.identity, container);
-            instance.Init(this);
-            _lastPlacedPlatformPosition = instance.transform.position;
+            instance.Init(this, replaceWhenDestroyed);
+            if (instance.transform.position.y > _highestPlatformPosition.y)
+                _highestPlatformPosition = instance.transform.position;
             _platformQueue.Enqueue(instance);
+            return instance;
         }
 
         private void FixedUpdate()
@@ -67,15 +80,23 @@ namespace PVitaliy.Platform
         private void RemoveLastPlatformAndSpawnNew()
         {
             var platform = _platformQueue.Dequeue();
+            if (_platformQueue.Count < factory.preferredPlatformAmount || (platform && platform.ReplaceWithNewWhenDestroyed))
+            {
+                SpawnNewPlatform();
+            }
             if (platform) Destroy(platform.gameObject);
-            SpawnNewPlatform();
         }
 
         private Vector2 GetNewPlatformPosition()
         {
+            return GetNewPlatformPosition(_highestPlatformPosition);
+        }
+
+        private Vector2 GetNewPlatformPosition(Vector3 startFrom)
+        {
             var distance = Random.Range(factory.verticalDistance.x, factory.verticalDistance.y);
             var x = Random.Range(factory.horizontalDistance.x, factory.horizontalDistance.y);
-            return new Vector2(x, _lastPlacedPlatformPosition.y + distance);
+            return new Vector2(x, startFrom.y + distance);
         }
 
         private void OnDrawGizmos()

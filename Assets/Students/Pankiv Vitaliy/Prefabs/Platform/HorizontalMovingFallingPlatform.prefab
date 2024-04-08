@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5616287437761241186}
   - component: {fileID: 8467158450492191022}
   - component: {fileID: 4017620452205805161}
+  - component: {fileID: 1676282148481362208}
   m_Layer: 7
   m_Name: HorizontalMovingFallingPlatform
   m_TagString: Untagged
@@ -35,7 +36,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3251596428685307653}
-  - {fileID: 7586105556480152408}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7694919085449789830
@@ -122,9 +122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd047c7ba898b734aa56db2fe6aca902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteColorController: {fileID: 3999737052623107354}
+  spriteColorController: {fileID: 1676282148481362208}
   _collider: {fileID: 4479954099015371379}
   emitParticlesOnLanding: 0
+  duplicateChanceMultiplier: 0
   minSpeed: 1
   maxSpeed: 2
   rigidBody: {fileID: 7694919085449789830}
@@ -4114,7 +4115,7 @@ ParticleSystem:
     colliderQueryMode: 0
     radiusScale: 1
     primitives:
-    - {fileID: 7381635615963801906}
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -5062,6 +5063,20 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1676282148481362208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982515712623186775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interpolationPower: 0.15
+  mainRenderer: {fileID: 4860188318163345552}
 --- !u!1 &2805780290839443070
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,7 +5087,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3251596428685307653}
   - component: {fileID: 4860188318163345552}
-  - component: {fileID: 3999737052623107354}
   m_Layer: 0
   m_Name: FrontPart
   m_TagString: Untagged
@@ -5147,70 +5161,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3999737052623107354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2805780290839443070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interpolationPower: 0.15
-  mainRenderer: {fileID: 4860188318163345552}
---- !u!1 &4461445888373633000
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7586105556480152408}
-  - component: {fileID: 7381635615963801906}
-  m_Layer: 0
-  m_Name: Collider 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7586105556480152408
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4461445888373633000}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 2.8571427, y: 2.8571427, z: 2.8571427}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5043924758013711008}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7381635615963801906
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4461445888373633000}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

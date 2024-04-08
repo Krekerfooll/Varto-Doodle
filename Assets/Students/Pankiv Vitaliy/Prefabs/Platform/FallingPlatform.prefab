@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6779573033104462945}
   - component: {fileID: 4301032210091029636}
-  - component: {fileID: 2889012546694229413}
   m_Layer: 0
   m_Name: FrontPart
   m_TagString: Untagged
@@ -85,20 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2889012546694229413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002389476791419449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interpolationPower: 0.15
-  mainRenderer: {fileID: 4301032210091029636}
 --- !u!1 &3301166121201772055
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,6 +98,7 @@ GameObject:
   - component: {fileID: 8952298720305993626}
   - component: {fileID: 6749972681302654558}
   - component: {fileID: 125986340197201528}
+  - component: {fileID: 542717338107051117}
   m_Layer: 7
   m_Name: FallingPlatform
   m_TagString: Untagged
@@ -134,7 +120,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6779573033104462945}
-  - {fileID: 2982258608215914090}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3574596129845011847
@@ -221,9 +206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75f9d9a3c0957144ab67d1ea16073cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteColorController: {fileID: 2889012546694229413}
+  spriteColorController: {fileID: 542717338107051117}
   _collider: {fileID: 7185634177256722214}
   emitParticlesOnLanding: 0
+  duplicateChanceMultiplier: 1
   breakingPS: {fileID: 125986340197201528}
   bodyContainer: {fileID: 1002389476791419449}
 --- !u!199 &6749972681302654558
@@ -4210,7 +4196,7 @@ ParticleSystem:
     colliderQueryMode: 0
     radiusScale: 1
     primitives:
-    - {fileID: 3621254906569474546}
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -5158,56 +5144,17 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1 &5365590548561336813
-GameObject:
+--- !u!114 &542717338107051117
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2982258608215914090}
-  - component: {fileID: 3621254906569474546}
-  m_Layer: 0
-  m_Name: Collider 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2982258608215914090
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5365590548561336813}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 2.8571427, y: 2.8571427, z: 2.8571427}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6003521599115773545}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &3621254906569474546
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5365590548561336813}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_GameObject: {fileID: 3301166121201772055}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interpolationPower: 0.15
+  mainRenderer: {fileID: 4301032210091029636}

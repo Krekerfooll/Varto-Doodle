@@ -5062,6 +5062,7 @@ GameObject:
   - component: {fileID: 2092984778742487572}
   - component: {fileID: 3718054025156239197}
   - component: {fileID: 1797249851244542716}
+  - component: {fileID: 801897940402608034}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5166,10 +5167,10 @@ MonoBehaviour:
     m_Bits: 128
   gameController: {fileID: 0}
   viewController: {fileID: 1797249851244542716}
-  rayCastingOffsetY: -0.61
+  rayCastingOffsetY: -0.57
+  raycastDistance: 0.15
   jumpPower: 8.5
   moveSpeed: 3
-  raycastDistance: 0.11
 --- !u!114 &1797249851244542716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5184,9 +5185,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 3718054025156239197}
   viewContainer: {fileID: 5833546029739232254}
-  directionLerpPower: 0.25
-  colorChanger: {fileID: 7841845049931290555}
+  colorChanger: {fileID: 801897940402608034}
   landingAnimation: {fileID: 1755137113454450948}
+  directionLerpPower: 0.25
+--- !u!114 &801897940402608034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2908533358660599688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interpolationPower: 0.15
+  mainRenderer: {fileID: 7489046136246098863}
 --- !u!1 &3652477444240205889
 GameObject:
   m_ObjectHideFlags: 0
@@ -5262,7 +5277,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3822173273198190460}
   - component: {fileID: 7489046136246098863}
-  - component: {fileID: 7841845049931290555}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -5337,17 +5351,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7841845049931290555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9216696330688523535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interpolationPower: 0.15
-  mainRenderer: {fileID: 7489046136246098863}
