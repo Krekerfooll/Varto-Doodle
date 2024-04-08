@@ -16,17 +16,86 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private GameSettingsManager _gameSettingsManager;
         public List<GameObject> Platforms { get { return _platforms; } }
 
+        [Space]
+        [Header("TEST")]
+        [SerializeField] private GameObject _basePlatform;
+        [SerializeField] private List<GameObject> _movedlatform = new List<GameObject>();
+        private float _xOffset = 1.6f;
+
         private void Awake()
         {
             _startPosition = transform.position;
             _currentHeith = _startPosition.y;
-            SpawnPlatform(4);
+            SpawnPlatform(0, 4);
         }
 
         private void Update()
         {
             if (_targetPosition.position.y > _platforms[1].transform.position.y + _heithStep)
-                SpawnPlatform(1);
+                SpawnPlatform(Random.Range(1, 3), 1);
+        }
+
+        private void DestroyPlatform()
+        {
+            if (_platforms.Count > 25)
+            {
+                Destroy(_platforms[0]);
+                _platforms.RemoveAt(0);
+            }
+        }
+
+        private void InitPlatform(GameObject platformForInit)
+        {
+            if (platformForInit.TryGetComponent<RightMovedPlatform>(out RightMovedPlatform moveRightPlatform))
+                moveRightPlatform.Init(_gameSettingsManager);
+            if (platformForInit.TryGetComponent<LeftMovedPlatform>(out LeftMovedPlatform moveLeftPlatform))
+                moveLeftPlatform.Init(_gameSettingsManager);
+        }
+
+        private void SpawnPlatform(int platformType, int countToSpawn)
+        {
+            switch (platformType)
+            {
+                case 0:
+                    for (int i = 0; i < countToSpawn; i++)
+                    {
+                        _currentHeith += _heithStep;
+                        Vector3 _platformPosition = new Vector3(Random.Range(_gameSettingsManager.LeftBounce, _gameSettingsManager.RightBounce), _currentHeith, transform.position.z);
+                        var spawnerPlatform = Instantiate(_basePlatform, _platformPosition, Quaternion.identity, this.transform);
+                        InitPlatform(spawnerPlatform);
+                        _platforms.Add(spawnerPlatform);
+                        DestroyPlatform();
+                    }
+                    break;
+                case 1:
+                    for (int i = 0; i < countToSpawn; i++)
+                    {
+                        _currentHeith += _heithStep;
+                        float _positionX = Random.Range(_gameSettingsManager.LeftBounce, _gameSettingsManager.RightBounce);
+                        int _countOfPlatforms = Random.Range(1, 3);
+                        for (int j = 0; j < _countOfPlatforms; j++)
+                        {
+                            Vector3 _platformPosition = new Vector3(_positionX + (j*_xOffset), _currentHeith, transform.position.z);
+                            var spawnerPlatform = Instantiate(_basePlatform, _platformPosition, Quaternion.identity, this.transform);
+                            InitPlatform(spawnerPlatform);
+                            _platforms.Add(spawnerPlatform);
+                            DestroyPlatform();
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < countToSpawn; i++)
+                    {
+                        _currentHeith += _heithStep;
+                        int _platformType = Random.Range(0, _movedlatform.Count);
+                        Vector3 _platformPosition = new Vector3(Random.Range(_gameSettingsManager.LeftBounce, _gameSettingsManager.RightBounce), _currentHeith, transform.position.z);
+                        var spawnerPlatform = Instantiate(_movedlatform[_platformType], _platformPosition, Quaternion.identity, this.transform);
+                        InitPlatform(spawnerPlatform);
+                        _platforms.Add(spawnerPlatform);
+                        DestroyPlatform();
+                    }
+                    break;
+            }
         }
 
         private void SpawnPlatform(int countToSpawn)
@@ -41,23 +110,6 @@ namespace Ustich.Arthur.DoodleJump
                 _platforms.Add(spawnerPlatform);
                 DestroyPlatform();
             }
-        }
-
-        private void DestroyPlatform()
-        {
-            if (_platforms.Count > 10)
-            {
-                Destroy(_platforms[0]);
-                _platforms.RemoveAt(0);
-            }
-        }
-
-        private void InitPlatform(GameObject platformForInit)
-        {
-            if (platformForInit.TryGetComponent<RightMovedPlatform>(out RightMovedPlatform moveRightPlatform))
-                moveRightPlatform.Init(_gameSettingsManager);
-            if (platformForInit.TryGetComponent<LeftMovedPlatform>(out LeftMovedPlatform moveLeftPlatform))
-                moveLeftPlatform.Init(_gameSettingsManager);
         }
     }
 }

@@ -443,6 +443,10 @@ MonoBehaviour:
   - {fileID: 1056184628628858551, guid: 57a2e797365baff43b0a523342853ab7, type: 3}
   _platforms: []
   _gameSettingsManager: {fileID: 1027519313}
+  _basePlatform: {fileID: 1969011324178302711, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
+  _movedlatform:
+  - {fileID: 2386350729383283264, guid: 5b75731ae6e30534799ff278551b5ae5, type: 3}
+  - {fileID: 1056184628628858551, guid: 57a2e797365baff43b0a523342853ab7, type: 3}
 --- !u!4 &697498842
 Transform:
   m_ObjectHideFlags: 0
