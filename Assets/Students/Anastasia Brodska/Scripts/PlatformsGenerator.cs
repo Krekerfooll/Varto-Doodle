@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Varto.Examples.Platforms;
 
 public class PlatformsGenerator : MonoBehaviour
 {
@@ -27,41 +28,35 @@ public class PlatformsGenerator : MonoBehaviour
 
         for (int i = 0; i < _stepsCountToSpawn; i++)
         {
-            SpawnPlatform();
+            SpawnPlatform(i + 1);
         }
     }
 
     private void Update()
     {
-        if (_target.position.y - _lastPlatformsDeletedOnPlayerPosition > _stepHeight * _stepsCountToDelete)
+        if (_target.position.y - _lastPlatformsSpawnedOnPlayerPosition > _stepHeight)
         {
-            if (_spawnedPlatforms.Count > 0)
-            {
-                var platformToDelete = _spawnedPlatforms.Dequeue();
-
-                if (platformToDelete && platformToDelete.gameObject)
-                {
-                    Destroy(platformToDelete.gameObject);
-                }
-
-                _lastPlatformsDeletedOnPlayerPosition += _stepHeight;
-            }
-            else
-            {
-                Debug.LogWarning("No platforms to delete.");
-            }
+            SpawnPlatform(_stepsCountToSpawn);
+            _lastPlatformsSpawnedOnPlayerPosition += _stepHeight;
         }
 
-        if (_target.position.y > _lastPlatformsSpawnedOnPlayerPosition)
+        if (_target.position.y - _lastPlatformsDeletedOnPlayerPosition > _stepHeight * _stepsCountToDelete)
         {
-            SpawnPlatform();
+            var platformToDelete = _spawnedPlatforms.Dequeue();
+
+            if (platformToDelete && platformToDelete.gameObject)
+            {
+                Destroy(platformToDelete.gameObject);
+            }
+
+            _lastPlatformsDeletedOnPlayerPosition += _stepHeight;
         }
     }
 
-    private void SpawnPlatform()
+    private void SpawnPlatform(int stepsCount)
     {
         var platformPositionX = Random.Range(_bounds.x, _bounds.y);
-        var platformPositionY = _lastPlatformsSpawnedOnPlayerPosition + _stepHeight;
+        var platformPositionY = _target.position.y + stepsCount * _stepHeight;
 
         var platformPosition = new Vector3(platformPositionX, platformPositionY, transform.position.z);
 
@@ -69,7 +64,5 @@ public class PlatformsGenerator : MonoBehaviour
         spawnedPlatform.Init(_target);
 
         _spawnedPlatforms.Enqueue(spawnedPlatform);
-
-        _lastPlatformsSpawnedOnPlayerPosition = platformPositionY;
     }
 }

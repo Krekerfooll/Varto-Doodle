@@ -5,11 +5,8 @@ using UnityEngine;
 public class PlatformManager : MonoBehaviour
 {
     [SerializeField] private GameObject newPlatformPrefab;
-    private PlayerMovement playerMovement; 
-    private void Start()
-    {
-        playerMovement = FindObjectOfType<PlayerMovement>();
-    }
+    [SerializeField] private PlayerMovement playerMovement; 
+   
 
 
     private void OnCollisionEnter2D(Collision2D collision)
