@@ -257,6 +257,7 @@ MonoBehaviour:
   - {fileID: 2396788886845373341, guid: bb9262408d2004dffb3a0c69d88fc126, type: 3}
   - {fileID: 671718281725221263, guid: cebc9b44341eb5042b68f89586a6b3c4, type: 3}
   - {fileID: 6289201244831051553, guid: cf49b5871dae14ea5b695967b28a04a8, type: 3}
+  - {fileID: 2396788886845373341, guid: 438b3b9c8812cb6489558aa98ffad2d2, type: 3}
   _platformsSpawnedPerStepCount: {x: 1, y: 2}
   _stepsCountToSpawn: 7
   _stepsCountToDelete: 5
