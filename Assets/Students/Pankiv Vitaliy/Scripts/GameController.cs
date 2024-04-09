@@ -47,7 +47,7 @@ namespace PVitaliy
         {
             while (true)
             {
-                backgroundColor.ChangeTargetColor(Random.ColorHSV(0, 1, .8f, 1, .4f, .6f));
+                backgroundColor.ChangeTargetColor(Random.ColorHSV(0, 1, .8f, 1, 0.07f, .2f));
                 yield return new WaitForSeconds(10);
             }
         }

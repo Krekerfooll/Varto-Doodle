@@ -2,11 +2,11 @@ Shader "Custom/BackgroundShader"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
         _dithering ("Dithering Power", Float) = 0
         _pixelationX ("Pixel resolution X", Float) = 1
         _pixelationY ("Pixel resolution Y", Float) = 1
-        _color ("Color", Color) = (1, 1, 1, 1)
+        _colorTop ("Color Top", Color) = (0, 0, 0, 1)
+        _colorBottom ("Color Bottom", Color) = (1, 1, 1, 1)
     }
     SubShader
     {
@@ -37,28 +37,26 @@ Shader "Custom/BackgroundShader"
             float _pixelationX;
             float _pixelationY;
             float _dithering;
-            float4 _color;
+            float4 _colorTop;
+            float4 _colorBottom;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = v.uv;
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target // Якесь таке страхопудало вийшло, методом тику
+            fixed4 frag (v2f i) : SV_Target
             {
                 const float2 pixelation = float2(_pixelationX, _pixelationY);
                 i.uv = floor(i.uv * pixelation);
-                i.uv.y += (i.uv.x % 2 == 0 ? -1 : 1) / _pixelationY * _dithering * 2;
-                i.uv.x += (i.uv.y % 2 == 0 ? -1 : 1) / _pixelationX * _dithering * 2;
-                i.uv.y += (sin(_Time * _SinTime + i.uv.y) * cos(i.uv.x / _pixelationX + _Time)) + sin(_Time * 10) * cos(_Time * 5) * 10;
-                i.uv.x += (cos(_Time * _SinTime + i.uv.y) * sin(i.uv.x / _pixelationX) + _Time) * _pixelationX;
-                
+                i.uv.y += sign(sin(i.uv.x)) * _dithering / _pixelationX + sin(_Time * 20) * _dithering / _pixelationY;
+                i.uv.x += sign(cos(i.uv.y)) * _dithering / _pixelationY + cos(_Time * 10) * _dithering / _pixelationX;
                 i.uv /= pixelation;
-                const fixed4 col = tex2D(_MainTex, i.uv);
-                return col * _color;
+                const fixed4 col = lerp(_colorBottom, _colorTop, i.uv.y * 1.1f);
+                return col;
             }
             ENDCG
         }

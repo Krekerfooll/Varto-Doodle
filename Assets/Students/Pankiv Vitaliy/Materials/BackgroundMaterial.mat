@@ -97,6 +97,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _color: {r: 0.13372645, g: 0.106532566, b: 0.3962264, a: 1}
+    - _colorBottom: {r: 0, g: 0.25330448, b: 1, a: 1}
+    - _colorTop: {r: 0.053627566, g: 0, b: 0.26415092, a: 1}
     - _dithering: {r: 0, g: 0, b: 0, a: 0}
     - _offset: {r: 0, g: 0, b: 0, a: 0}
     - _pixelation: {r: 1, g: 1, b: 1, a: 1}

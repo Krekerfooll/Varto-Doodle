@@ -6,6 +6,7 @@ namespace PVitaliy.Colors
     {
         [SerializeField] protected float interpolationPower = .15f;
         private Color _targetColor;
+        protected float LerpPower => interpolationPower * Time.deltaTime * 60;
         public Color TargetColor => _targetColor;
 
         protected abstract Color MainColor { get;set; }
@@ -25,7 +26,8 @@ namespace PVitaliy.Colors
 
         protected virtual void Update()
         {
-            MainColor = Color.Lerp(MainColor, _targetColor, interpolationPower * Time.deltaTime * 60);
+            MainColor = Color.Lerp(MainColor, _targetColor, LerpPower);
         }
+        
     }
 }
