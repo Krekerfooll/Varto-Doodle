@@ -20,7 +20,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
 
         private float _lastPlatformsSpawnedOnPlayerPosition;
         private float _lastPlatformsDeletedOnPlayerPosition;
-
+        private float[] _yOffsetArray = {-0.63f, 0, 0.63f};
+        
         private void Awake()
         {
             _spawnedPlatforms = new Queue<Platforms[]>();
@@ -68,7 +69,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
             {
                 var platformPositionX = Random.Range(_bounds.x, _bounds.y);
                 var positionXOffset = Random.Range(-_xOffset, _xOffset);
-                var positionYOffset = Random.Range(-_yOffset, _yOffset);
+                //var positionYOffset = Random.Range(-_yOffset, _yOffset);
+                var positionYOffset = _yOffsetArray[Random.Range(0, 3)];
                 var platformPosition = new Vector3(platformPositionX + positionXOffset, platformPositionY + positionYOffset, transform.position.z);
 
                 var randomPlatform = _platformPrefabVariants[Random.Range(0, _platformPrefabVariants.Count)];

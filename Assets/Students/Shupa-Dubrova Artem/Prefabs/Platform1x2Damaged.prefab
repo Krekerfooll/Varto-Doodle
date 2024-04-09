@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
-  _collider: {fileID: 9030885158142338687}
 --- !u!1 &9030885158142338687
 GameObject:
   m_ObjectHideFlags: 0

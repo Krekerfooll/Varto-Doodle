@@ -261,10 +261,10 @@ MonoBehaviour:
   _platformsSpawnedPerStepCount: {x: 1, y: 2}
   _stepsCountToSpawn: 7
   _stepsCountToDelete: 5
-  _stepHeight: 2
-  _bounds: {x: -2.4, y: 2.2}
+  _stepHeight: 1.7
+  _bounds: {x: -2.4, y: 2.4}
   _xOffset: 0
-  _yOffset: 0.5
+  _yOffset: 0.63
 --- !u!4 &9289421
 Transform:
   m_ObjectHideFlags: 0

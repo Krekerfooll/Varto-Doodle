@@ -414,5 +414,5 @@ MonoBehaviour:
   _spriteIdle: {fileID: 3238151210313245227}
   _spriteJump: {fileID: 5037044672223758986}
   _playerSpeed: 5
-  _jumpPower: 10
+  _jumpPower: 11
   _jumpPowerSpring: 20
