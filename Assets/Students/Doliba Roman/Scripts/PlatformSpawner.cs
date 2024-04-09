@@ -11,7 +11,8 @@ namespace RomanDoliba.Platform
         [SerializeField] private int _stepsToSpawn;
         [SerializeField] private float _stepsToDelete;
         [SerializeField] private float _stepHeight;
-        [SerializeField] private Vector2 _bounds;
+        [SerializeField] private Vector2 _boundsX;
+        [SerializeField] private Vector2 _boundsY;
         private Queue<Platform[]> _spawnedPlatforms;
         private float _lastPlatformsSpawnedPosition;
         private float _lastPlatformsDeletedPosition;
@@ -51,16 +52,27 @@ namespace RomanDoliba.Platform
 
         private void SpawnPlatform(int stepsCount)
         {
-            var platformPositionY = _platformTarget.position.y + stepsCount * _stepHeight;
+            var platformPositionY = 0f;
             var platformsToSpawnCount = Random.Range(_platformsOnOneHeight.x, _platformsOnOneHeight.y +1);
             var platformGroup = new Platform[platformsToSpawnCount];
 
             for(int i = 0; i < platformsToSpawnCount; i++)
             {
-                var platformPositionX = Random.Range(_bounds.x, _bounds.y);
+                    
+                if (platformsToSpawnCount == 1)
+                    {
+                        platformPositionY = _platformTarget.position.y + stepsCount * _stepHeight;
+                    }
+                    else
+                    {
+                        var randomHeight = Random.Range(_boundsY.x, _boundsY.y);
+                        platformPositionY = _platformTarget.position.y + randomHeight + stepsCount * _stepHeight;
+                    }
+
+                var platformPositionX = Random.Range(_boundsX.x, _boundsX.y);
                 var platformPosition = new Vector3(platformPositionX, platformPositionY, _platformTarget.position.z);
 
-                var randomPlatform = _platformsTypes[Random.Range(0, _platformsTypes.Count)];                        //+1
+                var randomPlatform = _platformsTypes[Random.Range(0, _platformsTypes.Count)];                        
 
                 var spawnedPlatform = Instantiate(randomPlatform, platformPosition, Quaternion.identity, this.transform);
                 spawnedPlatform.Init(_platformTarget);
