@@ -1,13 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class BackgroundTriger : MonoBehaviour
+namespace RomanDoliba.Background
 {
-    [SerializeField] private BackgoundChange backgoundChange;
-    private void OnCollisionEnter2D(Collision2D other)
+    public class BackgroundTriger : MonoBehaviour
     {
-        backgoundChange.BackgoundsChange();
+        [SerializeField] private BackgoundChange backgoundChange;
+        [SerializeField] private Player.MovementController movementController;
+              
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (movementController._isGrounded)
+            {
+                backgoundChange.BackgoundsChange();
+            }
+        }
     }
 }

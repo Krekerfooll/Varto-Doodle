@@ -1,55 +1,59 @@
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+namespace RomanDoliba.Player
 {
-    [SerializeField] private float _jumpPower;
-    [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _groundCheckDistance;
-    private bool _isGrounded;
-    private bool _backgroundTriger;
-    [SerializeField] private Rigidbody2D _playerRigidbody;
-    [SerializeField] private LayerMask _groundMask;
-    [SerializeField] private InputManager inputManager;
-    [SerializeField] private SpriteRenderer _lookLeftRight;
+    public class MovementController : MonoBehaviour
+    {
+        public bool _isGrounded;
 
-    private void Start()
-    {
-        _lookLeftRight.flipX = true;
-    }
-    
-    private void FixedUpdate()
-    {
-        _isGrounded = Physics2D.Raycast(_playerRigidbody.position, Vector2.down, _groundCheckDistance, _groundMask);
-        Debug.DrawLine(_playerRigidbody.position, _playerRigidbody.position + Vector2.down * _groundCheckDistance, Color.red);
-    }
-    
-    private void Update()
-    { 
-        if(inputManager.JumpInput && _isGrounded)
+        [SerializeField] private float _jumpPower;
+        [SerializeField] private float _moveSpeed;
+        [SerializeField] private float _groundCheckDistance;
+        private bool _backgroundTriger;
+        [SerializeField] private Rigidbody2D _playerRigidbody;
+        [SerializeField] private LayerMask _groundMask;
+        [SerializeField] private InputManager inputManager;
+        [SerializeField] private SpriteRenderer _lookLeftRight;
+
+        private void Start()
         {
-            Jump();
+            _lookLeftRight.flipX = true;
         }
-        else if(!_isGrounded)
+        
+        private void FixedUpdate()
         {
-            Move();
-
-            if (inputManager.MoveInput < 0f)
+            _isGrounded = Physics2D.Raycast(_playerRigidbody.position, Vector2.down, _groundCheckDistance, _groundMask);
+            Debug.DrawLine(_playerRigidbody.position, _playerRigidbody.position + Vector2.down * _groundCheckDistance, Color.red);
+        }
+        
+        private void Update()
+        { 
+            if(inputManager.JumpInput && _isGrounded)
             {
-                _lookLeftRight.flipX = false;
+                Jump();
             }
-            else if (inputManager.MoveInput > 0f)
+            else if(!_isGrounded)
             {
-                _lookLeftRight.flipX = true;
+                Move();
+
+                if (inputManager.MoveInput < 0f)
+                {
+                    _lookLeftRight.flipX = false;
+                }
+                else if (inputManager.MoveInput > 0f)
+                {
+                    _lookLeftRight.flipX = true;
+                }
             }
         }
-    }
 
-    private void Jump()
-    {
-        _playerRigidbody.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-    }
-    private void Move()
-    {
-        _playerRigidbody.velocity = new Vector2(_moveSpeed * inputManager.MoveInput, _playerRigidbody.velocity.y);
+        private void Jump()
+        {
+            _playerRigidbody.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+        }
+        private void Move()
+        {
+            _playerRigidbody.velocity = new Vector2(_moveSpeed * inputManager.MoveInput, _playerRigidbody.velocity.y);
+        }
     }
 }

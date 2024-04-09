@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 4855059192210500893}
   - component: {fileID: 5181835172149153946}
   - component: {fileID: 1089764504725929912}
-  - component: {fileID: 6339130485375415960}
+  - component: {fileID: 1275891253542741513}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4567da26793234185965dc80734ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isGrounded: 0
   _jumpPower: 10
   _moveSpeed: 5
   _groundCheckDistance: 0.6
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf548eaf67983d46936c10df2654d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6339130485375415960
+--- !u!114 &1275891253542741513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -210,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgoundChange: {fileID: 0}
+  movementController: {fileID: 5181835172149153946}
 --- !u!1 &6402805959390146814
 GameObject:
   m_ObjectHideFlags: 0

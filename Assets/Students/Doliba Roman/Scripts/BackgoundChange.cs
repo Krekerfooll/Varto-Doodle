@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class BackgoundChange : MonoBehaviour
+namespace RomanDoliba.Background
 {
-    [SerializeField] private SpriteRenderer [] Backgrounds = new SpriteRenderer [3];
-    private int _random;
-    
-    public void BackgoundsChange()
+    public class BackgoundChange : MonoBehaviour
     {
-        Backgrounds[_random].enabled = false;
-            _random = Random.Range(0, Backgrounds.Length);
-            Backgrounds[_random].enabled = true;
-    }  
+        [SerializeField] private SpriteRenderer [] Backgrounds = new SpriteRenderer [3];
+        private int _currentBackground;
+        
+        public void BackgoundsChange()
+        {
+            Backgrounds[_currentBackground].enabled = false;
+                _currentBackground = Random.Range(0, Backgrounds.Length);
+                Backgrounds[_currentBackground].enabled = true;
+        }  
+    }
 }
