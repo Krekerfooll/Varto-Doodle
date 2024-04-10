@@ -9,13 +9,17 @@ namespace Varto.Examples.Utils
 
         public void ChangeColor()
         {
+            ChangeColor(_color);
+        }
+        public void ChangeColor(Color color)
+        {
             if (_objectToChangeColor is SpriteRenderer spriteRenderer)
             {
-                spriteRenderer.color = _color;
+                spriteRenderer.color = color;
             }
             else
             {
-                _objectToChangeColor.material.color = _color;
+                _objectToChangeColor.material.color = color;
             }
         }
 

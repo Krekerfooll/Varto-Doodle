@@ -6,9 +6,9 @@ namespace Varto.Examples.Utils
     {
         [SerializeField] protected bool _executeOnAwake;
         [SerializeField] protected bool _executeOnlyOnes;
-
-        private bool _isExecutedOnes;
-
+        
+        protected bool _isExecutedOnes;
+        
         private void Awake()
         {
             if (_executeOnAwake)
@@ -17,12 +17,12 @@ namespace Varto.Examples.Utils
                 ExecuteInternal();
             }
         }
-
+        
         public void Execute()
         {
             if (_executeOnlyOnes && _isExecutedOnes)
                 return;
-
+        
             _isExecutedOnes = true;
             ExecuteInternal();
         }

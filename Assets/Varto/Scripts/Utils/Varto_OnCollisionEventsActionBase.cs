@@ -10,6 +10,9 @@ namespace Varto.Examples.Utils
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            if (_executeOnlyOnes && _isExecutedOnes)
+                return;
+
             if ((_onCollisionEnterWith.value & (1 << collision.gameObject.layer)) != 0)
             {
                 LastCollision = collision;
