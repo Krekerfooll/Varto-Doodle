@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8458727008745817939}
   - component: {fileID: 354987526636164422}
-  - component: {fileID: 6358460771025149280}
   m_Layer: 7
   m_Name: Platform1x1Collider
   m_TagString: Untagged
@@ -63,7 +62,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.31}
   m_SpriteTilingProperty:
@@ -78,25 +77,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.77, y: 0.65}
   m_EdgeRadius: 0
---- !u!251 &6358460771025149280
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493004414469901577}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 90
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!1 &5702062696254860036
 GameObject:
   m_ObjectHideFlags: 0
