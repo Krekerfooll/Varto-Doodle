@@ -172,11 +172,13 @@ MonoBehaviour:
   _platformsTypes:
   - {fileID: 6034549708071072686, guid: c5e70dbc571e5eb45a1208435b5d592c, type: 3}
   - {fileID: 3945216902740497925, guid: e44ff342a9ee6994286ca5c1289bb130, type: 3}
-  _platformsOnOneHeight: {x: 1, y: 2}
+  - {fileID: 6034549708071072686, guid: 96a9ec33fdf7ffb47a9694f4fe8eaec6, type: 3}
+  _platformsOnOneHeight: {x: 1, y: 3}
   _stepsToSpawn: 4
   _stepsToDelete: 3
   _stepHeight: 2.5
-  _bounds: {x: -2.5, y: 2.5}
+  _boundsX: {x: -2.5, y: 2.5}
+  _boundsY: {x: -1, y: 1}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,17 +651,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 606808198}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1912965427 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5181835172149153946, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
-  m_PrefabInstance: {fileID: 807572157025439466}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4567da26793234185965dc80734ee3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2018299485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7509423157623959783, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
@@ -677,10 +668,6 @@ PrefabInstance:
       propertyPath: backgoundChange
       value: 
       objectReference: {fileID: 606808196}
-    - target: {fileID: 1275891253542741513, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
-      propertyPath: movementController
-      value: 
-      objectReference: {fileID: 1912965427}
     - target: {fileID: 1778492669610290249, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.02
@@ -721,9 +708,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1888450678009471599, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182542081318190105, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3884129518095177118, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884129518095177118, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402805959390146814, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207203535320243687, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
