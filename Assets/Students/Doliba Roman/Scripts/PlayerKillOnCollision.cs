@@ -5,11 +5,12 @@ namespace RomanDoliba.Utils
     public class PlayerKillOnCollision : MonoBehaviour
     {
         [SerializeField] private float _delay;
-        private void OnCollisionEnter2D (Collision2D collision)
+               
+        private void OnTriggerEnter2D (Collider2D collider)
         {
-            if (collision.gameObject.layer == 8)
+            if (collider.gameObject.layer == 8)
             {
-                Destroy (collision.gameObject, _delay);
+                Destroy (collider.gameObject, _delay);
             }
         }
     }

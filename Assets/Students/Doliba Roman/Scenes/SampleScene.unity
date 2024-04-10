@@ -173,12 +173,13 @@ MonoBehaviour:
   - {fileID: 6034549708071072686, guid: c5e70dbc571e5eb45a1208435b5d592c, type: 3}
   - {fileID: 3945216902740497925, guid: e44ff342a9ee6994286ca5c1289bb130, type: 3}
   - {fileID: 6034549708071072686, guid: 96a9ec33fdf7ffb47a9694f4fe8eaec6, type: 3}
-  _platformsOnOneHeight: {x: 1, y: 3}
+  - {fileID: 6034549708071072686, guid: 7caab601c429eb042984126fa0ccf26e, type: 3}
+  _platformsOnOneHeight: {x: 1, y: 2}
   _stepsToSpawn: 4
   _stepsToDelete: 3
   _stepHeight: 2.5
   _boundsX: {x: -2.5, y: 2.5}
-  _boundsY: {x: -1, y: 1}
+  _boundsY: {x: -0.5, y: 0.5}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
