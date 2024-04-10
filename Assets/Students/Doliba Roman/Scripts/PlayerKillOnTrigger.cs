@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RomanDoliba.Utils
 {
-    public class PlayerKillOnCollision : MonoBehaviour
+    public class PlayerKillOnTrigger : MonoBehaviour
     {
         [SerializeField] private float _delay;
                
