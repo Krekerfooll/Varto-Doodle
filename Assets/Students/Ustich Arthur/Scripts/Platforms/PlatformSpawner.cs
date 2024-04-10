@@ -19,7 +19,7 @@ namespace Ustich.Arthur.DoodleJump
         [Space]
         [Header("TEST")]
         [SerializeField] private GameObject _basePlatform;
-        [SerializeField] private List<GameObject> _movedlatform = new List<GameObject>();
+        [SerializeField] private List<GameObject> _notBasePlatforms = new List<GameObject>();
         private float _xOffset = 1.6f;
 
         private void Awake()
@@ -87,9 +87,9 @@ namespace Ustich.Arthur.DoodleJump
                     for (int i = 0; i < countToSpawn; i++)
                     {
                         _currentHeith += _heithStep;
-                        int _platformType = Random.Range(0, _movedlatform.Count);
+                        int _platformType = Random.Range(0, _notBasePlatforms.Count);
                         Vector3 _platformPosition = new Vector3(Random.Range(_gameSettingsManager.LeftBounce, _gameSettingsManager.RightBounce), _currentHeith, transform.position.z);
-                        var spawnerPlatform = Instantiate(_movedlatform[_platformType], _platformPosition, Quaternion.identity, this.transform);
+                        var spawnerPlatform = Instantiate(_notBasePlatforms[_platformType], _platformPosition, Quaternion.identity, this.transform);
                         InitPlatform(spawnerPlatform);
                         _platforms.Add(spawnerPlatform);
                         DestroyPlatform();

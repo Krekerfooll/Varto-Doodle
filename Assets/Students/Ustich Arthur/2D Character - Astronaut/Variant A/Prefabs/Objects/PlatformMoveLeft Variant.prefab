@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1056184628628858549, guid: 57a2e797365baff43b0a523342853ab7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7440369
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1056184628628858549, guid: 57a2e797365baff43b0a523342853ab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.750751
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1056184628628858549, guid: 57a2e797365baff43b0a523342853ab7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameSettingsManager: {fileID: 0}
+  _changebleColor: 1
   _moveSpeed: 100
   _objectRigidbody: {fileID: 240682574855641374}
   _maxVelocityX: -2

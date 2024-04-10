@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BrokenPlatform : MonoBehaviour
+namespace Ustich.Arthur.DoodleJump
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BrokenPlatform : BasePlatform
     {
-        
-    }
+        private float _delay = 1f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            Debug.Log("Collision");
+            if (collision.gameObject.tag == "Player")
+            {
+                Debug.Log("Player Collision");
+                Destroy(gameObject, _delay);
+            }
+        }
+
+        protected override void Move()
+        {}
     }
 }

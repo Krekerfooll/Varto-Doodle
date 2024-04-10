@@ -133,11 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1969011324178302709, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.684425
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1969011324178302709, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.406307
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1969011324178302709, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -158,6 +158,14 @@ PrefabInstance:
     - target: {fileID: 1969011324178302709, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969011324178302709, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969011324178302709, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.21
       objectReference: {fileID: 0}
     - target: {fileID: 1969011324178302709, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -444,7 +452,8 @@ MonoBehaviour:
   _platforms: []
   _gameSettingsManager: {fileID: 1027519313}
   _basePlatform: {fileID: 1969011324178302711, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
-  _movedlatform:
+  _notBasePlatforms:
+  - {fileID: 4270143383703278370, guid: 19a2a170915a1964bbf1c5aebfb6cae2, type: 3}
   - {fileID: 2386350729383283264, guid: 5b75731ae6e30534799ff278551b5ae5, type: 3}
   - {fileID: 1056184628628858551, guid: 57a2e797365baff43b0a523342853ab7, type: 3}
 --- !u!4 &697498842
@@ -518,7 +527,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3433032877048046995, guid: df254403676944e786502cd04e5bc31e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.71
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 3433032877048046995, guid: df254403676944e786502cd04e5bc31e, type: 3}
       propertyPath: m_LocalPosition.y
