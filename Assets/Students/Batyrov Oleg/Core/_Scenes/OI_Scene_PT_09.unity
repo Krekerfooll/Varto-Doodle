@@ -1096,7 +1096,7 @@ MonoBehaviour:
   animator: {fileID: 310652788}
   _autoJumpOn: 0
   _speed: 12
-  _jumpPower: 20
+  _jumpPower: 22
   _maxVelocity: 40
   rayPosLeft: {fileID: 755525615}
   rayPosCenter: {fileID: 1956343062}

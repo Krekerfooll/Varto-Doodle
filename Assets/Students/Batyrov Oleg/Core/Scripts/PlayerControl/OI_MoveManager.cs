@@ -56,11 +56,13 @@ namespace OIMOD.Core.GameMech
 
             if (hitGroundLeft.collider || hitGroundRight.collider || hitGroundCenter.collider) {
                 _canJump = true;
-                animator.SetBool("InAir", false);
+                if (_rb.velocity.y == 0)
+                    animator.SetBool("InAir", false);
             }
             else {
                 _canJump = false;
-                animator.SetBool("InAir", true);
+                if (_rb.velocity.y != 0)
+                    animator.SetBool("InAir", true);
             }
         }
         private void BorderCheck() {
