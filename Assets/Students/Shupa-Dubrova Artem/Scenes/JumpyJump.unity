@@ -231,7 +231,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9289421}
-  - component: {fileID: 9289420}
   m_Layer: 0
   m_Name: PlatformGenerator
   m_TagString: Untagged
@@ -239,32 +238,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &9289420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9289419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734c4f03a82a74e37a0692a33bddae1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 1755779580}
-  _platformPrefabVariants:
-  - {fileID: -2222711435224738641, guid: ed63da925e1fb4ee7bbbd4f3f1de429a, type: 3}
-  - {fileID: 2396788886845373341, guid: bb9262408d2004dffb3a0c69d88fc126, type: 3}
-  - {fileID: 671718281725221263, guid: cebc9b44341eb5042b68f89586a6b3c4, type: 3}
-  - {fileID: 6289201244831051553, guid: cf49b5871dae14ea5b695967b28a04a8, type: 3}
-  - {fileID: 2396788886845373341, guid: 438b3b9c8812cb6489558aa98ffad2d2, type: 3}
-  _platformsSpawnedPerStepCount: {x: 1, y: 2}
-  _stepsCountToSpawn: 7
-  _stepsCountToDelete: 5
-  _stepHeight: 1.7
-  _bounds: {x: -2.4, y: 2.4}
-  _xOffset: 0
-  _yOffset: 0.63
 --- !u!4 &9289421
 Transform:
   m_ObjectHideFlags: 0
@@ -568,11 +541,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
---- !u!4 &1755779580 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5194641704645959004, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
-  m_PrefabInstance: {fileID: 1056072316}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2141096312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3841817953713471869, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}

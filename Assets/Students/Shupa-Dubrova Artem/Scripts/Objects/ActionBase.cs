@@ -18,7 +18,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Objects
             }
         }
 
-        protected void Execute()
+        public void Execute()
         {
             if (_executeOnlyOnes && _isExecutedOnes)
                 return;
