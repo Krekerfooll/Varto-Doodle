@@ -11,7 +11,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         [SerializeField] private bool _followByY;
         [SerializeField] private bool _followByZ;
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
             
             var targetPosition = new Vector3(
@@ -19,9 +19,10 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
                 _followByY ? _target.position.y : transform.position.y,
                 _followByZ ? _target.position.z : transform.position.z
             );
-            
-            transform.position = Vector3.Lerp(transform.position, targetPosition, _speed * Time.deltaTime);
-
+            if (_target.position.y > transform.position.y)
+            {
+                transform.position = Vector3.Lerp(transform.position, targetPosition, _speed * Time.deltaTime);
+            }
         }
     }
 }

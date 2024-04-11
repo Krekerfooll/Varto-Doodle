@@ -28,15 +28,14 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
             _lookLeft = _player.transform.localScale;
             _lookRight = new Vector3(-_lookLeft.x, _lookLeft.y, _lookLeft.z);
         }
+
         private void Update()
         {
-            
-            
+            HorizontalMove();
         }
 
         private void FixedUpdate()
         {
-            HorizontalMove();
             Jump();
             SideTeleport();
             SpriteSwitch();
