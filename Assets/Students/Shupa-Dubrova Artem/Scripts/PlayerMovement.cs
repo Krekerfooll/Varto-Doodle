@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts
@@ -30,11 +31,12 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         private void Update()
         {
             
-            HorizontalMove();
+            
         }
 
         private void FixedUpdate()
         {
+            HorizontalMove();
             Jump();
             SideTeleport();
             SpriteSwitch();
@@ -48,14 +50,19 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
                 _player.transform.localScale = _lookLeft;
             else if (_moveDirection > 0f)
                 _player.transform.localScale = _lookRight;
-        }   
-        
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            _setJump = true;
+        }
+
         private void Jump()
         {
-            _setJump = Physics2D.Raycast(_player.position, Vector2.down, _groundCheckDistance, _groundMask);
-            Debug.DrawLine(_player.position, _player.position + Vector2.down * _groundCheckDistance, Color.magenta);
-
-            if (_setJump)
+            // _setJump = Physics2D.Raycast(_player.position, Vector2.down, _groundCheckDistance, _groundMask);
+            // Debug.DrawLine(_player.position, _player.position + Vector2.down * _groundCheckDistance, Color.magenta);
+        
+            if (_setJump && _player.velocity.y <= 0f)
             {
                 Vector2 velocity = _player.velocity;
                 velocity.y = _jumpPower;

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 530393129172336650}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.646, z: 0}
+  m_LocalPosition: {x: 0, y: -0.524, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -346,7 +346,7 @@ MonoBehaviour:
   _spriteIdle: {fileID: 3238151210313245227}
   _spriteJump: {fileID: 5037044672223758986}
   _playerSpeed: 5
-  _jumpPower: 10
+  _jumpPower: 11
   _jumpPowerSpring: 0
   _groundMask:
     serializedVersion: 2
