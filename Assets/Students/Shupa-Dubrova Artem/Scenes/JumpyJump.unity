@@ -484,12 +484,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745023200944559770, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
+      propertyPath: _jumpPowerSpring
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745023200944559770, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: _groundMask.m_Bits
       value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 5745023200944559770, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: _groundCheckDistance
-      value: 0.5
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 6740311156654191577, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_LocalPosition.x

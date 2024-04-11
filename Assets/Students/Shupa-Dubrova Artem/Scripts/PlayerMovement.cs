@@ -56,7 +56,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
             if (_setJump)
             {
                 _player.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-                _setJump = false;
+                
             }
         }
         // private void OnTriggerStay2D(Collider2D other)
