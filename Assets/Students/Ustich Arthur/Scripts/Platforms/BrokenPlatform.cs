@@ -16,8 +16,5 @@ namespace Ustich.Arthur.DoodleJump
                 Destroy(gameObject, _delay);
             }
         }
-
-        protected override void Move()
-        {}
     }
 }

@@ -12,7 +12,7 @@ namespace Ustich.Arthur.DoodleJump
         {
             Move();
         }
-        protected override void Move()
+        protected void Move()
         {
             float _positionX = transform.position.x;
             _objectRigidbody.AddForce(Vector2.left * _moveSpeed * Time.deltaTime, ForceMode2D.Force);

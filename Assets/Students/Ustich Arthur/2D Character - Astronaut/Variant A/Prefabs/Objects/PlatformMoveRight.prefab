@@ -71,14 +71,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1969011324178302711, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 926522112529068074}
+      addedObject: {fileID: 2377115490229212097}
   m_SourcePrefab: {fileID: 100100000, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
 --- !u!1 &1056184628628858551 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1969011324178302711, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
   m_PrefabInstance: {fileID: 1583867455476342848}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &926522112529068074
+--- !u!114 &2377115490229212097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,14 +87,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1056184628628858551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72162c6ad564c4d46ac3ef29febbf5d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 833fd4cf6c6242a408911871774c680b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _gameSettingsManager: {fileID: 0}
-  _changebleColor: 1
-  _moveSpeed: 100
+  _moveSpeed: 2
   _objectRigidbody: {fileID: 3233941377547089385}
-  _maxVelocityX: 2
+  _moveRight: 1
 --- !u!50 &3233941377547089385 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4114675441218459049, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}

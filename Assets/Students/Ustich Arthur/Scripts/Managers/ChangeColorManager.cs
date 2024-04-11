@@ -30,13 +30,8 @@ namespace Ustich.Arthur.DoodleJump
                 _playerAnimator.runtimeAnimatorController = _playerIdleAnimation[_currentColor];
                 foreach (GameObject _platforms in _spawner.Platforms)
                 {
-                    _platforms.TryGetComponent<LeftMovedPlatform>(out LeftMovedPlatform _leftMovedPlatform);
-                    _platforms.TryGetComponent<RightMovedPlatform>(out RightMovedPlatform _rightMovedPlatform);
-                    if (_leftMovedPlatform.ChangebleColor || _rightMovedPlatform.ChangebleColor)
-                    {
                         SpriteRenderer _sprite = _platforms.GetComponent<SpriteRenderer>();
                         _sprite.sprite = _blockSprites[_currentColor];
-                    }
                 }
             }  
         }

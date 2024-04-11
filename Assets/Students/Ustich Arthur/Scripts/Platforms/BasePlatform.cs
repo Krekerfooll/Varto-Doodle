@@ -2,17 +2,17 @@ using UnityEngine;
 
 namespace Ustich.Arthur.DoodleJump
 {
-    public abstract class BasePlatform : MonoBehaviour
+    public class BasePlatform : MonoBehaviour
     {
         [SerializeField] protected GameSettingsManager _gameSettingsManager;
-        [SerializeField] private bool _changebleColor;
-        public bool ChangebleColor { get { return _changebleColor; } }
+        protected float _bounceLeft;
+        protected float _bounceRight;
+        protected float _positionX;
+        protected float _positionY;
 
         public virtual void Init(GameSettingsManager _manager)
         {
             _gameSettingsManager = _manager;
         }
-
-        protected abstract void Move();
     }
 }

@@ -46,10 +46,8 @@ namespace Ustich.Arthur.DoodleJump
 
         private void InitPlatform(GameObject platformForInit)
         {
-            if (platformForInit.TryGetComponent<RightMovedPlatform>(out RightMovedPlatform moveRightPlatform))
-                moveRightPlatform.Init(_gameSettingsManager);
-            if (platformForInit.TryGetComponent<LeftMovedPlatform>(out LeftMovedPlatform moveLeftPlatform))
-                moveLeftPlatform.Init(_gameSettingsManager);
+            if (platformForInit.TryGetComponent<MovedPlatform>(out MovedPlatform movedPlatform))
+                movedPlatform.Init(_gameSettingsManager);
         }
 
         private void SpawnPlatform(int platformType, int countToSpawn)
