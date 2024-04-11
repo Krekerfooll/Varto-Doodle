@@ -6,11 +6,13 @@ using UnityEngine;
 
 public class PlatformManager : MonoBehaviour
 {
-    [SerializeField] Renderer platformRenderer;
-    [SerializeField] Color baseColor = Color.white; 
+    private Renderer _platformRenderer;
+    private Color _baseColor = Color.green; 
+    
     private void Start()
-        {        
-        platformRenderer.material.color = baseColor;        
+    {
+        _platformRenderer = GetComponent<Renderer>();
+        _platformRenderer.material.color = _baseColor;        
         }
 
 
@@ -20,12 +22,11 @@ public class PlatformManager : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
         {
-        Color randomColor = Random.ColorHSV(); 
-        platformRenderer.material.color = randomColor;        
+        _platformRenderer.material.color = Random.ColorHSV();  
         }
 
     void OnCollisionExit2D(Collision2D collision)
         {
-        platformRenderer.material.color = baseColor;
+        _platformRenderer.material.color = _baseColor;
         }
 }
