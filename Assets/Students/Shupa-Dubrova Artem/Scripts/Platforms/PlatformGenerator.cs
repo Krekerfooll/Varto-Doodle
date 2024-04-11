@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
 {
-    public class PlatformGenerator : InitGenerator
+    public class PlatformGenerator : BaseGenerator
     {
         [Header("Player Platform Initializer target")]
         [SerializeField] protected Transform _target;

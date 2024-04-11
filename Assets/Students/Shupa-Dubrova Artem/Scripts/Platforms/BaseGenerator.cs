@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
 {
-    public abstract class InitGenerator : MonoBehaviour
+    public abstract class BaseGenerator : MonoBehaviour
     {
         public List<Platform> SpawnedPlatforms { get; protected set; }
 
