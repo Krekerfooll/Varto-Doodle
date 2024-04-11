@@ -36,8 +36,11 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
         {
             if (_staysActive && _isActivatedOnes)
                 return;
+            
+            if (_target.transform.position.y < transform.position.y)
+                _collider.SetActive(false);
 
-            if (_target.transform.position.y > transform.position.y)
+            if (_target.transform.position.y >= transform.position.y)
             {
                 _collider.SetActive(true);
                 _isActivatedOnes = true;
@@ -49,8 +52,6 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
             }
             else
             {
-                _collider.SetActive(false);
-
                 foreach (var action in _executeOnCollisionDeactivated)
                 {
                     action.Execute();

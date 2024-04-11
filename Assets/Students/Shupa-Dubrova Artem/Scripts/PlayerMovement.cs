@@ -29,12 +29,13 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         }
         private void Update()
         {
-            Jump();
+            
             HorizontalMove();
         }
 
         private void FixedUpdate()
         {
+            Jump();
             SideTeleport();
             SpriteSwitch();
         }
@@ -47,7 +48,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
                 _player.transform.localScale = _lookLeft;
             else if (_moveDirection > 0f)
                 _player.transform.localScale = _lookRight;
-        }        
+        }   
+        
         private void Jump()
         {
             _setJump = Physics2D.Raycast(_player.position, Vector2.down, _groundCheckDistance, _groundMask);
@@ -55,17 +57,12 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
 
             if (_setJump)
             {
-                _player.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-                
+                Vector2 velocity = _player.velocity;
+                velocity.y = _jumpPower;
+                _player.velocity = velocity;
+                _setJump = false;
             }
         }
-        // private void OnTriggerStay2D(Collider2D other)
-        // {
-        //     if (other.CompareTag($"Spring") && _player.velocity.y <= _jumpPower / 3)
-        //         _setSpringJump = true;
-        //     else if (_player.velocity.y <= _jumpPower / 3)
-        //         _setJump = true;
-        // }
 
         private void SideTeleport()
         {
