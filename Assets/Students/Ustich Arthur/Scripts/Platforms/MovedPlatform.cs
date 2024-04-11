@@ -6,6 +6,8 @@ namespace Ustich.Arthur.DoodleJump
 {
     public class MovedPlatform : BasePlatform
     {
+        [Space]
+        [Header("Moved Platform variables:")]
         [SerializeField] private float _moveSpeed;
         [SerializeField] private Rigidbody2D _objectRigidbody;
         [SerializeField] private bool _moveRight;

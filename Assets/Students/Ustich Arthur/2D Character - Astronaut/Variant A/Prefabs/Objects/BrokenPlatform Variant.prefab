@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3933895765268116132, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
+      propertyPath: _canChangeColor
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1969011324178302708, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
       propertyPath: m_Sprite
       value: 
