@@ -10,6 +10,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         [SerializeField] private float _playerSpeed;
         [SerializeField] private float _jumpPower;
         [SerializeField] private float _jumpPowerSpring;
+        [SerializeField] private LayerMask _groundMask;
+        [SerializeField] private float _groundCheckDistance;
         
         
         private Vector3 _lookLeft;
@@ -48,31 +50,22 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         }        
         private void Jump()
         {
-            if (_player.velocity.y > _jumpPower)
-            {
-                _setJump = false;
-                _setSpringJump = false;
-            }
-            
-            if (_setSpringJump)
-            {
-                _player.AddForce(Vector2.up * _jumpPowerSpring, ForceMode2D.Impulse);
-                _setSpringJump = false;
-            }
-            
-            else if (_setJump)
+            _setJump = Physics2D.Raycast(_player.position, Vector2.down, _groundCheckDistance, _groundMask);
+            Debug.DrawLine(_player.position, _player.position + Vector2.down * _groundCheckDistance, Color.magenta);
+
+            if (_setJump)
             {
                 _player.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
                 _setJump = false;
             }
         }
-        private void OnTriggerStay2D(Collider2D other)
-        {
-            if (other.CompareTag($"Spring") && _player.velocity.y <= _jumpPower / 3)
-                _setSpringJump = true;
-            else if (_player.velocity.y <= _jumpPower / 3)
-                _setJump = true;
-        }
+        // private void OnTriggerStay2D(Collider2D other)
+        // {
+        //     if (other.CompareTag($"Spring") && _player.velocity.y <= _jumpPower / 3)
+        //         _setSpringJump = true;
+        //     else if (_player.velocity.y <= _jumpPower / 3)
+        //         _setJump = true;
+        // }
 
         private void SideTeleport()
         {
