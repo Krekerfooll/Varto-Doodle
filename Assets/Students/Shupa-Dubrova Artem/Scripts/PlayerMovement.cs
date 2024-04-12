@@ -53,6 +53,10 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            // if (other.CompareTag($"Spring") && _player.velocity.y <= _jumpPower / 3)
+            //     _setSpringJump = true;
+            // else if (_player.velocity.y <= _jumpPower / 3)
+            //     _setJump = true;
             _setJump = true;
         }
 

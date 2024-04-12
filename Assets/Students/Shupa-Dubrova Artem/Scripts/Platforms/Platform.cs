@@ -8,7 +8,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
     {
         [SerializeField] protected Transform _target;
         [SerializeField] protected GameObject _collider;
-        [Space]
+        [Space] 
+        [SerializeField] protected bool _alwaysActive = false;
         [Tooltip("Is object stays active after become active ones")]
         [SerializeField] protected bool _staysActive = true;
         [Space]
@@ -35,6 +36,9 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
         protected virtual void OnUpdatePlatform()
         {
             if (_staysActive && _isActivatedOnes)
+                return;
+            
+            if (_alwaysActive)
                 return;
             
             if (_target.transform.position.y < transform.position.y)

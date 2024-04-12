@@ -9,11 +9,12 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         [SerializeField] private float _speed;
         
         private int _moveDirectionX = -1;
+        
         void FixedUpdate()
         {
             PlatformMove();
         }
-
+        
         private void PlatformMove()
         {
             if (transform.position.x < _boundsX.x)
