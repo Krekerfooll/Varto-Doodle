@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSpawner : MonoBehaviour
+namespace RomanDoliba.Utils
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ItemSpawner : ActionBase
     {
-        
-    }
+        [SerializeField] private Transform _spawnPoint;
+        [SerializeField] private GameObject[] _itemsToSpawn;
+        [Tooltip("The higher value, the lower chance")]
+        [SerializeField] private int _chanseToSpawn; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Awake()
+        {
+            Execute();
+        }
+
+        protected override void Execute()
+        {
+            var willSpawn = Random.Range(0, _chanseToSpawn);
+            if (willSpawn == 0)
+            {
+                var randomItem = _itemsToSpawn[Random.Range(0, _itemsToSpawn.Length)];
+                Instantiate (randomItem, _spawnPoint.transform.position, Quaternion.identity, _spawnPoint);
+            }
+        }
     }
 }
