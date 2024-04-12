@@ -337,10 +337,10 @@ MonoBehaviour:
   _platformPrefabVariants:
   - {fileID: 7600648323269748811, guid: a92b8245cc7e3204ea341101fdcb55dd, type: 3}
   - {fileID: -7073657891733254276, guid: 0a6f281b40155cf4197ecb4486b7c025, type: 3}
-  _platformsSpawnedPerStepCount: {x: 0, y: 0}
+  _platformsSpawnedPerStepCount: {x: 1, y: 3}
   _stepsCountToSpawn: 9
   _stepsCountToDelete: 4
-  _stepHeight: 1
+  _stepHeight: 0.7
   _bounds: {x: -2.2, y: 2.2}
 --- !u!4 &1238238922
 Transform:
