@@ -77,10 +77,14 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
             var platformPositionY = _target.position.y + stepsCount * _stepHeight;
 
             var platformsToSpawnCount = Random.Range(_platformsSpawnedPerStepCount.x, _platformsSpawnedPerStepCount.y + 1);
-
+            var columnWidth = (_bounds.y - _bounds.x) / platformsToSpawnCount;
+            
             for (int i = 0; i < platformsToSpawnCount; i++)
             {
-                var platformPositionX = Random.Range(_bounds.x, _bounds.y);
+                var columnStart = _bounds.x + i * columnWidth;
+                var columnEnd = columnStart + columnWidth;
+                
+                var platformPositionX = Random.Range(columnStart, columnEnd);
                 var randomYOffset = Random.Range(-1, 2) * _setOffsetY;
                 var platformPosition = new Vector3(platformPositionX, platformPositionY  + randomYOffset, transform.position.z);
 
