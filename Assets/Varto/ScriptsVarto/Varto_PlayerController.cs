@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Varto.Examples.Player
+namespace Varto.ScriptsVarto
 {
     public class Varto_PlayerController : MonoBehaviour
     {

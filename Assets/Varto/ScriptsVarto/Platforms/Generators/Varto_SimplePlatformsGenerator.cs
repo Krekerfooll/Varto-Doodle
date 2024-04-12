@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Varto.Examples.Platforms
+namespace Varto.ScriptsVarto.Platforms.Generators
 {
     public class Varto_SimplePlatformsGenerator : Varto_GeneratorBase
     {

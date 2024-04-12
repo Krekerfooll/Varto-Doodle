@@ -1,32 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-
-public class PlatformChangeColor : MonoBehaviour
+namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
 {
-    private Renderer _platformRenderer;
-    private Color _baseColor = Color.green; 
-    
-    private void Start()
+    public class PlatformChangeColor : MonoBehaviour
     {
-        _platformRenderer = GetComponent<Renderer>();
-        _platformRenderer.material.color = _baseColor;        
-        }
-
-
-    /// <summary>
-    /// Color change to random when in contact with another object
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnCollisionEnter2D(Collision2D collision)
+        private Renderer _platformRenderer;
+        private Color _baseColor = Color.green; 
+    
+        private void Start()
         {
-        _platformRenderer.material.color = Random.ColorHSV();  
+            _platformRenderer = GetComponent<Renderer>();
+            _platformRenderer.material.color = _baseColor;        
         }
 
-    void OnCollisionExit2D(Collision2D collision)
+
+        /// <summary>
+        /// Color change to random when in contact with another object
+        /// </summary>
+        /// <param name="collision"></param>
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-        _platformRenderer.material.color = _baseColor;
+            _platformRenderer.material.color = Random.ColorHSV();  
         }
+
+        void OnCollisionExit2D(Collision2D collision)
+        {
+            _platformRenderer.material.color = _baseColor;
+        }
+    }
 }

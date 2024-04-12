@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Varto.Examples.Utils
+namespace Varto.ScriptsVarto.Utils
 {
     public class Varto_ObjectSpawner : Varto_ActionBase
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Varto.Examples.Utils
+namespace Varto.ScriptsVarto
 {
     public class Varto_ColliderExtender : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using UnityEngine;
-using Varto.Examples.Utils;
+using Varto.ScriptsVarto.Platforms;
 
-namespace Varto.Examples.Platforms
+namespace Varto.ScriptsVarto
 {
     public class Varto_DestructablePlatform : Varto_Platform
     {

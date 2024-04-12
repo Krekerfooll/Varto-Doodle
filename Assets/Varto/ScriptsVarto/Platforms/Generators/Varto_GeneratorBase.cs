@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Varto.Examples.Platforms
+namespace Varto.ScriptsVarto.Platforms.Generators
 {
     public abstract class Varto_GeneratorBase : MonoBehaviour
     {

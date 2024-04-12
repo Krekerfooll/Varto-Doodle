@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Varto.Examples.Utils;
+using Varto.ScriptsVarto.Utils;
 
-namespace Varto.Examples.Platforms
+namespace Varto.ScriptsVarto.Platforms
 {
     public class Varto_Platform : MonoBehaviour
     {

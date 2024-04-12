@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Varto.Examples.Camera
+namespace Varto.ScriptsVarto
 {
     public class Varto_CameraFollow : MonoBehaviour
     {

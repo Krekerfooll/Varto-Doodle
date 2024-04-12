@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Varto.Examples.Utils
+namespace Varto.ScriptsVarto.Utils
 {
     public abstract class Varto_OnCollisionEventsActionBase : Varto_ActionBase
     {
