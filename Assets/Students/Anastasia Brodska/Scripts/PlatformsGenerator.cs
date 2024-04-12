@@ -1,28 +1,31 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Varto.Examples.Platforms;
+using System.Linq;
 
-public class PlatformsGenerator : MonoBehaviour
+public class PlatformsGenerator : GeneratorBase
 {
+
     [Header("Global Settings:")]
+    [Space]
     [SerializeField] private Transform _target;
     [Space]
-
     [Header("Spawn Settings:")]
-    [SerializeField] private PlatformCollider _platformPrefab;
+    [Space]
+    [SerializeField] private List<Platform> _platformPrefabVariants;
+    [SerializeField] private Vector2Int _platformsSpawnedPerStepCount;
     [SerializeField] private int _stepsCountToSpawn;
     [SerializeField] private float _stepsCountToDelete;
     [SerializeField] private float _stepHeight;
     [SerializeField] private Vector2 _bounds;
 
-    private Queue<PlatformCollider> _spawnedPlatforms;
+    private Queue<int> _groupsPlatformsCount;
 
     private float _lastPlatformsSpawnedOnPlayerPosition;
     private float _lastPlatformsDeletedOnPlayerPosition;
 
-    private void Awake()
+    protected override void InitGenerator()
     {
-        _spawnedPlatforms = new Queue<PlatformCollider>();
+        _groupsPlatformsCount = new Queue<int>();
 
         _lastPlatformsDeletedOnPlayerPosition = _lastPlatformsSpawnedOnPlayerPosition = _target.position.y;
 
@@ -32,37 +35,61 @@ public class PlatformsGenerator : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected override bool IsCanSpawnPlatforms()
     {
-        if (_target.position.y - _lastPlatformsSpawnedOnPlayerPosition > _stepHeight)
-        {
-            SpawnPlatform(_stepsCountToSpawn);
-            _lastPlatformsSpawnedOnPlayerPosition += _stepHeight;
-        }
+        return _target.position.y - _lastPlatformsSpawnedOnPlayerPosition > _stepHeight;
+    }
+    protected override bool IsCanDeletePlatforms()
+    {
+        var isHasPlatforms = SpawnedPlatforms.Count > 0;
+        var isAbleToDeletePlatformByPlayerPosition = _target.position.y - _lastPlatformsDeletedOnPlayerPosition > _stepHeight * _stepsCountToDelete;
+        return isHasPlatforms && isAbleToDeletePlatformByPlayerPosition;
+    }
 
-        if (_target.position.y - _lastPlatformsDeletedOnPlayerPosition > _stepHeight * _stepsCountToDelete)
-        {
-            var platformToDelete = _spawnedPlatforms.Dequeue();
+    protected override void SpawnPlatforms()
+    {
+        SpawnPlatform(_stepsCountToSpawn);
+        _lastPlatformsSpawnedOnPlayerPosition += _stepHeight;
+    }
+    protected override void DeletePlatforms()
+    {
+        var groupToDeletePlatformsCount = _groupsPlatformsCount.Dequeue();
 
-            if (platformToDelete && platformToDelete.gameObject)
+        var platformsToDestroy = SpawnedPlatforms.Take(groupToDeletePlatformsCount);
+
+        foreach (var platform in platformsToDestroy)
+        {
+            if (platform && platform.gameObject)
             {
-                Destroy(platformToDelete.gameObject);
+                Destroy(platform.gameObject);
             }
-
-            _lastPlatformsDeletedOnPlayerPosition += _stepHeight;
         }
+
+        SpawnedPlatforms.RemoveRange(0, groupToDeletePlatformsCount);
+
+        _lastPlatformsDeletedOnPlayerPosition += _stepHeight;
     }
 
     private void SpawnPlatform(int stepsCount)
     {
-        var platformPositionX = Random.Range(_bounds.x, _bounds.y);
         var platformPositionY = _target.position.y + stepsCount * _stepHeight;
 
-        var platformPosition = new Vector3(platformPositionX, platformPositionY, transform.position.z);
+        var platformsToSpawnCount = Random.Range(_platformsSpawnedPerStepCount.x, _platformsSpawnedPerStepCount.y + 1);
 
-        var spawnedPlatform = Instantiate(_platformPrefab, platformPosition, Quaternion.identity, this.transform);
-        spawnedPlatform.Init(_target);
+        for (int i = 0; i < platformsToSpawnCount; i++)
+        {
+            var platformPositionX = Random.Range(_bounds.x, _bounds.y);
+            var platformPosition = new Vector3(platformPositionX, platformPositionY, transform.position.z);
 
-        _spawnedPlatforms.Enqueue(spawnedPlatform);
+            var randomPlatform = _platformPrefabVariants[Random.Range(0, _platformPrefabVariants.Count)];
+
+            var spawnedPlatform = Instantiate(randomPlatform, platformPosition, Quaternion.identity, this.transform);
+            spawnedPlatform.Init(_target);
+
+            SpawnedPlatforms.Add(spawnedPlatform);
+        }
+
+        _groupsPlatformsCount.Enqueue(platformsToSpawnCount);
     }
 }
+

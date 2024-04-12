@@ -6,6 +6,15 @@ namespace Varto.Examples.Platforms
     {
         [SerializeField] protected Transform _target;
         [SerializeField] protected GameObject _collider;
+<<<<<<< Updated upstream:Assets/Varto/Scripts/Varto_Platform.cs
+=======
+        [Space]
+        [Tooltip("Is object stays active after become active ones")]
+        [SerializeField] protected bool _staysActive = true;
+        [Space]
+        [SerializeField] protected List<Utils.PlatformBase> _executeOnCollisionActivated;
+        [SerializeField] protected List<Utils.PlatformBase> _executeOnCollisionDeactivated;
+>>>>>>> Stashed changes:Assets/Varto/Scripts/Platforms/Varto_Platform.cs
 
         protected bool _isInitiated;
 
