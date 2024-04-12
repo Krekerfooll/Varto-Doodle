@@ -18,6 +18,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
         [SerializeField] private float _stepsCountToDelete;
         [SerializeField] private float _stepHeight;
         [SerializeField] private Vector2 _bounds;
+        [SerializeField] private float _setOffsetY;
 
         private Queue<int> _groupsPlatformsCount;
 
@@ -80,7 +81,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
             for (int i = 0; i < platformsToSpawnCount; i++)
             {
                 var platformPositionX = Random.Range(_bounds.x, _bounds.y);
-                var platformPosition = new Vector3(platformPositionX, platformPositionY, transform.position.z);
+                var randomYOffset = Random.Range(-1, 2) * _setOffsetY;
+                var platformPosition = new Vector3(platformPositionX, platformPositionY  + randomYOffset, transform.position.z);
 
                 var randomPlatform = _platformPrefabVariants[Random.Range(0, _platformPrefabVariants.Count)];
 
