@@ -535,6 +535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e5bdbdedd9dc047b7935ddfeadcae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onTriggerEnterWith:
+    serializedVersion: 2
+    m_Bits: 256
   _delay: 0.3
 --- !u!1 &7630703345935957964
 GameObject:

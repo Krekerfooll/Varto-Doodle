@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace RomanDoliba.Background
+namespace RomanDoliba.Utils
 {
-    public class BackgoundChange : MonoBehaviour
+    public class BackgoundChange : OnTriggerAction
     {
         [SerializeField] private SpriteRenderer [] Backgrounds = new SpriteRenderer [3];
         private int _currentBackground;
@@ -12,6 +12,11 @@ namespace RomanDoliba.Background
             Backgrounds[_currentBackground].enabled = false;
                 _currentBackground = Random.Range(0, Backgrounds.Length);
                 Backgrounds[_currentBackground].enabled = true;
-        }  
+        }
+
+        protected override void Execute()
+        {
+            BackgoundsChange();
+        }
     }
 }
