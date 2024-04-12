@@ -72,21 +72,43 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
             _lastPlatformsDeletedOnPlayerPosition += _stepHeight;
         }
 
+        // private void SpawnPlatform(int stepsCount)
+        // {
+        //     var platformPositionY = _target.position.y + stepsCount * _stepHeight;
+        //
+        //     var platformsToSpawnCount = Random.Range(_platformsSpawnedPerStepCount.x, _platformsSpawnedPerStepCount.y + 1);
+        //     var columnWidth = (_bounds.y - _bounds.x) / platformsToSpawnCount;
+        //     
+        //     for (int col = 0; col < platformsToSpawnCount; col++)
+        //     {
+        //         var columnStart = _bounds.x + col * columnWidth;
+        //         var columnEnd = columnStart + columnWidth;
+        //         
+        //         var platformPositionX = Random.Range(columnStart, columnEnd);
+        //         var randomYOffset = Random.Range(-1, 2) * _setOffsetY;
+        //         var platformPosition = new Vector3(platformPositionX, platformPositionY  + randomYOffset, transform.position.z);
+        //
+        //         var randomPlatform = _platformPrefabVariants[Random.Range(0, _platformPrefabVariants.Count)];
+        //
+        //         var spawnedPlatform = Instantiate(randomPlatform, platformPosition, Quaternion.identity, this.transform);
+        //         spawnedPlatform.Init(_target);
+        //
+        //         SpawnedPlatforms.Add(spawnedPlatform);
+        //     }
+        //
+        //     _groupsPlatformsCount.Enqueue(platformsToSpawnCount);
+        // }
         private void SpawnPlatform(int stepsCount)
         {
             var platformPositionY = _target.position.y + stepsCount * _stepHeight;
         
             var platformsToSpawnCount = Random.Range(_platformsSpawnedPerStepCount.x, _platformsSpawnedPerStepCount.y + 1);
-            var columnWidth = (_bounds.y - _bounds.x) / platformsToSpawnCount;
+            var addOffset = _setOffsetY * -1;
             
-            for (int col = 0; col < platformsToSpawnCount; col++)
+            for (int row = 0; row < platformsToSpawnCount; row++)
             {
-                var columnStart = _bounds.x + col * columnWidth;
-                var columnEnd = columnStart + columnWidth;
-                
-                var platformPositionX = Random.Range(columnStart, columnEnd);
-                var randomYOffset = Random.Range(-1, 2) * _setOffsetY;
-                var platformPosition = new Vector3(platformPositionX, platformPositionY  + randomYOffset, transform.position.z);
+                var platformPositionX = Random.Range(_bounds.x, _bounds.y);
+                var platformPosition = new Vector3(platformPositionX, platformPositionY + addOffset, transform.position.z);
         
                 var randomPlatform = _platformPrefabVariants[Random.Range(0, _platformPrefabVariants.Count)];
         
@@ -94,6 +116,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
                 spawnedPlatform.Init(_target);
         
                 SpawnedPlatforms.Add(spawnedPlatform);
+
+                addOffset += _setOffsetY;
             }
         
             _groupsPlatformsCount.Enqueue(platformsToSpawnCount);
