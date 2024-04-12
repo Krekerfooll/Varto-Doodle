@@ -23,7 +23,7 @@ namespace OIMOD.Core.GameMech
             if (_colorChangeOn) {
                 foreach (SpriteRenderer spriteRenderer in layerToChangeColor)  {
                     Color baseColor = spriteRenderer.color;
-                    Color targetColor = colorPallete[player.colorIndex];
+                    Color targetColor = colorPallete[0];
 
                     spriteRenderer.color = Color.Lerp(baseColor, targetColor, 1.5f * Time.deltaTime);
                 }

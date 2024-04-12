@@ -7,14 +7,14 @@ namespace OIMOD.Core.GameMech
         private bool _inputJump;
         private float _inputMove;
 
-        protected float MoveInput 
+        public float MoveInput 
         {
             get 
             {
                 return _inputMove = Input.GetAxis("Horizontal");
             }
         }
-        protected bool JumpInput 
+        public bool JumpInput 
         {
             get 
             {

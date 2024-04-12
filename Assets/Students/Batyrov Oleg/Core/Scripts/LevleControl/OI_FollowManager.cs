@@ -5,24 +5,33 @@ namespace OIMOD.Core.GameMech
     public class OI_FollowManager : MonoBehaviour
     {
         [Header("Follow Setup")]
-        [SerializeField] private Transform[] _follower;
-        [SerializeField] private Transform[] _target;
+        [SerializeField] private Transform _follower;
+        [SerializeField] private Transform _target;
         [Space]
-        [SerializeField] private float _followSmooth;
+        [SerializeField] private bool _stopOnHighestPosition;
+        [SerializeField] private bool _smoothFollow;
+        [SerializeField] private float _smoothFollowValue;
 
         void Update()
         {
-            if (_follower[0].position.y <= _target[0].position.y)
-                FollowTarget(_follower[0], _target[0], true);
-            FollowTarget(_follower[1], _follower[0], false);
-            FollowTarget(_follower[2], _target[1], false);
+            if (_stopOnHighestPosition)
+            {
+                if (_follower.position.y <= _target.position.y)
+                    FollowTarget(_follower, _target, _smoothFollow);
+            }
+            else if (!_stopOnHighestPosition)
+            {
+                FollowTarget(_follower, _target, _smoothFollow);
+            }
         }
         private void FollowTarget(Transform follower, Transform followTarget, bool useLerp)
         {
             var targetPos = new Vector3(follower.position.x, followTarget.position.y, follower.position.z);
-            if (useLerp )
-                follower.position = Vector3.Lerp(follower.position, targetPos, _followSmooth*Time.deltaTime);
-            else follower.position = targetPos;
+
+            if (useLerp)
+                follower.position = Vector3.Lerp(follower.position, targetPos, _smoothFollowValue*Time.deltaTime);
+            else 
+                follower.position = targetPos;
         }
     }
 }
