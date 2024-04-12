@@ -10,9 +10,6 @@ namespace Students.Shupa_Dubrova_Artem.Scripts
         [SerializeField] private float _playerSpeed;
         [SerializeField] private float _jumpPower;
         [SerializeField] private float _jumpPowerSpring;
-        [SerializeField] private LayerMask _groundMask;
-        [SerializeField] private float _groundCheckDistance;
-        
         
         private Vector3 _lookLeft;
         private Vector3 _lookRight;
