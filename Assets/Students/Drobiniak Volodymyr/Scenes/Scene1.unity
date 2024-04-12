@@ -378,11 +378,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4509380720223236947, guid: db7f6fe267c211a419b470176d1489e0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 11.306646
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4509380720223236947, guid: db7f6fe267c211a419b470176d1489e0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.8148727
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4509380720223236947, guid: db7f6fe267c211a419b470176d1489e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -390,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4509380720223236947, guid: db7f6fe267c211a419b470176d1489e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4509380720223236947, guid: db7f6fe267c211a419b470176d1489e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -921,8 +921,6 @@ MonoBehaviour:
   platformPrefabs:
   - {fileID: 4637607228958701063, guid: db7f6fe267c211a419b470176d1489e0, type: 3}
   - {fileID: 7387479124821484782, guid: c74807491bb3b724e8dbefcda82d9b58, type: 3}
-  spawnPosition: {x: 0, y: 0, z: 0}
-  spawnYInterval: 2
 --- !u!1 &1859353485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,7 +1085,7 @@ GameObject:
   - component: {fileID: 1921810829}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1117,7 +1115,7 @@ Transform:
   m_GameObject: {fileID: 1921810828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.61, y: -2.14, z: 0}
+  m_LocalPosition: {x: -16.61, y: -1.56, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
