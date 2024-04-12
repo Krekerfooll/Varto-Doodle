@@ -315,6 +315,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _collider: {fileID: 346386734}
+  _staysActive: 1
+  _executeOnCollisionActivated: []
+  _executeOnCollisionDeactivated: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +384,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 161
+    m_Bits: 417
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -441,7 +444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &555059813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +527,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _collider: {fileID: 624443089}
+  _staysActive: 1
+  _executeOnCollisionActivated: []
+  _executeOnCollisionDeactivated: []
 --- !u!70 &624443092
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -637,7 +643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1480967828
 Transform:
   m_ObjectHideFlags: 0
@@ -669,6 +675,13 @@ MonoBehaviour:
   _target: {fileID: 767906872}
   _platformPrefabVariants:
   - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+  - {fileID: 443534209096285633, guid: f5fba5a863d247a4c96cd111ff9df3ce, type: 3}
+  - {fileID: 443534209096285633, guid: 71df30999810fb74790646de60e4da63, type: 3}
   _platformsSpawnedPerStepCount: {x: 1, y: 3}
   _stepsCountToSpawn: 4
   _stepsCountToDelete: 2.22

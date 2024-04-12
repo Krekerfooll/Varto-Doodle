@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Varto.Examples.Utils
 {
-    public class Varto_ObjectSpawner : PlatformBase
+    public class Varto_ObjectSpawner : Varto_ActionBase
     {
         [SerializeField] private Transform _spawnPoint;
         [SerializeField] private GameObject[] _prefabsVariants;

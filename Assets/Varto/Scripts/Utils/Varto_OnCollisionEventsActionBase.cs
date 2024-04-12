@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Varto.Examples.Utils
 {
-    public abstract class Varto_OnCollisionEventsActionBase : PlatformBase
+    public abstract class Varto_OnCollisionEventsActionBase : Varto_ActionBase
     {
         [SerializeField] private LayerMask _onCollisionEnterWith;
 
