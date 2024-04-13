@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7337926044907892510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlatformTarget
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8559412559314030343}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Targets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,8 +77,8 @@ GameObject:
   - component: {fileID: 4855059192210500893}
   - component: {fileID: 5181835172149153946}
   - component: {fileID: 1089764504725929912}
-  - component: {fileID: 1275891253542741513}
-  m_Layer: 0
+  - component: {fileID: 354865164499975945}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf548eaf67983d46936c10df2654d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1275891253542741513
+--- !u!114 &354865164499975945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,11 +207,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3884129518095177118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3d7d571c9f00b148ada19aea1d63664, type: 3}
+  m_Script: {fileID: 11500000, guid: 3350d4c25f8a73f4c82723db0aabef77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgoundChange: {fileID: 0}
-  movementController: {fileID: 5181835172149153946}
+  _onTriggerEnterWith:
+    serializedVersion: 2
+    m_Bits: 64
+  _backgrounds:
+  - {fileID: 5681343039926764162, guid: 629ffd7ffa475144bbfe2b9315fcd3a5, type: 3}
+  - {fileID: 9151981645342297111, guid: f0ef9120c1d239a4f829ce60c9814a64, type: 3}
+  - {fileID: 9070724939715111943, guid: c740878541ee4864b97459f291528213, type: 3}
 --- !u!1 &6402805959390146814
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8144215422484549822}
   - component: {fileID: 6708946031683280451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7509423157623959783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CameraTarget
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
