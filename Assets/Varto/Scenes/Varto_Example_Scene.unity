@@ -313,11 +313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1a41b53fd01a540b7d15889d247029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _collider: {fileID: 346386734}
-  _staysActive: 1
-  _executeOnCollisionActivated: []
-  _executeOnCollisionDeactivated: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,12 +452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279cc520165134a4986c381a42979315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 767906872}
-  _platformPrefab: {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  _stepsCountToSpawn: 4
-  _stepsCountToDelete: 2.22
-  _stepHeight: 2.8
-  _bounds: {x: -2.2, y: 2.2}
 --- !u!4 &555059814
 Transform:
   m_ObjectHideFlags: 0
@@ -525,11 +514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1a41b53fd01a540b7d15889d247029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _collider: {fileID: 624443089}
-  _staysActive: 1
-  _executeOnCollisionActivated: []
-  _executeOnCollisionDeactivated: []
 --- !u!70 &624443092
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -669,24 +653,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1480967827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c962ffeff841041bc2d561cff1ce3a, type: 3}
+  m_Script: {fileID: 11500000, guid: b9d30a20d6edd1442bd0d018657bccb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 767906872}
   _platformPrefabVariants:
   - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
   - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 443534209096285633, guid: f5fba5a863d247a4c96cd111ff9df3ce, type: 3}
   - {fileID: 443534209096285633, guid: 71df30999810fb74790646de60e4da63, type: 3}
+  - {fileID: 443534209096285633, guid: f5fba5a863d247a4c96cd111ff9df3ce, type: 3}
   _platformsSpawnedPerStepCount: {x: 1, y: 3}
   _stepsCountToSpawn: 4
-  _stepsCountToDelete: 2.22
+  _stepsCountToDelete: 4
   _stepHeight: 2.8
-  _bounds: {x: -2.2, y: 2.2}
+  _bounds: {x: -2.8, y: 2.8}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
