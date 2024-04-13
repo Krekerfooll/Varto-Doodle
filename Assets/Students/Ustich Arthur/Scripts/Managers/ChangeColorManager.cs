@@ -11,7 +11,7 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private List<Sprite> _blockSprites = new List<Sprite>();
         [Space]
         [Header("Additional component:")]
-        [SerializeField] private PlatformSpawner _spawner;
+        [SerializeField] private SpawnManager _spawner;
         [SerializeField] private PlayerMovement _playerMoveMovement;
         private int _currentColor = 0;
         int _randColor = 0;
@@ -28,7 +28,7 @@ namespace Ustich.Arthur.DoodleJump
             {
                 UniqeColor();
                 _playerAnimator.runtimeAnimatorController = _playerIdleAnimation[_currentColor];
-                foreach (GameObject _platforms in _spawner.Platforms)
+                foreach (GameObject _platforms in _spawner.SpawnedObjects)
                 {
                     bool changable = _platforms.GetComponent<ColorChangable>().CanChangeColor;
                     if (changable)
