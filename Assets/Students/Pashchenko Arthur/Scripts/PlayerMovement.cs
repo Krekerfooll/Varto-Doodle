@@ -1,6 +1,5 @@
-using Doodle.core;
 using UnityEngine;
-namespace Doodle.core
+namespace Artur.Pashchenko.Player
 {
     public class PlayerMovement : MonoBehaviour
     {

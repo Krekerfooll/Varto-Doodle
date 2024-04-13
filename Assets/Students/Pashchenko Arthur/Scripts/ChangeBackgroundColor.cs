@@ -1,21 +1,23 @@
-using Doodle.core;
+using Artur.Pashchenko.Player;
 using System.Net.Http.Headers;
 using UnityEngine;
-
-public class ChangeBackgroundColor : MonoBehaviour
+namespace Artur.Pashchenko.Background
 {
-    public Color[] availableColors;
-    private int randomColor;
-
-    private void Update()
+    public class ChangeBackgroundColor : MonoBehaviour
     {
-        
-        if  (InputController.IsJumped && PlayerMovement.IsGrounded)
+        public Color[] availableColors;
+        private int randomColor;
+
+        private void Update()
         {
-            randomColor = Random.Range(0, availableColors.Length);
-            Camera.main.backgroundColor = availableColors[randomColor];
-            
+
+            if (InputController.IsJumped && PlayerMovement.IsGrounded)
+            {
+                randomColor = Random.Range(0, availableColors.Length);
+                Camera.main.backgroundColor = availableColors[randomColor];
+
+            }
+
         }
-      
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
-namespace Doodle.core
-{
+namespace Artur.Pashchenko.Player
+{ 
     public class InputController : MonoBehaviour
     {
         [SerializeField] Rigidbody2D _player;
