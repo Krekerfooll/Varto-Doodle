@@ -97,6 +97,37 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1 &2648507484483810597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6115504144677689647}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6115504144677689647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2648507484483810597}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.369, y: 0.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8960364812456837902}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3416470482922310870
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8960364812456837902}
   - component: {fileID: 8029315788962237943}
+  - component: {fileID: 3508622105662878816}
   m_Layer: 7
   m_Name: Platform1x2
   m_TagString: Untagged
@@ -127,6 +159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6115504144677689647}
   - {fileID: 6860744449783048343}
   - {fileID: 2211832305465468125}
   m_Father: {fileID: 0}
@@ -149,6 +182,24 @@ MonoBehaviour:
   _staysActive: 1
   _executeOnCollisionActivated: []
   _executeOnCollisionDeactivated: []
+--- !u!114 &3508622105662878816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3416470482922310870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc309455c2d6d644b9a7df61fc875609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 1
+  _executeOnlyOnes: 1
+  _spawnPoint: {fileID: 6115504144677689647}
+  _prefabsVariants:
+  - {fileID: 7838726208683138031, guid: 557c636864c71d14d8da71ef50d548b9, type: 3}
+  _chanceToSpawnObject: 15
 --- !u!1 &5142005368654487936
 GameObject:
   m_ObjectHideFlags: 0

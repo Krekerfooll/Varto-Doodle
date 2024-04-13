@@ -32,6 +32,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
 
         private void FixedUpdate()
         {
+            
             Jump();
             SideTeleport();
             SpriteSwitch();

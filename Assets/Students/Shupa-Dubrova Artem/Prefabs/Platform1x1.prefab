@@ -222,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8727949722743212404}
   - component: {fileID: 2924947795352661211}
+  - component: {fileID: 3771775904894564434}
   m_Layer: 7
   m_Name: Platform1x1
   m_TagString: Untagged
@@ -265,3 +266,21 @@ MonoBehaviour:
   _staysActive: 1
   _executeOnCollisionActivated: []
   _executeOnCollisionDeactivated: []
+--- !u!114 &3771775904894564434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7108192625701566519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc309455c2d6d644b9a7df61fc875609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 1
+  _executeOnlyOnes: 1
+  _spawnPoint: {fileID: 2778582880604161187}
+  _prefabsVariants:
+  - {fileID: 7838726208683138031, guid: 557c636864c71d14d8da71ef50d548b9, type: 3}
+  _chanceToSpawnObject: 15

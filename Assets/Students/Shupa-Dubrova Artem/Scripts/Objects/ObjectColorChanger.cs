@@ -7,11 +7,12 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Objects
         [SerializeField] private Renderer _objectToChangeColor;
         [SerializeField] private Color _color;
 
-        public void ChangeColor()
+        private void ChangeColor()
         {
             ChangeColor(_color);
         }
-        public void ChangeColor(Color color)
+
+        private void ChangeColor(Color color)
         {
             if (_objectToChangeColor is SpriteRenderer spriteRenderer)
             {

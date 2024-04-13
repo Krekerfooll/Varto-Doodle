@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts.Player
@@ -6,16 +5,28 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
     public class BuffSpring : BuffBase
     {
         [SerializeField] private Rigidbody2D _playerTarget;
+        [SerializeField] private string _onTriggerEnterWith;
         [SerializeField] private float _springJumpPower;
         
-        public override void ApplyBuff()
+        private bool _isTriggered;
+        
+        private void OnTriggerEnter2D(Collider2D other)
         {
-           
+            if (other.CompareTag($"{_onTriggerEnterWith}"))
+            {
+                _isTriggered = true;
+            }
         }
-
-        private void OnTriggerEnter(Collider other)
+        
+        protected override void ApplyBuff()
         {
-            throw new NotImplementedException();
+            if (_isTriggered)
+            {
+                Vector2 velocity = _playerTarget.velocity;
+                velocity.y = _springJumpPower;
+                _playerTarget.velocity = velocity;
+                Debug.Log("IS TRIGGERED");
+            }
         }
     }
 }
