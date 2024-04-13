@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Students.Shupa_Dubrova_Artem.Scripts
+namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
 {
     public class MovingPlatform : MonoBehaviour
     {

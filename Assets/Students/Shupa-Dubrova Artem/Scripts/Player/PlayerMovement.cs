@@ -9,6 +9,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
         [SerializeField] private GameObject _spriteJump;
         [SerializeField] private float _playerSpeed;
         [SerializeField] private float _jumpPower;
+        [SerializeField] private LayerMask _onCollisionEnterWith;
         
         private Vector3 _lookLeft;
         private Vector3 _lookRight;
@@ -46,9 +47,12 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
                 _player.transform.localScale = _lookRight;
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            _setJump = true;
+            if ((_onCollisionEnterWith.value & (1 << collision.gameObject.layer)) != 0)
+            {
+                _setJump = true;
+            }
         }
 
         private void Jump()

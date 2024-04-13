@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Students.Shupa_Dubrova_Artem.Scripts
+namespace Students.Shupa_Dubrova_Artem.Scripts.Camera
 {
     public class BackgroundPosition : MonoBehaviour
     {

@@ -239,9 +239,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6740311156654191577}
-  - component: {fileID: 5745023200944559770}
   - component: {fileID: 1723461509887156698}
   - component: {fileID: 6865780242413345403}
+  - component: {fileID: 5731777506921444233}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -268,24 +268,6 @@ Transform:
   - {fileID: 744833814132936961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5745023200944559770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8213492586715047947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5fd52b66866542b39e660b2b3c59686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 1723461509887156698}
-  _spriteIdle: {fileID: 3238151210313245227}
-  _spriteJump: {fileID: 5037044672223758986}
-  _playerSpeed: 5
-  _jumpPower: 11
-  _jumpPowerSpring: 0
 --- !u!50 &1723461509887156698
 Rigidbody2D:
   serializedVersion: 4
@@ -298,7 +280,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1
+  m_Mass: 0.64
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
@@ -358,3 +340,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5731777506921444233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213492586715047947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd751190fa38fd47852bd15d802fe5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1723461509887156698}
+  _spriteIdle: {fileID: 3238151210313245227}
+  _spriteJump: {fileID: 5037044672223758986}
+  _playerSpeed: 5
+  _jumpPower: 12
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 128

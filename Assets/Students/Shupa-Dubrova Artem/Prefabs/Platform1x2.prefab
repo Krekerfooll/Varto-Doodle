@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _collider: {fileID: 1049718066483964005}
+  _alwaysActive: 0
   _staysActive: 1
   _executeOnCollisionActivated: []
   _executeOnCollisionDeactivated: []
