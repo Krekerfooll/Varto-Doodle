@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6656978439459165061}
   - component: {fileID: 1056792030456091608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: blik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5154639113291315192}
   - component: {fileID: 2624581668804980796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: eye2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 913621147591303769}
   - component: {fileID: 3943187129359969481}
   - component: {fileID: 7375246185711634454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ MonoBehaviour:
   groundCheckDistance: 0.8
   _groundMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 128
   _isJump: 0
 --- !u!1 &4005629834199445431
 GameObject:
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6210473596174551059}
   - component: {fileID: 5413929737920572717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4565284305288524704}
   - component: {fileID: 8019643102938445090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017995150758034010}
   - component: {fileID: 8461258798381702214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5709051930707894912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlatformTarget
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -585,7 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5511259000817444056}
   - component: {fileID: 4703914166280890726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: eye1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 158437312712733476}
   - component: {fileID: 8508014589435364363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
