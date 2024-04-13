@@ -286,10 +286,6 @@ MonoBehaviour:
   _playerSpeed: 5
   _jumpPower: 11
   _jumpPowerSpring: 0
-  _groundMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _groundCheckDistance: 0.55
 --- !u!50 &1723461509887156698
 Rigidbody2D:
   serializedVersion: 4
@@ -302,7 +298,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.64
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2

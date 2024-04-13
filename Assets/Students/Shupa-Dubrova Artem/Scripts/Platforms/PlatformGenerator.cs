@@ -80,20 +80,26 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
         
             var platformsToSpawnCount = Random.Range(_platformsSpawnedPerStepCount.x, _platformsSpawnedPerStepCount.y + 1);
             var columnWidth = (_bounds.y - _bounds.x) / platformsToSpawnCount;
+            var addOffset = _setOffsetY * -1;
             
             var calculateChance = Random.Range(1, 101);
 
             if (calculateChance <= _platformInteractiveChance)
             {
-                var platformPositionX = Random.Range(_bounds.x, _bounds.y);
-                var platformPosition = new Vector3(platformPositionX, platformPositionY, transform.position.z);
-                
-                var randomPlatform = _platformInteractive[Random.Range(0, _platformInteractive.Count)];
-                
-                var spawnedPlatform = Instantiate(randomPlatform, platformPosition, Quaternion.identity, this.transform);
-                spawnedPlatform.Init(_target);
-                
-                SpawnedPlatforms.Add(spawnedPlatform);
+                for (int row = 0; row < platformsToSpawnCount; row++)
+                {
+                    var platformPositionX = Random.Range(_bounds.x, _bounds.y);
+                    var platformPosition = new Vector3(platformPositionX, platformPositionY + addOffset, transform.position.z);
+        
+                    var randomPlatform = _platformInteractive[Random.Range(0, _platformInteractive.Count)];
+        
+                    var spawnedPlatform = Instantiate(randomPlatform, platformPosition, Quaternion.identity, this.transform);
+                    spawnedPlatform.Init(_target);
+        
+                    SpawnedPlatforms.Add(spawnedPlatform);
+
+                    addOffset += _setOffsetY;
+                }
             }
             else
             {
