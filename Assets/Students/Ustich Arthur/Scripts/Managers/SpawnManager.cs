@@ -9,10 +9,8 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private GameSettingsManager _gameSettingsManager;
         [SerializeField] private float _height;
         [SerializeField] private Transform _target;
-        [Space]
-        [Header("DEBUG")]
-        [SerializeField] private List<GameObject> _spawnedObjects = new List<GameObject>();
-        [Space]
+        
+        private List<GameObject> _spawnedObjects = new List<GameObject>();
         private float _rightBounce;
         private float _leftBounce;
         private int _heightStep = 1;
