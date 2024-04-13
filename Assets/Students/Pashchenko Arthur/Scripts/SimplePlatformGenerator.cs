@@ -32,7 +32,7 @@ namespace Artur.Pashchenko.Platform
 
             for (int i = 0; i < _stepsToSpawn; i++)
             {
-                SpawnPlatform(i);
+                SpawnPlatform(i + 1);
             }
         }
         private void Update()
@@ -43,11 +43,11 @@ namespace Artur.Pashchenko.Platform
                 _lastPlatformsSpawnedOnPlayerPos += _stepHeight;
             }
 
-            if (_target.position.y - _lastPlatformsSpawnedOnPlayerPos > _stepHeight)
+            if (_target.position.y - _lastPlatformsDeletedOnPlayerPos > _stepHeight * _stepsToDelete)
             {
                 var platformToDelete = _spawnedPlatforms.Dequeue();
 
-                if (platformToDelete && platformToDelete.gameObject)
+                if (platformToDelete)
                 {
                     Destroy(platformToDelete.gameObject);
                 }

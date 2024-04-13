@@ -23,10 +23,10 @@ namespace Artur.Pashchenko.Platform
         }
 
         protected virtual void UpdatePlatformCollider() 
-        { 
-            if (transform.position.y < _target.transform.position.y) 
+        {
+            if (_target.transform.position.y > transform.position.y)
             {
-                _collider.SetActive(true);               
+                _collider.SetActive(true);
             }
             else
             {
