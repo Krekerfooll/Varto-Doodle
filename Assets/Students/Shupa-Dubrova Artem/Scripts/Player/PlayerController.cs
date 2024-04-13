@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts.Player
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D _player;
         [SerializeField] private GameObject _spriteIdle;
@@ -83,6 +83,5 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
             _spriteIdle.SetActive(isSlowEnoughToIdle);
             _spriteJump.SetActive(!isSlowEnoughToIdle);
         }
-
     }
 }

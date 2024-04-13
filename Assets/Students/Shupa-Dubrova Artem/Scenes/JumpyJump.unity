@@ -468,10 +468,6 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5731777506921444233, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
-      propertyPath: _jumpPower
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 5745023200944559770, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -532,7 +528,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5731777506921444233, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
