@@ -46,6 +46,7 @@ namespace Ustich.Arthur.DoodleJump
                 {
                     Vector3 _posToSpawn = new Vector3(_posXtoSpawn + (_xOffset * i), _posYtoSpawn + Random.Range(-0.3f, 0.3f), 0);
                     _spawnedObjects.Add(Instantiate(_prefabsForSpawn[_prefabNumber], _posToSpawn, Quaternion.identity, this.transform));
+                    _spawnedObjects[_spawnedObjects.Count - 1].GetComponent<EnableCollider>().ColliderInit(_target);
                     if (_spawnedObjects[_spawnedObjects.Count - 1].TryGetComponent<MovedPlatform>(out MovedPlatform movedPlatform))
                         movedPlatform.Init(_gameSettingsManager);
                 }
