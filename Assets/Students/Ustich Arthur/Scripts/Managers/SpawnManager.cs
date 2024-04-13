@@ -17,6 +17,8 @@ namespace Ustich.Arthur.DoodleJump
         private float _leftBounce;
         private int _heightStep = 1;
         private float _startPosY;
+        private float _xOffset = 1.6f;
+        private int _maxPlatformCountonScene = 15;
 
         public List<GameObject> SpawnedObjects { get {  return _spawnedObjects; } }
 
@@ -34,15 +36,20 @@ namespace Ustich.Arthur.DoodleJump
 
         private void Spawn()
         {
-            if (_spawnedObjects.Count < 10)
+            if (_spawnedObjects.Count < _maxPlatformCountonScene)
             {
                 int _prefabNumber = Random.Range(0, _prefabsForSpawn.Count);
                 float _posXtoSpawn = Random.Range(_leftBounce, _rightBounce);
                 float _posYtoSpawn = _startPosY + (_height * _heightStep);
-                Vector3 _posToSpawn = new Vector3(_posXtoSpawn, _posYtoSpawn, 0);
-                _spawnedObjects.Add(Instantiate(_prefabsForSpawn[_prefabNumber], _posToSpawn, Quaternion.identity, this.transform));
-                if (_spawnedObjects[_spawnedObjects.Count - 1].TryGetComponent<MovedPlatform>(out MovedPlatform movedPlatform))
-                    movedPlatform.Init(_gameSettingsManager);
+                
+                for (int i = 0; i <= (Random.Range(0, 2)); i++)
+                {
+                    Vector3 _posToSpawn = new Vector3(_posXtoSpawn + (_xOffset * i), _posYtoSpawn + Random.Range(-0.3f, 0.3f), 0);
+                    _spawnedObjects.Add(Instantiate(_prefabsForSpawn[_prefabNumber], _posToSpawn, Quaternion.identity, this.transform));
+                    if (_spawnedObjects[_spawnedObjects.Count - 1].TryGetComponent<MovedPlatform>(out MovedPlatform movedPlatform))
+                        movedPlatform.Init(_gameSettingsManager);
+                }
+
                 _heightStep += 1;
             }
         }
