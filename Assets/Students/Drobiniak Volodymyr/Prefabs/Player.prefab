@@ -210,8 +210,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.23549306}
-  m_Size: {x: 0.30905125, y: 0.55410737}
+  m_Offset: {x: -0.0007209778, y: 0.22900514}
+  m_Size: {x: 0.33644485, y: 0.5872679}
   m_Direction: 0
 --- !u!114 &7336828484161610788
 MonoBehaviour:
@@ -226,6 +226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 10
-  jumpPower: 550
+  jumpPower: 600
   playerRb: {fileID: 926822463798391077}
   playerSr: {fileID: 3377190023187087736}

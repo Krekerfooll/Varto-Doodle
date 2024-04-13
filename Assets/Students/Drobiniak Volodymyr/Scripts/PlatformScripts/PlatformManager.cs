@@ -29,9 +29,7 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
             PlatformGeneration();
         }
 
-        /// <summary>
-        /// Generates platforms depending on the number on the stage
-        /// </summary>
+        
         private void PlatformGeneration()
         {
             if (_spawnedPlatforms.Count < _numberOfPlatforms)
@@ -66,8 +64,7 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
         }
         
         private void DeletePlatform()
-        {
-            // Перевіряємо, чи є у списку платформи для видалення
+       { // Перевіряємо, чи є у списку платформи для видалення
             if (_spawnedPlatforms.Count > 0)
             {
                 // Перевіряємо відстань між гравцем і найнижчою платформою
@@ -83,7 +80,6 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
                 }
             }
         }
-
     }
 }
 
