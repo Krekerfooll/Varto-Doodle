@@ -205,6 +205,7 @@ MonoBehaviour:
   _platformCollider: {fileID: 3230915427319088392}
   _playerInstance: {fileID: 0}
   _destroyBorder: {fileID: 0}
+  ThisPlatformIsGood: 0
   _init: 0
   _checkDestroyPosition: {fileID: 3460400147541142110}
   _checkTargetPosition: {fileID: 7316943023941110722}

@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5184824536964231267, guid: 9534d89e2e7b3dc43b1e4cd6bf4e0748, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5184824536964231267, guid: 9534d89e2e7b3dc43b1e4cd6bf4e0748, type: 3}
       propertyPath: m_LocalPosition.z
@@ -946,7 +946,7 @@ Transform:
   m_GameObject: {fileID: 1016146095}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06001532, y: 2.079717, z: -0.06607078}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -981,7 +981,7 @@ Transform:
   m_GameObject: {fileID: 1019727633}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1070,7 +1070,7 @@ MonoBehaviour:
   playerSpeed: 12
   playerJumpForce: 22
   playerMaxVelocity: 40
-  playerAutoJump: 0
+  playerAutoJump: 1
   playerFloorTarget: {fileID: 1277125368}
   rayPosLeft: {fileID: 755525615}
   rayPosCenter: {fileID: 1956343062}
@@ -1104,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 867817246349020065, guid: 50c51dea06c3b5b4d9721d956915dc12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 867817246349020065, guid: 50c51dea06c3b5b4d9721d956915dc12, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1723,12 +1723,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 1247748148}
-  _platformType:
-  - {fileID: 6614500075941966269, guid: 9534d89e2e7b3dc43b1e4cd6bf4e0748, type: 3}
-  - {fileID: 6614500075941966269, guid: 024a173f444e316419c7a5a71292dcd5, type: 3}
-  - {fileID: 6614500075941966269, guid: 252d36bb47fe79e498e796bde1273531, type: 3}
+  PlatformData:
+  - platformPrefab: {fileID: 6614500075941966269, guid: 9534d89e2e7b3dc43b1e4cd6bf4e0748, type: 3}
+    spawnRate: 100
+    stepsToSpawn: 1
+    currentStep: 0
+    isSpecial: 0
+    isDeadly: 0
+  - platformPrefab: {fileID: 6614500075941966269, guid: 252d36bb47fe79e498e796bde1273531, type: 3}
+    spawnRate: 50
+    stepsToSpawn: 5
+    currentStep: 0
+    isSpecial: 0
+    isDeadly: 0
+  - platformPrefab: {fileID: 6614500075941966269, guid: 024a173f444e316419c7a5a71292dcd5, type: 3}
+    spawnRate: 50
+    stepsToSpawn: 10
+    currentStep: 0
+    isSpecial: 1
+    isDeadly: 0
   _spawnCount: 5
-  _spawnDistance: 3
+  difficultyStep: 25
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

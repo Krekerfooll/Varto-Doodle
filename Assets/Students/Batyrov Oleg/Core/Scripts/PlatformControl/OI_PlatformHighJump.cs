@@ -20,6 +20,7 @@ namespace OIMOD.Core.GameMech
 
             _playerRb = gameData.playerRigidBody;
             _playerJumpForce = gameData.playerJumpForce;
+
         }
         private void OnTriggerEnter2D(Collider2D playerCollider) {
             if (playerCollider.gameObject.tag == "Player")

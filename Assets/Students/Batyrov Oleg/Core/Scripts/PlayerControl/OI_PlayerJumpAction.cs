@@ -74,7 +74,7 @@ namespace OIMOD.Core.Component
 
             if (_canJump && playerRbVelocityY == 0)
                 playerAnimator.SetBool("InAir", false);
-            else if (_canJump && playerRbVelocityY != 0)
+            else if (!_canJump && playerRbVelocityY != 0)
                 playerAnimator.SetBool("InAir", true);
         }
     }

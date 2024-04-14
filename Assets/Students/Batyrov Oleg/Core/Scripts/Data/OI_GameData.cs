@@ -36,6 +36,7 @@ namespace OIMOD.Core.Component
         [SerializeField] public Transform spawnPosition;
         [SerializeField] public GameObject spawnPlaceholder;
 
+
         private void Awake()
         {
             Application.targetFrameRate = 60;

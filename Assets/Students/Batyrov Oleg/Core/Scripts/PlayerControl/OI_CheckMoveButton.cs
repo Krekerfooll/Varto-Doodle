@@ -14,7 +14,6 @@ namespace OIMOD.Core.Component
 
             if (inputManager.MoveInput != 0)
             {
-                Debug.Log("must be move input!");
                 foreach (var action in _moveActions)
                 {
                     action.Execute();
