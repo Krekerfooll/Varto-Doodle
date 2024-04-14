@@ -4,11 +4,23 @@ namespace Scripts
 {
     public static class ColorController
     {
-        public static void ChangeColor(SpriteRenderer _spriteRenderer, ref float _color)
+        public static void ChangeColorByStep(SpriteRenderer _spriteRenderer, ref float color, float step)
         {
-            _color -= 0.1f;
-            _spriteRenderer.color = new Color(_color, _color, _color);
-            if (_color == 0) _color = 1f;
+            color -= step;
+            _spriteRenderer.color = new Color(color, color, color);
+            if (color <= 0) color = 1f;
+        }
+
+        public static void ChangeColorByRandom(ref Color color)
+        {
+            color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        }
+
+        public static void ChangeColorForCameraBackgroundByRandom()
+        {
+            Color color = new Color();
+            ChangeColorByRandom(ref color);
+            Camera.main.backgroundColor = color;
         }
     }
 }
