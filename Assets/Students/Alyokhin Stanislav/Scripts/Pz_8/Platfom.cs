@@ -18,8 +18,8 @@ namespace Alokhin.Stanislav.Platform
 
             if (other.gameObject.CompareTag("Player"))
             {
-                //Color randomColor = Random.Color();
-                //objectRender.material.color = randomColor;
+                Color randomColor = new Color(Random.Range(0f,1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+                objectRender.material.color = randomColor;
             }
 
         }
