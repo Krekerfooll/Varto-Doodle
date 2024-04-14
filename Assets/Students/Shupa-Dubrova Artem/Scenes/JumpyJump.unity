@@ -460,6 +460,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 530393129172336650, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1723461509887156698, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_Mass
       value: 0.64
@@ -467,6 +471,14 @@ PrefabInstance:
     - target: {fileID: 1723461509887156698, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238151210313245227, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037044672223758986, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5745023200944559770, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_Enabled
@@ -519,6 +531,10 @@ PrefabInstance:
     - target: {fileID: 6740311156654191577, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8143004095335997217, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8213492586715047947, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_Name

@@ -4,9 +4,14 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
 {
     public abstract class BuffBase : MonoBehaviour
     {
-        private void Awake()
+        [SerializeField] private string _onTriggerEnterWith;
+        
+        void OnTriggerEnter2D(Collider2D other)
         {
-            ApplyBuff();
+            if (other.CompareTag($"{_onTriggerEnterWith}"))
+            {
+                ApplyBuff();
+            }
         }
         protected abstract void ApplyBuff();
     }

@@ -84,5 +84,11 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
             _spriteIdle.SetActive(isSlowEnoughToIdle);
             _spriteJump.SetActive(!isSlowEnoughToIdle);
         }
+
+        public void SetJumpPower(float newJumpPower)
+        {
+            _jumpPower += newJumpPower;
+        }
+        
     }
 }
