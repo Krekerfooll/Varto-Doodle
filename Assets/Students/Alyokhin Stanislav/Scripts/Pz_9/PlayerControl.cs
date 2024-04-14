@@ -6,6 +6,7 @@ namespace Alokhin.Stanislav.Player
 {
     public class PlayerControl : MonoBehaviour
     {
+        [SerializeField] private Rigidbody2D _rb2;
 
     }
 
