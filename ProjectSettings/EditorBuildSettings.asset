@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Varto/Scenes/Varto_Example_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Students/Pashchenko Arthur/Scenes/SampleScene.unity
+    guid: 099e48581dc82d345958e5d01974e776
   m_configObjects: {}

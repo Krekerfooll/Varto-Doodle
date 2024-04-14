@@ -8,6 +8,8 @@ namespace Artur.Pashchenko.Player
         [SerializeField] float _movementSpeed;
         [SerializeField] float _distanceForCast;
         [SerializeField] LayerMask _groundMask;
+        [SerializeField] float _rotationSpeed;
+        Quaternion _targetRotation;
         private static bool _isGrounded;
         public static bool IsGrounded { get { return _isGrounded; } }
 
@@ -27,9 +29,22 @@ namespace Artur.Pashchenko.Player
         {
             if (!_isGrounded)
             {
-                _playerRigidbody.velocity =new Vector2(InputController.Direction * _movementSpeed, _playerRigidbody.velocity.y);
-            }
-                
+                _playerRigidbody.velocity = new Vector2(InputController.Direction * _movementSpeed, _playerRigidbody.velocity.y);
+
+                if (InputController.Direction < 0) 
+                {
+                    _targetRotation = Quaternion.Euler(this.transform.rotation.x, 180, this.transform.rotation.z);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, _rotationSpeed * Time.deltaTime);
+                }
+                else if (InputController.Direction > 0)
+                {
+                    _targetRotation = Quaternion.Euler(this.transform.rotation.x, 0, this.transform.rotation.z);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, _rotationSpeed * Time.deltaTime);
+                }
+
+               
+
+            }  
         } 
     private void FixedUpdate()
         {
