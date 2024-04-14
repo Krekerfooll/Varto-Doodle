@@ -16,7 +16,7 @@ namespace Artur.Pashchenko.Platform
         [SerializeField] private float _stepsToDelete;
         [SerializeField] private float _stepHeight;
         [SerializeField] private Vector2 _border;
-
+        [SerializeField] private Vector2 _range;
         private Queue<Platform> _spawnedPlatforms = new Queue<Platform>();
 
         private float _lastPlatformsSpawnedOnPlayerPos;
@@ -60,7 +60,7 @@ namespace Artur.Pashchenko.Platform
             private void SpawnPlatform(int stepsCount)
             {
                 var X = Random.Range(_border.x, _border.y);
-                var Y = _target.position.y + stepsCount * _stepHeight;
+                var Y = _target.position.y + stepsCount * _stepHeight + Random.Range(_range.x, _range.y);
 
                 var platformPosition = new Vector3(X, Y, transform.position.z);
                 var spawnedPlatform = Instantiate(_platformPrefab, platformPosition, Quaternion.identity, transform);

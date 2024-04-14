@@ -769,8 +769,9 @@ MonoBehaviour:
   _platformPrefab: {fileID: 5015394022728100551, guid: 6fa9bfb0ea5b3bc468674109f3df21c8, type: 3}
   _stepsToSpawn: 4
   _stepsToDelete: 4
-  _stepHeight: 3
+  _stepHeight: 2.8
   _border: {x: -2.1, y: 2.1}
+  _range: {x: 1, y: -1}
 --- !u!4 &721951787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4347625961940923521, guid: 6a20b02730b6c964e90738c37db18030, type: 3}
