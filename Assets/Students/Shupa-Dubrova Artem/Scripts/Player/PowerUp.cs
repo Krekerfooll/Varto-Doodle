@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,19 +6,21 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
 {
     public class PowerUp : MonoBehaviour
     {
-        [SerializeField] private float _jumpIncreaseAmount = 20;
-        [SerializeField] private float _powerupDuration = 3;
+        [SerializeField] private float _jumpIncreaseAmount;
+        [SerializeField] private float _powerupDuration;
         
-        [SerializeField] private string _onTriggerEnterWith;
+        [SerializeField] private string _onTriggerEnterWithTag;
         [SerializeField] private bool _buffOnlyOnce;
         [SerializeField] private GameObject _spriteIdle;
         [SerializeField] private GameObject _spriteActivated;
         [SerializeField] private Collider2D _colliderToDisable;
+
+        private bool _canBeBuffed = true;
         
         private void OnTriggerEnter2D(Collider2D other)
         {
             PlayerController playerController = other.gameObject.GetComponent<PlayerController>();
-            if (other.CompareTag($"{_onTriggerEnterWith}"))
+            if (other.CompareTag($"{_onTriggerEnterWithTag}") && _canBeBuffed)
             {
                 StartCoroutine(PowerupSequence(playerController));
             }
@@ -27,10 +28,12 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
 
         private IEnumerator PowerupSequence(PlayerController playerController)
         {
+            _canBeBuffed = false;
             //Disable components
             if (_buffOnlyOnce)
             {
                 _spriteIdle.SetActive(false);
+                _spriteActivated.SetActive(false);
                 _colliderToDisable.enabled = false;
             }
             else
@@ -63,6 +66,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
             {
                 Destroy(gameObject);
             }
+
+            _canBeBuffed = true;
         }
 
         private void ActivatePowerup(PlayerController playerController)

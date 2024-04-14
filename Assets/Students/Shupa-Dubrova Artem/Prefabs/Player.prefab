@@ -356,7 +356,7 @@ MonoBehaviour:
   _spriteIdle: {fileID: 3238151210313245227}
   _spriteJump: {fileID: 5037044672223758986}
   _playerSpeed: 5
-  _jumpPower: 12
+  _jumpPower: 13
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 128

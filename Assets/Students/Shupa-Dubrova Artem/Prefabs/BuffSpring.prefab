@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 200
   m_Sprite: {fileID: 21300000, guid: 710a74a35a1664443b5692efd4e6827a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -293,9 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e70e67cf7bc31448d63f2ecfc8957f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpIncreaseAmount: 12
+  _jumpIncreaseAmount: 10
   _powerupDuration: 0.3
-  _onTriggerEnterWith: Player
+  _onTriggerEnterWithTag: Player
   _buffOnlyOnce: 0
   _spriteIdle: {fileID: 3474684933148471106}
   _spriteActivated: {fileID: 2286882407838089409}

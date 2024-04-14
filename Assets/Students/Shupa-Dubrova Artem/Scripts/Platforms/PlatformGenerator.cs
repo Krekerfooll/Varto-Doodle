@@ -83,8 +83,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
             var addOffset = _setOffsetY * -1;
             
             var calculateChance = Random.Range(1, 101);
-
-            if (calculateChance <= _platformInteractiveChance)
+            
+            if (calculateChance <= _platformInteractiveChance) //if interactive platform
             {
                 for (int row = 0; row < platformsToSpawnCount; row++)
                 {

@@ -199,6 +199,9 @@ MonoBehaviour:
   _spawnPoint: {fileID: 6115504144677689647}
   _prefabsVariants:
   - {fileID: 7838726208683138031, guid: 557c636864c71d14d8da71ef50d548b9, type: 3}
+  - {fileID: 7838726208683138031, guid: 557c636864c71d14d8da71ef50d548b9, type: 3}
+  - {fileID: 7838726208683138031, guid: 557c636864c71d14d8da71ef50d548b9, type: 3}
+  - {fileID: 6976917310316161160, guid: 4aa97840ac7a75047a4434c91c4e2bc2, type: 3}
   _chanceToSpawnObject: 15
 --- !u!1 &5142005368654487936
 GameObject:

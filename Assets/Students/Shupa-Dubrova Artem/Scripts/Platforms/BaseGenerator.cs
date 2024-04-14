@@ -13,7 +13,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
             InitGenerator();
         }
 
-        public void Update()
+        private void Update()
         {
             if (IsCanSpawnPlatforms())
             {
