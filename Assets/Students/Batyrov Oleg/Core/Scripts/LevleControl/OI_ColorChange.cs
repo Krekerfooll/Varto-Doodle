@@ -1,14 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OIMOD.Core.GameMech
+namespace OIMOD.Core.Component
 {
     public class OI_ColorChange : OI_InputManager
     {
         [Header("Colorized Targets Setup")]
         [SerializeField] public List<SpriteRenderer> layerToChangeColor;
         [SerializeField] private GameObject _platformHolder;
-        [SerializeField] OI_MoveManager player;
         [SerializeField] private bool _colorChangeOn;
         [Space]
         [Header("Color Pallete Setup")]

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace OIMOD.Core.GameMech
+namespace OIMOD.Core.Component
 {
     public class OI_InputManager : MonoBehaviour
     {
