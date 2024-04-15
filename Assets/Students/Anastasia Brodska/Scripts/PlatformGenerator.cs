@@ -1,7 +1,7 @@
 
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
 public class PlatformsGenerator : GeneratorBase
 {
@@ -82,12 +82,21 @@ public class PlatformsGenerator : GeneratorBase
             var platformPositionX = Random.Range(_bounds.x, _bounds.y);
             var platformPosition = new Vector3(platformPositionX, platformPositionY, transform.position.z);
 
-            var randomPlatform = _platformPrefabVariants[Random.Range(0, _platformPrefabVariants.Count)];
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(platformPosition, Vector2.one * 0.5f, 0);
 
-            var spawnedPlatform = Instantiate(randomPlatform, platformPosition, Quaternion.identity, this.transform);
-            spawnedPlatform.Init(_target);
+            if (colliders.Length == 0)
+            {
+                var randomPlatform = _platformPrefabVariants[Random.Range(0, _platformPrefabVariants.Count)];
+                var spawnedPlatform = Instantiate(randomPlatform, platformPosition, Quaternion.identity, this.transform);
+                spawnedPlatform.Init(_target);
+                SpawnedPlatforms.Add(spawnedPlatform);
+            }
+            else
+            {
 
-            SpawnedPlatforms.Add(spawnedPlatform);
+                Debug.Log("Collisions detected, trying another position...");
+                i--;
+            }
         }
 
         _groupsPlatformsCount.Enqueue(platformsToSpawnCount);
