@@ -1,9 +1,8 @@
-using OIMOD.Core.Component;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace OIMOD.Core.GameMech
+namespace OIMOD.Core.Component
 {
     public class OI_PlatformGenerator : MonoBehaviour
     {

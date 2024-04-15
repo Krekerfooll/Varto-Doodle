@@ -117,8 +117,8 @@ GameObject:
   - component: {fileID: 5184824536964231267}
   - component: {fileID: 3230915427319088392}
   - component: {fileID: 4014532898975349241}
-  - component: {fileID: 7771775433444443458}
   - component: {fileID: 2454646544947728545}
+  - component: {fileID: 7771775433444443458}
   - component: {fileID: 4406624287880200616}
   - component: {fileID: 7542381846629957821}
   - component: {fileID: 8952636041854791003}
@@ -206,13 +206,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _platformCollider: {fileID: 3230915427319088392}
-  _playerInstance: {fileID: 0}
-  _destroyBorder: {fileID: 0}
-  _init: 0
   _checkDestroyPosition: {fileID: 2454646544947728545}
-  _checkTargetPosition: {fileID: 7771775433444443458}
-  _checkOnTriggerEnter: {fileID: 3292086854122207967}
+  _platformSpawnCollectable: {fileID: 0}
+  _checkTargetPositionY: {fileID: 7771775433444443458}
+  _checkOnCollisionEnter: []
+  _checkOnTriggerEnterUpwards:
+  - {fileID: 3292086854122207967}
   _destroyAction: {fileID: 5499937316374004633}
+--- !u!114 &2454646544947728545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614500075941966269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f066ca0038975a7478cf60c8b6e99293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetToDestroyTransform: {fileID: 5184824536964231267}
+  _targetDestroyAtTransform: {fileID: 0}
+  _onDestroyAction:
+  - {fileID: 8952636041854791003}
+  delay: 0
 --- !u!114 &7771775433444443458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,22 +248,7 @@ MonoBehaviour:
   - {fileID: 4406624287880200616}
   _bIsHigherActions:
   - {fileID: 7542381846629957821}
---- !u!114 &2454646544947728545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6614500075941966269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f066ca0038975a7478cf60c8b6e99293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetToDestroyTransform: {fileID: 5184824536964231267}
-  _targetDestroyAtTransform: {fileID: 0}
-  _onDestroyAction:
-  - {fileID: 8952636041854791003}
+  delay: 0
 --- !u!114 &4406624287880200616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +355,7 @@ MonoBehaviour:
   _targetObject: {fileID: 0}
   _onTriggerActions:
   - {fileID: 5499937316374004633}
+  delay: 0
 --- !u!114 &5499937316374004633
 MonoBehaviour:
   m_ObjectHideFlags: 0

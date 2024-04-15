@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace OIMOD.Core.Component
 {
-    public class OI_CheckOnTriggerEnter : MonoBehaviour
+    public class OI_CheckOnTriggerEnterUpwards : MonoBehaviour
     {
         [SerializeField] public GameObject _targetObject;
         [SerializeField] private List<OI_ActionBase> _onTriggerActions;
@@ -14,7 +14,9 @@ namespace OIMOD.Core.Component
             if (_targetObject == null) return;
 
             var targetCollision = _targetObject.GetComponent<Collider2D>();
-            if (target == targetCollision)
+            var targetVelocity = _targetObject.GetComponent<Rigidbody2D>().velocity.y;
+
+            if ((target == targetCollision) && (targetVelocity <= 0.5f))
             {
                 foreach (var action in _onTriggerActions)
                 {

@@ -25,6 +25,8 @@ namespace OIMOD.Core.Component
         [Space]
         [Header("Level Data")]
         [SerializeField] public int gameScore;
+        [SerializeField] public int hightScore;
+        [SerializeField] public int bonusScore;
         [Space]
         [SerializeField] public GameObject levelBorderLeft;
         [SerializeField] public GameObject levelBorderRight;
@@ -35,6 +37,7 @@ namespace OIMOD.Core.Component
         [Header("Platform Generator")]
         [SerializeField] public Transform spawnPosition;
         [SerializeField] public GameObject spawnPlaceholder;
+        [SerializeField] public GameObject collectablePlaceholder;
 
 
         private void Awake()

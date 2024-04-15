@@ -10,8 +10,10 @@ namespace OIMOD.Core.Component
             if (gameData.playerInstance == null) return;
 
             var playerPosY = gameData.playerInstance.transform.position.y;
-            if (playerPosY >= gameData.gameScore)
-                gameData.gameScore = (int)playerPosY;
+            if (playerPosY >= gameData.hightScore)
+                gameData.hightScore = (int)playerPosY;
+
+            gameData.gameScore = gameData.hightScore + gameData.bonusScore;
         }
     }
 }

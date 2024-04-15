@@ -106,6 +106,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &3068891480682832089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2701331603832674552}
+  m_Layer: 7
+  m_Name: SpawnCollectable
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2701331603832674552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3068891480682832089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5184824536964231267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6614500075941966269
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,8 +148,9 @@ GameObject:
   - component: {fileID: 5184824536964231267}
   - component: {fileID: 3230915427319088392}
   - component: {fileID: 2986190560092719688}
-  - component: {fileID: 7771775433444443458}
   - component: {fileID: 2454646544947728545}
+  - component: {fileID: 7771775433444443458}
+  - component: {fileID: 4266255915400321523}
   - component: {fileID: 4406624287880200616}
   - component: {fileID: 7542381846629957821}
   - component: {fileID: 8952636041854791003}
@@ -143,6 +175,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3571788264198901330}
+  - {fileID: 2701331603832674552}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3230915427319088392
@@ -203,12 +236,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _platformCollider: {fileID: 3230915427319088392}
-  _playerInstance: {fileID: 0}
-  _destroyBorder: {fileID: 0}
-  ThisPlatformIsGood: 1
-  _init: 0
   _checkDestroyPosition: {fileID: 2454646544947728545}
-  _checkTargetPosition: {fileID: 7771775433444443458}
+  _platformSpawnCollectable: {fileID: 4266255915400321523}
+  _checkTargetPositionY: {fileID: 7771775433444443458}
+  _checkOnCollisionEnter: []
+  _checkOnTriggerEnterUpwards: []
+--- !u!114 &2454646544947728545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614500075941966269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f066ca0038975a7478cf60c8b6e99293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetToDestroyTransform: {fileID: 5184824536964231267}
+  _targetDestroyAtTransform: {fileID: 0}
+  _onDestroyAction:
+  - {fileID: 8952636041854791003}
+  delay: 0
 --- !u!114 &7771775433444443458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +276,8 @@ MonoBehaviour:
   - {fileID: 4406624287880200616}
   _bIsHigherActions:
   - {fileID: 7542381846629957821}
---- !u!114 &2454646544947728545
+  delay: 0
+--- !u!114 &4266255915400321523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,13 +286,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6614500075941966269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f066ca0038975a7478cf60c8b6e99293, type: 3}
+  m_Script: {fileID: 11500000, guid: 785ceb6ad495c934484e34311d6a3353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetToDestroyTransform: {fileID: 5184824536964231267}
-  _targetDestroyAtTransform: {fileID: 0}
-  _onDestroyAction:
-  - {fileID: 8952636041854791003}
+  _executeOnAwake: 0
+  _executeOnce: 1
+  gameData: {fileID: 0}
+  _spawnObject:
+  - {fileID: 881137061805068212, guid: 2cc2156afa50b334c864a278e6329383, type: 3}
+  _spawnPos: {fileID: 2701331603832674552}
+  _spawnRate: 5
 --- !u!114 &4406624287880200616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _executeOnAwake: 0
-  _executeOnce: 0
+  _executeOnce: 1
   _targetToDestroy: {fileID: 6614500075941966269}
   _delay: 0
 --- !u!1 &8635734551897515926

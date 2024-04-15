@@ -117,8 +117,9 @@ GameObject:
   - component: {fileID: 5184824536964231267}
   - component: {fileID: 3230915427319088392}
   - component: {fileID: 6514794132258174944}
-  - component: {fileID: 7316943023941110722}
   - component: {fileID: 3460400147541142110}
+  - component: {fileID: 1164572238103912392}
+  - component: {fileID: 7316943023941110722}
   - component: {fileID: 6027354083838649294}
   - component: {fileID: 551419644764400358}
   - component: {fileID: 2930794706946072388}
@@ -143,6 +144,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6862025962245763452}
+  - {fileID: 2676893116697015595}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3230915427319088392
@@ -203,11 +205,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _platformCollider: {fileID: 3230915427319088392}
-  _playerInstance: {fileID: 0}
-  _destroyBorder: {fileID: 0}
-  _init: 0
   _checkDestroyPosition: {fileID: 3460400147541142110}
-  _checkTargetPosition: {fileID: 7316943023941110722}
+  _platformSpawnCollectable: {fileID: 1164572238103912392}
+  _checkTargetPositionY: {fileID: 7316943023941110722}
+  _checkOnCollisionEnter: []
+  _checkOnTriggerEnterUpwards: []
+--- !u!114 &3460400147541142110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614500075941966269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f066ca0038975a7478cf60c8b6e99293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetToDestroyTransform: {fileID: 5184824536964231267}
+  _targetDestroyAtTransform: {fileID: 0}
+  _onDestroyAction:
+  - {fileID: 2930794706946072388}
+  delay: 0
+--- !u!114 &1164572238103912392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614500075941966269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785ceb6ad495c934484e34311d6a3353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnce: 1
+  gameData: {fileID: 0}
+  _spawnObject:
+  - {fileID: 881137061805068212, guid: 2cc2156afa50b334c864a278e6329383, type: 3}
+  _spawnPos: {fileID: 2676893116697015595}
+  _spawnRate: 19
 --- !u!114 &7316943023941110722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,22 +264,7 @@ MonoBehaviour:
   - {fileID: 6027354083838649294}
   _bIsHigherActions:
   - {fileID: 551419644764400358}
---- !u!114 &3460400147541142110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6614500075941966269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f066ca0038975a7478cf60c8b6e99293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetToDestroyTransform: {fileID: 5184824536964231267}
-  _targetDestroyAtTransform: {fileID: 0}
-  _onDestroyAction:
-  - {fileID: 2930794706946072388}
+  delay: 0
 --- !u!114 &6027354083838649294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +311,37 @@ MonoBehaviour:
   _executeOnce: 0
   _targetToDestroy: {fileID: 6614500075941966269}
   _delay: 0
+--- !u!1 &8406369620480829189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2676893116697015595}
+  m_Layer: 7
+  m_Name: SpawnCollectable
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2676893116697015595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8406369620480829189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5184824536964231267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9017445741591265175
 GameObject:
   m_ObjectHideFlags: 0

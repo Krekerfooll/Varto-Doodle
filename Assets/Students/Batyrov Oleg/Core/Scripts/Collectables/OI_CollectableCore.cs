@@ -1,19 +1,19 @@
-using OIMOD.Core.Component;
 using UnityEngine;
 
-namespace OIMOD.Core.GameMech
+namespace OIMOD.Core.Component
 {
-    public abstract class OI_PlatformCore : MonoBehaviour
+    public abstract class OI_CollectableCore : MonoBehaviour
     {
         [Header("Base Setup")]
-        [SerializeField] protected Collider2D _platformCollider;
         [SerializeField] protected GameObject _playerInstance;
         [SerializeField] protected GameObject _destroyBorder;
         [Space]
         [Header("TestOnly")]
         [SerializeField] protected bool _init;
         [Header("Scripts Setup")]
+        [SerializeField] public OI_GameData _gameData;
         [SerializeField] protected OI_CheckTargetDestroyPosition _checkDestroyPosition;
+        [SerializeField] protected OI_CheckOnTriggerEnter _checkOnTriggerEnter;
 
         public virtual void Init(OI_GameData gameData)
         {
@@ -21,9 +21,10 @@ namespace OIMOD.Core.GameMech
             _destroyBorder = gameData.levelBorderDown;
 
             _checkDestroyPosition._targetDestroyAtTransform = gameData.levelBorderDown.transform;
+            _checkOnTriggerEnter._targetObject = gameData.playerInstance;
+            _gameData = gameData;
 
             _init = true;
         }
     }
 }
-
