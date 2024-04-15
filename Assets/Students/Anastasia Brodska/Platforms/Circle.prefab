@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2752720472368896374}
   - component: {fileID: -6463171342775561903}
   - component: {fileID: -6884644488786372746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,5 +167,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _destructionType: 0
-  _objectToDestroy: {fileID: 0}
+  _objectToDestroy: {fileID: 1888729581944456538}
   _delay: 0.07
