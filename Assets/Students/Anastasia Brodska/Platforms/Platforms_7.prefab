@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 765702029845309859}
   - component: {fileID: 385012262378573418}
   - component: {fileID: 7600648323269748811}
+  - component: {fileID: -1236721899268455154}
+  - component: {fileID: -6010889553571420634}
   m_Layer: 7
   m_Name: Platforms_7
   m_TagString: Platform
@@ -33,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 285188987772650252}
+  - {fileID: 1286229708298416552}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &765702029845309859
@@ -76,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 500
-  m_Sprite: {fileID: 21300000, guid: e2f16101dc75518419c685dc89fc409f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d3c816e6da333cc409579ce963764e77, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129,8 +132,48 @@ MonoBehaviour:
   _target: {fileID: 0}
   _collider: {fileID: 2513908524000497426}
   _staysActive: 1
-  _executeOnCollisionActivated: []
-  _executeOnCollisionDeactivated: []
+  _executeOnCollisionActivated:
+  - {fileID: -1236721899268455154}
+  _executeOnCollisionDeactivated:
+  - {fileID: -6010889553571420634}
+--- !u!114 &-1236721899268455154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765702029866487219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc59d5f8aaa79024b94017d8a75ece68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 0
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 0
+  _objectToChangeColor: {fileID: 765702029845309859}
+  _color: {r: 0.6792453, g: 0.27233893, b: 0.46957564, a: 1}
+--- !u!114 &-6010889553571420634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765702029866487219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc59d5f8aaa79024b94017d8a75ece68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 0
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 0
+  _objectToChangeColor: {fileID: 765702029845309859}
+  _color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2513908524000497426
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,3 +251,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.17, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &3555518604305580300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286229708298416552}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1286229708298416552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555518604305580300}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.04, y: 1.25, z: 0}
+  m_LocalScale: {x: 7.1428576, y: 3.2258067, z: 7.1428576}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 765702029866424145}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

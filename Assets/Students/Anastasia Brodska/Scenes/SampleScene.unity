@@ -337,10 +337,10 @@ MonoBehaviour:
   _platformPrefabVariants:
   - {fileID: 7600648323269748811, guid: a92b8245cc7e3204ea341101fdcb55dd, type: 3}
   - {fileID: -7073657891733254276, guid: 0a6f281b40155cf4197ecb4486b7c025, type: 3}
-  _platformsSpawnedPerStepCount: {x: 1, y: 3}
-  _stepsCountToSpawn: 9
+  _platformsSpawnedPerStepCount: {x: 1, y: 2}
+  _stepsCountToSpawn: 6
   _stepsCountToDelete: 4
-  _stepHeight: 0.7
+  _stepHeight: 1
   _bounds: {x: -2.2, y: 2.2}
 --- !u!4 &1238238922
 Transform:
@@ -351,7 +351,7 @@ Transform:
   m_GameObject: {fileID: 1238238920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.77821654, y: 1.2121695, z: -0.022503594}
+  m_LocalPosition: {x: 0.74, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -458,7 +458,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4818593569052095565, guid: 08fb3fe51686bc7469057470513da3cc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -685,8 +686,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 500
-  m_Sprite: {fileID: 21300000, guid: e2f16101dc75518419c685dc89fc409f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d3c816e6da333cc409579ce963764e77, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
