@@ -93,8 +93,6 @@ public class PlatformsGenerator : GeneratorBase
             }
             else
             {
-
-                Debug.Log("Collisions detected, trying another position...");
                 i--;
             }
         }
