@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 5181835172149153946}
   - component: {fileID: 1089764504725929912}
   - component: {fileID: 354865164499975945}
+  - component: {fileID: 8261847185333746608}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -214,9 +215,26 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _backgrounds:
-  - {fileID: 5681343039926764162, guid: 629ffd7ffa475144bbfe2b9315fcd3a5, type: 3}
-  - {fileID: 9151981645342297111, guid: f0ef9120c1d239a4f829ce60c9814a64, type: 3}
-  - {fileID: 9070724939715111943, guid: c740878541ee4864b97459f291528213, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &8261847185333746608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3884129518095177118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23870afd5db951f4eb70813e90890d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onTriggerEnterWith:
+    serializedVersion: 2
+    m_Bits: 512
+  _color: {r: 0.74509805, g: 0, b: 0, a: 0.88235295}
+  _objectToChangeColor: {fileID: 6708946031683280451}
 --- !u!1 &6402805959390146814
 GameObject:
   m_ObjectHideFlags: 0

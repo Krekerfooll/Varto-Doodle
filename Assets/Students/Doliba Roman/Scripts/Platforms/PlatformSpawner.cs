@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace RomanDoliba.Platform
 {
-    public class PlatformSpawner : MonoBehaviour
+    public class PlatformSpawner : SpawnerBase
     {
         [SerializeField] private Transform _platformTarget;
         [SerializeField] private List<Platform> _platformsTypes;
@@ -17,7 +17,7 @@ namespace RomanDoliba.Platform
         private float _lastPlatformsSpawnedPosition;
         private float _lastPlatformsDeletedPosition;
 
-        private void Awake()
+        protected override void SpawnOnAwake()
         {
             _spawnedPlatforms = new Queue<Platform[]>();
 
@@ -28,16 +28,23 @@ namespace RomanDoliba.Platform
             }
         }
 
-        private void Update()
+        protected override bool CanSpawnPlatforms()
         {
-            if (_platformTarget.position.y - _lastPlatformsSpawnedPosition > _stepHeight)
-            {
-                SpawnPlatform(_stepsToSpawn);
-                _lastPlatformsSpawnedPosition += _stepHeight;
-            }
-            if (_platformTarget.position.y - _lastPlatformsDeletedPosition > _stepHeight * _stepsToDelete)
-            {
-                var platformGroupToDelete = _spawnedPlatforms.Dequeue();
+            return _platformTarget.position.y - _lastPlatformsSpawnedPosition > _stepHeight;
+        }
+        protected override void SpawnPlatforms()
+        {
+            SpawnPlatform(_stepsToSpawn);
+            _lastPlatformsSpawnedPosition += _stepHeight;
+        }
+
+        protected override bool CanDeletePlatforms()
+        {
+            return _platformTarget.position.y - _lastPlatformsDeletedPosition > _stepHeight * _stepsToDelete;
+        }
+        protected override void DeletePlatforms()
+        {
+            var platformGroupToDelete = _spawnedPlatforms.Dequeue();
                 for (int i = 0; i < platformGroupToDelete.Length; i++)
                 {
                     if (platformGroupToDelete[i] && platformGroupToDelete[i].gameObject)
@@ -47,9 +54,8 @@ namespace RomanDoliba.Platform
                 }
 
                 _lastPlatformsDeletedPosition += _stepHeight;
-            }
         }
-
+        
         private void SpawnPlatform(int stepsCount)
         {
             var platformPositionY = 0f;

@@ -1,12 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RomanDoliba.Utils
 {
-    public class PlayerKillOnTrigger : OnTriggerAction
+    public class DestroyOnTrigger : OnTriggerAction
     {
         [SerializeField] private float _delay;
         [SerializeField] private bool _destroyItself;
-        
+                
         private void Destroy()
         {
             if (_destroyItself)
@@ -18,6 +19,7 @@ namespace RomanDoliba.Utils
                 Destroy(LastCollider.gameObject, _delay);
             }
         }
+
         protected override void Execute()
         {
             Destroy();

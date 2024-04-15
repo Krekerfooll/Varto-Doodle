@@ -494,10 +494,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 155727660913778784, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
-      propertyPath: _objectToChangeColor
-      value: 
-      objectReference: {fileID: 1523463990}
     - target: {fileID: 493325835533915022, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
       propertyPath: _target
       value: 
@@ -505,6 +501,10 @@ PrefabInstance:
     - target: {fileID: 7630703345935957964, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
       propertyPath: m_Name
       value: FirePlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630703345935957964, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7936124550872214876, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
       propertyPath: m_LocalPosition.x
@@ -594,38 +594,11 @@ Transform:
   - {fileID: 1793138053}
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1523463990 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6708946031683280451, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
-  m_PrefabInstance: {fileID: 807572157025439466}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1530752211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7337926044907892510, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
   m_PrefabInstance: {fileID: 807572157025439466}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1720346915 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3884129518095177118, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
-  m_PrefabInstance: {fileID: 807572157025439466}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1720346922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720346915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23870afd5db951f4eb70813e90890d4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onTriggerEnterWith:
-    serializedVersion: 2
-    m_Bits: 512
-  _color: {r: 0.74509805, g: 0, b: 0, a: 0.88235295}
-  _objectToChangeColor: {fileID: 1523463990}
 --- !u!1 &1793138052
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,13 +926,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4855059192210500893, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855059192210500893, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181835172149153946, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: _jumpPower
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181835172149153946, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      propertyPath: _moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3884129518095177118, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1720346922}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
 --- !u!4 &1153717566287563761
 Transform:

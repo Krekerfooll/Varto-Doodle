@@ -7,18 +7,22 @@ namespace RomanDoliba.Utils
         [SerializeField] private Color _color;
         [SerializeField] private Renderer _objectToChangeColor;
 
-        private void ChangeColorOn()
+        public void ChangeColorOn()
+        {
+            ChangeColorOn(_color);
+        }
+
+        public void ChangeColorOn(Color color)
         {
             if(_objectToChangeColor is SpriteRenderer spriteRenderer)
             {
-                spriteRenderer.color = _color;
+                spriteRenderer.color = color;
             }
             else
             {
-                _objectToChangeColor.material.color = _color;
+                _objectToChangeColor.material.color = color;
             }
         }
-        
         
         protected override void Execute()
         {
