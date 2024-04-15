@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 5953329857074231441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.184, z: 0}
-  m_LocalScale: {x: 0.67, y: 0.67, z: 0.67}
+  m_LocalPosition: {x: 0, y: -0.288, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1925700682895309058}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 108
   m_Sprite: {fileID: 1964829231, guid: 501a09ced8cb1429c9ce9a7c042bc222, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 2529327328244339840}
   - component: {fileID: 1555681123362922651}
   - component: {fileID: 3611729353034226183}
-  - component: {fileID: 9014025296205478355}
+  - component: {fileID: 5854809669657835939}
   m_Layer: 7
   m_Name: Platform1x2DamagedCollider
   m_TagString: Untagged
@@ -235,7 +235,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.54, y: 0.15}
+  m_Size: {x: 2.28, y: 0.15}
   m_EdgeRadius: 0
 --- !u!251 &3611729353034226183
 PlatformEffector2D:
@@ -256,7 +256,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &9014025296205478355
+--- !u!114 &5854809669657835939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9030885158142338687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 655eb93228900234f8ecd8ac20c3780d, type: 3}
+  m_Script: {fileID: 11500000, guid: 222d193fd0ef2c24d864b47dd16d1148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _executeOnAwake: 0
@@ -273,6 +273,6 @@ MonoBehaviour:
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 1
-  _destructionType: 0
-  _objectToDestroy: {fileID: 6381792462824913334}
+  _gameObject: {fileID: 6381792462824913334}
+  _animator: {fileID: 1874814255224171493}
   _delay: 0.4
