@@ -3,13 +3,12 @@ using UnityEngine;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts.Player
 {
-    public class BuffSpring : BuffBase
+    public class BuffStar : BuffBase
     {
         [SerializeField] private float _jumpBuffAmount;
         [SerializeField] private float _powerupDuration;
         [SerializeField] private string _onTriggerEnterWithTag;
-        [SerializeField] private GameObject _spriteIdle;
-        [SerializeField] private GameObject _spriteActivated;
+        [SerializeField] private GameObject _spriteToDelete;
         [SerializeField] private Collider2D _colliderToDisable;
 
         private PlayerController _playerController;
@@ -48,17 +47,14 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
         
         private IEnumerator BuffSequence()
         {
-
             _canBeBuffed = false;
             _buffIsOver = false;
-            
-            _spriteIdle.SetActive(false);
-            _spriteActivated.SetActive(true);
+            _spriteToDelete.SetActive(false);
+            _colliderToDisable.enabled = false;
             
             yield return new WaitForSeconds(_powerupDuration);
             
-            _spriteIdle.SetActive(true);
-            _spriteActivated.SetActive(false);
+            Destroy(gameObject);
 
             _buffIsOver = true;
         }

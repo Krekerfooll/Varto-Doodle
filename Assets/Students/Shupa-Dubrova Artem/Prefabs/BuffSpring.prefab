@@ -254,8 +254,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8507273065588503638}
-  - component: {fileID: 6281756747998585180}
   - component: {fileID: 7760176255300376707}
+  - component: {fileID: 1621261529611328220}
   m_Layer: 8
   m_Name: BuffSpring
   m_TagString: Spring
@@ -281,25 +281,6 @@ Transform:
   - {fileID: 4998018163775176766}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6281756747998585180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7838726208683138031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e70e67cf7bc31448d63f2ecfc8957f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _jumpIncreaseAmount: 10
-  _powerupDuration: 0.3
-  _onTriggerEnterWithTag: Player
-  _buffOnlyOnce: 0
-  _spriteIdle: {fileID: 3474684933148471106}
-  _spriteActivated: {fileID: 2286882407838089409}
-  _colliderToDisable: {fileID: 2193276307648273800}
 --- !u!50 &7760176255300376707
 Rigidbody2D:
   serializedVersion: 4
@@ -327,3 +308,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1621261529611328220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838726208683138031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7937d258e073ed44b972aa7ec75c824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpBuffAmount: 20
+  _powerupDuration: 0.5
+  _onTriggerEnterWithTag: Player
+  _spriteIdle: {fileID: 3474684933148471106}
+  _spriteActivated: {fileID: 2286882407838089409}
+  _colliderToDisable: {fileID: 2193276307648273800}

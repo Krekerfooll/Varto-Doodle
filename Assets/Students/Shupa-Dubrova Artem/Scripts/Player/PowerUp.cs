@@ -76,7 +76,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
         }
         private void DeactivatePowerup(PlayerController playerController)
         {
-            playerController.SetJumpPower(-_jumpIncreaseAmount);
+            playerController.SetJumpPower(0);
         }
 
     }

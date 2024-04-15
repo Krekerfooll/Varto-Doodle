@@ -4,7 +4,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
 {
     public abstract class BuffBase : MonoBehaviour
     {
-        private void FixedUpdate()
+        private void Update()
         {
             if (IsCanBeBuffed())
             {

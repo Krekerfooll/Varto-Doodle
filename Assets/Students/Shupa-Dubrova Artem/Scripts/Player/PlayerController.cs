@@ -5,8 +5,9 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D _player;
-        [SerializeField] private GameObject _spriteIdle;
-        [SerializeField] private GameObject _spriteJump;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private Color _colorWhenBuffed;
+        [SerializeField] private Animator _animator;
         [SerializeField] private float _playerSpeed;
         [SerializeField] private float _jumpPower;
         [SerializeField] private LayerMask _onCollisionEnterWith;
@@ -14,6 +15,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
         private Vector3 _lookLeft;
         private Vector3 _lookRight;
 
+        private float _currentJumpPower;
         private float _moveDirection;
         private float _transformX;
         private bool _setJump;
@@ -21,6 +23,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
         
         private void Start()
         {
+            _currentJumpPower = _jumpPower;
             _lookLeft = _player.transform.localScale;
             _lookRight = new Vector3(-_lookLeft.x, _lookLeft.y, _lookLeft.z);
         }
@@ -60,7 +63,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
             if (_setJump && _player.velocity.y <= 0f)
             {
                 Vector2 velocity = _player.velocity;
-                velocity.y = _jumpPower;
+                velocity.y = _currentJumpPower;
                 _player.velocity = velocity;
                 _setJump = false;
             }
@@ -80,13 +83,22 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
         {
             var isSlowEnoughToIdle = _player.velocity.y <= _jumpPower / 3;
             
-            _spriteIdle.SetActive(isSlowEnoughToIdle);
-            _spriteJump.SetActive(!isSlowEnoughToIdle);
+            _animator.SetBool("isJumping", isSlowEnoughToIdle);
+            _animator.SetBool("isJumping", !isSlowEnoughToIdle);
         }
 
-        public void SetJumpPower(float newJumpPower)
+        public void SetJumpPower(float buffJumpPower)
         {
-            _jumpPower += newJumpPower;
+            if (buffJumpPower > 0 && _currentJumpPower <= _jumpPower)
+            {
+                _currentJumpPower = buffJumpPower;
+                _spriteRenderer.color = _colorWhenBuffed;
+            }
+            else
+            {
+                _currentJumpPower = _jumpPower;
+                _spriteRenderer.color = Color.white;
+            }
         }
         
     }

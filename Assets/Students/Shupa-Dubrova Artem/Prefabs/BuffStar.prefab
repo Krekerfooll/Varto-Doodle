@@ -183,7 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7499408729145386639}
   - component: {fileID: 1829532662222637711}
-  - component: {fileID: 2569215609803057862}
+  - component: {fileID: 7422277664164734475}
   m_Layer: 8
   m_Name: BuffStar
   m_TagString: RainbowStar
@@ -235,7 +235,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2569215609803057862
+--- !u!114 &7422277664164734475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,13 +244,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6976917310316161160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3e70e67cf7bc31448d63f2ecfc8957f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a8ec6bb3b5d1469d9f1c6504097c2f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpIncreaseAmount: 0
-  _powerupDuration: 0
+  _jumpBuffAmount: 20
+  _powerupDuration: 5
+  _buffOnlyOnce: 0
   _onTriggerEnterWithTag: Player
-  _buffOnlyOnce: 1
-  _spriteIdle: {fileID: 6291128312380715831}
-  _spriteActivated: {fileID: 0}
+  _spriteToDelete: {fileID: 6291128312380715831}
   _colliderToDisable: {fileID: 4864109346220892793}
