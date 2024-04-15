@@ -493,11 +493,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2908165083591844885, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: _colorWhenBuffed.g
-      value: 0.504717
+      value: 0.87514293
       objectReference: {fileID: 0}
     - target: {fileID: 2908165083591844885, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: _colorWhenBuffed.r
-      value: 0.76051223
+      value: 0.5058824
       objectReference: {fileID: 0}
     - target: {fileID: 3238151210313245227, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
       propertyPath: m_TagString

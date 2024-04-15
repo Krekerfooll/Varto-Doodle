@@ -13,33 +13,29 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
 
         private PlayerController _playerController;
         private bool _canBeBuffed;
-        private bool _buffIsOver;
+        private bool _buffIsOver = true;
         
-        protected override bool IsCanBeBuffed()
-        {
-            return _canBeBuffed;
-        }
-
-        protected override bool IsBuffOver()
-        {
-            return _buffIsOver;
-        }
-
         protected override void ApplyBuff()
         {
-            _playerController.SetJumpPower(_jumpBuffAmount);
-            StartCoroutine(BuffSequence());
+            if (_canBeBuffed && _buffIsOver)
+            {
+                _playerController.SetJumpPower(_jumpBuffAmount);
+                StartCoroutine(BuffSequence());
+            }
         }
-
+        
         protected override void RemoveBuff()
         {
-            _playerController.SetJumpPower(0);
+            if (_buffIsOver)
+            {
+                _playerController.SetJumpPower(0);
+            }
         }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
             _playerController = other.gameObject.GetComponent<PlayerController>();
-            if (other.CompareTag($"{_onTriggerEnterWithTag}"))
+            if (other.CompareTag($"{_onTriggerEnterWithTag}") && _buffIsOver)
             {
                 _canBeBuffed = true;
             }

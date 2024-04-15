@@ -10,57 +10,44 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
         [SerializeField] private string _onTriggerEnterWithTag;
         [SerializeField] private GameObject _spriteIdle;
         [SerializeField] private GameObject _spriteActivated;
-        [SerializeField] private Collider2D _colliderToDisable;
 
         private PlayerController _playerController;
-        private bool _canBeBuffed;
-        private bool _buffIsOver;
-        
-        protected override bool IsCanBeBuffed()
-        {
-            return _canBeBuffed;
-        }
-
-        protected override bool IsBuffOver()
-        {
-            return _buffIsOver;
-        }
+        private bool _buffApplied;
 
         protected override void ApplyBuff()
         {
-            _playerController.SetJumpPower(_jumpBuffAmount);
-            StartCoroutine(BuffSequence());
+            return;
         }
 
         protected override void RemoveBuff()
         {
-            _playerController.SetJumpPower(0);
+            return;
         }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
             _playerController = other.gameObject.GetComponent<PlayerController>();
-            if (other.CompareTag($"{_onTriggerEnterWithTag}"))
+            if (other.CompareTag($"{_onTriggerEnterWithTag}") && !_buffApplied)
             {
-                _canBeBuffed = true;
+                StartCoroutine(BuffSequence(_playerController));
             }
         }
         
-        private IEnumerator BuffSequence()
+        private IEnumerator BuffSequence(PlayerController _playerController)
         {
-
-            _canBeBuffed = false;
-            _buffIsOver = false;
-            
+            _buffApplied = true;
             _spriteIdle.SetActive(false);
             _spriteActivated.SetActive(true);
             
+            _playerController.SetJumpPower(_jumpBuffAmount);
             yield return new WaitForSeconds(_powerupDuration);
+            _playerController.SetJumpPower(_jumpBuffAmount);
+            
             
             _spriteIdle.SetActive(true);
             _spriteActivated.SetActive(false);
 
-            _buffIsOver = true;
+            _buffApplied = false;
         }
     }
 }

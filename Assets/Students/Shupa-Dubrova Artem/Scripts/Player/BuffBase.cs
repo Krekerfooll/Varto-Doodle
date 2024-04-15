@@ -6,19 +6,10 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
     {
         private void Update()
         {
-            if (IsCanBeBuffed())
-            {
-                ApplyBuff();
-            }
-    
-            if (IsBuffOver())
-            {
-                RemoveBuff();
-            }
+            ApplyBuff();
+            RemoveBuff();
         }
 
-        protected abstract bool IsCanBeBuffed();
-        protected abstract bool IsBuffOver();
         protected abstract void ApplyBuff();
         protected abstract void RemoveBuff();
 
