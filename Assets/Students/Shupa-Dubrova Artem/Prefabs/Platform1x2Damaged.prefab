@@ -116,7 +116,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1925700682895309058}
   - component: {fileID: 8114691733109953909}
-  - component: {fileID: 243121013219226351}
   m_Layer: 7
   m_Name: Platform1x2Damaged
   m_TagString: Untagged
@@ -157,30 +156,8 @@ MonoBehaviour:
   _collider: {fileID: 9030885158142338687}
   _alwaysActive: 0
   _staysActive: 1
-  _executeOnCollisionActivated:
-  - {fileID: 0}
-  _executeOnCollisionDeactivated:
-  - {fileID: 0}
---- !u!114 &243121013219226351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6381792462824913334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 655eb93228900234f8ecd8ac20c3780d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _executeOnAwake: 0
-  _executeOnlyOnes: 1
-  _onCollisionEnterWith:
-    serializedVersion: 2
-    m_Bits: 1
-  _destructionType: 0
-  _objectToDestroy: {fileID: 6381792462824913334}
-  _delay: 0.4
+  _executeOnCollisionActivated: []
+  _executeOnCollisionDeactivated: []
 --- !u!1 &9030885158142338687
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +169,7 @@ GameObject:
   - component: {fileID: 2529327328244339840}
   - component: {fileID: 1555681123362922651}
   - component: {fileID: 3611729353034226183}
-  - component: {fileID: 1608182946242259376}
+  - component: {fileID: 9014025296205478355}
   m_Layer: 7
   m_Name: Platform1x2DamagedCollider
   m_TagString: Untagged
@@ -279,7 +256,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &1608182946242259376
+--- !u!114 &9014025296205478355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,4 +275,4 @@ MonoBehaviour:
     m_Bits: 1
   _destructionType: 0
   _objectToDestroy: {fileID: 6381792462824913334}
-  _delay: 0.3
+  _delay: 0.4
