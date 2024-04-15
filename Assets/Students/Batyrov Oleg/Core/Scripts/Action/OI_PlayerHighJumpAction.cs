@@ -10,7 +10,15 @@ namespace OIMOD.Core.Component
         protected override void ExecuteInternal()
         {
             var playerRb = _player.GetComponent<Rigidbody2D>();
-            playerRb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+            if (playerRb.velocity.y > 0)
+            {
+                playerRb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+            }
+            else if (playerRb.velocity.y < 0)
+            {
+                playerRb.AddForce(Vector2.up * (_jumpForce * 3), ForceMode2D.Impulse);
+            }
+
         }
     }
 }

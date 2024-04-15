@@ -9,6 +9,8 @@ namespace OIMOD.Core.Component
         private void Update() => BorderCheck();
         private void BorderCheck()
         {
+            if (gameData.playerInstance == null) return;
+
             var playerTransform = gameData.playerInstance.transform;
             var playerPos = gameData.playerInstance.transform.position;
             var borderLeft = gameData.levelBorderLeft.transform.position.x;

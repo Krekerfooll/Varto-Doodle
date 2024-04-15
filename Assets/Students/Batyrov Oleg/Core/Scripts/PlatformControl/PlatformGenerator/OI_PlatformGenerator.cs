@@ -46,7 +46,7 @@ namespace OIMOD.Core.GameMech
         private void Start() => SpawnPlatform();
         private void Update() 
         {
-            if (CanSpawn) SpawnPlatform();
+            if (gameData.playerInstance != null && CanSpawn) SpawnPlatform();
             CheckDifficulty();
         }
         private void SpawnPlatform() 
@@ -176,7 +176,7 @@ namespace OIMOD.Core.GameMech
                         platform.spawnRate = Random.Range(0, 70);
                         platform.stepsToSpawn = Random.Range(3, 11);
                     }
-                    else if (!platform.isDeadly && platform.isSpecial)
+                    else if (platform.isDeadly && !platform.isSpecial)
                     {
                         platform.spawnRate = Random.Range(0, 50);
                         platform.stepsToSpawn = Random.Range(2, 11);

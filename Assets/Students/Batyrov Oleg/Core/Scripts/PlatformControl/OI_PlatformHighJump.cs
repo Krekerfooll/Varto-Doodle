@@ -22,10 +22,6 @@ namespace OIMOD.Core.GameMech
             _playerJumpForce = gameData.playerJumpForce;
 
         }
-        private void OnTriggerEnter2D(Collider2D playerCollider) {
-            if (playerCollider.gameObject.tag == "Player")
-                _playerRb.AddForce(Vector2.up * _playerJumpForce, ForceMode2D.Impulse);
-        }
     }
 }
 

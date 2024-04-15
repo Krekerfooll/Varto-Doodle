@@ -22,6 +22,8 @@ namespace OIMOD.Core.Component
         }
         protected override void ExecuteInternal()
         {
+            if (_playerRb == null) return;
+
             _playerRb.velocity = new Vector2(inputManager.MoveInput * _speed, _playerRb.velocity.y);
             if (inputManager.MoveInput > 0) _playerRender.localScale = new Vector3(-1, 1, 1);
             else if (inputManager.MoveInput < 0) _playerRender.localScale = new Vector3(1, 1, 1);

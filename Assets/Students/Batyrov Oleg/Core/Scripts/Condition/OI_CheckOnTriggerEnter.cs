@@ -7,15 +7,19 @@ namespace OIMOD.Core.Component
     {
         [SerializeField] public GameObject _targetObject;
         [SerializeField] private List<OI_ActionBase> _onTriggerActions;
+        [SerializeField] private float delay;
 
         private void OnTriggerEnter2D(Collider2D target)
         {
+            if (_targetObject == null) return;
+
             var targetCollision = _targetObject.GetComponent<Collider2D>();
-            if (target == targetCollision)
+            var targetVelocity = _targetObject.GetComponent<Rigidbody2D>().velocity.y;
+            if ((target == targetCollision) && (targetVelocity <= 0.5f))
             {
                 foreach (var action in _onTriggerActions)
                 {
-                    action.Execute();
+                    action.Invoke("Execute",delay);
                 }
             }
         }

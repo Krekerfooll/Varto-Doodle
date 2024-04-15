@@ -14,7 +14,11 @@ namespace OIMOD.Core.Component
             _maxVelocity = gameData.playerMaxVelocity;
         }
         private void FixedUpdate() => SpeedLimit();
-        private void SpeedLimit() => _playerRb.velocity = Vector2.ClampMagnitude(gameData.playerRigidBody.velocity, _maxVelocity);
+        private void SpeedLimit() 
+        {
+            if (_playerRb == null) return;
+            _playerRb.velocity = Vector2.ClampMagnitude(gameData.playerRigidBody.velocity, _maxVelocity);
+        } 
     }
 }
 

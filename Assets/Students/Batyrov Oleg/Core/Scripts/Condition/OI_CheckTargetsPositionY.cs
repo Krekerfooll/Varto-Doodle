@@ -12,23 +12,27 @@ namespace OIMOD.Core.Component
         [SerializeField] private List<OI_ActionBase> _aIsHigherActions;
         [SerializeField] private List<OI_ActionBase> _bIsHigherActions;
 
+        [SerializeField] private float delay;
+
         private void Update()
         {
-            var targetA = _targetATransform.position.y;
-            var targetB = _targetBTransform.position.y;
+            if (_targetATransform == null || _targetBTransform == null) return;
+
+            float targetA = _targetATransform.position.y;
+            float targetB = _targetBTransform.position.y;
 
             if (targetA > targetB)
             {
                 foreach (var action in _aIsHigherActions)
                 {
-                    action.Execute();
+                    action.Invoke("Execute", delay);
                 }
             }
             else
             {
                 foreach (var action in _bIsHigherActions)
                 {
-                    action.Execute();
+                    action.Invoke("Execute", delay);
                 }
             }
         }

@@ -7,7 +7,8 @@ namespace OIMOD.Core.Component
         [SerializeField] private Collider2D _collider;
         protected override void ExecuteInternal() 
         {
-            _collider.enabled = false;
+            if (_collider != null) 
+                _collider.enabled = false;
         }
     }
 }

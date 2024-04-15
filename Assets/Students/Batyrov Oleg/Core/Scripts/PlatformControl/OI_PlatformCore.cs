@@ -10,7 +10,6 @@ namespace OIMOD.Core.GameMech
         [SerializeField] protected GameObject _playerInstance;
         [SerializeField] protected GameObject _destroyBorder;
         [Space]
-        [SerializeField] public bool ThisPlatformIsGood;
         [Header("TestOnly")]
         [SerializeField] protected bool _init;
         [Header("Scripts Setup")]

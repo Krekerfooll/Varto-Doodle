@@ -9,9 +9,12 @@ namespace OIMOD.Core.Component
         [SerializeField] public Transform _targetDestroyAtTransform;
 
         [SerializeField] private List<OI_ActionBase> _onDestroyAction;
+        [SerializeField] private float delay;
 
         private void Update()
         {
+            if (_targetToDestroyTransform == null || _targetDestroyAtTransform == null) return;
+
             var targetA = _targetToDestroyTransform.position.y;
             var targetDestroy = _targetDestroyAtTransform.position.y;
 
@@ -19,7 +22,7 @@ namespace OIMOD.Core.Component
             {
                 foreach (var action in _onDestroyAction)
                 {
-                    action.Execute();
+                    action.Invoke("Execute", delay);
                 }
             }
         }

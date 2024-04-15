@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace OIMOD.Core.GameMech
+namespace OIMOD.Core.Component
 {
     public class OI_FollowManager : MonoBehaviour
     {
@@ -14,6 +14,8 @@ namespace OIMOD.Core.GameMech
 
         void Update()
         {
+            if (_follower == null || _target == null) return;
+
             if (_stopOnHighestPosition)
             {
                 if (_follower.position.y <= _target.position.y)

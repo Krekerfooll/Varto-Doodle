@@ -16,6 +16,8 @@ namespace OIMOD.Core.Component
 
         private void Update()
         {
+            if (gameData.playerInstance == null) return;
+
             RayCheckGround();
             AnimationSwitch();
             if (_autoJumpOn && _activateAutoJump)
@@ -23,6 +25,8 @@ namespace OIMOD.Core.Component
         }
         protected override void ExecuteInternal()
         {
+            if (gameData.playerInstance == null) return;
+
             if (_autoJumpOn && !_activateAutoJump)
                 _activateAutoJump = true;
             else if (_autoJumpOn && _activateAutoJump)
