@@ -1,25 +1,23 @@
-using PVitaliy.Colors;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace PVitaliy.Platform
 {
-    public abstract class PlatformBase : MonoBehaviour // do NEVER destroy gameObject from here again
+    public class PlatformBase : MonoBehaviour // do NEVER destroy gameObject from here again
     {
+        [FormerlySerializedAs("onPlayerLanded")]
         [Header("Platform Base")]
-        [SerializeField] protected ColorTarget spriteColorController;
         [SerializeField] protected Collider2D _collider;
-        [SerializeField] private bool emitParticlesOnLanding = true;
         [SerializeField] private float duplicateChanceMultiplier = 1;
+        [SerializeField] private PlatformType type;
+        
         private bool _initialized;
         private Transform _collisionEnablingPoint;
         protected PlatformController Controller;
-        protected virtual bool ColliderEnabled => transform.position.y <= _collisionEnablingPoint.position.y;
-        
-        public Color TargetColor => spriteColorController.TargetColor;
-        public bool EmitParticlesOnLanding => emitParticlesOnLanding;
+        private bool ColliderEnabled => transform.position.y <= _collisionEnablingPoint.position.y;
         public float DuplicateChanceMultiplier => duplicateChanceMultiplier;
         public bool ReplaceWithNewWhenDestroyed { get; private set; }
-        public abstract PlatformType Type { get; }
+        public PlatformType Type => type;
 
         public void Init(PlatformController controller, bool replaceWithNew)
         {
@@ -30,21 +28,12 @@ namespace PVitaliy.Platform
             _initialized = true;
         }
 
-        private void Update()
-        {
-            if (!_initialized) return;
-            OnUpdate();
-        }
-
         private void FixedUpdate()
         {
             if (!_initialized) return;
             _collider.enabled = ColliderEnabled;
-            OnFixedUpdate();
         }
 
         protected virtual void AfterInit() {}
-        protected virtual void OnUpdate() {}
-        protected virtual void OnFixedUpdate() {}
     }
 }

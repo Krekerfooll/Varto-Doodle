@@ -71,6 +71,7 @@ namespace PVitaliy.Platform
             instance.Init(this, !isDuplicated);
             if (instance.transform.position.y > _highestPlatformPosition.y) _highestPlatformPosition = instance.transform.position;
             if (!isDuplicated) _nonDuplicatesCount++;
+            else instance.name += " D";
             _platformQueue.Enqueue(instance);
             return instance;
         }

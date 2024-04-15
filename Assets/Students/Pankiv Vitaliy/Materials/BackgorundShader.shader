@@ -32,8 +32,6 @@ Shader "Custom/BackgroundShader"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
             float _pixelationX;
             float _pixelationY;
             float _dithering;
@@ -52,8 +50,8 @@ Shader "Custom/BackgroundShader"
             {
                 const float2 pixelation = float2(_pixelationX, _pixelationY);
                 i.uv = floor(i.uv * pixelation);
-                i.uv.y += sign(sin(i.uv.x)) * _dithering / _pixelationX + sin(_Time * 20) * _dithering / _pixelationY;
-                i.uv.x += sign(cos(i.uv.y)) * _dithering / _pixelationY + cos(_Time * 10) * _dithering / _pixelationX;
+                i.uv.y += (sign(sin(i.uv.x)) + cos(i.uv.x)) * _dithering / _pixelationY;
+                i.uv.x += sign(cos(i.uv.y)) * _dithering / _pixelationX;
                 i.uv /= pixelation;
                 const fixed4 col = lerp(_colorBottom, _colorTop, i.uv.y * 1.1f);
                 return col;

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: StaticPlatformFactory
   m_EditorClassIdentifier: 
   platforms:
-  - {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
-  startingPlatform: {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
+  - {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
+  startingPlatform: {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
   verticalDistance: {x: 1.5, y: 3.5}
   horizontalDistance: {x: -2.3, y: 2.3}
   maxPlatformCount: 16
-  preferredPlatformsAmount: 8
+  preferredPlatformAmount: 6
   scoreMultiplier: 0.75
   duplicateChance: 0

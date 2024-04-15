@@ -95,10 +95,11 @@ GameObject:
   - component: {fileID: 6003521599115773545}
   - component: {fileID: 3574596129845011847}
   - component: {fileID: 7185634177256722214}
-  - component: {fileID: 8952298720305993626}
   - component: {fileID: 6749972681302654558}
   - component: {fileID: 125986340197201528}
-  - component: {fileID: 542717338107051117}
+  - component: {fileID: 5478645995520309443}
+  - component: {fileID: -8340029030092691041}
+  - component: {fileID: 105495845797583310}
   m_Layer: 7
   m_Name: FallingPlatform
   m_TagString: Untagged
@@ -181,7 +182,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06, y: 0}
+  m_Offset: {x: 0, y: -0.06}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -192,26 +193,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.37, y: 0.74}
+  m_Size: {x: 3.3, y: 0.65}
   m_EdgeRadius: 0
---- !u!114 &8952298720305993626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3301166121201772055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75f9d9a3c0957144ab67d1ea16073cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteColorController: {fileID: 542717338107051117}
-  _collider: {fileID: 7185634177256722214}
-  emitParticlesOnLanding: 0
-  duplicateChanceMultiplier: 1
-  breakingPS: {fileID: 125986340197201528}
-  bodyContainer: {fileID: 1002389476791419449}
 --- !u!199 &6749972681302654558
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -474,8 +457,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
       maxColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -5144,7 +5127,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &542717338107051117
+--- !u!114 &5478645995520309443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5153,8 +5136,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 3301166121201772055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
+  m_Script: {fileID: 11500000, guid: c894dd1c9f080e84da21a17360e8b83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interpolationPower: 0.15
-  mainRenderer: {fileID: 4301032210091029636}
+  _collider: {fileID: 7185634177256722214}
+  duplicateChanceMultiplier: 1
+  type: 1
+--- !u!114 &-8340029030092691041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301166121201772055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197fbfcaa397426f8efb81ba48cabc9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakingPS: {fileID: 125986340197201528}
+  viewContainer: {fileID: 1002389476791419449}
+  _collider: {fileID: 7185634177256722214}
+  secondsBeforeViewTurnOff: 0.3
+  secondsBeforeObjectTurnOff: 1
+--- !u!114 &105495845797583310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301166121201772055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6656d8bb2707242ab690ae1ce91c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnce: 1
+  actions:
+  - {fileID: -8340029030092691041}
+  collideWith:
+    serializedVersion: 2
+    m_Bits: 256

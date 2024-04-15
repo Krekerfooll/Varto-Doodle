@@ -11,10 +11,12 @@ GameObject:
   - component: {fileID: 5043924758013711008}
   - component: {fileID: 7694919085449789830}
   - component: {fileID: 4479954099015371379}
-  - component: {fileID: 5616287437761241186}
   - component: {fileID: 8467158450492191022}
   - component: {fileID: 4017620452205805161}
-  - component: {fileID: 1676282148481362208}
+  - component: {fileID: 7300417356805758911}
+  - component: {fileID: 4734005545066275416}
+  - component: {fileID: 2246947442882877912}
+  - component: {fileID: 3876433050920747474}
   m_Layer: 7
   m_Name: HorizontalMovingFallingPlatform
   m_TagString: Untagged
@@ -97,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06, y: 0}
+  m_Offset: {x: 0, y: -0.06}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -108,29 +110,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.37, y: 0.74}
+  m_Size: {x: 3.3, y: 0.65}
   m_EdgeRadius: 0
---- !u!114 &5616287437761241186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 982515712623186775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd047c7ba898b734aa56db2fe6aca902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteColorController: {fileID: 1676282148481362208}
-  _collider: {fileID: 4479954099015371379}
-  emitParticlesOnLanding: 0
-  duplicateChanceMultiplier: 0
-  minSpeed: 1
-  maxSpeed: 2
-  rigidBody: {fileID: 7694919085449789830}
-  breakingPS: {fileID: 4017620452205805161}
-  bodyContainer: {fileID: 2805780290839443070}
 --- !u!199 &8467158450492191022
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -393,8 +374,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
       maxColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -5063,7 +5044,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &1676282148481362208
+--- !u!114 &7300417356805758911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5072,11 +5053,62 @@ MonoBehaviour:
   m_GameObject: {fileID: 982515712623186775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3701c22a222a4a81b457d049201f9dd9, type: 3}
+  m_Script: {fileID: 11500000, guid: c894dd1c9f080e84da21a17360e8b83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interpolationPower: 0.15
-  mainRenderer: {fileID: 4860188318163345552}
+  _collider: {fileID: 4479954099015371379}
+  duplicateChanceMultiplier: 1
+  type: 3
+--- !u!114 &4734005545066275416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982515712623186775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15bbed20d0d03848a62d6980382c3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpeed: 1
+  maxSpeed: 2
+  rigidBody: {fileID: 7694919085449789830}
+--- !u!114 &2246947442882877912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982515712623186775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197fbfcaa397426f8efb81ba48cabc9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakingPS: {fileID: 4017620452205805161}
+  viewContainer: {fileID: 2805780290839443070}
+  _collider: {fileID: 4479954099015371379}
+  secondsBeforeViewTurnOff: 0.3
+  secondsBeforeObjectTurnOff: 1
+--- !u!114 &3876433050920747474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982515712623186775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6656d8bb2707242ab690ae1ce91c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnce: 1
+  actions:
+  - {fileID: 2246947442882877912}
+  collideWith:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &2805780290839443070
 GameObject:
   m_ObjectHideFlags: 0
