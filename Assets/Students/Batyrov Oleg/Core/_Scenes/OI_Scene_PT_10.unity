@@ -1714,14 +1714,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1654363706}
   - component: {fileID: 1654363708}
-  - component: {fileID: 1654363710}
   - component: {fileID: 1654363709}
-  - component: {fileID: 1654363714}
   - component: {fileID: 1654363713}
   - component: {fileID: 1654363712}
   - component: {fileID: 1654363711}
   - component: {fileID: 1654363716}
   - component: {fileID: 1654363715}
+  - component: {fileID: 1654363717}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -1756,6 +1755,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2c0a11e17393c42bbd3b1e1bc20d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _JumpInputAction:
+  - {fileID: 1654363709}
+  _MoveInputAction:
+  - {fileID: 1654363713}
 --- !u!114 &1654363709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,21 +1775,7 @@ MonoBehaviour:
   _executeOnce: 0
   inputManager: {fileID: 1654363708}
   gameData: {fileID: 1247748148}
---- !u!114 &1654363710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654363705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b988548d718ef548977da42f6df2377, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 1654363708}
-  _jumpActions:
-  - {fileID: 1654363709}
+  _jumpActions: []
 --- !u!114 &1654363711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,21 +1818,6 @@ MonoBehaviour:
   _executeOnce: 0
   inputManager: {fileID: 1654363708}
   gameData: {fileID: 1247748148}
---- !u!114 &1654363714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654363705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d628a25456502c84e8131010157a781b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 1654363708}
-  _moveActions:
-  - {fileID: 1654363713}
 --- !u!114 &1654363715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1877,6 +1851,20 @@ MonoBehaviour:
   _onDestroyAction:
   - {fileID: 1654363715}
   delay: 0
+--- !u!114 &1654363717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654363705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9779e37613ebabe49bce426629966c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 1247748148}
+  jumpAction: {fileID: 1654363709}
 --- !u!1 &1670841940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,14 +2422,14 @@ MonoBehaviour:
     isSpecial: 1
     isDeadly: 0
   - platformPrefab: {fileID: 6614500075941966269, guid: 6b2c6ab7596caab41a5b317c0247a4b7, type: 3}
-    spawnRate: 0
-    stepsToSpawn: 0
+    spawnRate: 62
+    stepsToSpawn: 3
     currentStep: 0
     isSpecial: 0
     isDeadly: 0
   - platformPrefab: {fileID: 6614500075941966269, guid: 284acacd73c0ce341abe4ea75056bc6b, type: 3}
-    spawnRate: 0
-    stepsToSpawn: 0
+    spawnRate: 43
+    stepsToSpawn: 4
     currentStep: 0
     isSpecial: 1
     isDeadly: 0

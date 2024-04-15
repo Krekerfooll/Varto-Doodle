@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 namespace OIMOD.Core.Component
 {
@@ -5,6 +6,7 @@ namespace OIMOD.Core.Component
     {
         [SerializeField] private OI_InputManager inputManager;
         [SerializeField] private OI_GameData gameData;
+        [SerializeField] private List<OI_ActionBase> _jumpActions;
         private bool _canJump;
         private bool _activateAutoJump;
         private bool _autoJumpOn;
@@ -19,7 +21,6 @@ namespace OIMOD.Core.Component
             if (gameData.playerInstance == null) return;
 
             RayCheckGround();
-            AnimationSwitch();
             if (_autoJumpOn && _activateAutoJump)
                 CheckJump();
         }
@@ -70,16 +71,8 @@ namespace OIMOD.Core.Component
             playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
             playerRb.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
             _canJump = false;
-        }
-        private void AnimationSwitch()
-        {
-            var playerRbVelocityY = gameData.playerRigidBody.velocity.y;
-            var playerAnimator = gameData.playerRenderAnimator;
-
-            if (_canJump && playerRbVelocityY == 0)
-                playerAnimator.SetBool("InAir", false);
-            else if (!_canJump && playerRbVelocityY != 0)
-                playerAnimator.SetBool("InAir", true);
+            foreach (var action in _jumpActions)
+                action.Execute();
         }
     }
 }

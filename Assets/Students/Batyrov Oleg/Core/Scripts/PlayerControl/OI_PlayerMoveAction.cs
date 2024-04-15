@@ -17,9 +17,6 @@ namespace OIMOD.Core.Component
             _speed = gameData.playerSpeed;
             _playerRender = gameData.playerRender.transform;
         }
-        private void FixedUpdate()
-        {
-        }
         protected override void ExecuteInternal()
         {
             if (_playerRb == null) return;
