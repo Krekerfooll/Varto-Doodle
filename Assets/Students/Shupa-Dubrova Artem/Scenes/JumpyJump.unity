@@ -277,6 +277,7 @@ MonoBehaviour:
   - {fileID: 2924947795352661211, guid: 70be3c9f3832448259e11f718d70a5e4, type: 3}
   - {fileID: 379657777223355198, guid: 438b3b9c8812cb6489558aa98ffad2d2, type: 3}
   - {fileID: 379657777223355198, guid: 438b3b9c8812cb6489558aa98ffad2d2, type: 3}
+  - {fileID: 8114691733109953909, guid: cd29ffe6876034fa4889234a98efefa7, type: 3}
   _platformInteractiveChance: 20
   _platformsSpawnedPerStepCount: {x: 1, y: 2}
   _stepsCountToSpawn: 7

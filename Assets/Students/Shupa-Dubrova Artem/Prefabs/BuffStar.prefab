@@ -247,9 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a8ec6bb3b5d1469d9f1c6504097c2f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpBuffAmount: 20
-  _powerupDuration: 5
-  _buffOnlyOnce: 0
   _onTriggerEnterWithTag: Player
+  _jumpBuffAmount: 20
+  _powerupDuration: 3
   _spriteToDelete: {fileID: 6291128312380715831}
   _colliderToDisable: {fileID: 4864109346220892793}
