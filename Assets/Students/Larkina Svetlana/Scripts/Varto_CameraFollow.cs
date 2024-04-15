@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Varto.Camera
 {
@@ -12,11 +13,14 @@ namespace Varto.Camera
         [SerializeField] private bool _followByX;
         [SerializeField] private bool _followByY;
         [SerializeField] private bool _followByZ;
+        [Space]
+        public Vector3 offset;
 
-        void Update()
+        private void FixedUpdate()
         {
-            var targetPosition = new Vector3(transform.position.x, _target.position.y, transform.position.z);
-            transform.position = targetPosition;
+            Vector3 desiredPosition = _target.position + offset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, _speed);
+            transform.position = smoothedPosition;
         }
     }
 }

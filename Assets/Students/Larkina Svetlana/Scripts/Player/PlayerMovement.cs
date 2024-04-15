@@ -4,18 +4,43 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D _rigidbody;
-    [SerializeField] private float _jumpPower;
-    [SerializeField] private float _moveSpeed;
-  
-    private void Update()
+
+    private Rigidbody2D rb;
+    private bool isGrounded;
+
+    public float jumpForce = 10f; 
+    public float moveSpeed = 5f;
+
+    private static Transform _currentTransform;
+
+    void Start()
     {
-        var direction = Input.GetAxis("Horizontal");
-        _rigidbody.velocity = new Vector2(direction * _moveSpeed, _rigidbody.velocity.y);
-        if (Input.GetKeyDown(KeyCode.Space))
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        _currentTransform = rb.transform;
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
+
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _rigidbody.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+        }
+        
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
 
+       
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)) && isGrounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
     }
 }
