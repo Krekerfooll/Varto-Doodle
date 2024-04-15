@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 7104026825881524759}
   - component: {fileID: 6516490548897410471}
   - component: {fileID: 6803009083490406805}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpikesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,6 +539,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _delay: 0.3
+  _destroyItself: 0
 --- !u!1 &7630703345935957964
 GameObject:
   m_ObjectHideFlags: 0

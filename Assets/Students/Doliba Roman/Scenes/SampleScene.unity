@@ -176,7 +176,7 @@ MonoBehaviour:
   - {fileID: 3945216902740497925, guid: e44ff342a9ee6994286ca5c1289bb130, type: 3}
   - {fileID: 3945216902740497925, guid: e44ff342a9ee6994286ca5c1289bb130, type: 3}
   - {fileID: 6034549708071072686, guid: c5e70dbc571e5eb45a1208435b5d592c, type: 3}
-  _platformsOnOneHeight: {x: 1, y: 2}
+  _platformsOnOneHeight: {x: 1, y: 3}
   _stepsToSpawn: 4
   _stepsToDelete: 3
   _stepHeight: 2.5
@@ -486,28 +486,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1090962969103486099, guid: f0ef9120c1d239a4f829ce60c9814a64, type: 3}
   m_PrefabInstance: {fileID: 5141440192315482293}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1143858011 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7630703345935957964, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
-  m_PrefabInstance: {fileID: 1215281141}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1143858014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143858011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543a51ac9bdfbc447b6b7b10e9471169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 2018299485}
-  _speed: 0.3
-  _followByX: 0
-  _followByY: 1
-  _followByZ: 0
 --- !u!1001 &1215281141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,29 +494,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2914164196649089388, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
-      propertyPath: m_Mass
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2914164196649089388, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6034549708071072686, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
-      propertyPath: _platformTarget
+    - target: {fileID: 155727660913778784, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
+      propertyPath: _objectToChangeColor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1523463990}
+    - target: {fileID: 493325835533915022, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 2018299485}
     - target: {fileID: 7630703345935957964, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
       propertyPath: m_Name
       value: FirePlatform
-      objectReference: {fileID: 0}
-    - target: {fileID: 7630703345935957964, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7936124550872214876, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.346625
       objectReference: {fileID: 0}
     - target: {fileID: 7936124550872214876, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
       propertyPath: m_LocalPosition.x
@@ -583,10 +549,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7630703345935957964, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1143858014}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf9f9265d3ac7b4b8590e9dedab9569, type: 3}
 --- !u!212 &1461076171 stripped
 SpriteRenderer:
@@ -631,11 +594,38 @@ Transform:
   - {fileID: 1793138053}
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1523463990 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6708946031683280451, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+  m_PrefabInstance: {fileID: 807572157025439466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1530752211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7337926044907892510, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
   m_PrefabInstance: {fileID: 807572157025439466}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1720346915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3884129518095177118, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+  m_PrefabInstance: {fileID: 807572157025439466}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1720346922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720346915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23870afd5db951f4eb70813e90890d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onTriggerEnterWith:
+    serializedVersion: 2
+    m_Bits: 512
+  _color: {r: 0.74509805, g: 0, b: 0, a: 0.88235295}
+  _objectToChangeColor: {fileID: 1523463990}
 --- !u!1 &1793138052
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +655,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: -3.5, y: -0.7, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1508732928}
@@ -804,7 +794,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.5, y: 0.7, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1508732928}
@@ -966,7 +956,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3884129518095177118, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1720346922}
   m_SourcePrefab: {fileID: 100100000, guid: c9437eaa7c7a7ae4eba21844dbc59785, type: 3}
 --- !u!4 &1153717566287563761
 Transform:

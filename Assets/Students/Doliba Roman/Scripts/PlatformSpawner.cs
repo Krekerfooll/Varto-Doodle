@@ -59,7 +59,7 @@ namespace RomanDoliba.Platform
             for(int i = 0; i < platformsToSpawnCount; i++)
             {
                     
-                if (platformsToSpawnCount == 1)
+                if (i == 0)
                     {
                         platformPositionY = _platformTarget.position.y + stepsCount * _stepHeight;
                     }
