@@ -1859,7 +1859,7 @@ GameObject:
   - component: {fileID: 6309962307002072609}
   - component: {fileID: 4646734885917847174}
   m_Layer: 0
-  m_Name: Ground_0
+  m_Name: GroundPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
