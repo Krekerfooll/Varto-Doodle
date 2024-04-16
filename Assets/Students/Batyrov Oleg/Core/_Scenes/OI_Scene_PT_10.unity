@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5184824536964231267, guid: 9534d89e2e7b3dc43b1e4cd6bf4e0748, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5184824536964231267, guid: 9534d89e2e7b3dc43b1e4cd6bf4e0748, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1361,6 +1361,7 @@ MonoBehaviour:
   playerRender: {fileID: 686019912}
   playerSpriteRender: {fileID: 310652789}
   playerRenderAnimator: {fileID: 310652788}
+  playerIsAlive: 1
   playerRigidBody: {fileID: 1845790565}
   playerSpeed: 12
   playerJumpForce: 22
@@ -1721,6 +1722,7 @@ GameObject:
   - component: {fileID: 1654363716}
   - component: {fileID: 1654363715}
   - component: {fileID: 1654363717}
+  - component: {fileID: 1654363718}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -1755,6 +1757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2c0a11e17393c42bbd3b1e1bc20d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData: {fileID: 1247748148}
   _JumpInputAction:
   - {fileID: 1654363709}
   _MoveInputAction:
@@ -1775,7 +1778,8 @@ MonoBehaviour:
   _executeOnce: 0
   inputManager: {fileID: 1654363708}
   gameData: {fileID: 1247748148}
-  _jumpActions: []
+  _jumpActions:
+  - {fileID: 1654363718}
 --- !u!114 &1654363711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1865,6 +1869,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData: {fileID: 1247748148}
   jumpAction: {fileID: 1654363709}
+--- !u!114 &1654363718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654363705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82e3061c4c903143a38f97ace9790e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnce: 0
+  objectToSpawn: {fileID: 8933050576727380269, guid: d914864d7614eee47a3aa1ce5927b812, type: 3}
+  spawnTransform: {fileID: 1711270968}
+  spawnPlaceholder: {fileID: 106162872}
 --- !u!1 &1670841940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,8 +2455,8 @@ MonoBehaviour:
     isSpecial: 1
     isDeadly: 0
   - platformPrefab: {fileID: 6614500075941966269, guid: c9404fd508e8a0b4985e4e58ca519ad8, type: 3}
-    spawnRate: 0
-    stepsToSpawn: 0
+    spawnRate: 10
+    stepsToSpawn: 10
     currentStep: 0
     isSpecial: 0
     isDeadly: 1

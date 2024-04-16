@@ -9,6 +9,7 @@ namespace OIMOD.Core.Component
         [SerializeField] public GameObject playerRender;
         [SerializeField] public SpriteRenderer playerSpriteRender;
         [SerializeField] public Animator playerRenderAnimator;
+        [SerializeField] public bool playerIsAlive;
         [Space]
         [SerializeField] public Rigidbody2D playerRigidBody;
         [SerializeField] public float playerSpeed;

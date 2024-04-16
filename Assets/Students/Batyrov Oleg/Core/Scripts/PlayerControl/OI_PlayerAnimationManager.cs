@@ -30,15 +30,37 @@ namespace OIMOD.Core.Component
         }
         private void CheckPlayerState()
         {
-
+            if (!gameData.playerIsAlive)
+            {
+                playerAnimator.SetBool("isDying",true);
+            }
         }
         private void AnimationSwitch()
         {
 
             if (playerVelocity.y == 0)
-                playerAnimator.SetBool("InAir", false);
-            else if (playerVelocity.y != 0)
-                playerAnimator.SetBool("InAir", true);
+            {
+                playerAnimator.SetBool("isJumping", false);
+                playerAnimator.SetBool("isFalling", false);
+            }
+            else if (playerVelocity.y > 0)
+            {
+                playerAnimator.SetBool("isJumping", true);
+                playerAnimator.SetBool("isFalling", false);
+            }
+            else if (playerVelocity.y < 0)
+            {
+                playerAnimator.SetBool("isJumping", false);
+                playerAnimator.SetBool("isFalling", true);
+            }
+                
+
+
+            if (playerVelocity.x > 0.2f || playerVelocity.x < -0.2f)
+                playerAnimator.SetBool("isMoving", true);
+            else
+                playerAnimator.SetBool("isMoving", false);
         }
+
     }
 }

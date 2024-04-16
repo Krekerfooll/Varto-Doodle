@@ -295,7 +295,7 @@ MonoBehaviour:
   _spawnObject:
   - {fileID: 881137061805068212, guid: 2cc2156afa50b334c864a278e6329383, type: 3}
   _spawnPos: {fileID: 2701331603832674552}
-  _spawnRate: 5
+  _spawnRate: 50
 --- !u!114 &4406624287880200616
 MonoBehaviour:
   m_ObjectHideFlags: 0

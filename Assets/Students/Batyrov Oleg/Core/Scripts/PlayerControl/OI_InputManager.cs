@@ -5,6 +5,7 @@ namespace OIMOD.Core.Component
 {
     public class OI_InputManager : MonoBehaviour
     {
+        [SerializeField] private OI_GameData gameData;
         [SerializeField] private List<OI_ActionBase> _JumpInputAction;
         [SerializeField] private List<OI_ActionBase> _MoveInputAction;
         private bool _inputJump;
@@ -26,14 +27,14 @@ namespace OIMOD.Core.Component
         }
         private void Update()
         {
-            if (JumpInput && _JumpInputAction != null)
+            if (gameData.playerIsAlive && JumpInput && _JumpInputAction != null)
             {
                 foreach (var action in _JumpInputAction)
                 {
                     action.Execute();
                 }
             }
-            if (MoveInput != 0 && _MoveInputAction != null)
+            if (gameData.playerIsAlive &&  MoveInput != 0 && _MoveInputAction != null)
             {
                 foreach (var action in _MoveInputAction)
                 {
