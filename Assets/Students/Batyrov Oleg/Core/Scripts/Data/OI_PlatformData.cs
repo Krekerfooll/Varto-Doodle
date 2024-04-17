@@ -9,7 +9,11 @@ namespace OIMOD.Core.Component
         [Range(0,100)] public int spawnRate;
         [Range(0, 10)] public int stepsToSpawn;
         public int currentStep;
-        public bool isSpecial;
+        public bool isSimple;
+        public bool isSmall;
+        public bool isHighJump;
+        public bool isSimpleBroken;
+        public bool isSmallBroken;
         public bool isDeadly;
     }
 }

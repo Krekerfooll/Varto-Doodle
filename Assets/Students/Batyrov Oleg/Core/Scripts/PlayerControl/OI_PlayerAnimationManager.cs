@@ -10,10 +10,6 @@ namespace OIMOD.Core.Component
         private Vector2 playerVelocity;
         private Animator playerAnimator;
 
-        private bool isJumping;
-        private bool isFalling;
-        private bool isWalking;
-
         private void Awake()
         {
             playerAnimator = gameData.playerRenderAnimator;
@@ -33,6 +29,7 @@ namespace OIMOD.Core.Component
             if (!gameData.playerIsAlive)
             {
                 playerAnimator.SetBool("isDying",true);
+
             }
         }
         private void AnimationSwitch()

@@ -2428,40 +2428,65 @@ MonoBehaviour:
     spawnRate: 100
     stepsToSpawn: 1
     currentStep: 0
-    isSpecial: 0
+    isSimple: 1
+    isSmall: 0
+    isHighJump: 0
+    isSimpleBroken: 0
+    isSmallBroken: 0
     isDeadly: 0
   - platformPrefab: {fileID: 6614500075941966269, guid: 252d36bb47fe79e498e796bde1273531, type: 3}
-    spawnRate: 75
+    spawnRate: 100
     stepsToSpawn: 3
     currentStep: 0
-    isSpecial: 0
+    isSimple: 0
+    isSmall: 1
+    isHighJump: 0
+    isSimpleBroken: 0
+    isSmallBroken: 0
     isDeadly: 0
   - platformPrefab: {fileID: 6614500075941966269, guid: 024a173f444e316419c7a5a71292dcd5, type: 3}
-    spawnRate: 60
-    stepsToSpawn: 5
+    spawnRate: 0
+    stepsToSpawn: 0
     currentStep: 0
-    isSpecial: 1
+    isSimple: 0
+    isSmall: 0
+    isHighJump: 1
+    isSimpleBroken: 0
+    isSmallBroken: 0
     isDeadly: 0
   - platformPrefab: {fileID: 6614500075941966269, guid: 6b2c6ab7596caab41a5b317c0247a4b7, type: 3}
-    spawnRate: 62
-    stepsToSpawn: 3
+    spawnRate: 0
+    stepsToSpawn: 0
     currentStep: 0
-    isSpecial: 0
+    isSimple: 0
+    isSmall: 0
+    isHighJump: 0
+    isSimpleBroken: 1
+    isSmallBroken: 0
     isDeadly: 0
   - platformPrefab: {fileID: 6614500075941966269, guid: 284acacd73c0ce341abe4ea75056bc6b, type: 3}
-    spawnRate: 43
-    stepsToSpawn: 4
+    spawnRate: 0
+    stepsToSpawn: 0
     currentStep: 0
-    isSpecial: 1
+    isSimple: 0
+    isSmall: 0
+    isHighJump: 0
+    isSimpleBroken: 0
+    isSmallBroken: 1
     isDeadly: 0
   - platformPrefab: {fileID: 6614500075941966269, guid: c9404fd508e8a0b4985e4e58ca519ad8, type: 3}
-    spawnRate: 10
-    stepsToSpawn: 10
+    spawnRate: 0
+    stepsToSpawn: 0
     currentStep: 0
-    isSpecial: 0
+    isSimple: 0
+    isSmall: 0
+    isHighJump: 0
+    isSimpleBroken: 0
+    isSmallBroken: 0
     isDeadly: 1
   _spawnCount: 5
-  difficultyStep: 15
+  difficultyStep: 30
+  difficultyLevelStep: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

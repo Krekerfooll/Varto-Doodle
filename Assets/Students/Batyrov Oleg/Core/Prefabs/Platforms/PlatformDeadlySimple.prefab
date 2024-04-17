@@ -121,6 +121,8 @@ GameObject:
   - component: {fileID: 7771775433444443458}
   - component: {fileID: 4406624287880200616}
   - component: {fileID: 7542381846629957821}
+  - component: {fileID: 6655926761767953286}
+  - component: {fileID: 3590829580017169810}
   - component: {fileID: 8952636041854791003}
   - component: {fileID: 5446536183232506807}
   - component: {fileID: 3292086854122207967}
@@ -246,8 +248,10 @@ MonoBehaviour:
   _targetBTransform: {fileID: 5184824536964231267}
   _aIsHigherActions:
   - {fileID: 4406624287880200616}
+  - {fileID: 6655926761767953286}
   _bIsHigherActions:
   - {fileID: 7542381846629957821}
+  - {fileID: 3590829580017169810}
   delay: 0
 --- !u!114 &4406624287880200616
 MonoBehaviour:
@@ -279,6 +283,36 @@ MonoBehaviour:
   _executeOnAwake: 0
   _executeOnce: 0
   _collider: {fileID: 3230915427319088392}
+--- !u!114 &6655926761767953286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614500075941966269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c909085ae28d8e438facd94e4da60b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnce: 0
+  _collider: {fileID: 5446536183232506807}
+--- !u!114 &3590829580017169810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614500075941966269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5951b536eecdb4a4d929af65dee61240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnce: 0
+  _collider: {fileID: 5446536183232506807}
 --- !u!114 &8952636041854791003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +361,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3}
+  m_Offset: {x: 0, y: 0.24}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
