@@ -20,8 +20,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
             yield return new WaitForSeconds(_powerupDuration);
             _playerController.SetJumpPower(0);
             
-            Destroy(gameObject);
             _buffActive = false;
+            Destroy(gameObject);
         }
     }
 }

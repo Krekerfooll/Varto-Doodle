@@ -19,7 +19,6 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
         private float _moveDirection;
         private float _transformX;
         private bool _setJump;
-        private bool _setSpringJump;
         
         private void Start()
         {
