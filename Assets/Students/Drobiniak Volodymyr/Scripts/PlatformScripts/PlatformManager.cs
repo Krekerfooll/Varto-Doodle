@@ -64,22 +64,35 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
         }
         
         private void DeletePlatform()
-       { // Перевіряємо, чи є у списку платформи для видалення
+        {
+            // Перевіряємо, чи є у списку платформи для видалення
             if (_spawnedPlatforms.Count > 0)
             {
-                // Перевіряємо відстань між гравцем і найнижчою платформою
+                // Отримуємо найнижчу платформу
                 var lowestPlatform = _spawnedPlatforms[0];
-                float distanceToLowestPlatform = _player.transform.position.y - lowestPlatform.transform.position.y;
-                float platformRemovalDistance = 20f;
-
-                // Якщо відстань більша ніж 20 одиниць по осі Y, видаляємо платформи знизу
-                if (distanceToLowestPlatform > platformRemovalDistance)
+        
+                // Перевіряємо, чи платформа існує
+                if (lowestPlatform != null)
                 {
+                    // Перевіряємо відстань між гравцем і найнижчою платформою
+                    float distanceToLowestPlatform = _player.transform.position.y - lowestPlatform.transform.position.y;
+                    float platformRemovalDistance = 20f;
+
+                    // Якщо відстань більша ніж 20 одиниць по осі Y, видаляємо платформи знизу
+                    if (distanceToLowestPlatform > platformRemovalDistance)
+                    {
+                        _spawnedPlatforms.RemoveAt(0);
+                        Destroy(lowestPlatform);
+                    }
+                }
+                else
+                {
+                    // Якщо платформа була видалена і вже не існує, видаляємо її зі списку
                     _spawnedPlatforms.RemoveAt(0);
-                    Destroy(lowestPlatform);
                 }
             }
         }
+
     }
 }
 

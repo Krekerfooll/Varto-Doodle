@@ -27,9 +27,11 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
         [SerializeField] private Rigidbody2D playerRb;
         [SerializeField] private SpriteRenderer playerSr;
 
+        [Header("Temporary")]
         private float _direction;
         [SerializeField] private bool isOnTheGround;
         [SerializeField] private bool canJump;
+        
     
     
         void Awake() 
@@ -72,12 +74,6 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
             isOnTheGround = hit.collider != null; // Перевіряємо, чи є зіткнення з колайдером
             Debug.DrawLine(groundChecker.position, groundChecker.position + (Vector3.down * radiusChecker), Color.black);
         }
-        
-        private void OnDrawGizmos() 
-        {
-            Gizmos.color = Color.red; // Встановлюємо червоний колір
-            Gizmos.DrawWireSphere(groundChecker.position, radiusChecker);
-        }
 
         void PlayerJump()
         {
@@ -86,7 +82,6 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
                 playerRb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             }
         }
-        
 
         private void FixedUpdate()
         {
