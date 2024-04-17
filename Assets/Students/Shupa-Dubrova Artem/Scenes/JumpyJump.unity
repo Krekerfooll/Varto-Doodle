@@ -280,7 +280,7 @@ MonoBehaviour:
   _platformInteractiveChance: 20
   _platformsSpawnedPerStepCount: {x: 1, y: 3}
   _stepsCountToSpawn: 7
-  _stepsCountToDelete: 7
+  _stepsCountToDelete: 12
   _stepHeight: 2
   _bounds: {x: -2.2, y: 2.2}
   _setOffsetY: 0.6
