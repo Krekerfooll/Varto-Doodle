@@ -21,7 +21,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
             _playerController.SetJumpPower(0);
             
             Destroy(gameObject);
-            _buffActive = true;
+            _buffActive = false;
         }
     }
 }

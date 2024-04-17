@@ -22,6 +22,5 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
                 _animator.SetBool("isDestroyed", true);
             }
         }
-        
     }
 }
