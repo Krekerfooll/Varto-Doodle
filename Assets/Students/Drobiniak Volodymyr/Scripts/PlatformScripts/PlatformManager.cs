@@ -11,7 +11,7 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
         private Vector3 _spawnPosition;
         private int _spawnYInterval = 2;
         private readonly int _numberOfPlatforms = 20;    
-        private readonly int _spawnPositionX = 20;
+        private readonly int _spawnPositionX = 4;
         private GameObject _player;
 
         private void Start()

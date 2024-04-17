@@ -7,7 +7,7 @@ namespace Students.Drobiniak_Volodymyr.Scripts
         [SerializeField] private Transform playerTarget;
         [SerializeField,Range(0,3)] private float cameraSpeed = 0.5f;
         
-        void FixedUpdate()
+        void Update()
         {
             if (playerTarget != null)
             {
