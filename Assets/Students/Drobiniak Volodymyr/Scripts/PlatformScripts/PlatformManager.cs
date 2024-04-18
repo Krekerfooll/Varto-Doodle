@@ -10,18 +10,13 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
         private List<GameObject> _spawnedPlatforms = new List<GameObject>();
         private Vector3 _spawnPosition;
         [SerializeField] private int _spawnPositionYInterval = 3;
-        [SerializeField] private int _spawnPositionX = 8;
+        [SerializeField] private int _spawnPositionX = 10;
         private readonly int _numberOfPlatforms = 20;  
         private GameObject _player;
 
         private void Start()
         {
             _player = GameObject.FindWithTag("Player");
-            // Стартово додаємо 20 платформ на різних рівнях по осі Y
-            for (int i = 0; i < _numberOfPlatforms; i++)
-            {
-                CreatePlatform();
-            }
         }
 
         private void Update()
@@ -51,16 +46,16 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
             GameObject platformFromPrefabs = platformPrefabs[Random.Range(0, platformPrefabs.Count)];
         
             // Створюємо платформу у випадковому положенні по осі Х та стартової У. Наприклад, платформа
-            // може з'явитися випадково від -20 до 20 по осі Х.
+            // може з'явитися випадково по осі Х.
             int randomX = Random.Range(-_spawnPositionX, _spawnPositionX); 
             
             // Створюю координати випадкових позицій з кроком по осі Y
-            Vector3 spawnPosition = new Vector3(randomX,this._spawnPosition.y + _spawnPositionYInterval, 0f);
+            Vector3 spawnPosition = new Vector3(randomX,_spawnPosition.y + _spawnPositionYInterval, 0f);
             
             //Інстанціюю платформу та додаю її до списку 
             GameObject newPlatform =  Instantiate(platformFromPrefabs, spawnPosition, Quaternion.identity);
             _spawnedPlatforms.Add(newPlatform);
-            _spawnPositionYInterval += 2;
+            _spawnPositionYInterval += 3;
         }
         
         private void DeletePlatform()

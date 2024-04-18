@@ -20,12 +20,15 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
         /// <param name="collision"></param>
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            _platformRenderer.material.color = Random.ColorHSV();  
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                _platformRenderer.material.color = Random.ColorHSV();
+            }
         }
 
         void OnCollisionExit2D(Collision2D collision)
         {
-            _platformRenderer.material.color = _baseColor;
+          _platformRenderer.material.color = _baseColor;
         }
     }
 }

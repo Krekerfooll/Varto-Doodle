@@ -25,11 +25,11 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
         
         [SerializeField] private Rigidbody2D playerRb;
         [SerializeField] private SpriteRenderer playerSr;
-
-        [Header("Temporary")]
+        
         private float _direction;
-        [SerializeField] private bool isOnTheGround;
-        [SerializeField] private bool canJump;
+        private bool _isOnTheGround;
+        private bool _canJump;
+        [SerializeField] private int _gemCounter = 0;
         
     
     
@@ -43,7 +43,7 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
         { 
             _direction = Input.GetAxis("Horizontal");
             CheckIsOnTheGround();
-            canJump = Input.GetButtonDown("Jump");
+            _canJump = Input.GetButtonDown("Jump");
             Flip(_direction);
             PlayerMovement(_direction);
             PlayerJump();
@@ -72,15 +72,25 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
         void CheckIsOnTheGround()
         {
             RaycastHit2D hit = Physics2D.Raycast(groundChecker.position, Vector2.down, distanceChecker, platformGround);
-            isOnTheGround = hit.collider != null; // Перевіряємо, чи є зіткнення з колайдером
+            _isOnTheGround = hit.collider != null; // Перевіряємо, чи є зіткнення з колайдером
             Debug.DrawLine(groundChecker.position, groundChecker.position + (Vector3.down * distanceChecker), Color.black);
         }
 
         void PlayerJump()
         {
-            if (canJump && isOnTheGround)
+            if (_canJump && _isOnTheGround)
             {
                 playerRb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Gem"))
+            {
+                Debug.Log(gameObject.name+" contact with " + other.gameObject.name);
+                _gemCounter += 1;
+                Destroy(other.gameObject);
             }
         }
 
