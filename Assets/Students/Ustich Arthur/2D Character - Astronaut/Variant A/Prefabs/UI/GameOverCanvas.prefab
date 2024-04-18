@@ -340,6 +340,22 @@ PrefabInstance:
       value: 106.1
       objectReference: {fileID: 0}
     - target: {fileID: 7884038735847586404, guid: b843b7d89b1386b45878847818f5b82a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.48235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884038735847586404, guid: b843b7d89b1386b45878847818f5b82a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.48235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884038735847586404, guid: b843b7d89b1386b45878847818f5b82a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.48235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884038735847586404, guid: b843b7d89b1386b45878847818f5b82a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4286282619
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884038735847586404, guid: b843b7d89b1386b45878847818f5b82a, type: 3}
       propertyPath: m_fontColorGradient.topRight.b
       value: 0.48235294
       objectReference: {fileID: 0}
