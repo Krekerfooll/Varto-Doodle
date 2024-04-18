@@ -4,9 +4,8 @@ using UnityEngine.Serialization;
 
 namespace Students.Drobiniak_Volodymyr.Scripts.Player
 {
-    [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(BoxCollider2D))]
-    [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(Rigidbody2D),(typeof(BoxCollider2D)), (typeof(SpriteRenderer)))]
+    
 
     public class NewPlayerController : MonoBehaviour
     {
@@ -18,7 +17,7 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
         [Header("JUMP")] 
         [SerializeField, Range(0, 100)] private float jumpPower = 20f;
         [SerializeField] private Transform groundChecker;
-        [SerializeField] private float radiusChecker;
+        [FormerlySerializedAs("radiusChecker")] [SerializeField] private float distanceChecker;
         [SerializeField] private LayerMask platformGround;
         [FormerlySerializedAs("_playerRb")]
         [Space(2)]
@@ -46,6 +45,8 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
             CheckIsOnTheGround();
             canJump = Input.GetButtonDown("Jump");
             Flip(_direction);
+            PlayerMovement(_direction);
+            PlayerJump();
         }
 
         void PlayerMovement(float direction)
@@ -70,9 +71,9 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
         /// </summary>
         void CheckIsOnTheGround()
         {
-            RaycastHit2D hit = Physics2D.Raycast(groundChecker.position, Vector2.down, radiusChecker, platformGround);
+            RaycastHit2D hit = Physics2D.Raycast(groundChecker.position, Vector2.down, distanceChecker, platformGround);
             isOnTheGround = hit.collider != null; // Перевіряємо, чи є зіткнення з колайдером
-            Debug.DrawLine(groundChecker.position, groundChecker.position + (Vector3.down * radiusChecker), Color.black);
+            Debug.DrawLine(groundChecker.position, groundChecker.position + (Vector3.down * distanceChecker), Color.black);
         }
 
         void PlayerJump()
@@ -85,8 +86,8 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
 
         private void FixedUpdate()
         {
-            PlayerMovement(_direction);
-            PlayerJump();
+            // PlayerMovement(_direction);
+            // PlayerJump();
         }
     }
 }

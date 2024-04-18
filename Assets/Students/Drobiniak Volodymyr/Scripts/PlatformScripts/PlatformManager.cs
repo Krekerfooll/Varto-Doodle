@@ -9,9 +9,9 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
         [SerializeField] private List<GameObject> platformPrefabs;
         private List<GameObject> _spawnedPlatforms = new List<GameObject>();
         private Vector3 _spawnPosition;
-        private int _spawnYInterval = 2;
-        private readonly int _numberOfPlatforms = 20;    
-        private readonly int _spawnPositionX = 4;
+        [SerializeField] private int _spawnPositionYInterval = 3;
+        [SerializeField] private int _spawnPositionX = 8;
+        private readonly int _numberOfPlatforms = 20;  
         private GameObject _player;
 
         private void Start()
@@ -55,12 +55,12 @@ namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
             int randomX = Random.Range(-_spawnPositionX, _spawnPositionX); 
             
             // Створюю координати випадкових позицій з кроком по осі Y
-            Vector3 spawnPosition = new Vector3(randomX,this._spawnPosition.y + _spawnYInterval, 0f);
+            Vector3 spawnPosition = new Vector3(randomX,this._spawnPosition.y + _spawnPositionYInterval, 0f);
             
             //Інстанціюю платформу та додаю її до списку 
             GameObject newPlatform =  Instantiate(platformFromPrefabs, spawnPosition, Quaternion.identity);
             _spawnedPlatforms.Add(newPlatform);
-            _spawnYInterval += 2;
+            _spawnPositionYInterval += 2;
         }
         
         private void DeletePlatform()
