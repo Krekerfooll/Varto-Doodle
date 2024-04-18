@@ -3,10 +3,11 @@ using UnityEngine;
 
 namespace PVitaliy.Actions.Core
 {
-    public class ActionExecutorBase : MonoBehaviour
+    public abstract class ActionExecutorBase : MonoBehaviour
     {
         [SerializeField] protected bool _executeOnce;
         protected bool _executedOnce;
+        public abstract void Execute();
         protected void ExecuteActions(IEnumerable<ActionBase> actions)
         {
             if (_executedOnce && _executeOnce) return;

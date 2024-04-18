@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f3fe6d15fe412d81f0705857e5669e, type: 3}
   m_Name: NoMistakesAllowed
   m_EditorClassIdentifier: 
-  platforms:
+  Values:
   - {fileID: 5478645995520309443, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
   startingPlatform: {fileID: 6096099500834720225, guid: 4210c6d6d573c1c4190a39f3254724e8, type: 3}
   verticalDistance: {x: 3.5, y: 3.5}

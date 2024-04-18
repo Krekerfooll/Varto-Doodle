@@ -1,9 +1,10 @@
+using PVitaliy.Factory;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace PVitaliy.Platform
 {
-    public class PlatformBase : MonoBehaviour // do NEVER destroy gameObject from here again
+    public class PlatformBase : FactoryObject<PlatformType> // do NEVER destroy gameObject from here again
     {
         [FormerlySerializedAs("onPlayerLanded")]
         [Header("Platform Base")]
@@ -13,15 +14,19 @@ namespace PVitaliy.Platform
         
         private bool _initialized;
         private Transform _collisionEnablingPoint;
-        protected PlatformController Controller;
+        protected PlatformGenerator Generator;
         private bool ColliderEnabled => transform.position.y <= _collisionEnablingPoint.position.y;
         public float DuplicateChanceMultiplier => duplicateChanceMultiplier;
         public bool ReplaceWithNewWhenDestroyed { get; private set; }
-        public PlatformType Type => type;
 
-        public void Init(PlatformController controller, bool replaceWithNew)
+        public override PlatformType Type()
         {
-            Controller = controller;
+            return type;
+        }
+
+        public void Init(PlatformGenerator controller, bool replaceWithNew)
+        {
+            Generator = controller;
             _collisionEnablingPoint = controller.CollisionStartTarget;
             ReplaceWithNewWhenDestroyed = replaceWithNew;
             AfterInit();

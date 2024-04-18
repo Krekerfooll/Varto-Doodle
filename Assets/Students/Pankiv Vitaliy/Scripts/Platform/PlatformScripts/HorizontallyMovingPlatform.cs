@@ -11,7 +11,7 @@ namespace PVitaliy.Platform
         protected override void AfterInit()
         {
             base.AfterInit();
-            slider.SetPoints(Controller.MovingPlatformsBoundsLeft, Controller.MovingPlatformsBoundsRight);
+            slider.SetPoints(Generator.MovingPlatformsBoundsLeft, Generator.MovingPlatformsBoundsRight);
         }
     }
 }

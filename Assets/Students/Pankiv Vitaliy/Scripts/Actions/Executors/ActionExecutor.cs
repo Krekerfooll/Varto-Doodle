@@ -7,7 +7,7 @@ namespace PVitaliy.Actions.Core
     {
         [SerializeField] protected List<ActionBase> actions;
 
-        public void Execute()
+        public override void Execute()
         {
             if (_executeOnce && _executedOnce) return;
             ExecuteActions(actions);

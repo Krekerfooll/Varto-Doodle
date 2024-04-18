@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f3fe6d15fe412d81f0705857e5669e, type: 3}
   m_Name: AllPlatformsFactory
   m_EditorClassIdentifier: 
-  platforms:
+  Values:
   - {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
   - {fileID: 6096099500834720225, guid: 4210c6d6d573c1c4190a39f3254724e8, type: 3}
   - {fileID: 7300417356805758911, guid: 69f052b155386f8458e0cea4cd0a110f, type: 3}

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef3fba784ddd0b4e807795ccd73e07d, type: 3}
   m_Name: NoMistakesAllowed2
   m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 5478645995520309443, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
+  Values:
   - {fileID: 7300417356805758911, guid: 69f052b155386f8458e0cea4cd0a110f, type: 3}
+  - {fileID: 5478645995520309443, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
   startingPlatform: {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
   verticalDistance: {x: 3.45, y: 3.45}
   horizontalDistance: {x: -2.3, y: 2.3}
@@ -23,7 +23,8 @@ MonoBehaviour:
   scoreMultiplier: 3
   duplicateChance: 0
   weights:
-  - type: 3
-    weight: 0.2
-  - type: 1
-    weight: 1
+    weights:
+    - data: 3
+      weight: 0.1
+    - data: 1
+      weight: 1

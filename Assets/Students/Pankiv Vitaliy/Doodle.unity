@@ -335,15 +335,15 @@ PrefabInstance:
       addedObject: {fileID: 722957696}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 145119980427e4a40b392b85be7cc14e, type: 3}
---- !u!114 &1050622813 stripped
+--- !u!114 &1134048279 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6863525002044975661, guid: d843c649f18b1864eab1495572aa2cdd, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3119804497110257060, guid: d843c649f18b1864eab1495572aa2cdd, type: 3}
   m_PrefabInstance: {fileID: 474371889316776960}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a45745d4f2b85e4c9b2f934d224649d, type: 3}
+  m_Script: {fileID: 11500000, guid: 797b20528885459e8f870ffa979505c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1137494072
@@ -5754,7 +5754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0d9876a2a84c4781e2062ef8cefbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformController: {fileID: 1050622813}
+  generator: {fileID: 1134048279}
   player: {fileID: 1227014680}
   losingPoint: {fileID: 1137494073}
   gameUI: {fileID: 505414426}
@@ -5855,6 +5855,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformController
       objectReference: {fileID: 0}
+    - target: {fileID: 3119804497110257060, guid: d843c649f18b1864eab1495572aa2cdd, type: 3}
+      propertyPath: removeAtPoint
+      value: 
+      objectReference: {fileID: 1340602063}
+    - target: {fileID: 3119804497110257060, guid: d843c649f18b1864eab1495572aa2cdd, type: 3}
+      propertyPath: collisionStartTarget
+      value: 
+      objectReference: {fileID: 722957696}
     - target: {fileID: 4286243245335500966, guid: d843c649f18b1864eab1495572aa2cdd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5895,22 +5903,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5489118527497400844, guid: d843c649f18b1864eab1495572aa2cdd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6863525002044975661, guid: d843c649f18b1864eab1495572aa2cdd, type: 3}
-      propertyPath: removeAtPoint
-      value: 
-      objectReference: {fileID: 1340602063}
-    - target: {fileID: 6863525002044975661, guid: d843c649f18b1864eab1495572aa2cdd, type: 3}
-      propertyPath: gameController
-      value: 
-      objectReference: {fileID: 2057480814}
-    - target: {fileID: 6863525002044975661, guid: d843c649f18b1864eab1495572aa2cdd, type: 3}
-      propertyPath: collisionStartTarget
-      value: 
-      objectReference: {fileID: 722957696}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

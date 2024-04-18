@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4286243245335500966}
-  - component: {fileID: 6863525002044975661}
+  - component: {fileID: 3119804497110257060}
   m_Layer: 0
   m_Name: PlatformController
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 4775140385555690571}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6863525002044975661
+--- !u!114 &3119804497110257060
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,17 +43,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 458902223581587285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a45745d4f2b85e4c9b2f934d224649d, type: 3}
+  m_Script: {fileID: 11500000, guid: 797b20528885459e8f870ffa979505c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   factory: {fileID: 11400000, guid: d911f46a285567f47a6eefde5555d47d, type: 2}
+  OnGenerated: {fileID: 0}
   container: {fileID: 8931886383514948678}
   startPlatformPosition: {x: 0, y: 0, z: 0}
   removeAtPoint: {fileID: 0}
   collisionStartTarget: {fileID: 0}
   movingPlatformsBoundsLeft: {fileID: 8936695251923693148}
   movingPlatformsBoundsRight: {fileID: 652203379068022519}
-  drawGizmos: 0
+  drawGizmos: 1
 --- !u!1 &582063900503244323
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,13 +1,12 @@
 using System.Collections.Generic;
+using PVitaliy.Factory;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace PVitaliy.Platform
 {
-    public class PlatformController : MonoBehaviour
+    public class PlatformGenerator : FactoryGenerator<PlatformFactory, PlatformBase, PlatformType>
     {
-        [SerializeField] private PlatformFactory factory;
-        [Space]
+        [Header("Platform Generator")]
         [SerializeField] private Transform container;
         [SerializeField] private Vector3 startPlatformPosition;
         [Header("Action Points")]
@@ -46,18 +45,12 @@ namespace PVitaliy.Platform
 
         private void SpawnNewPlatform()
         {
-            var newPlatform = SpawnPlatformAt(factory.GetRandomPlatformType(), GetNewPlatformPosition());
+            var newPlatform = SpawnPlatformAt(GenerateRandom(), GetNewPlatformPosition());
             if (newPlatform && Random.Range(0, 1f) <= factory.duplicateChance * newPlatform.DuplicateChanceMultiplier)
             {
                 var duplicatePosition = GetNewPlatformPosition(newPlatform.transform.position + Vector3.down * factory.verticalDistance.x);
-                SpawnPlatformAt(factory.GetRandomPlatformType(), duplicatePosition, true);
+                SpawnPlatformAt(GenerateRandom(), duplicatePosition, true);
             }
-        }
-
-        private PlatformBase SpawnPlatformAt(PlatformType type, Vector2 position, bool isDuplicated = false)
-        {
-            var platform = factory.CreatePlatform(type);
-            return SpawnPlatformAt(platform, position, isDuplicated);
         }
 
         private PlatformBase SpawnPlatformAt(PlatformBase platform, Vector2 position, bool isDuplicated = false)
@@ -69,11 +62,18 @@ namespace PVitaliy.Platform
             }
             var instance = Instantiate(platform, position, Quaternion.identity, container);
             instance.Init(this, !isDuplicated);
-            if (instance.transform.position.y > _highestPlatformPosition.y) _highestPlatformPosition = instance.transform.position;
+            NewPlatformInitiatedHandler(instance);
+            
             if (!isDuplicated) _nonDuplicatesCount++;
             else instance.name += " D";
-            _platformQueue.Enqueue(instance);
+            
             return instance;
+        }
+
+        private void NewPlatformInitiatedHandler(PlatformBase instance)
+        {
+            if (instance.transform.position.y > _highestPlatformPosition.y) _highestPlatformPosition = instance.transform.position;
+            _platformQueue.Enqueue(instance);
         }
 
         private void FixedUpdate()
@@ -81,11 +81,11 @@ namespace PVitaliy.Platform
             var bottomPlatform = _platformQueue.Peek();
             if (bottomPlatform.transform.position.y < removeAtPoint.position.y)
             {
-                RemoveLastPlatformAndSpawnNew();
+                RemoveLastPlatformAndGenerateNew();
             }
         }
 
-        private void RemoveLastPlatformAndSpawnNew()
+        private void RemoveLastPlatformAndGenerateNew()
         {
             var platform = _platformQueue.Dequeue();
             Destroy(platform.gameObject);

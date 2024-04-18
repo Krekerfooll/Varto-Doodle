@@ -5,14 +5,14 @@ namespace PVitaliy
 {
     public class GameController : MonoBehaviour
     {
-        [SerializeField] private PlatformController platformController;
+        [SerializeField] private PlatformGenerator generator;
         [SerializeField] private Transform player;
         [SerializeField] private Transform losingPoint;
         [SerializeField] private GameUI gameUI;
         private float _maxPlayerHeight;
         private void Awake()
         {
-            platformController.Init();
+            generator.Init();
             UpdateMaxPlayerHeight(0);
         }
 
@@ -36,7 +36,7 @@ namespace PVitaliy
 
         private int ConvertHeightToScore()
         {
-            return Mathf.RoundToInt(_maxPlayerHeight * platformController.GameScoreMultiplier);
+            return Mathf.RoundToInt(_maxPlayerHeight * generator.GameScoreMultiplier);
         }
     }
 }

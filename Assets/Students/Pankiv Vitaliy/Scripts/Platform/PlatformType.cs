@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace PVitaliy.Platform
 {
-    public enum PlatformType
+    public enum PlatformType : short
     {
         Static,
         Falling,

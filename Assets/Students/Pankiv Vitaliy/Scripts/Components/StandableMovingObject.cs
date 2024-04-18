@@ -22,8 +22,7 @@ namespace PVitaliy.Components
         {
             foreach (var otherRigidBody in _touchingBodies)
             {
-                if (otherRigidBody.velocity.x != 0 || otherRigidBody.velocity.y != 0) continue;
-                otherRigidBody.velocity = rigidBody.velocity;
+                otherRigidBody.velocity += rigidBody.velocity;
             }
         }
     }
