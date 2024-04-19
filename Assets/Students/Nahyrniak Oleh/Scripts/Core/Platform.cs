@@ -23,8 +23,7 @@ namespace Doodle.Core
         }
         private void HandlePlatformPass(Transform target, Collider2D platformCollider)
         {
-            if(target.transform.position.y > transform.position.y) platformCollider.enabled = true;
-            else platformCollider.enabled = false;
+            platformCollider.enabled = target.transform.position.y > transform.position.y;
         }
     }
 }

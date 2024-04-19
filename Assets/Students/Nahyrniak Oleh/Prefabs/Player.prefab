@@ -278,8 +278,11 @@ GameObject:
   - component: {fileID: 1535289237963113279}
   - component: {fileID: 4474023559412528260}
   - component: {fileID: 2287050778037100146}
-  - component: {fileID: 852533075864634484}
-  - component: {fileID: 2216446335844263576}
+  - component: {fileID: 5172580553937901813}
+  - component: {fileID: 5175628718497478613}
+  - component: {fileID: 8007642164524285748}
+  - component: {fileID: 88232773486833257}
+  - component: {fileID: 9121222781100964733}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -366,7 +369,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &852533075864634484
+--- !u!114 &5172580553937901813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -375,14 +378,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5107424794041920922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10460a2c12ebd054698be5d583a551fe, type: 3}
+  m_Script: {fileID: 11500000, guid: c4018929d7e546847a904ba3b27b7afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 2287050778037100146}
-  _collider: {fileID: 4474023559412528260}
-  _jumpPower: 8
-  _movePower: 5
---- !u!114 &2216446335844263576
+  _condition: {fileID: 5175628718497478613}
+  _executeOnEnter:
+  - {fileID: 8007642164524285748}
+  _executeOnHold:
+  - {fileID: 88232773486833257}
+  _executeOnExit: []
+  _executeOnReverse:
+  - {fileID: 9121222781100964733}
+--- !u!114 &5175628718497478613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -391,17 +398,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 5107424794041920922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47fc7821e7e857d40808684d6376bfa7, type: 3}
+  m_Script: {fileID: 11500000, guid: cd5dc7c9f2f07134497c323e85354fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 2287050778037100146}
   _collider: {fileID: 4474023559412528260}
-  _backgroundColorList:
+--- !u!114 &8007642164524285748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107424794041920922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243d028e9439f2245ab231f9f1a0846a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorList:
   - {r: 0.21176471, g: 0.49019608, b: 0.49411765, a: 0}
-  - {r: 0.21176472, g: 0.49411765, b: 0.2754595, a: 0}
-  - {r: 0.49411765, g: 0.44422922, b: 0.21176472, a: 0}
-  - {r: 0.42917633, g: 0.21176472, b: 0.49411765, a: 0}
-  - {r: 0.21176472, g: 0.37513936, b: 0.49411765, a: 0}
+  - {r: 0.48264396, g: 0.49411765, b: 0.21176472, a: 0}
+  - {r: 0.43532187, g: 0.17254901, b: 0.5294118, a: 0}
+--- !u!114 &88232773486833257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107424794041920922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee2b8600cc5d3842a89f617cadbed7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 2287050778037100146}
+  _jumpPower: 8
+  _key: 119
+--- !u!114 &9121222781100964733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107424794041920922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6775288ca2c86e34db9e0a9acd70c668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 2287050778037100146}
+  _movePower: 5
 --- !u!1 &6639821687047706901
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 6639821687047706901}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

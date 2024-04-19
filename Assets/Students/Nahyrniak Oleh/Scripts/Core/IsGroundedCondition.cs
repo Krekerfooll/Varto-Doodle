@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿using Doodle.Utils;
+using UnityEngine;
 
 namespace Doodle.Core
 {
-    internal class PlayerHelpers
+    public class IsGroundedCondition : Condition
     {
-        internal static bool IsPlayerGrounded(Rigidbody2D rigidbody, Collider2D collider)
+        [SerializeField] private Rigidbody2D _rigidbody;
+        [SerializeField] private Collider2D _collider;
+
+        public override bool Check()
         {
-            Vector2 rayOrigin = (Vector2)rigidbody.transform.position + Vector2.down * collider.bounds.size.y / 1.95f;
+            Vector2 rayOrigin = (Vector2)_rigidbody.transform.position + Vector2.down * _collider.bounds.size.y / 1.95f;
             Vector2 rayDirection = Vector2.down;
             float _groundCheckDistance = 0.02f;
 
