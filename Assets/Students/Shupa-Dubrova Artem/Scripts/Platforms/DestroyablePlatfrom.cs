@@ -1,15 +1,15 @@
 using UnityEngine;
-using Students.Shupa_Dubrova_Artem.Scripts.Objects;
+using Students.Shupa_Dubrova_Artem.Scripts.Utils;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
 {
-    public class DestroyablePlatfrom : OnCollisionEvents
+    public class DestroyablePlatfrom : OnCollisionAction
     {
         [SerializeField] private GameObject _gameObject;
         [SerializeField] private Animator _animator;
         [SerializeField] private float _delay;
-        
-        protected override void ExecuteInternal()
+
+        public override void Execute()
         {
             DestroyPlatform();
         }

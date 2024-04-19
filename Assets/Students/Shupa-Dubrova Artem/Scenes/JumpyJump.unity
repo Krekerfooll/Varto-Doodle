@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 826851087}
-  _speed: 2
+  _speed: 4
   _followByX: 0
   _followByY: 1
   _followByZ: 0

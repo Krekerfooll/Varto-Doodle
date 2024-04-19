@@ -1,6 +1,4 @@
-using System.Collections.Generic;
 using UnityEngine;
-using Students.Shupa_Dubrova_Artem.Scripts.Objects;
 
 namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
 {
@@ -13,8 +11,6 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
         [Tooltip("Is object stays active after become active ones")]
         [SerializeField] protected bool _staysActive = true;
         [Space]
-        [SerializeField] protected List<ActionBase> _executeOnCollisionActivated;
-        [SerializeField] protected List<ActionBase> _executeOnCollisionDeactivated;
 
         protected bool _isInitiated;
         protected bool _isActivatedOnes;
@@ -48,19 +44,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
             {
                 _collider.SetActive(true);
                 _isActivatedOnes = true;
-
-                foreach (var action in _executeOnCollisionActivated)
-                {
-                    action.Execute();
-                }
             }
-            else
-            {
-                foreach (var action in _executeOnCollisionDeactivated)
-                {
-                    action.Execute();
-                }
-            }
+            
         }
     }
 }

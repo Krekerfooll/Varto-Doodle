@@ -1,9 +1,10 @@
 using System.Collections;
+using Students.Shupa_Dubrova_Artem.Scripts.Player;
 using UnityEngine;
 
-namespace Students.Shupa_Dubrova_Artem.Scripts.Player
+namespace Students.Shupa_Dubrova_Artem.Scripts.Examples
 {
-    public abstract class BuffBase : MonoBehaviour
+    public abstract class OldBuffBase : MonoBehaviour
     {
         [SerializeField] protected string _onTriggerEnterWithTag;
         protected PlayerController _playerController;

@@ -268,11 +268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222d193fd0ef2c24d864b47dd16d1148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _executeOnAwake: 0
-  _executeOnlyOnes: 0
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 1
+  _executeOnce: 1
   _gameObject: {fileID: 6381792462824913334}
   _animator: {fileID: 1874814255224171493}
   _delay: 0.4

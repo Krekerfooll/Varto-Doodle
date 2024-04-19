@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8960364812456837902}
   - component: {fileID: 8029315788962237943}
-  - component: {fileID: 3508622105662878816}
+  - component: {fileID: 5867145946040213703}
   m_Layer: 7
   m_Name: Platform1x2
   m_TagString: Untagged
@@ -182,7 +182,7 @@ MonoBehaviour:
   _staysActive: 1
   _executeOnCollisionActivated: []
   _executeOnCollisionDeactivated: []
---- !u!114 &3508622105662878816
+--- !u!114 &5867145946040213703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,11 +191,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3416470482922310870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc309455c2d6d644b9a7df61fc875609, type: 3}
+  m_Script: {fileID: 11500000, guid: 950ef6d65913f824a82fb14222e868c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _executeOnAwake: 1
-  _executeOnlyOnes: 1
   _spawnPoint: {fileID: 6115504144677689647}
   _prefabsVariants:
   - {fileID: 7838726208683138031, guid: 557c636864c71d14d8da71ef50d548b9, type: 3}

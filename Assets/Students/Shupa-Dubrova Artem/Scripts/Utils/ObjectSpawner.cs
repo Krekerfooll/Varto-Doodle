@@ -1,6 +1,7 @@
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-namespace Students.Shupa_Dubrova_Artem.Scripts.Objects
+namespace Students.Shupa_Dubrova_Artem.Scripts.Utils
 {
     public class ObjectSpawner : ActionBase
     {
@@ -8,7 +9,12 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Objects
         [SerializeField] private GameObject[] _prefabsVariants;
         [SerializeField] private int _chanceToSpawnObject;
 
-        protected override void ExecuteInternal()
+        private void Awake()
+        {
+            Execute();
+        }
+
+        public override void Execute()
         {
             var randomObject = _prefabsVariants[Random.Range(0, _prefabsVariants.Length)];
             var randomChance = Random.Range(0, 100);
@@ -17,5 +23,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Objects
                 Instantiate(randomObject, _spawnPoint);
             }
         }
+        
     }
 }
+
