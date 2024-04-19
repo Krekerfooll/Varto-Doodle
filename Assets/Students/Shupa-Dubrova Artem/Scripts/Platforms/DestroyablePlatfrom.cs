@@ -17,7 +17,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
         private void DestroyPlatform()
         {
             Destroy(_gameObject, _delay);
-            if (_animator is not null)
+            if (_animator != null)
             {
                 _animator.SetBool("isDestroyed", true);
             }
