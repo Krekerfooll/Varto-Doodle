@@ -161,6 +161,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8349190160177446441}
   - component: {fileID: 2569584704516397851}
+  - component: {fileID: 3695120896237693062}
+  - component: {fileID: 7236943660306423895}
   m_Layer: 7
   m_Name: Varto_Platform
   m_TagString: Untagged
@@ -199,3 +201,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _collider: {fileID: 5463279747692914631}
+  _staysActive: 1
+  _executeOnCollisionActivated:
+  - {fileID: 3695120896237693062}
+  _executeOnCollisionDeactivated:
+  - {fileID: 7236943660306423895}
+--- !u!114 &3695120896237693062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990151874966119391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44cb6e910258f9f449a06becb21cbe5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 0
+  _objectToChangeColor: {fileID: 4885913635209999258}
+  _color: {r: 0.53333336, g: 0.4509804, b: 0.23921569, a: 1}
+--- !u!114 &7236943660306423895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990151874966119391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44cb6e910258f9f449a06becb21cbe5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 0
+  _objectToChangeColor: {fileID: 4885913635209999258}
+  _color: {r: 0.7294118, g: 0.6117647, b: 0.30980393, a: 1}
