@@ -9,7 +9,7 @@ namespace PVitaliy.Platform
         [Header("Weighted Platform Factory")]
         [SerializeField] private WeightsController<PlatformType> weights;
 
-        private void Awake()
+        public override void Init()
         {
             weights.UpdateWeights();
         }

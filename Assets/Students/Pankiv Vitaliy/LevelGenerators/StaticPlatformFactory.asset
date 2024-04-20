@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Values:
   - {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
-  startingPlatform: {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
-  verticalDistance: {x: 1.5, y: 3.5}
-  horizontalDistance: {x: -2.3, y: 2.3}
+  startingPlatform: {fileID: 1797740374321707943, guid: ce31b44381694f64c8a1b088f05c5828, type: 3}
+  verticalDistance:
+    min: 1.5
+    max: 3.5
+  horizontalDistance:
+    min: -2.3
+    max: 2.3
   maxPlatformCount: 16
-  preferredPlatformAmount: 6
+  preferredPlatformAmount: 8
   scoreMultiplier: 0.75
   duplicateChance: 0

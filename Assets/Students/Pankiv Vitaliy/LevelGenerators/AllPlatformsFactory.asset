@@ -15,12 +15,16 @@ MonoBehaviour:
   Values:
   - {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
   - {fileID: 6096099500834720225, guid: 4210c6d6d573c1c4190a39f3254724e8, type: 3}
-  - {fileID: 7300417356805758911, guid: 69f052b155386f8458e0cea4cd0a110f, type: 3}
+  - {fileID: -6313985008643099376, guid: 69f052b155386f8458e0cea4cd0a110f, type: 3}
   - {fileID: 5478645995520309443, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
-  startingPlatform: {fileID: 2692060347191553108, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
-  verticalDistance: {x: 1.5, y: 3.5}
-  horizontalDistance: {x: -2.3, y: 2.3}
+  startingPlatform: {fileID: 1797740374321707943, guid: ce31b44381694f64c8a1b088f05c5828, type: 3}
+  verticalDistance:
+    min: 1.5
+    max: 3.5
+  horizontalDistance:
+    min: -2.3
+    max: 2.3
   maxPlatformCount: 16
-  preferredPlatformAmount: 6
+  preferredPlatformAmount: 8
   scoreMultiplier: 1
   duplicateChance: 0.2

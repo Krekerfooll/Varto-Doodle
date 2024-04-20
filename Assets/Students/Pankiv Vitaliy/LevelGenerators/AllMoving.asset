@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eef3fba784ddd0b4e807795ccd73e07d, type: 3}
-  m_Name: AllWeighted
+  m_Name: AllMoving
   m_EditorClassIdentifier: 
   Values:
-  - {fileID: 5478645995520309443, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
-  - {fileID: -6313985008643099376, guid: 69f052b155386f8458e0cea4cd0a110f, type: 3}
   - {fileID: 6096099500834720225, guid: 4210c6d6d573c1c4190a39f3254724e8, type: 3}
-  - {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
+  - {fileID: -6313985008643099376, guid: 69f052b155386f8458e0cea4cd0a110f, type: 3}
   startingPlatform: {fileID: 1797740374321707943, guid: ce31b44381694f64c8a1b088f05c5828, type: 3}
   verticalDistance:
     min: 1.5
@@ -26,15 +24,11 @@ MonoBehaviour:
     max: 2.3
   maxPlatformCount: 16
   preferredPlatformAmount: 8
-  scoreMultiplier: 1
-  duplicateChance: 0.2
+  scoreMultiplier: 1.5
+  duplicateChance: 0
   weights:
     weights:
     - data: 3
-      weight: 0.2
-    - data: 2
-      weight: 0.3
-    - data: 1
-      weight: 0.6
-    - data: 0
+      weight: 0.1
+    - data: 3
       weight: 1

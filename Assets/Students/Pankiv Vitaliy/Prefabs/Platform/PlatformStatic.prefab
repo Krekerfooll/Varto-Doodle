@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1243546248027775924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7678300578335678880}
+  m_Layer: 7
+  m_Name: EntityContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7678300578335678880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243546248027775924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.73, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8766308355070873371}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1962318349117031861
 GameObject:
   m_ObjectHideFlags: 0
@@ -5005,6 +5036,7 @@ GameObject:
   - component: {fileID: 1941883143327624901}
   - component: {fileID: 6093509213347645002}
   - component: {fileID: 5214757152636264803}
+  - component: {fileID: 4130134407285815213}
   m_Layer: 7
   m_Name: PlatformStatic
   m_TagString: Untagged
@@ -5027,6 +5059,7 @@ Transform:
   m_Children:
   - {fileID: 3476869095151863406}
   - {fileID: 3074231011102460105}
+  - {fileID: 7678300578335678880}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &6834081075459372580
@@ -5163,3 +5196,20 @@ MonoBehaviour:
   collideWith:
     serializedVersion: 2
     m_Bits: 256
+  useTrigger: 0
+--- !u!114 &4130134407285815213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6595282012220114911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e54a4ab5ff0f204a894061ce275095f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factory: {fileID: 11400000, guid: 89e67d4768a1a0e47ba985bca90deff9, type: 2}
+  OnGenerated: {fileID: 0}
+  platform: {fileID: 1797740374321707943}
+  entityContainer: {fileID: 7678300578335678880}

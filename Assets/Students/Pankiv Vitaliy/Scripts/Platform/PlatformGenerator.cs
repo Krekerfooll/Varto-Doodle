@@ -48,7 +48,7 @@ namespace PVitaliy.Platform
             var newPlatform = SpawnPlatformAt(GenerateRandom(), GetNewPlatformPosition());
             if (newPlatform && Random.Range(0, 1f) <= factory.duplicateChance * newPlatform.DuplicateChanceMultiplier)
             {
-                var duplicatePosition = GetNewPlatformPosition(newPlatform.transform.position + Vector3.down * factory.verticalDistance.x);
+                var duplicatePosition = GetNewPlatformPosition(newPlatform.transform.position + Vector3.down * factory.verticalDistance.Min);
                 SpawnPlatformAt(GenerateRandom(), duplicatePosition, true);
             }
         }
@@ -103,8 +103,8 @@ namespace PVitaliy.Platform
 
         private Vector2 GetNewPlatformPosition(Vector3 startFrom)
         {
-            var distance = Random.Range(factory.verticalDistance.x, factory.verticalDistance.y);
-            var x = Random.Range(factory.horizontalDistance.x, factory.horizontalDistance.y);
+            var distance = Random.Range(factory.verticalDistance.Min, factory.verticalDistance.Max);
+            var x = Random.Range(factory.horizontalDistance.Min, factory.horizontalDistance.Max);
             return new Vector2(x, startFrom.y + distance);
         }
 
@@ -118,13 +118,13 @@ namespace PVitaliy.Platform
             
             Gizmos.color = Color.blue;
             // Горизонтальні ліміти генерації платформ
-            Gizmos.DrawLine(new Vector3(factory.horizontalDistance.x, factory.verticalDistance.x) + transformPosition,
-                new Vector3(factory.horizontalDistance.y, factory.verticalDistance.x) + transformPosition);
+            Gizmos.DrawLine(new Vector3(factory.horizontalDistance.Min, factory.verticalDistance.Min) + transformPosition,
+                new Vector3(factory.horizontalDistance.Max, factory.verticalDistance.Min) + transformPosition);
             
             // Вертикальні ліміти генерації платформ
-            var avgX = (factory.horizontalDistance.x + factory.horizontalDistance.y) / 2;
-            var startPoint = new Vector3(avgX, factory.verticalDistance.x) + transformPosition;
-            Gizmos.DrawLine(startPoint, new Vector3(avgX, factory.verticalDistance.y) + transformPosition);
+            var avgX = (factory.horizontalDistance.Min + factory.horizontalDistance.Max) / 2;
+            var startPoint = new Vector3(avgX, factory.verticalDistance.Min) + transformPosition;
+            Gizmos.DrawLine(startPoint, new Vector3(avgX, factory.verticalDistance.Max) + transformPosition);
             Gizmos.color = Color.red;
             Gizmos.DrawLine(startPoint, new Vector3(avgX, 0) + transformPosition);
         }

@@ -11,7 +11,8 @@ namespace PVitaliy.Player
         [SerializeField] private float raycastDistance = 1;
         [SerializeField] private float jumpPower = 7;
         [SerializeField] private float moveSpeed = 1;
-        public bool IsGrounded => rigidBody.velocity.y <= 0 && (
+        [SerializeField] [Min(0)] private float rayDistanceFromCenter = .7f;
+        private bool IsGrounded => rigidBody.velocity.y <= 0 && (
             Physics2D.Raycast(GetRayStartPosition(-1), Vector2.down, raycastDistance, groundMask) ||
             Physics2D.Raycast(GetRayStartPosition(1), Vector2.down, raycastDistance, groundMask)
             );
@@ -19,7 +20,7 @@ namespace PVitaliy.Player
 
         public Vector3 GetRayStartPosition(float rayDirectionX = 0)
         {
-            return rigidBody.transform.position + Vector3.right * (rayDirectionX * .35f) + Vector3.up * rayCastingOffsetY;
+            return rigidBody.transform.position + Vector3.right * (rayDirectionX * rayDistanceFromCenter * .35f) + Vector3.up * rayCastingOffsetY;
         }
 
         private void Update()

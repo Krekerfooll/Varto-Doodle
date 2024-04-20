@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace PVitaliy.Factory
 {
     [Serializable]
-    public struct WeightsData<TK>
+    public struct WeightData<TK>
     {
         public TK data;
         public float weight;
@@ -15,13 +16,12 @@ namespace PVitaliy.Factory
     [Serializable]
     public class WeightsController<TK>
     {
-        [SerializeField] private List<WeightsData<TK>> weights;
+        [SerializeField] private List<WeightData<TK>> weights;
         private float _totalWeight;
 
         public void UpdateWeights()
         {
-            _totalWeight = 0;
-            weights.ForEach(weightData => _totalWeight += weightData.weight);
+            _totalWeight = weights.Sum(weightData => weightData.weight);
             weights.Sort((w1, w2) => w1.weight < w2.weight ? -1 : 1);
         }
 

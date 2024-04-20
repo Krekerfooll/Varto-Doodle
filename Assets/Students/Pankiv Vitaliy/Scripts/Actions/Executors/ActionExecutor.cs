@@ -12,5 +12,13 @@ namespace PVitaliy.Actions.Core
             if (_executeOnce && _executedOnce) return;
             ExecuteActions(actions);
         }
+        
+        protected void SetActionsTarget(GameObject target)
+        {
+            actions.ForEach(action =>
+            {
+                if (action is ActionBaseWithTarget a) a.SetTarget(target);
+            });
+        }
     }
 }

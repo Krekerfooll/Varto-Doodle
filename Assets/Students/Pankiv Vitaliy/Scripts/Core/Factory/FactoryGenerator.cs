@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace PVitaliy.Factory
 {
-    public abstract class FactoryGenerator<TF, TO, TK> : MonoBehaviour where TO : FactoryObject<TK> where TF : FactoryBase<TO, TK>
+    public abstract class FactoryGenerator<TF, TO, TK> : MonoBehaviour where TF : FactoryBase<TO, TK> where TO : FactoryObject<TK>
     {
         [Header("Generator")]
         [SerializeField] protected TF factory;
-
         [SerializeField] private ActionExecutorBase OnGenerated;
 
         protected TO GenerateRandom()

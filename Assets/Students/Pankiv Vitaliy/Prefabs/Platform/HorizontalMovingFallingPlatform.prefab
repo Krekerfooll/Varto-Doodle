@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4479954099015371379}
   - component: {fileID: 8467158450492191022}
   - component: {fileID: 4017620452205805161}
-  - component: {fileID: 7300417356805758911}
+  - component: {fileID: -6313985008643099376}
   - component: {fileID: 4734005545066275416}
   - component: {fileID: 2246947442882877912}
   - component: {fileID: 3876433050920747474}
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.06}
+  m_Offset: {x: 0, y: -0.18805736}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.3, y: 0.65}
+  m_Size: {x: 3.3, y: 0.9061147}
   m_EdgeRadius: 0
 --- !u!199 &8467158450492191022
 ParticleSystemRenderer:
@@ -5044,7 +5044,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &7300417356805758911
+--- !u!114 &-6313985008643099376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5053,12 +5053,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 982515712623186775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c894dd1c9f080e84da21a17360e8b83d, type: 3}
+  m_Script: {fileID: 11500000, guid: 44d205a8934bc6045b0456cc29a4c62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 4479954099015371379}
-  duplicateChanceMultiplier: 1
+  duplicateChanceMultiplier: 0
   type: 3
+  slider: {fileID: 4734005545066275416}
 --- !u!114 &4734005545066275416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5109,6 +5110,7 @@ MonoBehaviour:
   collideWith:
     serializedVersion: 2
     m_Bits: 256
+  useTrigger: 0
 --- !u!1 &2805780290839443070
 GameObject:
   m_ObjectHideFlags: 0

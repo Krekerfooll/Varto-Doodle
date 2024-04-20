@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PVitaliy.Actions.Core
 {
-    public abstract class ActionExecutorBase : MonoBehaviour
+    public abstract class ActionExecutorBase: MonoBehaviour
     {
         [SerializeField] protected bool _executeOnce;
         protected bool _executedOnce;

@@ -1,4 +1,5 @@
 using PVitaliy.Factory;
+using PVitaliy.Utils;
 using UnityEngine;
 
 namespace PVitaliy.Platform
@@ -9,8 +10,8 @@ namespace PVitaliy.Platform
     {
         [Header("Platform Factory")]
         public PlatformBase startingPlatform;
-        public Vector2 verticalDistance;
-        public Vector2 horizontalDistance;
+        public MinMax<float> verticalDistance;
+        public MinMax<float> horizontalDistance;
         [Min(2)] public int maxPlatformCount = 16;
         [Min(1)] public int preferredPlatformAmount = 6;
         [Min(0)] public float scoreMultiplier = 1;
