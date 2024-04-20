@@ -29,7 +29,7 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
         private float _direction;
         private bool _isOnTheGround;
         private bool _canJump;
-        [SerializeField] private int _gemCounter = 0;
+        [SerializeField] internal int gemCounter = 0;
         
     
     
@@ -89,7 +89,7 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
             if (other.gameObject.CompareTag("Gem"))
             {
                 Debug.Log(gameObject.name+" contact with " + other.gameObject.name);
-                _gemCounter += 1;
+                gemCounter += 1;
                 Destroy(other.gameObject);
             }
         }

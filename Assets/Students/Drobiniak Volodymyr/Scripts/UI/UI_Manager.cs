@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using Students.Drobiniak_Volodymyr.Scripts.Player;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI; 
 
-public class UI_Manager : MonoBehaviour
+namespace Students.Drobiniak_Volodymyr.Scripts.UI
 {
-    // Start is called before the first frame update
-    void Start()
+    public class UI_Manager : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField] private NewPlayerController playerScript;
+        [SerializeField] private TextMeshProUGUI scoreText;
+        private void Update()
+        {
+            string gemCountString = playerScript.gemCounter.ToString();
+            scoreText.text = $"GEMS: {gemCountString}";
+        }
     }
 }
+
+
