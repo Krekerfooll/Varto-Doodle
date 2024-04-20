@@ -8,8 +8,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Utils
         [SerializeField] private Animator _animator;
         [SerializeField] private Transform _target;
         [SerializeField] private Rigidbody2D _rigidbody2D;
-        
-        public override void Execute()
+
+        protected override void Execute()
         {
             ExecuteSpring();
         }

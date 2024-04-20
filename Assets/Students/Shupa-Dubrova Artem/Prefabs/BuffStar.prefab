@@ -250,5 +250,4 @@ MonoBehaviour:
   _onTriggerEnterWithTag: Player
   _executeOnce: 1
   _buffJumpPower: 20
-  _rigidbody2D: {fileID: 0}
   _playerController: {fileID: 0}

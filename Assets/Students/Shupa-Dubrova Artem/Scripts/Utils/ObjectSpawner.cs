@@ -14,7 +14,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Utils
             Execute();
         }
 
-        public override void Execute()
+        protected override void Execute()
         {
             var randomObject = _prefabsVariants[Random.Range(0, _prefabsVariants.Length)];
             var randomChance = Random.Range(0, 100);

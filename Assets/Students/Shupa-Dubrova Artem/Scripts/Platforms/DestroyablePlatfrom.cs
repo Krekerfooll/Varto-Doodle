@@ -9,7 +9,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Platforms
         [SerializeField] private Animator _animator;
         [SerializeField] private float _delay;
 
-        public override void Execute()
+        protected override void Execute()
         {
             DestroyPlatform();
         }

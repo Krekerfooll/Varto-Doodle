@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 1723461509887156698}
   - component: {fileID: 6865780242413345403}
   - component: {fileID: 2908165083591844885}
+  - component: {fileID: 760573880658104071}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -290,11 +291,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1723461509887156698}
-  _spriteRenderer: {fileID: 0}
-  _colorWhenBuffed: {r: 0, g: 0, b: 0, a: 0}
   _animator: {fileID: 2140767205524796695}
   _playerSpeed: 7
   _jumpPower: 13
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &760573880658104071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213492586715047947}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ef9ca599e65894ea4922a53dfcb51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 352320371124777615}
+  _colors:
+  - {r: 0.5019608, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.5019608, b: 0.9984355, a: 1}
+  _speedOfChange: 4

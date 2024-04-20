@@ -5,8 +5,6 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D _player;
-        [SerializeField] private SpriteRenderer _spriteRenderer;
-        [SerializeField] private Color _colorWhenBuffed;
         [SerializeField] private Animator _animator;
         [SerializeField] private float _playerSpeed;
         [SerializeField] private float _jumpPower;
@@ -91,14 +89,11 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
             if (buffJumpPower > 0 && _currentJumpPower <= _jumpPower)
             {
                 _currentJumpPower = buffJumpPower;
-                _spriteRenderer.color = _colorWhenBuffed;
             }
             else
             {
                 _currentJumpPower = _jumpPower;
-                _spriteRenderer.color = Color.white;
             }
         }
-        
     }
 }

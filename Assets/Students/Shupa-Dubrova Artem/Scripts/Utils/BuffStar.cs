@@ -7,8 +7,8 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Utils
     {
         [SerializeField] private float _buffJumpPower;
         [SerializeField] private PlayerController _playerController;
-        
-        public override void Execute()
+
+        protected override void Execute()
         {
             ExecuteStar();
         }
