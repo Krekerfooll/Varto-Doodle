@@ -13,12 +13,12 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Camera
 
         private void LateUpdate()
         {
-            
             var targetPosition = new Vector3(
                 _followByX ? _target.position.x : transform.position.x,
                 _followByY ? _target.position.y : transform.position.y,
                 _followByZ ? _target.position.z : transform.position.z
             );
+            
             if (_target.position.y > transform.position.y)
             {
                 transform.position = Vector3.Lerp(transform.position, targetPosition, _speed * Time.deltaTime);

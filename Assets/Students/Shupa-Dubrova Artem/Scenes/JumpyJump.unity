@@ -276,11 +276,13 @@ MonoBehaviour:
   _platformInteractive:
   - {fileID: 2924947795352661211, guid: 70be3c9f3832448259e11f718d70a5e4, type: 3}
   - {fileID: 379657777223355198, guid: 438b3b9c8812cb6489558aa98ffad2d2, type: 3}
+  - {fileID: 379657777223355198, guid: 438b3b9c8812cb6489558aa98ffad2d2, type: 3}
+  - {fileID: 8114691733109953909, guid: cd29ffe6876034fa4889234a98efefa7, type: 3}
   - {fileID: 8114691733109953909, guid: cd29ffe6876034fa4889234a98efefa7, type: 3}
   _platformInteractiveChance: 20
   _platformsSpawnedPerStepCount: {x: 1, y: 3}
-  _stepsCountToSpawn: 7
-  _stepsCountToDelete: 12
+  _stepsCountToSpawn: 5
+  _stepsCountToDelete: 5
   _stepHeight: 2.7
   _bounds: {x: -2.2, y: 2.2}
   _setOffsetY: 0.6
@@ -341,11 +343,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb9262408d2004dffb3a0c69d88fc126, type: 3}
---- !u!4 &826851087 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3841817953713471869, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
-  m_PrefabInstance: {fileID: 2086512252}
-  m_PrefabAsset: {fileID: 0}
 --- !u!212 &843548785 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 352320371124777615, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
@@ -457,11 +454,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d238f53b61764ed390d7be179756dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 826851087}
-  _speed: 4
+  _target: {fileID: 1423075886}
+  _speed: 6
   _followByX: 0
   _followByY: 1
   _followByZ: 0
+--- !u!4 &1423075886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6740311156654191577, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
+  m_PrefabInstance: {fileID: 2086512252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1543330098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5194641704645959004, guid: e38110f5360eb6248a6c8e2197669d73, type: 3}
