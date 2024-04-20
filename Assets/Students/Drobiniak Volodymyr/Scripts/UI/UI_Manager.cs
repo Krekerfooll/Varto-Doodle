@@ -1,8 +1,10 @@
-using System;
+using System.Collections;
 using Students.Drobiniak_Volodymyr.Scripts.Player;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 namespace Students.Drobiniak_Volodymyr.Scripts.UI
 {
@@ -11,27 +13,38 @@ namespace Students.Drobiniak_Volodymyr.Scripts.UI
         [Header("Score UI")]
         [SerializeField] private NewPlayerController playerScript;
         [SerializeField] private TextMeshProUGUI scoreText;
-        [Space(2)]
+        private string _gemCountString;
         
-        
-        [Header("TIMER")]
+        [Space()][Header("TIMER")]
         [SerializeField] private float totalTime = 60f; 
-        [SerializeField] private TextMeshProUGUI _timerText; // Посилання на текстовий елемент для відображення таймера
-        private float _currentTime; // Поточний час таймера
+        [SerializeField] private TextMeshProUGUI timerText; 
+        private float _currentTime; 
+
+        [Space()][Header("GameOverScreen")] 
+        [SerializeField] private GameObject gameOverScreen;
+        [SerializeField] private RawImage background;
+        [SerializeField] private float duration = 2f;
+        private readonly Color _originalColor = new Color(1f, 0.788f, 0.788f); // Колір FFC9C9 в форматі RGBA
+        private Color _targetColor = new Color(1f, 0.231f, 0.231f);
+
 
         private void Start()
         {
-            _timerText ??= GetComponent<TextMeshProUGUI>();
+            Time.timeScale = 1;
+            timerText ??= GetComponent<TextMeshProUGUI>();
             _currentTime = totalTime;
         }
 
 
         private void Update()
         {
-            string gemCountString = playerScript.gemCounter.ToString();
-            scoreText.text = $"GEMS: {gemCountString}";
+            ShowScores();
             Timer();
-            
+        }
+
+        private void ShowScores()
+        {
+            scoreText.text = $"GEMS: {playerScript.gemCounter}";
         }
 
         private void Timer()
@@ -41,9 +54,33 @@ namespace Students.Drobiniak_Volodymyr.Scripts.UI
             // Форматування тексту для відображення у форматі хвилин:секунди
             int minutes = Mathf.FloorToInt(_currentTime / 60);
             int seconds = Mathf.FloorToInt(_currentTime % 60);
-            _timerText.text = $"{minutes:00}:{seconds:00}";
+            timerText.text = $"{minutes:00}:{seconds:00}";
+            
+            if (_currentTime <= 0)
+            {
+                ShowGameOverScreen();
+            }
+        }
+
+        private void ShowGameOverScreen()
+        {
+            gameOverScreen.SetActive(true); 
+            scoreText.text = $"GEMS: {playerScript.gemCounter}";
+            Time.timeScale = 0f;
+            timerText.gameObject.SetActive(false);
+        }
+        
+        
+
+        public void RestartGame()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Time.timeScale = 1f;
+            gameOverScreen.SetActive(false);
+            timerText.gameObject.SetActive(true);
         }
     }
 }
+
 
 

@@ -93,11 +93,5 @@ namespace Students.Drobiniak_Volodymyr.Scripts.Player
                 Destroy(other.gameObject);
             }
         }
-
-        private void FixedUpdate()
-        {
-            // PlayerMovement(_direction);
-            // PlayerJump();
-        }
     }
 }

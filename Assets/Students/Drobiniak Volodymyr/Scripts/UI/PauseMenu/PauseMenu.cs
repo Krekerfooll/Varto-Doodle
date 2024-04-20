@@ -21,7 +21,6 @@ namespace Students.Drobiniak_Volodymyr.Scripts.UI.PauseMenu
                 else
                 {
                     PauseGame();
-
                 }
             }
         }
@@ -45,6 +44,5 @@ namespace Students.Drobiniak_Volodymyr.Scripts.UI.PauseMenu
             Time.timeScale = 1f;
             SceneManager.LoadScene("MainMenu");
         }
-        
     }
 }
