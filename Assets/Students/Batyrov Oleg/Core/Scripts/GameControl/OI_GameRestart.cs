@@ -7,9 +7,9 @@ namespace OIMOD.Core.Component
         [SerializeField] private OI_GameData gameData;
         [SerializeField] private OI_PlayerJumpAction jumpAction;
         [SerializeField] private GameObject playerInstance, startPlatform, platformSpawner, cameraInstance;
-        [SerializeField] private GameObject restartPlatform, platformParent, collectableParent, levelBorders;
+        [SerializeField] private GameObject restartPlatform, platformParent, collectableParent, levelBorders, bgBackParalax;
         [SerializeField] private OI_PlatformGenerator platformGenerator;
-        private Vector3 playerStartPos, platformStartPos, platformSpawnerStartPos, cameraStartPos, levelBordersStartPos;
+        private Vector3 playerStartPos, platformStartPos, platformSpawnerStartPos, cameraStartPos, levelBordersStartPos, bgBackParalaxStartPos;
 
         private void Awake()
         {
@@ -18,6 +18,7 @@ namespace OIMOD.Core.Component
             platformSpawnerStartPos = platformSpawner.transform.position;
             cameraStartPos = cameraInstance.transform.position;
             levelBordersStartPos = levelBorders.transform.position;
+            bgBackParalaxStartPos = bgBackParalax.transform.position;
 
             gameObject.SetActive(false);
         }
@@ -39,6 +40,7 @@ namespace OIMOD.Core.Component
             platformSpawner.transform.position = platformSpawnerStartPos;
             cameraInstance.transform.position = cameraStartPos;
             levelBorders.transform.position = levelBordersStartPos;
+            bgBackParalax.transform.position = bgBackParalaxStartPos;
 
             gameObject.SetActive(false);
         }
