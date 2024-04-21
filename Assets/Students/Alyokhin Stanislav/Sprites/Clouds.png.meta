@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82e455cc164845941a0800f0753a5aef
+guid: 218ff927d0340dd4a92e50910f8b98b8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_0
+      name: Clouds_0
       rect:
         serializedVersion: 2
-        x: 273
-        y: 203
-        width: 315
-        height: 499
+        x: 78
+        y: 707
+        width: 664
+        height: 231
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76efce43c98a92245b46719ca3f9ed50
-      internalID: -840748212
+      spriteID: 4181b8a5e288cbf4897b9b3b4f9014f6
+      internalID: 150859398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clouds_1
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 535
+        width: 147
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ba45a3ee1907249aeb2ac07a776304
+      internalID: 1061843914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clouds_2
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 315
+        width: 369
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86179cd7d7e1b6e4a9155dc0ed2e53cd
+      internalID: 83170033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clouds_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 409
+        width: 417
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98729fff9009bbd4d9ece39a06cb8d1e
+      internalID: -1129922179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clouds_4
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 99
+        width: 589
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9decd07717ecdbb428bf04b6ede93c4b
+      internalID: -1178159248
       vertices: []
       indices: 
       edges: []
@@ -180,7 +264,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_0: -840748212
+      Clouds_0: 150859398
+      Clouds_1: 1061843914
+      Clouds_2: 83170033
+      Clouds_3: -1129922179
+      Clouds_4: -1178159248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

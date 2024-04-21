@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 905b9a5f6ac63fc48a77eaad33a45648
+guid: 7a16dd11fb9844c43ac29ae299534d75
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: platformSprait_0
+      name: PlatformsGround_0
       rect:
         serializedVersion: 2
-        x: 391
-        y: 732
-        width: 441
-        height: 153
+        x: 791
+        y: 646
+        width: 176
+        height: 321
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa3bdd65df1b5a7448c86c760ab2418c
-      internalID: -677784373
+      spriteID: 23af73457dd66fd489f7624156b2a92a
+      internalID: 1914769864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: platformSprait_1
+      name: PlatformsGround_1
       rect:
         serializedVersion: 2
-        x: 601
-        y: 191
-        width: 166
-        height: 121
+        x: 304
+        y: 824
+        width: 444
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,19 +184,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3e4c1a8f7de30a4ea732ec6bd2d1250
-      internalID: 797998580
+      spriteID: 335e19422db170144bb86187e35af70a
+      internalID: 1991386127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: platformSprait_2
+      name: PlatformsGround_2
       rect:
         serializedVersion: 2
-        x: 143
-        y: 211
-        width: 146
+        x: 63
+        y: 792
+        width: 183
         height: 161
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63fd8b5785d43934bb26487666ec3830
-      internalID: 1205851127
+      spriteID: d9e9a2953262c704eb63f93302cf8875
+      internalID: -1627951076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: platformSprait_3
+      name: PlatformsGround_3
       rect:
         serializedVersion: 2
-        x: 199
-        y: 490
-        width: 312
-        height: 112
+        x: 80
+        y: 640
+        width: 169
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,8 +226,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97217951398b21949b6f998610927bc4
-      internalID: 225203674
+      spriteID: 6aec2f5ebb3b7ea4088306460d7d5c0e
+      internalID: 744048077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformsGround_4
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 662
+        width: 313
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027be671fe13d20469dfbe7d58b94e42
+      internalID: 514243860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformsGround_5
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 343
+        width: 315
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081efc97df2719f49b7b27dadd3a17a5
+      internalID: -233842115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformsGround_6
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 8
+        width: 207
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9dc0e2230f2e8488308188f3dd3ae1
+      internalID: -1467327465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformsGround_7
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 241
+        width: 496
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50deb0bcaf62f844cb1ea3f13576213c
+      internalID: -615112396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformsGround_8
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 40
+        width: 658
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d86917bfc1c37a49b71453513650b19
+      internalID: -1223178098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformsGround_9
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 378
+        width: 225
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4452f85bc1301b84b8321055c52a0390
+      internalID: 652623163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformsGround_10
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 463
+        width: 192
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7787d87b13a90ee4db1e1277f5a897b4
+      internalID: -42114468
       vertices: []
       indices: 
       edges: []
@@ -243,10 +390,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      platformSprait_0: -677784373
-      platformSprait_1: 797998580
-      platformSprait_2: 1205851127
-      platformSprait_3: 225203674
+      PlatformsGround_0: 1914769864
+      PlatformsGround_1: 1991386127
+      PlatformsGround_10: -42114468
+      PlatformsGround_2: -1627951076
+      PlatformsGround_3: 744048077
+      PlatformsGround_4: 514243860
+      PlatformsGround_5: -233842115
+      PlatformsGround_6: -1467327465
+      PlatformsGround_7: -615112396
+      PlatformsGround_8: -1223178098
+      PlatformsGround_9: 652623163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

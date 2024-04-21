@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Alokhin.Stanislav.Player
+namespace Alokhin.Stanislav
 {
     public class PlayerControl : MonoBehaviour
     {
@@ -15,17 +13,24 @@ namespace Alokhin.Stanislav.Player
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private float _groundCheckDistance;
 
+        private Vector3 _lookLeft;
+        private Vector3 _lookRight;
+       //private bool _lookLeft;
+       //private bool _lookRight;
+
         //private float _moveDiraction;
         private bool _isJump;
         private bool _isGrounded;
 
         private void Start()
         {
-
+            _lookLeft = _rb2.transform.localScale;
+            _lookRight = new Vector3(-_lookLeft.x, _lookLeft.y, _lookLeft.z);
         }
         private void Update()
         {
             CalculateJump();
+            CalculateSpeed();
         }
 
         void FixedUpdate()
@@ -56,11 +61,21 @@ namespace Alokhin.Stanislav.Player
                 _rb2.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
                 _isJump = true;
             }
-            var _moveDiraction = Input.GetAxis("Horizontal");
-           _rb2.velocity = new Vector2(_speed * _moveDiraction, _rb2.velocity.y);
+
         }
         private void CalculateSpeed()
         {
+            var _moveDiraction = Input.GetAxis("Horizontal");
+            _rb2.velocity = new Vector2(_speed * _moveDiraction, _rb2.velocity.y);
+
+            if (_moveDiraction < 0f)
+            {
+                _rb2.transform.localScale = _lookLeft;
+            }
+            else if (_moveDiraction > 0f)
+            {
+                _rb2.transform.localScale = _lookRight;
+            }
 
         }
     }

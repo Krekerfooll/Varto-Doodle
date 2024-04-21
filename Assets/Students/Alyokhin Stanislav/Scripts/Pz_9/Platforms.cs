@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Alokhin.Stanislav.Player
+namespace Alokhin.Stanislav.Ground
 {
-    public class Platform : MonoBehaviour
+    public class Platforms : MonoBehaviour
     {
         [SerializeField] protected Transform _target;
         [SerializeField] protected GameObject _collider;

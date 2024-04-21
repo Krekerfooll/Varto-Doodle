@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Alokhin.Stanislav.Platform
+namespace Alokhin.Stanislav.PlatformGround
 {
-    public class Platfom : MonoBehaviour
+    public class Platforms : MonoBehaviour
     {
         [SerializeField] Renderer objectRender;
 
