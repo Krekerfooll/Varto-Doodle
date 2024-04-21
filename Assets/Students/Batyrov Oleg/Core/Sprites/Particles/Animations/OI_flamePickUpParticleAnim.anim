@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OI_playerDeathAnim
+  m_Name: OI_flamePickUpParticleAnim
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,44 +21,24 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 88b91af803fd4fb478934f5cbb44b109, type: 3}
-    - time: 0.033333335
-      value: {fileID: 21300000, guid: c5e5c44ea05565e4e8f563f1eeac49b3, type: 3}
-    - time: 0.06666667
-      value: {fileID: 21300000, guid: b735415277c5b3b438d0b367eba38eea, type: 3}
-    - time: 0.11666667
-      value: {fileID: 21300000, guid: 103fe37b6ec75614fab08ba612ac5f3c, type: 3}
-    - time: 0.18333334
-      value: {fileID: 21300000, guid: 93bc7851091dd8044b0bf62990654a3c, type: 3}
-    - time: 0.25
-      value: {fileID: 21300000, guid: a74082e0836f28f4591b0effb6dc3684, type: 3}
-    - time: 0.31666666
-      value: {fileID: 21300000, guid: c4ec438f9b0a36e4aba30bf6169b2c07, type: 3}
-    - time: 0.38333333
-      value: {fileID: 21300000, guid: 24a90447c2866f541ac97a2221e077cf, type: 3}
-    - time: 0.46666667
-      value: {fileID: 21300000, guid: 5776232d64b7e414eb1b7b902aac1f1a, type: 3}
-    - time: 0.53333336
-      value: {fileID: 21300000, guid: 0a212f9a8d033e846807bac8a7656ba9, type: 3}
-    - time: 0.6333333
       value: {fileID: 21300000, guid: 5a8cb705f76419042903e7dbe0f2b8b7, type: 3}
-    - time: 0.68333334
+    - time: 0.06666667
       value: {fileID: 21300000, guid: a0cac9745e03dbc4d8893f9e646737a0, type: 3}
-    - time: 0.71666664
+    - time: 0.11666667
       value: {fileID: 21300000, guid: 69d40eb225916314392ab5af6fde50d6, type: 3}
-    - time: 0.81666666
+    - time: 0.16666667
       value: {fileID: 21300000, guid: 1b46b2dafd44d26469bfe49e7b2cf757, type: 3}
-    - time: 0.85
+    - time: 0.23333333
       value: {fileID: 21300000, guid: 8c4a8d71a50282a4bba0e23f083f470f, type: 3}
-    - time: 0.9166667
+    - time: 0.3
       value: {fileID: 21300000, guid: 6e2a1798b0341504e9a7d76410c74a92, type: 3}
-    - time: 0.96666664
+    - time: 0.35
       value: {fileID: 21300000, guid: fdd254f1d03f62e4295d23676f208daa, type: 3}
-    - time: 1.0333333
+    - time: 0.4
       value: {fileID: 21300000, guid: c5ad34d0b6c5a56418560bafec099b3d, type: 3}
-    - time: 1.1
+    - time: 0.46666667
       value: {fileID: 21300000, guid: 900054184dea27d488412aca522ec9f0, type: 3}
-    - time: 1.2
+    - time: 0.51666665
       value: {fileID: 21300000, guid: 900054184dea27d488412aca522ec9f0, type: 3}
     attribute: m_Sprite
     path: 
@@ -82,16 +62,6 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 88b91af803fd4fb478934f5cbb44b109, type: 3}
-    - {fileID: 21300000, guid: c5e5c44ea05565e4e8f563f1eeac49b3, type: 3}
-    - {fileID: 21300000, guid: b735415277c5b3b438d0b367eba38eea, type: 3}
-    - {fileID: 21300000, guid: 103fe37b6ec75614fab08ba612ac5f3c, type: 3}
-    - {fileID: 21300000, guid: 93bc7851091dd8044b0bf62990654a3c, type: 3}
-    - {fileID: 21300000, guid: a74082e0836f28f4591b0effb6dc3684, type: 3}
-    - {fileID: 21300000, guid: c4ec438f9b0a36e4aba30bf6169b2c07, type: 3}
-    - {fileID: 21300000, guid: 24a90447c2866f541ac97a2221e077cf, type: 3}
-    - {fileID: 21300000, guid: 5776232d64b7e414eb1b7b902aac1f1a, type: 3}
-    - {fileID: 21300000, guid: 0a212f9a8d033e846807bac8a7656ba9, type: 3}
     - {fileID: 21300000, guid: 5a8cb705f76419042903e7dbe0f2b8b7, type: 3}
     - {fileID: 21300000, guid: a0cac9745e03dbc4d8893f9e646737a0, type: 3}
     - {fileID: 21300000, guid: 69d40eb225916314392ab5af6fde50d6, type: 3}
@@ -107,7 +77,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.2166667
+    m_StopTime: 0.5333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -127,7 +97,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.1333333
+  - time: 0.51666665
     functionName: ExecuteInternal
     data: 
     objectReferenceParameter: {fileID: 0}

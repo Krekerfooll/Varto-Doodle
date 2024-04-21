@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6490049507898968628}
   - component: {fileID: 6619044842259896788}
   - component: {fileID: 6086670973423086639}
+  - component: {fileID: 2814398481877424702}
   m_Layer: 0
   m_Name: FireSoul
   m_TagString: Untagged
@@ -102,6 +103,7 @@ MonoBehaviour:
   _gameData: {fileID: 0}
   _checkDestroyPosition: {fileID: 8421698016675573119}
   _checkOnTriggerEnter: {fileID: 6490049507898968628}
+  _spawnObjectAction: {fileID: 2814398481877424702}
 --- !u!114 &8421698016675573119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetObject: {fileID: 0}
   _onTriggerActions:
+  - {fileID: 2814398481877424702}
   - {fileID: 6619044842259896788}
   - {fileID: 6086670973423086639}
   delay: 0
@@ -166,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _executeOnAwake: 0
   _executeOnce: 1
-  bonus: 25
+  bonus: 10
 --- !u!114 &6086670973423086639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +186,23 @@ MonoBehaviour:
   _executeOnce: 0
   _targetToDestroy: {fileID: 881137061805068212}
   _delay: 0
+--- !u!114 &2814398481877424702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881137061805068212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82e3061c4c903143a38f97ace9790e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnce: 0
+  objectToSpawn: {fileID: 2641460184687595587, guid: 7644895f431fc8543a0ccef7b5105b15, type: 3}
+  spawnTransform: {fileID: 7955799710296767299}
+  spawnPlaceholder: {fileID: 7955799710296767299}
 --- !u!1 &1130836565089338378
 GameObject:
   m_ObjectHideFlags: 0

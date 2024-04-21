@@ -4,13 +4,13 @@ namespace OIMOD.Core.Component
 {
     public class OI_DisableAction : OI_ActionBase
     {
-        [SerializeField] public GameObject _target;
+        [SerializeField] public GameObject[] _target;
         [SerializeField] private float delay;
 
         protected override void ExecuteInternal()
         {
-            if (_target != null)
-                _target.SetActive(false);
+            if (_target != null) 
+                foreach (GameObject target in _target) target.SetActive(false);
         }
     }
 }

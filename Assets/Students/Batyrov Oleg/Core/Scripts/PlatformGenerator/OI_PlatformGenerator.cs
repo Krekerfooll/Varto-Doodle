@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,19 +10,21 @@ namespace OIMOD.Core.Component
         [SerializeField] protected List<OI_PlatformData> PlatformData;
         [SerializeField] protected int _spawnCount;
 
-        [SerializeField] protected int difficultyStep;
+        [SerializeField] public int difficultyStep;
         [SerializeField][Range(1,10)] protected int difficultyLevelStep;
-        protected bool beforeRandomGeneration;
-        protected int introDifficultyLevel = 1;
-        protected int randomDifficultyLevel = 1;
-        protected int _currentDifficultyStep;
-        protected int _currentDifficultyLevel;
+        public bool beforeRandomGeneration;
+        public int introDifficultyLevel = 1;
+        public int randomDifficultyLevel = 1;
+        public int _currentDifficultyStep;
 
-        protected int gameDifficultyLevel = 0;
-        protected int maxDifficultyLevel = 9;
+        public int spawnRateDifficultyLevel = 0;
+        protected int maxSpawnRateDifficultyLevel = 50;
+        public int spawnStepDifficultyLevel = 0;
+        protected int maxSpawnStepDifficultyLevel = 10;
 
-        protected bool firstTimeIntro;
-        protected bool firstTimeRandom;
+
+        public bool firstTimeIntro;
+        public bool firstTimeRandom;
 
         protected bool hasSpawnedOnLine;
 
@@ -185,7 +186,7 @@ namespace OIMOD.Core.Component
 
             if (beforeRandomGeneration)
             {
-                if (_currentDifficultyStep == 0)
+                if (_currentDifficultyStep == 0 || introDifficultyLevel == 0)
                 {
                     introDifficultyLevel++;
                     readyToChangeRates = true;
@@ -265,26 +266,27 @@ namespace OIMOD.Core.Component
             }
             if (!beforeRandomGeneration)
             {
-                randomDifficultyLevel = _currentDifficultyStep == 0 ? randomDifficultyLevel++ : randomDifficultyLevel;
+                if (_currentDifficultyStep <= 0) randomDifficultyLevel++;
                 _currentDifficultyStep = _currentDifficultyStep <= 0 ? difficultyStep : _currentDifficultyStep;
-                hightDifficulty = gameDifficultyLevel;
 
                 if (randomDifficultyLevel > difficultyLevelStep || firstTimeRandom)
                 {
-                    gameDifficultyLevel = gameDifficultyLevel == maxDifficultyLevel ? maxDifficultyLevel : gameDifficultyLevel++;
-                    randomDifficultyLevel = 1;
+                    if (spawnRateDifficultyLevel != maxSpawnRateDifficultyLevel) spawnRateDifficultyLevel++;
+                    if (spawnStepDifficultyLevel != maxSpawnStepDifficultyLevel) spawnStepDifficultyLevel++;
 
-                    int[] simpleSpawnData = { 1, 100 - gameDifficultyLevel, 1, 1 + gameDifficultyLevel };
-                    int[] smallSpawnData = { 1, 30 - gameDifficultyLevel, 1, 1 + gameDifficultyLevel };
-                    int[] highJumpSpawnData = { 35, 50 + gameDifficultyLevel, 5, 10 - gameDifficultyLevel };
-                    int[] simpleBrokenSpawnData = { 1, 50 + gameDifficultyLevel, 5, 10 - gameDifficultyLevel };
-                    int[] smallBrokenSpawnData = { 1, 50 + gameDifficultyLevel, 5, 10 - gameDifficultyLevel };
-                    int[] deadlySpawnData = { 1, 10 + gameDifficultyLevel, 10, 10 - gameDifficultyLevel };
+                    int[] simpleSpawnData = { 1, 100 - spawnRateDifficultyLevel, 1, 1 + spawnStepDifficultyLevel };
+                    int[] smallSpawnData = { 1, 30 - spawnRateDifficultyLevel, 1, 1 + spawnStepDifficultyLevel };
+                    int[] highJumpSpawnData = { 35, 50 + spawnRateDifficultyLevel, 5, 10 - spawnStepDifficultyLevel };
+                    int[] simpleBrokenSpawnData = { 1, 50 + spawnRateDifficultyLevel, 5, 10 - spawnStepDifficultyLevel };
+                    int[] smallBrokenSpawnData = { 1, 50 + spawnRateDifficultyLevel, 5, 10 - spawnStepDifficultyLevel };
+                    int[] deadlySpawnData = { 1, 10 + spawnRateDifficultyLevel, 10, 10 - spawnStepDifficultyLevel };
 
                     GeneratePlatformRates(simpleSpawnData, smallSpawnData, highJumpSpawnData,
                         simpleBrokenSpawnData, smallBrokenSpawnData, deadlySpawnData);
+                    hightDifficulty = Random.Range(0, 11);
                     firstTimeRandom = false;
                 }
+                
             }
         }
         public void GeneratePlatformRates(int[] simple, int[] small, int[] highJump,

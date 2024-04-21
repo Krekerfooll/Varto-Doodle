@@ -6,7 +6,7 @@ namespace OIMOD.Core.Component
     {
         [SerializeField] private GameObject objectToSpawn;
         [SerializeField] private Transform spawnTransform;
-        [SerializeField] private Transform spawnPlaceholder;
+        [SerializeField] public Transform spawnPlaceholder;
         protected override void ExecuteInternal()
         {
             Instantiate(objectToSpawn, spawnTransform.position, Quaternion.identity, spawnPlaceholder);

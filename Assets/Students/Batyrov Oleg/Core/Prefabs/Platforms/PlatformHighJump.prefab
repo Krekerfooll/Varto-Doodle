@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 4131418105359017225}
   - component: {fileID: 6905522979832305106}
   - component: {fileID: 8901147499553456000}
+  - component: {fileID: 1597285110962103954}
   m_Layer: 7
   m_Name: PlatformHighJump
   m_TagString: Untagged
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8561399865677734aa8519862eae7ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameData: {fileID: 0}
   _platformCollider: {fileID: 6077924638863318554}
   _checkDestroyPosition: {fileID: 8201155941598502551}
   _platformSpawnCollectable: {fileID: 0}
@@ -169,6 +171,7 @@ MonoBehaviour:
   _targetObject: {fileID: 0}
   _onTriggerActions:
   - {fileID: 8901147499553456000}
+  - {fileID: 1597285110962103954}
   delay: 0
 --- !u!114 &6905522979832305106
 MonoBehaviour:
@@ -202,6 +205,23 @@ MonoBehaviour:
   _executeOnce: 0
   _player: {fileID: 0}
   _jumpForce: 0
+--- !u!114 &1597285110962103954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6614500075941966269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82e3061c4c903143a38f97ace9790e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnce: 0
+  objectToSpawn: {fileID: 8933050576727380269, guid: 09ce1c6e9ec892643be183569652c395, type: 3}
+  spawnTransform: {fileID: 5184824536964231267}
+  spawnPlaceholder: {fileID: 5184824536964231267}
 --- !u!1 &7468413370684774941
 GameObject:
   m_ObjectHideFlags: 0

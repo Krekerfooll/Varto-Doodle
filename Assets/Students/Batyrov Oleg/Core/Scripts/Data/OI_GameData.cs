@@ -28,6 +28,7 @@ namespace OIMOD.Core.Component
         [SerializeField] public int gameScore;
         [SerializeField] public int hightScore;
         [SerializeField] public int bonusScore;
+        [SerializeField] public int gameRecordScore;
         [Space]
         [SerializeField] public GameObject levelBorderLeft;
         [SerializeField] public GameObject levelBorderRight;

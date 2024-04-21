@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace OIMOD.Core.Component 
@@ -7,10 +5,11 @@ namespace OIMOD.Core.Component
     public class OI_PlayAnimationAction : OI_ActionBase
     {
         [SerializeField] private Animator animator;
-        [SerializeField] private string animationParameter;
+        [SerializeField] private string animationToPlay;
         protected override void ExecuteInternal()
         {
-            animator.SetBool(animationParameter, true);
+            if (gameObject.activeSelf)
+                animator.Play(animationToPlay);
         }
     }
 }

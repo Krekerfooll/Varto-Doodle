@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faab1bbf8081b3245ae0e13ec9b1905b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameData: {fileID: 0}
   _platformCollider: {fileID: 3230915427319088392}
   _checkDestroyPosition: {fileID: 2454646544947728545}
   _platformSpawnCollectable: {fileID: 1853583248064053716}
@@ -383,7 +384,7 @@ MonoBehaviour:
   _executeOnAwake: 0
   _executeOnce: 1
   animator: {fileID: 8700438832783245872}
-  animationParameter: isTouched
+  animationToPlay: platformBrokenSimpleBreakAnimation
 --- !u!114 &7404839765864386179
 MonoBehaviour:
   m_ObjectHideFlags: 0

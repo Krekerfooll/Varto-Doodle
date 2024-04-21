@@ -11,15 +11,11 @@ namespace OIMOD.Core.Component
         private bool _activateAutoJump;
         private bool _autoJumpOn;
 
-        private void Awake()
-        {
-            _autoJumpOn = gameData.playerAutoJump;
-        }
-
         private void Update()
         {
             if (gameData.playerInstance == null) return;
 
+            _autoJumpOn = gameData.playerAutoJump;
             RayCheckGround();
             if (_autoJumpOn && _activateAutoJump)
                 CheckJump();

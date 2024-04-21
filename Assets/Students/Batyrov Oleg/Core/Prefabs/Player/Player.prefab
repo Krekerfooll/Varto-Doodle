@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2694480325473273022}
   - component: {fileID: 7458056955875208471}
   - component: {fileID: 6982029366665973335}
-  - component: {fileID: 4848461341191850951}
+  - component: {fileID: 700762125337613906}
   m_Layer: 0
   m_Name: playerSprite
   m_TagString: Untagged
@@ -107,7 +107,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4848461341191850951
+--- !u!114 &700762125337613906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,13 +116,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 307292526137971292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18374bf0a8b3284e869219fa61bff60, type: 3}
+  m_Script: {fileID: 11500000, guid: 9762a0f64cb082849a281016b5aa97b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _executeOnAwake: 0
   _executeOnce: 0
-  _targetToDestroy: {fileID: 735419038596652755}
-  _delay: 0
+  _target:
+  - {fileID: 735419038596652755}
+  delay: 0
 --- !u!1 &735419038596652755
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +135,8 @@ GameObject:
   - component: {fileID: 867817246349020065}
   - component: {fileID: 3554042627111810689}
   - component: {fileID: 7547962696898336824}
+  - component: {fileID: 8497555977529714863}
+  - component: {fileID: 8377127441348818726}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -230,6 +233,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &8497555977529714863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735419038596652755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39178ec316adfb7408be1c0d703d1d97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actions:
+  - {fileID: 8377127441348818726}
+  delay: 0
+--- !u!114 &8377127441348818726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735419038596652755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c0de10df071a724eb8a30153a300311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnce: 0
+  animator: {fileID: 6982029366665973335}
+  animationToPlay: OI_playerStandAnim
 --- !u!1 &1691517316585546574
 GameObject:
   m_ObjectHideFlags: 0

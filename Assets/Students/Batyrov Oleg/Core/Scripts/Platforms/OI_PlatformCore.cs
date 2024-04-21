@@ -5,6 +5,7 @@ namespace OIMOD.Core.Component
     public abstract class OI_PlatformCore : MonoBehaviour
     {
         [Header("Base Setup")]
+        [SerializeField] protected OI_GameData _gameData;
         [SerializeField] protected Collider2D _platformCollider;
         protected GameObject _playerInstance;
         protected GameObject _destroyBorder;
@@ -39,6 +40,10 @@ namespace OIMOD.Core.Component
                 for (int i = 0; i < _checkOnTriggerEnterUpwards.Length; i++)
                     _checkOnTriggerEnterUpwards[i]._targetObject = gameData.playerInstance;
             }
+        }
+        public void Awake()
+        {
+            if (_gameData != null) Init(_gameData);
         }
     }
 }
