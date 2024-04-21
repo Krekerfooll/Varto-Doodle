@@ -50,16 +50,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3934671487583583573, guid: 41ee9e74c79ca1743b0c776def21295c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3934671487583583573, guid: 41ee9e74c79ca1743b0c776def21295c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.396
+      value: 0.121
       objectReference: {fileID: 0}
     - target: {fileID: 7443820281171607370, guid: 41ee9e74c79ca1743b0c776def21295c, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 8699972466958736167, guid: 41ee9e74c79ca1743b0c776def21295c, type: 3}
       propertyPath: m_Name
       value: Ground1Spawn
@@ -98,4 +98,4 @@ MonoBehaviour:
   _executeOnlyOnes: 1
   _spawnPoint: {fileID: 3119083364398170838}
   _prefabsVariants:
-  - {fileID: 1888729581944456538, guid: 86dcb819f5e3e3146b239cbd54bdc031, type: 3}
+  - {fileID: 2519769653079805902, guid: a3e203faae56b31439c2450c33b62323, type: 3}
