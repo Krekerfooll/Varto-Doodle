@@ -8,7 +8,7 @@ namespace OIMOD.Core.Component
         [SerializeField] private OI_GameData gameData;
         [SerializeField] private List<OI_ActionBase> _jumpActions;
         private bool _canJump;
-        private bool _activateAutoJump;
+        public bool _activateAutoJump;
         private bool _autoJumpOn;
 
         private void Update()
@@ -56,8 +56,8 @@ namespace OIMOD.Core.Component
         {
             var playerRbVelocity = gameData.playerRigidBody.velocity;
 
-            if (_canJump && !_autoJumpOn && (playerRbVelocity.y <= 0)) Jump();
-            else if (_autoJumpOn && _activateAutoJump && _canJump && (playerRbVelocity.y <= 0)) Jump();
+            if (_canJump && !_autoJumpOn && (playerRbVelocity.y == 0)) Jump();
+            else if (_autoJumpOn && _activateAutoJump && _canJump && (playerRbVelocity.y == 0)) Jump();
         }
         private void Jump()
         {

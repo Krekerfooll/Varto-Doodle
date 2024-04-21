@@ -35,25 +35,25 @@ namespace OIMOD.Core.Component
         private void AnimationSwitch()
         {
 
-            if (playerVelocity.y == 0)
-            {
-                playerAnimator.SetBool("isJumping", false);
-                playerAnimator.SetBool("isFalling", false);
-            }
-            else if (playerVelocity.y > 0)
+            if (playerVelocity.y > 0.1f)
             {
                 playerAnimator.SetBool("isJumping", true);
                 playerAnimator.SetBool("isFalling", false);
             }
-            else if (playerVelocity.y < 0)
+            else if (playerVelocity.y < -0.1f)
             {
                 playerAnimator.SetBool("isJumping", false);
                 playerAnimator.SetBool("isFalling", true);
             }
+            else
+            {
+                playerAnimator.SetBool("isJumping", false);
+                playerAnimator.SetBool("isFalling", false);
+            }
                 
 
 
-            if (playerVelocity.x > 0.2f || playerVelocity.x < -0.2f)
+            if (playerVelocity.x > 0.1f || playerVelocity.x < -0.1f)
                 playerAnimator.SetBool("isMoving", true);
             else
                 playerAnimator.SetBool("isMoving", false);

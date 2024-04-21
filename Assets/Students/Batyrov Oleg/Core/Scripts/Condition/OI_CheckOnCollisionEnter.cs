@@ -13,7 +13,7 @@ namespace OIMOD.Core.Component
         {
             if (_targetObject == null) return;
 
-            if ((target.transform.tag == "Player") && (_targetObject.GetComponent<Rigidbody2D>().velocity.y == 0))
+            if ((target.transform.tag == "Player") && (_targetObject.GetComponent<Rigidbody2D>().velocity.y <= 0))
             {
                 foreach (var action in _onTriggerActions)
                 {

@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a842205852c3c9a4ba08d25b1504b468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameData: {fileID: 0}
   _platformCollider: {fileID: 3230915427319088392}
   _checkDestroyPosition: {fileID: 2454646544947728545}
   _platformSpawnCollectable: {fileID: 4266255915400321523}
@@ -295,7 +296,7 @@ MonoBehaviour:
   _spawnObject:
   - {fileID: 881137061805068212, guid: 2cc2156afa50b334c864a278e6329383, type: 3}
   _spawnPos: {fileID: 2701331603832674552}
-  _spawnRate: 50
+  _spawnRate: 48
 --- !u!114 &4406624287880200616
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ namespace OIMOD.Core.Component
     public class OI_GameRestart : MonoBehaviour
     {
         [SerializeField] private OI_GameData gameData;
+        [SerializeField] private OI_PlayerJumpAction jumpAction;
         [SerializeField] private GameObject playerInstance, startPlatform, platformSpawner, cameraInstance;
         [SerializeField] private GameObject restartPlatform, platformParent, collectableParent, levelBorders;
         [SerializeField] private OI_PlatformGenerator platformGenerator;
@@ -26,6 +27,7 @@ namespace OIMOD.Core.Component
             gameData.hightScore = 0;
             gameData.bonusScore = 0;
             gameData.playerIsAlive = true;
+            jumpAction._activateAutoJump = false;
 
             foreach (Transform child in platformParent.transform) Destroy(child.gameObject);
             foreach (Transform child in collectableParent.transform) Destroy(child.gameObject);

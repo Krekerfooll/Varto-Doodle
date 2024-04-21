@@ -40,8 +40,7 @@ namespace OIMOD.Core.Component
                 {
                     action.Execute();
                 }
-            }
-            
+            } 
         }
     }
 }

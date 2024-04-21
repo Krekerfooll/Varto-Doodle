@@ -21,7 +21,7 @@ namespace OIMOD.Core.Component
             float targetA = _targetATransform.position.y;
             float targetB = _targetBTransform.position.y;
 
-            if (targetA > targetB)
+            if (targetA >= targetB)
             {
                 foreach (var action in _aIsHigherActions)
                 {

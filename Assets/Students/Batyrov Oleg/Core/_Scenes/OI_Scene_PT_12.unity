@@ -1773,6 +1773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 1247748148}
+  jumpAction: {fileID: 683452049}
   playerInstance: {fileID: 1845790564}
   startPlatform: {fileID: 1666903329}
   platformSpawner: {fileID: 1019727633}
@@ -2100,7 +2101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &580861491
 Transform:
   m_ObjectHideFlags: 0
@@ -2546,6 +2547,7 @@ MonoBehaviour:
   gameData: {fileID: 1247748148}
   _jumpActions:
   - {fileID: 683452050}
+  _activateAutoJump: 0
 --- !u!114 &683452050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3102,7 +3104,7 @@ Transform:
   m_GameObject: {fileID: 1019727633}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5013,7 +5015,7 @@ GameObject:
   - component: {fileID: 1863171092}
   - component: {fileID: 1863171091}
   m_Layer: 0
-  m_Name: ApplacationOpenManagger
+  m_Name: ApplacationOpenManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5708,9 +5710,9 @@ MonoBehaviour:
     isSmallBroken: 0
     isDeadly: 1
   _spawnCount: 10
-  difficultyStep: 30
+  difficultyStep: 35
   difficultyLevelStep: 10
-  beforeRandomGeneration: 0
+  beforeRandomGeneration: 1
   introDifficultyLevel: 1
   randomDifficultyLevel: 1
   _currentDifficultyStep: 0
