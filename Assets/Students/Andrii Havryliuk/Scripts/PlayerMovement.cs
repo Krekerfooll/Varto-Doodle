@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Scripts
@@ -8,6 +9,7 @@ namespace Scripts
         [Space]
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpPower;
+        [SerializeField] private float _maxVelocity;
         [Space]
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private float _groundCheckDistance;
@@ -21,18 +23,17 @@ namespace Scripts
 
 
 
-
         void Start()
         {
             _lookLeft = _player.transform.localScale;
             _lookRight = new Vector3(-_lookLeft.x, _lookLeft.y, _lookLeft.z);
-
         }
 
         void Update()
         {
             PowerJump();
             PowerSpeed();
+            MaxVelocity();
         }
 
         private void FixedUpdate()
@@ -52,6 +53,7 @@ namespace Scripts
             {
                 _player.velocity = new Vector2(_speed * _moveDirection, _player.velocity.y);
             }
+            
         }
 
         private void PowerJump()
@@ -69,7 +71,13 @@ namespace Scripts
                 _player.transform.localScale = _lookRight;
         }
 
-
+        private void MaxVelocity()
+        {
+            if (_player.velocity.magnitude >= _maxVelocity)
+            {
+                _player.velocity = _player.velocity.normalized * _maxVelocity;
+            }
+        }  
     }
 
 }
