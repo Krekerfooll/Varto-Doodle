@@ -14,8 +14,11 @@ namespace Ustich.Arthur.DoodleJump
 
         private void Follow()
         {
-            var targetPosition = new Vector3(transform.position.x, _target.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, targetPosition, _speed * Time.deltaTime);
+            if (_target != null)
+            {
+                var targetPosition = new Vector3(transform.position.x, _target.position.y, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, targetPosition, _speed * Time.deltaTime);
+            }
         }
     }
 }

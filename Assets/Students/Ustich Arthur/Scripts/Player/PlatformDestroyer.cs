@@ -4,10 +4,13 @@ namespace Ustich.Arthur.DoodleJump
 {
     public class PlatformDestroyer : MonoBehaviour
     {
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.tag == "Block")
-                Destroy(collision.gameObject);
-        }
+       //[SerializeField] private ActionBase _destroyAction;
+       //public Collider2D LastCollision;
+       //
+       //private void OnTriggerEnter2D(Collider2D collision)
+       //{
+       //    LastCollision = collision;
+       //    _destroyAction.Execute();
+       //}
     }
 }

@@ -28,7 +28,7 @@ namespace Ustich.Arthur.DoodleJump
 
         private void Spawn()
         {
-            if (_targetTransform.position.y + 5 >= _spawnPosition.y) //_backGrounds[_backGrounds.Count - 1].transform.position.y)
+            if (_targetTransform != null && _targetTransform.position.y + 5 >= _spawnPosition.y)
             {
                 _spawnPosition = new Vector3(_spawnPosition.x, _spawnPosition.y + _spawnStep, _spawnPosition.z);
                 _backGrounds.Add(Instantiate(_backGroundPrefab, _spawnPosition, Quaternion.identity, this.transform));
