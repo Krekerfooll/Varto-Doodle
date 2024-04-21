@@ -114,7 +114,7 @@ MonoBehaviour:
   _executeOnlyOnes: 0
   _onCollisionEnterWith:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   _destructionType: 0
   _objectToDestroy: {fileID: 0}
   _delay: 0.07
@@ -134,7 +134,7 @@ MonoBehaviour:
   _executeOnlyOnes: 0
   _onCollisionEnterWith:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   _objectToChangeColor: {fileID: 8835023379011599113}
   _color: {r: 1, g: 0.97713137, b: 0.62578607, a: 1}
 --- !u!1 &5724035018989690155
