@@ -74,7 +74,7 @@ namespace Varto.Examples.UI
                 _gameScreenCoinsCounter.text = _coinsCount.ToString();
                 _gameOverScreenCoinsCounter.text = _coinsCount.ToString();
             }
-            else if(eventName == _onGameOverEventName)
+            else if (eventName == _onGameOverEventName)
             {
                 _gameOverScreen.gameObject.SetActive(true);
             }
