@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,15 +5,15 @@ namespace Students.Drobiniak_Volodymyr.Scripts.UI.PauseMenu
 {
     public class PauseMenu : MonoBehaviour
     {
-        [SerializeField] private bool pauseGame;
         [SerializeField] private GameObject pauseGameMenu;
+        private bool _pauseGame;
 
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (pauseGame)
+                if (_pauseGame)
                 {
                     ResumeGame();
                 }
@@ -27,14 +26,14 @@ namespace Students.Drobiniak_Volodymyr.Scripts.UI.PauseMenu
 
         public void ResumeGame()
         {
-            pauseGame = false;
+            _pauseGame = false;
             pauseGameMenu.SetActive(false);
             Time.timeScale = 1f;
         }
 
         public void PauseGame()
         {
-            pauseGame = true;
+            _pauseGame = true;
             pauseGameMenu.SetActive(true);
             Time.timeScale = 0f;
         }

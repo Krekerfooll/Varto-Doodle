@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Students.Drobiniak_Volodymyr.Scripts.PlatformScripts
