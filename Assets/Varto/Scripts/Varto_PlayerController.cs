@@ -1,4 +1,5 @@
 using UnityEngine;
+using Varto.Examples.Utils;
 
 namespace Varto.Examples.Player
 {
@@ -11,6 +12,8 @@ namespace Varto.Examples.Player
         [Space]
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private float _groundCheckDistance;
+        [Space]
+        [SerializeField] private Varto_ActionBase _onPlayerDie;
 
         private Vector3 _lookLeft;
         private Vector3 _lookRight;
@@ -64,6 +67,12 @@ namespace Varto.Examples.Player
                 _player.transform.localScale = _lookLeft;
             else if (_moveDirection > 0f)
                 _player.transform.localScale = _lookRight;
+        }
+
+
+        private void OnDestroy()
+        {
+            _onPlayerDie.Execute();
         }
     }
 }
