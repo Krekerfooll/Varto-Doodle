@@ -6,13 +6,13 @@ namespace Scripts
     public class PlatformBase : MonoBehaviour
     {
         
-        [SerializeField] private int _health;
+        [SerializeField] protected int _health;
         [Space]
-        [SerializeField] private SpriteRenderer _spriteRenderer;
-        [SerializeField] private BoxCollider2D _collider;
-        [SerializeField] private PlatformCollider _platformCollider;
-        
-        private Transform _target;
+        [SerializeField] protected SpriteRenderer _spriteRenderer;
+        [SerializeField] protected BoxCollider2D _collider;
+        [SerializeField] protected PlatformCollider _platformCollider;
+
+        protected Transform _target;
 
         public int Health 
         { 
@@ -20,8 +20,8 @@ namespace Scripts
             set { _health = Mathf.Max(value, 0); } 
         }
 
-        bool firstStep = true;
-        private float _color = 1f;
+        protected bool firstStep = true;
+        protected float _color = 1f;
 
         public bool _isInitiated {get; private set;}
 
@@ -31,7 +31,7 @@ namespace Scripts
             _isInitiated = true;
         }
 
-        void Update()
+        private void Update()
         {
             if (_isInitiated)
             {
@@ -40,7 +40,7 @@ namespace Scripts
         }
 
 
-        private void OnUpdatePlatform()
+        protected void OnUpdatePlatform()
         {
             if (_target.position.y > transform.position.y)
             {
@@ -60,21 +60,5 @@ namespace Scripts
                 }
             }
         }
-
-        
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (firstStep)
-            {
-                ColorController.ChangeColorForCameraBackgroundByRandom();
-                firstStep = false;
-            }
-            if (Health > 0)
-            {
-                ColorController.ChangeColorByStep(_spriteRenderer, ref _color, 0.3f);
-                Health--;
-            }
-        }
-
     }
 }
