@@ -7,21 +7,18 @@ public class Platform : MonoBehaviour
     [SerializeField] protected Transform _target;
     [SerializeField] protected GameObject _collider;
 
-    protected bool _isInitiated;
+    //protected bool _isInitiated;
+
 
     public void Init(Transform target)
     {
         _target = target;
-        _isInitiated = true;
+        //_isInitiated = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (_isInitiated)
-        //{
-            OnUpdatePlatform();
-        //}
+        OnUpdatePlatform();
     }
 
     protected virtual void OnUpdatePlatform()
@@ -35,6 +32,8 @@ public class Platform : MonoBehaviour
             _collider.SetActive(false);
         }
     }
+
+
 
 
 }

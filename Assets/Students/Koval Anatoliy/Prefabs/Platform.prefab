@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 6228507063584595099}
   - component: {fileID: 4948896871584949746}
   - component: {fileID: 3226396937127862523}
+  - component: {fileID: 3921332027546752833}
   m_Layer: 7
   m_Name: PlatformCollider
   m_TagString: Untagged
@@ -263,6 +264,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3921332027546752833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913617583465034920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa6da22477bac44db3df2d033ed9d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spRender0: {fileID: 1441548489382979126}
+  spRender1: {fileID: 2508520931199042038}
+  spRender2: {fileID: 3880731218048078623}
+  spRender3: {fileID: 2767441848071747004}
 --- !u!1 &5928335775996577341
 GameObject:
   m_ObjectHideFlags: 0
