@@ -148,6 +148,10 @@ MonoBehaviour:
   _rigidbody: {fileID: 126277522}
   _jumpPower: 5
   _moveSpeed: 4
+  _groundCheckDistance: 5
+  _isGroundedMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &240427250
 GameObject:
   m_ObjectHideFlags: 0
