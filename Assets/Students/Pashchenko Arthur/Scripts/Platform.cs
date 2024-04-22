@@ -8,7 +8,10 @@ namespace Artur.Pashchenko.Platform
         [SerializeField] private Transform _target;
         [SerializeField] private GameObject _collider;
         protected bool _enabled;
-
+        private void Start()
+        {
+        
+        }
         public void Init (Transform target) 
         {
             _target = target;

@@ -12,13 +12,14 @@ namespace Artur.Pashchenko.Platform
         [Header("Spawn Settings")]
         [Space]
         [SerializeField] private Platform _platformPrefab;
+        [SerializeField] private DestroyablePlatform _destroyablePlatformPrefab;
         [SerializeField] private int _stepsToSpawn;
         [SerializeField] private float _stepsToDelete;
         [SerializeField] private float _stepHeight;
         [SerializeField] private Vector2 _border;
         [SerializeField] private Vector2 _range;
+        [SerializeField] private float _probabilityForType1;
         private Queue<Platform> _spawnedPlatforms = new Queue<Platform>();
-
         private float _lastPlatformsSpawnedOnPlayerPos;
         private float _lastPlatformsDeletedOnPlayerPos;
 
@@ -63,7 +64,9 @@ namespace Artur.Pashchenko.Platform
                 var Y = _target.position.y + stepsCount * _stepHeight + Random.Range(_range.x, _range.y);
 
                 var platformPosition = new Vector3(X, Y, transform.position.z);
-                var spawnedPlatform = Instantiate(_platformPrefab, platformPosition, Quaternion.identity, transform);
+                Platform selectedPlatformPrefab = Random.Range(0f, 100f) < _probabilityForType1 ? _platformPrefab : _destroyablePlatformPrefab;
+
+                var spawnedPlatform = Instantiate(selectedPlatformPrefab, platformPosition, Quaternion.identity, transform);
 
                 spawnedPlatform.Init(_target);
 
