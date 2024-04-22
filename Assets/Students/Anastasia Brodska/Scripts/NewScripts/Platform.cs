@@ -34,6 +34,9 @@ public class Platform : MonoBehaviour
         if (_staysActive && _isActivatedOnes)
             return;
 
+        if (_target == null)
+            return;
+
         if (_target.transform.position.y > transform.position.y)
         {
             _collider.SetActive(true);

@@ -43,26 +43,54 @@ public class UiManager : MonoBehaviour
 
     private int _coinsCount = 0;
 
+
     private void Awake()
     {
-        _gameScreenCoinsCounter.text = _coinsCount.ToString();
-        _gameOverScreenCoinsCounter.text = _coinsCount.ToString();
+        InitializeScreens();
+        InitializeButtons();
+        SubscribeToEvents();
+    }
 
+    private void OnDestroy()
+    {
+        UnsubscribeFromEvents();
+    }
+
+    private void InitializeScreens()
+    {
         _startScreen.gameObject.SetActive(true);
         _startingameScreen.gameObject.SetActive(false);
         _gameScreen.gameObject.SetActive(false);
         _pauseScreen.gameObject.SetActive(false);
         _gameOverScreen.gameObject.SetActive(false);
+    }
 
-        _startButton.onClick.AddListener(CloseStartScreen);
+    private void InitializeButtons()
+    {
+        _startButton.onClick.AddListener(StartGame);
         _startingameButton.onClick.AddListener(RestartCurrentScene);
         _resumeingameButton.onClick.AddListener(CloseStartScreen);
         _pauseButton.onClick.AddListener(OpenPauseScreen);
         _resumeButton.onClick.AddListener(ClosePauseScreen);
         _exitButton.onClick.AddListener(OpenInGameStartScreen);
         _restartButton.onClick.AddListener(RestartCurrentScene);
+    }
 
+    private void SubscribeToEvents()
+    {
         GlobalEvents.OnEvent += OnAnyGlobalEvent;
+        PlayerMovement.OnPlayerDeath += OnPlayerDeath;
+    }
+
+    private void UnsubscribeFromEvents()
+    {
+        GlobalEvents.OnEvent -= OnAnyGlobalEvent;
+        PlayerMovement.OnPlayerDeath -= OnPlayerDeath;
+    }
+
+    private void StartGame()
+    {
+        CloseStartScreen();
     }
 
     private void OpenInGameStartScreen()
@@ -92,10 +120,8 @@ public class UiManager : MonoBehaviour
 
     private void RestartCurrentScene()
     {
-        GlobalEvents.OnEvent -= OnAnyGlobalEvent;
-
-        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        UnsubscribeFromEvents();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnAnyGlobalEvent(string eventName)
@@ -103,13 +129,29 @@ public class UiManager : MonoBehaviour
         if (eventName == _onCollectCoinEventName)
         {
             _coinsCount += _coinsAmountPerEvent;
-
-            _gameScreenCoinsCounter.text = _coinsCount.ToString();
-            _gameOverScreenCoinsCounter.text = _coinsCount.ToString();
+            UpdateCoinsCounter();
         }
         else if (eventName == _onGameOverEventName)
         {
+            _gameScreen.gameObject.SetActive(false);
             _gameOverScreen.gameObject.SetActive(true);
         }
     }
+
+    private void OnPlayerDeath(string eventName)
+    {
+        if (eventName == _onGameOverEventName)
+        {
+            _gameScreen.gameObject.SetActive(false);
+            _gameOverScreen.gameObject.SetActive(true);
+        }
+    }
+
+    private void UpdateCoinsCounter()
+    {
+        _gameScreenCoinsCounter.text = _coinsCount.ToString();
+        _gameOverScreenCoinsCounter.text = _coinsCount.ToString();
+    }
 }
+
+
