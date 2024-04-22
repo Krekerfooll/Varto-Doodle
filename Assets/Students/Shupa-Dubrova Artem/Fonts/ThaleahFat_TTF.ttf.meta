@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ceb0cd98defae274ea04ff277f0a8627
+guid: de11a1f8a103e3645bc5eb74d8e126bc
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,14 +8,14 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
+  fontName: ThaleahFat
   fontNames:
-  - Pixelify Sans
+  - ThaleahFat
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
-  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
