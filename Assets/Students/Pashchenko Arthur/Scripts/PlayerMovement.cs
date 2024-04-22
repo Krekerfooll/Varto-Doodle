@@ -33,7 +33,7 @@ namespace Artur.Pashchenko.Player
 
                 if (InputController.Direction < 0) 
                 {
-                    _targetRotation = Quaternion.Euler(this.transform.rotation.x, 180, this.transform.rotation.z);
+                    _targetRotation = Quaternion.Euler(this.transform.rotation.x, -180, this.transform.rotation.z);
                     transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, _rotationSpeed * Time.deltaTime);
                 }
                 else if (InputController.Direction > 0)
@@ -41,6 +41,7 @@ namespace Artur.Pashchenko.Player
                     _targetRotation = Quaternion.Euler(this.transform.rotation.x, 0, this.transform.rotation.z);
                     transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, _rotationSpeed * Time.deltaTime);
                 }
+              
 
                
 
@@ -50,6 +51,13 @@ namespace Artur.Pashchenko.Player
         {
             _isGrounded = Physics2D.Raycast(_playerRigidbody.position, Vector2.down, _distanceForCast, _groundMask);
             Debug.DrawLine(_playerRigidbody.position, _playerRigidbody.position + Vector2.down * _distanceForCast, Color.red);
+
+
+            if (_isGrounded)
+            {
+                if (transform.rotation.eulerAngles.y < 90f) transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                else if (transform.rotation.eulerAngles.y >= 90f) transform.rotation = Quaternion.Euler(0f, -180f, 0f);
+            }
         }
 
     }
