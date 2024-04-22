@@ -156,8 +156,6 @@ MonoBehaviour:
   _collider: {fileID: 9030885158142338687}
   _alwaysActive: 0
   _staysActive: 1
-  _executeOnCollisionActivated: []
-  _executeOnCollisionDeactivated: []
 --- !u!1 &9030885158142338687
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,4 +272,4 @@ MonoBehaviour:
   _executeOnce: 1
   _gameObject: {fileID: 6381792462824913334}
   _animator: {fileID: 1874814255224171493}
-  _delay: 0.4
+  _delay: 0.3

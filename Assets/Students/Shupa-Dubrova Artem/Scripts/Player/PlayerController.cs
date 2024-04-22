@@ -5,6 +5,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D _player;
+        [SerializeField] private Vector2 _sideBounds;
         [SerializeField] private Animator _animator;
         [SerializeField] private float _playerSpeed;
         [SerializeField] private float _jumpPower;
@@ -70,7 +71,7 @@ namespace Students.Shupa_Dubrova_Artem.Scripts.Player
         {
             _transformX = _player.transform.position.x;
             
-            if (_transformX is >= 3f or <= -3f)
+            if (_transformX > _sideBounds.y || _transformX < _sideBounds.x)
             {
                 transform.Translate(-_transformX * 2, 0, 0);
             }

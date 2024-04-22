@@ -291,9 +291,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1723461509887156698}
+  _sideBounds: {x: -4.3, y: 4.3}
   _animator: {fileID: 2140767205524796695}
   _playerSpeed: 7
-  _jumpPower: 13
+  _jumpPower: 14
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 128

@@ -149,8 +149,6 @@ MonoBehaviour:
   _collider: {fileID: 1049718066483964005}
   _alwaysActive: 0
   _staysActive: 1
-  _executeOnCollisionActivated: []
-  _executeOnCollisionDeactivated: []
 --- !u!50 &482776340959986590
 Rigidbody2D:
   serializedVersion: 4
@@ -191,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _platform: {fileID: 482776340959986590}
-  _boundsX: {x: -2, y: 2}
+  _boundsX: {x: -3.48, y: 3.48}
   _speed: 2
 --- !u!1 &5142005368654487936
 GameObject:

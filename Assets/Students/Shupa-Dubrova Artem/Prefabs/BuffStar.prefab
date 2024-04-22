@@ -249,5 +249,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onTriggerEnterWithTag: Player
   _executeOnce: 1
-  _buffJumpPower: 20
+  _buffJumpPower: 0
   _playerController: {fileID: 0}
