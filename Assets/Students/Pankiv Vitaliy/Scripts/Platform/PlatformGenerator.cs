@@ -29,10 +29,10 @@ namespace PVitaliy.Platform
         {
             _platformQueue = new Queue<PlatformBase>(factory.maxPlatformCount);
             factory.Init();
-            GeneratedStartingPlatforms();
+            PreGeneratePlatforms();
         }
 
-        private void GeneratedStartingPlatforms()
+        private void PreGeneratePlatforms()
         {
             _nonDuplicatesCount = 0;
             _highestPlatformPosition = transform.position + startPlatformPosition;

@@ -7,7 +7,7 @@ namespace PVitaliy.Platform
     public class WeightedPlatformFactory : PlatformFactory
     {
         [Header("Weighted Platform Factory")]
-        [SerializeField] private WeightsController<PlatformType> weights;
+        [SerializeField] private WeightsCollection<PlatformType> weights;
 
         public override void Init()
         {
@@ -16,7 +16,7 @@ namespace PVitaliy.Platform
 
         public override PlatformType GetRandomType()
         {
-            return weights.GetRandom();
+            return weights.GetRandomData();
         }
     }
 }

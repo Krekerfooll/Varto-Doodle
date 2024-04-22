@@ -14,7 +14,7 @@ namespace PVitaliy.Factory
     }
     
     [Serializable]
-    public class WeightsController<TK>
+    public class WeightsCollection<TK>
     {
         [SerializeField] private List<WeightData<TK>> weights;
         private float _totalWeight;
@@ -25,7 +25,7 @@ namespace PVitaliy.Factory
             weights.Sort((w1, w2) => w1.weight < w2.weight ? -1 : 1);
         }
 
-        public TK GetRandom()
+        public TK GetRandomData()
         {
             var selectedWeight = Random.Range(0, _totalWeight);
             float currentWeight = 0;

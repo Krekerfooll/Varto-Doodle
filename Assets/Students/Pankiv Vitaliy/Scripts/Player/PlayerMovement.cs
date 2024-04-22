@@ -18,6 +18,11 @@ namespace PVitaliy.Player
             );
         public float RaycastDistance => raycastDistance;
 
+        public static bool IsPlayer(GameObject obj)
+        {
+            return obj.tag.Equals("Player");
+        }
+
         public Vector3 GetRayStartPosition(float rayDirectionX = 0)
         {
             return rigidBody.transform.position + Vector3.right * (rayDirectionX * rayDistanceFromCenter * .35f) + Vector3.up * rayCastingOffsetY;
@@ -35,7 +40,7 @@ namespace PVitaliy.Player
         private void UpdateMovement()
         {
             var x = Input.GetAxisRaw("Horizontal");
-            ChangeViewDirection(x);
+            TryChangeViewDirection(x);
             rigidBody.velocity = new Vector2(x * moveSpeed, rigidBody.velocity.y);
         }
 
@@ -52,7 +57,7 @@ namespace PVitaliy.Player
             }
         }
 
-        private void ChangeViewDirection(float directionX)
+        private void TryChangeViewDirection(float directionX)
         {
             if (directionX == 0) return;
             viewController.ChangeDirection(directionX < 0);

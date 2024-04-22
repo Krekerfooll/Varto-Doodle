@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PVitaliy.Utils
+namespace PVitaliy.Components
 {
     public class TargetFollower : MonoBehaviour
     {

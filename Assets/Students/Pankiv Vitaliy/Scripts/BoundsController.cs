@@ -1,3 +1,4 @@
+using PVitaliy.Player;
 using UnityEngine;
 
 namespace PVitaliy
@@ -9,7 +10,7 @@ namespace PVitaliy
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (Globals.IsPlayer(other.gameObject))
+            if (PlayerMovement.IsPlayer(other.gameObject))
             {
                 var moveToX = leftWall.IsTouching(other)
                     ? rightWall.ClosestPoint(other.transform.position).x + other.transform.localScale.x / 1.99f

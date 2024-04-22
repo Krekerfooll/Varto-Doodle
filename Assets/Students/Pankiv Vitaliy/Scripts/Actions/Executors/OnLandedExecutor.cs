@@ -1,4 +1,5 @@
 using PVitaliy.Actions.Core;
+using PVitaliy.Utils;
 using UnityEngine;
 
 namespace PVitaliy.Executors
@@ -11,7 +12,8 @@ namespace PVitaliy.Executors
         private bool CanExecute(GameObject target)
         {
             var rigidBody = target.GetComponent<Rigidbody2D>();
-            return rigidBody.velocity.y <= 1 && Globals.IsSameLayer(target.layer, collideWith);
+            if (!rigidBody) return false;
+            return rigidBody.velocity.y <= 1 && StaticUtils.IsSameLayer(target.layer, collideWith);
         }
 
         private void OnCollisionEnter2D(Collision2D other)

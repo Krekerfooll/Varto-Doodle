@@ -97,10 +97,10 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _color: {r: 0.13372645, g: 0.106532566, b: 0.3962264, a: 1}
-    - _colorBottom: {r: 0.08578998, g: 0.05139729, b: 0.31132078, a: 1}
-    - _colorTop: {r: 0.12447641, g: 0.044010323, b: 0.21698111, a: 1}
+    - _colorBottom: {r: 0.06346223, g: 0.009834462, b: 0.122641504, a: 1}
+    - _colorTop: {r: 0.0788163, g: 0.04774831, b: 0.2735849, a: 1}
     - _dithering: {r: 0, g: 0, b: 0, a: 0}
     - _offset: {r: 0, g: 0, b: 0, a: 0}
-    - _pixelation: {r: 1, g: 1, b: 1, a: 1}
+    - _pixelation: {r: 32, g: 64, b: 1, a: 1}
     - _spriteColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

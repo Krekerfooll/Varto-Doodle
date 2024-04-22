@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererWithMaterial: {fileID: 1400418988}
-  interpolationPower: 0.01
+  interpolationPower: 0.02
 --- !u!1 &1531633810
 GameObject:
   m_ObjectHideFlags: 0

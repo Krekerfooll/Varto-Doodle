@@ -305,7 +305,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factory: {fileID: 11400000, guid: 89e67d4768a1a0e47ba985bca90deff9, type: 2}
   OnGenerated: {fileID: 0}
-  platform: {fileID: 6096099500834720225}
   entityContainer: {fileID: 2875225587903282502}
 --- !u!1 &5883680006386794710
 GameObject:
@@ -5238,7 +5237,7 @@ Transform:
   m_GameObject: {fileID: 7049658479139403350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -3,15 +3,13 @@ Shader "Custom/BackgroundShader"
     Properties
     {
         _dithering ("Dithering Power", Float) = 0
-        _pixelationX ("Pixel resolution X", Float) = 1
-        _pixelationY ("Pixel resolution Y", Float) = 1
+        _pixelation ("Pixel resolution", Vector) = (0, 0, 0, 0)
         _colorTop ("Color Top", Color) = (0, 0, 0, 1)
         _colorBottom ("Color Bottom", Color) = (1, 1, 1, 1)
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
-
         Pass
         {
             CGPROGRAM
@@ -32,8 +30,7 @@ Shader "Custom/BackgroundShader"
                 float4 vertex : SV_POSITION;
             };
 
-            float _pixelationX;
-            float _pixelationY;
+            float2 _pixelation;
             float _dithering;
             float4 _colorTop;
             float4 _colorBottom;
@@ -48,12 +45,11 @@ Shader "Custom/BackgroundShader"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                const float2 pixelation = float2(_pixelationX, _pixelationY);
-                i.uv = floor(i.uv * pixelation);
-                i.uv.y += (sign(sin(i.uv.x)) + cos(i.uv.x)) * _dithering / _pixelationY;
-                i.uv.x += sign(cos(i.uv.y)) * _dithering / _pixelationX;
-                i.uv /= pixelation;
-                const fixed4 col = lerp(_colorBottom, _colorTop, i.uv.y * 1.1f);
+                const float how_could_i_call_it = cos(_Time * _CosTime * 2 + i.uv.x / _pixelation.x * _SinTime * UNITY_HALF_PI);
+                i.uv = floor(i.uv * _pixelation);
+                i.uv.y += sin(i.uv.x) * how_could_i_call_it * _dithering / _pixelation.y;
+                i.uv /= _pixelation;
+                const fixed4 col = lerp(_colorBottom, _colorTop, i.uv.y * 0.9f);
                 return col;
             }
             ENDCG
