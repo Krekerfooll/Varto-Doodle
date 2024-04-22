@@ -17,10 +17,7 @@ namespace Ustich.Arthur.DoodleJump
 
         private void ManageSprites()
         {
-            if (_playerMovement.IsGrounded)
-                _shadowSpriteRenderer.enabled = true;
-            else
-                _shadowSpriteRenderer.enabled = false;
+            _shadowSpriteRenderer.enabled = _playerMovement.IsGrounded ? true : false;
 
             if (_playerMovement.MoveDirection > 0)
                 _playerSpriteRenderer.flipX = true;

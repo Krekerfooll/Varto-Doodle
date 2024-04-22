@@ -11,10 +11,10 @@ namespace Ustich.Arthur.DoodleJump
 
         public override void ExecuteInternal()
         {
-            Destroy();
+            ExecuteDestroy();
         }
 
-        public void Destroy()
+        public void ExecuteDestroy()
         {
             switch (_objectToDestroyType)
             {

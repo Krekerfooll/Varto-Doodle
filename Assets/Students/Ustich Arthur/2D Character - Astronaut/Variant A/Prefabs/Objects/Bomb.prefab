@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _executeOnAwake: 0
+  _tags:
+  - Player
   _objectAnimator: {fileID: 5666365220958166416}
   _objectAnimation: {fileID: 9100000, guid: b2a70a8bb2ab49a7928dad3525ae7754, type: 2}
   _destroyCollision: {fileID: 8519472006610472651}
@@ -132,6 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _executeOnAwake: 0
+  _tags:
+  - Player
   _destroyAction: {fileID: 1709667163843898363}
   _objectToDestroy: {fileID: 0}
   _objectToDestroyType: 0
@@ -323,6 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _executeOnAwake: 0
+  _tags:
+  - Player
   _destroyAction: {fileID: 1430409289934324390}
   _objectToDestroy: {fileID: 0}
   _objectToDestroyType: 2
