@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float _speed;
+    
     //public float Speed (get; )
+    [SerializeField] Rigidbody2D _rigidbody;
+    [SerializeField] private float _jumpPower;
+    [SerializeField] private float _moveSpeed;
 
 
     void Start()
@@ -15,6 +18,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+        var direction = Input.GetAxis("Horizontal");
+        _rigidbody.velocity = new Vector2(direction*_moveSpeed, _rigidbody.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            _rigidbody.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+
+        }
     }
 }
