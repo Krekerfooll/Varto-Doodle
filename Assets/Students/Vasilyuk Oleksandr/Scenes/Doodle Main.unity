@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 126277522}
   _jumpPower: 5
-  _moveSpeed: 2
+  _moveSpeed: 4
 --- !u!1 &240427250
 GameObject:
   m_ObjectHideFlags: 0
