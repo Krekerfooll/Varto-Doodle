@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2495906432081861218}
   - component: {fileID: 2899556801033276478}
   - component: {fileID: 877477086359598918}
+  - component: {fileID: 7095052806699100463}
   m_Layer: 8
   m_Name: Cat_Sprite_Sheet_0
   m_TagString: Untagged
@@ -138,7 +139,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -198,6 +199,26 @@ MonoBehaviour:
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 64
+  _isTrigger: 1
   _destructionType: 0
-  _objectToDestroy: {fileID: 1888729581944456538, guid: 86dcb819f5e3e3146b239cbd54bdc031, type: 3}
+  _objectToDestroy: {fileID: 0}
   _delay: 0.07
+--- !u!114 &7095052806699100463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2519769653079805902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3286d299402c78458cc4c49642cda2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 1
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 64
+  _isTrigger: 1
+  _eventName: coin_add

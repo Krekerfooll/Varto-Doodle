@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Varto.Examples.Utils;
 
 public class UiManager : MonoBehaviour
 {
@@ -11,6 +10,18 @@ public class UiManager : MonoBehaviour
     [SerializeField] private string _onGameOverEventName;
     [Space]
     [SerializeField] private int _coinsAmountPerEvent;
+
+    [Space]
+    [Header("Start Screen")]
+    [SerializeField] private RectTransform _startScreen;
+    [SerializeField] private Button _startButton;
+
+    [Space]
+    [Header("Start in game Screen")]
+    [SerializeField] private RectTransform _startingameScreen;
+    [SerializeField] private Button _startingameButton;
+    [SerializeField] private Button _resumeingameButton;
+
 
     [Space]
     [Header("Game Screen")]
@@ -22,6 +33,7 @@ public class UiManager : MonoBehaviour
     [Header("Pause Screen")]
     [SerializeField] private RectTransform _pauseScreen;
     [SerializeField] private Button _resumeButton;
+    [SerializeField] private Button _exitButton;
 
     [Space]
     [Header("Game Over Screen")]
@@ -36,20 +48,43 @@ public class UiManager : MonoBehaviour
         _gameScreenCoinsCounter.text = _coinsCount.ToString();
         _gameOverScreenCoinsCounter.text = _coinsCount.ToString();
 
+        _startScreen.gameObject.SetActive(true);
+        _startingameScreen.gameObject.SetActive(false);
+        _gameScreen.gameObject.SetActive(false);
         _pauseScreen.gameObject.SetActive(false);
         _gameOverScreen.gameObject.SetActive(false);
 
+        _startButton.onClick.AddListener(CloseStartScreen);
+        _startingameButton.onClick.AddListener(RestartCurrentScene);
+        _resumeingameButton.onClick.AddListener(CloseStartScreen);
         _pauseButton.onClick.AddListener(OpenPauseScreen);
         _resumeButton.onClick.AddListener(ClosePauseScreen);
+        _exitButton.onClick.AddListener(OpenInGameStartScreen);
         _restartButton.onClick.AddListener(RestartCurrentScene);
 
-        Varto_GlobalEventSender.OnEvent += OnAnyGlobalEvent;
+        GlobalEvents.OnEvent += OnAnyGlobalEvent;
+    }
+
+    private void OpenInGameStartScreen()
+    {
+        _startingameScreen.gameObject.SetActive(true);
+        _gameScreen.gameObject.SetActive(false);
+        _pauseScreen.gameObject.SetActive(false);
+        _gameOverScreen.gameObject.SetActive(false);
+    }
+
+    private void CloseStartScreen()
+    {
+        _startScreen.gameObject.SetActive(false);
+        _startingameScreen.gameObject.SetActive(false);
+        _gameScreen.gameObject.SetActive(true);
     }
 
     private void OpenPauseScreen()
     {
         _pauseScreen.gameObject.SetActive(true);
     }
+
     private void ClosePauseScreen()
     {
         _pauseScreen.gameObject.SetActive(false);
@@ -57,7 +92,7 @@ public class UiManager : MonoBehaviour
 
     private void RestartCurrentScene()
     {
-        Varto_GlobalEventSender.OnEvent -= OnAnyGlobalEvent;
+        GlobalEvents.OnEvent -= OnAnyGlobalEvent;
 
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);

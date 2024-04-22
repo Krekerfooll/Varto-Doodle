@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2567613295806363545}
   - component: {fileID: 1502927958674858305}
   - component: {fileID: 3589899667248996522}
-  - component: {fileID: -6723659891558939580}
   - component: {fileID: 595802582417813024}
   - component: {fileID: 2600802980481626850}
+  - component: {fileID: -6723659891558939580}
+  - component: {fileID: 6679166308957208125}
   m_Layer: 8
   m_Name: Bear_Trap_0
   m_TagString: Untagged
@@ -110,26 +111,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6723659891558939580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5351787041622368968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c180204ea158ab49adc8d296f63b0bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _executeOnAwake: 0
-  _executeOnlyOnes: 0
-  _onCollisionEnterWith:
-    serializedVersion: 2
-    m_Bits: 64
-  _destructionType: 2
-  _objectToDestroy: {fileID: 0}
-  _delay: 0.07
 --- !u!50 &595802582417813024
 Rigidbody2D:
   serializedVersion: 4
@@ -202,6 +183,46 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &-6723659891558939580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351787041622368968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c180204ea158ab49adc8d296f63b0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 0
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 64
+  _isTrigger: 0
+  _destructionType: 2
+  _objectToDestroy: {fileID: 0}
+  _delay: 0.07
+--- !u!114 &6679166308957208125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351787041622368968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3286d299402c78458cc4c49642cda2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 0
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 64
+  _isTrigger: 0
+  _eventName: end_game
 --- !u!1 &6010093778190142358
 GameObject:
   m_ObjectHideFlags: 0

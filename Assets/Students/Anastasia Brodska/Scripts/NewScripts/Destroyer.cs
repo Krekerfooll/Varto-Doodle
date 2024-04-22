@@ -8,33 +8,27 @@ public class Destroyer : PlatformOnColision
     [SerializeField] private GameObject _objectToDestroy;
     [SerializeField] private float _delay;
 
-    private void Start()
-    {
-        _delay = Mathf.Max(0, _delay);
-    }
-
-    protected override void ExecuteInternal()
-    {
-        Invoke("DestroyObject", _delay);
-    }
-
-    private void DestroyObject()
+    public void Destroy()
     {
         switch (_destructionType)
         {
             case DestructionType.Self:
-                Destroy(gameObject);
+                Destroy(gameObject, _delay);
                 break;
 
             case DestructionType.TargetObject:
-                if (_objectToDestroy != null)
-                    Destroy(_objectToDestroy);
+                Destroy(_objectToDestroy, _delay);
                 break;
 
             case DestructionType.CollidedObject:
-                if (LastCollision != null && LastCollision.gameObject != null)
-                    Destroy(LastCollision.gameObject);
+                Destroy(LastCollision.gameObject, _delay);
                 break;
         }
     }
+
+    protected override void ExecuteInternal()
+    {
+        Destroy();
+    }
 }
+
