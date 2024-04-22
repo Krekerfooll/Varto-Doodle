@@ -146,12 +146,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 126277522}
-  _jumpPower: 5
+  _jumpPower: 8
   _moveSpeed: 4
-  _groundCheckDistance: 5
+  _groundCheckDistance: 0.7
+  _player: {fileID: 126277526}
   _isGroundedMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!4 &126277526 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 19817256455328110, guid: b619d8ee23f405e46b561e53747f60e6, type: 3}
+  m_PrefabInstance: {fileID: 3594409831071654612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &240427250
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float _groundCheckDistance;
     private bool _isGrounded;
-    private Transform _player;
+    [SerializeField] private Transform _player;
     [SerializeField] private LayerMask _isGroundedMask;
 
 
@@ -20,7 +20,16 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         var direction = Input.GetAxis("Horizontal");
-        _rigidbody.velocity = new Vector2(direction*_moveSpeed, _rigidbody.velocity.y);
+        if (direction>=0f)
+        {
+            _player.localScale = new Vector3(1f, 1f);
+            _rigidbody.velocity = new Vector2(direction * _moveSpeed, _rigidbody.velocity.y);
+        }
+        else
+        {
+            _player.localScale = new Vector3(-1f, 1f);
+            _rigidbody.velocity = new Vector2(direction * _moveSpeed, _rigidbody.velocity.y);
+        }
 
         if (Physics2D.Raycast(_player.position, Vector3.down, _groundCheckDistance, _isGroundedMask))
         {
