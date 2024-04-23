@@ -1,22 +1,29 @@
 using UnityEngine;
 
-namespace Alokhin.Stanislav.CloudMove
+namespace Alokhin.Stanislav.CloudMoves
 {
     public class CloudMove : MonoBehaviour
     {
         [SerializeField] float _speed;
-        [SerializeField] Vector2 _resetPosition;
-        void Update()
-        {
-            //transform.position = Camera.main.transform.position + _resetPosition;
+        [SerializeField] float _endPosX;
 
-            //_resetPosition.x += _speed * Time.deltaTime;
-           transform.Translate(Vector2.right * _speed * Time.deltaTime);
-           if (transform.position.x > _resetPosition.x)
-           {
-               transform.position = new Vector3(_resetPosition.x, _resetPosition.y);
-           }
+        public void StartFloating(float speed, float endPosx)
+        {
+            _speed = speed; 
+            _endPosX = endPosx;
+            
+
         }
+        void Update ()
+        {
+            transform.Translate(Vector3.right * (Time.deltaTime * _speed * (Random.Range(0.5f, 2.0f))));
+
+            if(transform.position.x > _endPosX)
+            {
+                Destroy(gameObject);
+            }
+        }
+
     }
 }
 

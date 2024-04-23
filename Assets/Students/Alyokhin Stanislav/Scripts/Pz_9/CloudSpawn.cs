@@ -1,32 +1,36 @@
+using Alokhin.Stanislav.CloudMoves;
 using UnityEngine;
 
 namespace Alokhin.Stanislav.CloudSpawn
 {
     public class CloudSpawn : MonoBehaviour
     {
-        [SerializeField] private GameObject _cloudOne;
-        [SerializeField] private GameObject _cloudTwo;
-        [SerializeField] private GameObject _cloudThree;
-        //[SerializeField] float _speed;
-        //[SerializeField] Vector2 _resetPosition;
-        private void Start()
+        [SerializeField] GameObject[] clouds;
+
+        [SerializeField] float intervalSpawn;
+
+        Vector3 startPos;
+
+        void Start ()
         {
-            float randomX = Random.Range(-10f, 10f);
-            int randomY = Random.Range(5, 20);
+            startPos = transform.position;
 
-            Vector2 spawnPosition = new Vector2(randomX, randomY);
-
-            Instantiate(_cloudThree, spawnPosition, Quaternion.identity);
-            Instantiate(_cloudTwo, spawnPosition, Quaternion.identity);
-            Instantiate(_cloudOne, spawnPosition, Quaternion.identity);
+            Invoke("AttemptSpawn", intervalSpawn);
         }
-        void Update()
+        void SpawnCloud()
         {
-            // transform.Translate(Vector2.right * _speed * Time.deltaTime);
-            //  if (transform.position.x > _resetPosition.x)
-            //  {
-            //      transform.position = new Vector3(_resetPosition.x, _resetPosition.y);
-            //  }
+            int randomIndex = Random.Range(0,clouds.Length);
+            GameObject cloud = Instantiate( clouds [randomIndex]);
+
+            cloud.transform.position = startPos;
+            float speed = Random.Range(0.5f, 1.5f);
+        }
+        void AttemptSpawn()
+        {
+            SpawnCloud();
+
+            Invoke("AttemptSpawn", intervalSpawn);
         }
     }
+ 
 }

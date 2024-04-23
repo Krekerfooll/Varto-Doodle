@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Alokhin.Stanislav.Ground
+namespace Alokhin.Stanislav.PlatformGround
 {
     public class Platforms : MonoBehaviour
     {

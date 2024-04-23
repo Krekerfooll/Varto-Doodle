@@ -1,5 +1,6 @@
 using Alokhin.Stanislav.PlatformGround;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Alokhin.Stanislav.PlatformGenerator
@@ -34,11 +35,18 @@ namespace Alokhin.Stanislav.PlatformGenerator
         {
             if(_target.position.y - _lastPlatformSpawnedOnPlayerPosition > _stepHeight )
             {
-
+                SpawnPlatform(_stepsCountToSpawn);
+                _lastPlatformSpawnedOnPlayerPosition += _stepHeight;
             }
             if(_target.position.y - _lastPlatformDeletedOnPlayerPosition > _stepHeight * _stepsCountToDelete)
             {
+                var platformToDelete = _spawnedPlatforms.Dequeue();
 
+                if( platformToDelete && platformToDelete.gameObject)
+                {
+                    Destroy(platformToDelete.gameObject);
+                }
+                _lastPlatformDeletedOnPlayerPosition += _stepHeight;
             }
         }
 
@@ -47,10 +55,12 @@ namespace Alokhin.Stanislav.PlatformGenerator
             var platformPositionX = Random.Range(_bounds.x, _bounds.y);
             var platformPositionY = _target.position.y + _stepsCount * _stepHeight;
 
-            var platformPosition = new Vector3(platformPositionY, platformPositionX, transform.position.z);
+            var platformPosition = new Vector3(platformPositionX, platformPositionY, transform.position.z);
 
             var spawnPlatform = Instantiate(_platformPrefab,platformPosition,Quaternion.identity, this.transform);
-            //spawnPlatform.Init(_target);
+            spawnPlatform.Init(_target);
+
+            _spawnedPlatforms.Enqueue(spawnPlatform);
         }
     }
 }
