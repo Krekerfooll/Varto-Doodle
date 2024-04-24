@@ -28,14 +28,12 @@ namespace Ustich.Arthur.DoodleJump
 
         private bool CheckTags(string _tag)
         {
-            bool _isCoincides;
             foreach (string tempTag in _tags)
             {
-                _isCoincides = _tag == tempTag ? true : false;
-                if (_isCoincides)
-                    return _isCoincides;
+                if(_tag == tempTag)
+                    return true;
             }
-            return _isCoincides = false;
+            return false;
         }
     }
 }
