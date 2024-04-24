@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3526886908858773970}
   - component: {fileID: 5487106656093547992}
   - component: {fileID: 581014698974500666}
+  - component: {fileID: 8008148691188836756}
   - component: {fileID: 8430401467079097944}
   - component: {fileID: 4714026641000476017}
   m_Layer: 0
@@ -65,7 +66,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.39}
@@ -98,6 +99,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8008148691188836756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4385925216608706505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84c79f2b45ca0440bab44b63105827a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 1
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 256
+  _isTrigger: 1
+  _eventName: coin_add
 --- !u!114 &8430401467079097944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +135,7 @@ MonoBehaviour:
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 256
+  _isTrigger: 1
   _destructionType: 0
   _objectToDestroy: {fileID: 0}
   _delay: 0.07
@@ -135,6 +156,7 @@ MonoBehaviour:
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 256
+  _isTrigger: 1
   _objectToChangeColor: {fileID: 8835023379011599113}
   _color: {r: 1, g: 0.97713137, b: 0.62578607, a: 1}
 --- !u!1 &5724035018989690155
