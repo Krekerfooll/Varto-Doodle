@@ -13,6 +13,9 @@ namespace Varto.Examples.Camera
 
         void Update()
         {
+            if (_target == null)
+                return;
+
             var targetPosition = new Vector3(
                 _followByX ? _target.position.x : transform.position.x,
                 _followByY ? _target.position.y : transform.position.y,
