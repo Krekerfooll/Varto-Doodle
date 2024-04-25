@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Alokhin.Stanislav
@@ -12,6 +13,7 @@ namespace Alokhin.Stanislav
         [Space]
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private float _groundCheckDistance;
+        [SerializeField] private ParticleSystem _dust;
 
         private Vector3 _lookLeft;
         private Vector3 _lookRight;
@@ -60,6 +62,7 @@ namespace Alokhin.Stanislav
             {
                 _rb2.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
                 _isJump = true;
+                CreateDust();
             }
 
         }
@@ -77,6 +80,11 @@ namespace Alokhin.Stanislav
                 _rb2.transform.localScale = _lookRight;
             }
 
+        }
+
+        private void CreateDust()
+        {
+            _dust.Play();
         }
     }
 
