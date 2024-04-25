@@ -7,9 +7,20 @@ public class Platform : MonoBehaviour
     [SerializeField] private Transform _target;
     [SerializeField] private GameObject _collider;
 
+    protected bool _isInitiated;
+
+    public void Init(Transform target)
+    {
+        _target = target;
+        _isInitiated = true;
+    }
+
     private void Update()
     {
-        OnPlatform();
+        if (_isInitiated)
+        {
+            OnPlatform();
+        }
     }
     private void OnPlatform()
     {
