@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool CheckSurroundingColliders()
     {
-        Collider2D[] results = new Collider2D[5]; // Массив для результатов
+        Collider2D[] results = new Collider2D[5];
         int count = Physics2D.OverlapCircleNonAlloc(transform.position, _surroundingCheckRadius, results, _groundMask);
         for (int i = 0; i < count; i++)
         {
