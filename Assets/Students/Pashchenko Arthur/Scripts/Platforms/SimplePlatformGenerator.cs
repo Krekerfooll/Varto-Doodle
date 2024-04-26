@@ -12,7 +12,7 @@ namespace Artur.Pashchenko.Platform
         [Header("Spawn Settings")]
         [Space]
         [SerializeField] private Platform _platformPrefab;
-        [SerializeField] private DestroyablePlatform _destroyablePlatformPrefab;
+        [SerializeField] private Platform _destroyablePlatformPrefab;
         [SerializeField] private int _stepsToSpawn;
         [SerializeField] private float _stepsToDelete;
         [SerializeField] private float _stepHeight;

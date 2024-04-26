@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2583382790438959260}
-  - component: {fileID: 2687221931348826971}
+  - component: {fileID: 2845897491667999560}
+  - component: {fileID: 3933173372796230886}
   m_Layer: 3
   m_Name: DestroyablePlatform
-  m_TagString: Platform
+  m_TagString: DestroyablePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +35,7 @@ Transform:
   - {fileID: 2875908290806727964}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2687221931348826971
+--- !u!114 &2845897491667999560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,17 +44,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 2464745585522149761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87fced12315e5d44b94be6688bd44786, type: 3}
+  m_Script: {fileID: 11500000, guid: 06147d11c0de1d44d8c32d444564dd0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1692891543174034789, guid: f5e1e1a68e796c94c84a865891d36636, type: 3}
   _collider: {fileID: 8733231905151991925}
-  _removalTime: 3
-  _playerRigidbody: {fileID: 7238382565631716533, guid: f6a843a1bb817fe4f88cc843bb033f1a, type: 3}
-  _groundMask:
+  _staysActive: 1
+  _doOnCollisionActivated:
+  - {fileID: 3933173372796230886}
+  _doOnCollisionDeactivated:
+  - {fileID: 3933173372796230886}
+--- !u!114 &3933173372796230886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464745585522149761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde6f0e416a3caa468d02b084cfe365a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onCollisionWith:
     serializedVersion: 2
-    m_Bits: 8
-  _distanceForCast: 1
+    m_Bits: 256
+  _destroyType: 0
 --- !u!1 &5425744137859955131
 GameObject:
   m_ObjectHideFlags: 0

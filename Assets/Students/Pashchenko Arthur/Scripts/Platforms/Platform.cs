@@ -1,4 +1,4 @@
-using System.Collections;
+using Artur.Pashchenko.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 namespace Artur.Pashchenko.Platform
@@ -7,11 +7,12 @@ namespace Artur.Pashchenko.Platform
     {
         [SerializeField] private Transform _target;
         [SerializeField] private GameObject _collider;
+        [SerializeField] protected bool _staysActive = true;
         protected bool _enabled;
-        private void Start()
-        {
-        
-        }
+        [SerializeField] protected List<ActionBase> _doOnCollisionActivated;
+        [SerializeField] protected List<ActionBase> _doOnCollisionDeactivated;
+
+       
         public void Init (Transform target) 
         {
             _target = target;
@@ -30,10 +31,16 @@ namespace Artur.Pashchenko.Platform
             if (_target.transform.position.y > transform.position.y)
             {
                 _collider.SetActive(true);
+                foreach (var action in _doOnCollisionActivated)
+                    action.Execute();
+
             }
             else
             {
                 _collider.SetActive(false);
+                foreach (var action in _doOnCollisionDeactivated)
+                    action.Execute();
+
             }
         }
     }

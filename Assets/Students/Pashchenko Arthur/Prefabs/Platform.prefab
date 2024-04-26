@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1692891543174034789, guid: f5e1e1a68e796c94c84a865891d36636, type: 3}
   _collider: {fileID: 4803666646837650720}
+  _staysActive: 1
+  _doOnCollisionActivated: []
+  _doOnCollisionDeactivated: []
 --- !u!1 &3434498953352108582
 GameObject:
   m_ObjectHideFlags: 0
