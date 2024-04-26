@@ -15,27 +15,35 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private PlayerMovement _playerMoveMovement;
         private int _currentColor = 0;
         int _randColor = 0;
+        private bool _colorWasChanged = false;
 
 
         private void Update()
         {
             ChangeGameObjColor();
+            CheckJumping();
         }
 
         private void ChangeGameObjColor()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && _playerMoveMovement.IsGrounded)
+            if (_playerMoveMovement.IsGrounded)
             {
                 UniqeColor();
-                _playerAnimator.runtimeAnimatorController = _playerIdleAnimation[_currentColor];
-                foreach (GameObject _platforms in _spawner.SpawnedObjects)
+                if (!_colorWasChanged)
                 {
-                    bool changable = _platforms.GetComponent<ColorChangable>().CanChangeColor;
-                    if (changable)
+                    _playerAnimator.runtimeAnimatorController = _playerIdleAnimation[_currentColor];
+                    _colorWasChanged = true;
+
+
+                    foreach (GameObject _platforms in _spawner.SpawnedObjects)
                     {
-                        SpriteRenderer _sprite = _platforms.GetComponent<SpriteRenderer>();
-                        _sprite.sprite = _blockSprites[_currentColor];
-                    }   
+                        bool changable = _platforms.GetComponent<ColorChangable>().CanChangeColor;
+                        if (changable)
+                        {
+                            SpriteRenderer _sprite = _platforms.GetComponent<SpriteRenderer>();
+                            _sprite.sprite = _blockSprites[_currentColor];
+                        }
+                    }
                 }
             }  
         }
@@ -55,6 +63,12 @@ namespace Ustich.Arthur.DoodleJump
                 _randColor++;
                 _currentColor = _randColor;
             }
+        }
+
+        private void CheckJumping()
+        {
+            if (_playerMoveMovement.IsJumping)
+                _colorWasChanged = false;
         }
     }
 }

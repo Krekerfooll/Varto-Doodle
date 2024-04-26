@@ -8,7 +8,7 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private SpriteRenderer _shadowSpriteRenderer;
 
         [SerializeField] private PlayerMovement _playerMovement;
-
+        [SerializeField] private ActionBase _action;
         private void Update()
         {
             ManageSprites();
@@ -23,6 +23,9 @@ namespace Ustich.Arthur.DoodleJump
                 _playerSpriteRenderer.flipX = true;
             else if (_playerMovement.MoveDirection < 0)
                 _playerSpriteRenderer.flipX = false;
+
+            if (_playerMovement.IsJumping)
+                _action.Execute();
         }
     }
 }

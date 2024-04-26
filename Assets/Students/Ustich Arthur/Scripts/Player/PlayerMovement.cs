@@ -17,6 +17,7 @@ namespace Ustich.Arthur.DoodleJump
 
         private float _moveDirection;
         private bool _isGrounded;
+        public bool IsJumping { get; private set; }
         public bool IsGrounded { get { return _isGrounded; } }
         public float MoveDirection { get { return _moveDirection; } }
 
@@ -37,9 +38,11 @@ namespace Ustich.Arthur.DoodleJump
         private void Jump()
         {
             _isGrounded = Physics2D.Raycast(_playerRB2D.position, Vector2.down, _groundCheckDistance, _groundMask);
+            IsJumping = !_isGrounded;
             Debug.DrawLine(_playerRB2D.position, _playerRB2D.position + Vector2.down * _groundCheckDistance, Color.green);
             if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
                 _playerRB2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+                
         }
 
         private void TeleportOnBounde()

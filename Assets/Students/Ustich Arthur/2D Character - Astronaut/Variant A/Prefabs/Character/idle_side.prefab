@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9004941267645967997}
   - component: {fileID: 3766941472645118655}
   - component: {fileID: 5808752618486394085}
+  - component: {fileID: 6021556322791703282}
   m_Layer: 0
   m_Name: idle_side
   m_TagString: Player
@@ -220,6 +221,22 @@ MonoBehaviour:
   _playerSpriteRenderer: {fileID: 3433032877048046994}
   _shadowSpriteRenderer: {fileID: 3433032877061787966}
   _playerMovement: {fileID: 3766941472645118655}
+  _action: {fileID: 6021556322791703282}
+--- !u!114 &6021556322791703282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3433032877048047004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3eb15bde66b4894691e1f6be90ad934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _objectAnimator: {fileID: 3433032877048047005}
+  _objectAnimation: {fileID: 9100000, guid: e7417ee036ed431aa34c4594eba6f23e, type: 2}
 --- !u!1 &3433032877061787960
 GameObject:
   m_ObjectHideFlags: 0
