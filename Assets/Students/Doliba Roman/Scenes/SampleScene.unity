@@ -1565,8 +1565,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 968752811602010219, guid: 6218c2e68519b554da2df27299f013f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3622236371267749572}
   m_SourcePrefab: {fileID: 100100000, guid: 6218c2e68519b554da2df27299f013f3, type: 3}
+--- !u!114 &3622236371267749570 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5853208797602705711, guid: 6218c2e68519b554da2df27299f013f3, type: 3}
+  m_PrefabInstance: {fileID: 3622236371267749569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622236371267749571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3622236371267749571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 968752811602010219, guid: 6218c2e68519b554da2df27299f013f3, type: 3}
+  m_PrefabInstance: {fileID: 3622236371267749569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3622236371267749572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622236371267749571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325acc6c86ceb7e46ab483e9e95a46f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _countinueButton: {fileID: 3622236371267749570}
+  _pauseScreen: {fileID: 1726043181}
 --- !u!61 &4414707181717715925
 BoxCollider2D:
   m_ObjectHideFlags: 0
