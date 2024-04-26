@@ -38,12 +38,13 @@ namespace Varto.Examples.Platforms
 
         protected override bool IsCanSpawnPlatforms()
         {
-            return _target.position.y - _lastPlatformsSpawnedOnPlayerPosition > _stepHeight;
+            return _target != null && _target.position.y - _lastPlatformsSpawnedOnPlayerPosition > _stepHeight;
         }
         protected override bool IsCanDeletePlatforms()
         {
             var isHasPlatforms = SpawnedPlatforms.Count > 0;
-            var isAbleToDeletePlatformByPlayerPosition = _target.position.y - _lastPlatformsDeletedOnPlayerPosition > _stepHeight * _stepsCountToDelete;
+            var isAbleToDeletePlatformByPlayerPosition = 
+                _target != null && _target.position.y - _lastPlatformsDeletedOnPlayerPosition > _stepHeight * _stepsCountToDelete;
             return isHasPlatforms && isAbleToDeletePlatformByPlayerPosition;
         }
 
