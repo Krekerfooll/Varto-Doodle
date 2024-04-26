@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class CameraScript : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class CameraScript : MonoBehaviour
 
     void Update()
     {
-        var targetPosition = new Vector3(transform.position.x, _player.position.y, transform.position.z);
+        if (_player != null)
+        {
+            var targetPosition = new Vector3(transform.position.x, _player.position.y, transform.position.z);
 
-        transform.position = targetPosition;
-        transform.position = Vector3.Lerp(transform.position, targetPosition, _speed * Time.deltaTime);
+            transform.position = targetPosition;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, _speed * Time.deltaTime);
+        }
     }
 }

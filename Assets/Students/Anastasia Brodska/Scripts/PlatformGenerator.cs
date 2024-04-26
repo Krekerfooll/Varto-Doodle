@@ -38,13 +38,27 @@ public class PlatformsGenerator : GeneratorBase
 
     protected override bool IsCanSpawnPlatforms()
     {
-        return _target.position.y - _lastPlatformsSpawnedOnPlayerPosition > _stepHeight;
+        if (_target != null)
+        {
+            return _target.position.y - _lastPlatformsSpawnedOnPlayerPosition > _stepHeight;
+        }
+        else
+        {
+            return false;
+        }
     }
     protected override bool IsCanDeletePlatforms()
     {
-        var isHasPlatforms = SpawnedPlatforms.Count > 0;
-        var isAbleToDeletePlatformByPlayerPosition = _target.position.y - _lastPlatformsDeletedOnPlayerPosition > _stepHeight * _stepsCountToDelete;
-        return isHasPlatforms && isAbleToDeletePlatformByPlayerPosition;
+        if (_target != null)
+        {
+            var isHasPlatforms = SpawnedPlatforms.Count > 0;
+            var isAbleToDeletePlatformByPlayerPosition = _target.position.y - _lastPlatformsDeletedOnPlayerPosition > _stepHeight * _stepsCountToDelete;
+            return isHasPlatforms && isAbleToDeletePlatformByPlayerPosition;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     protected override void SpawnPlatforms()
