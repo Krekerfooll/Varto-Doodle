@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5098571919312555711}
   - component: {fileID: 2748573405424894790}
   - component: {fileID: 5578773818467523391}
+  - component: {fileID: -8391239659632116106}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Untagged
@@ -166,3 +167,19 @@ MonoBehaviour:
     m_Bits: 256
   _delay: 0.1
   _destroyItself: 1
+--- !u!114 &-8391239659632116106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3523758542842945961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18fe6a9e8d983242a14ca876755c9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onTriggerEnterWith:
+    serializedVersion: 2
+    m_Bits: 256
+  _eventName: diamondTaken
