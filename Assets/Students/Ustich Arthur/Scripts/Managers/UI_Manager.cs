@@ -9,11 +9,10 @@ namespace Ustich.Arthur.DoodleJump
     {
         [Header("Actions")]
         [SerializeField] private ActionBase _backMainMenuAction;
-
-        [Space]
-        [Header("TargetSetting")]
-        [SerializeField] private GameObject _target;
-        private int score = 0;
+        [SerializeField] private ActionBase _closeButtonAction;
+        [SerializeField] private ActionBase _pauseButtomAction;
+        [SerializeField] private ActionBase _gameOverAction;
+        [SerializeField] private ActionBase _changeScoreText;
 
         [Space]
         [Header("Menu")]
@@ -21,57 +20,30 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private Button _homeButton;
         [SerializeField] private Button _closeMenuButton;
         [SerializeField] private TextMeshProUGUI _gameOverText;
-        [SerializeField] private GameObject _panel;
-        [SerializeField] private GameObject _menuButtons;
 
         [Space]
         [Header("GameUI")]
         [SerializeField] private Button _pauseButton;
-        [SerializeField] private TextMeshProUGUI _scoreText;
 
         private void Awake()
         {
-            _panel.SetActive(false);
-            _menuButtons.SetActive(false);
-            _gameOverText.gameObject.SetActive(false);
-            _closeMenuButton.gameObject.SetActive(false);
-            _pauseButton.gameObject.SetActive(true);
+            _closeButtonAction.Execute();
 
             _pauseButton.onClick.AddListener(PauseButtonAction);
             _closeMenuButton.onClick.AddListener(CloseMenuAction);
             _homeButton.onClick.AddListener(BackHomeButtonAction);
             _restartButton.onClick.AddListener(RestartGameButtonAction);
-
-            _scoreText.text = score.ToString();
         }
 
         private void Update()
         {
-            if (_target != null && _target.transform.position.y > score)
-            {
-                score = (int)_target.transform.position.y;
-                _scoreText.text = score.ToString();
-            }
-
-            if (_target == null)
-                GameOver();
+            _changeScoreText.Execute();
+            _gameOverAction.Execute();
         }
 
-        private void PauseButtonAction()
-        {
-            _panel.SetActive(true);
-            _menuButtons.SetActive(true);
-            _closeMenuButton.gameObject.SetActive(true);
-            _pauseButton.gameObject.SetActive(false);
-        }
+        private void PauseButtonAction() => _pauseButtomAction.Execute();
 
-        private void CloseMenuAction()
-        {
-            _panel.SetActive(false);
-            _menuButtons.SetActive(false);
-            _closeMenuButton.gameObject.SetActive(false);
-            _pauseButton.gameObject.SetActive(true);
-        }
+        private void CloseMenuAction() => _closeButtonAction.Execute();
 
         private void BackHomeButtonAction() => _backMainMenuAction.Execute();
 
@@ -79,15 +51,6 @@ namespace Ustich.Arthur.DoodleJump
         {
             int currentScene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentScene);
-        }
-
-        private void GameOver()
-        {
-            _panel.SetActive(true);
-            _menuButtons.SetActive(true);
-            _closeMenuButton.gameObject.SetActive(true);
-            _gameOverText.gameObject.SetActive(true);
-            _pauseButton.gameObject.SetActive(false);
         }
     }
 }
