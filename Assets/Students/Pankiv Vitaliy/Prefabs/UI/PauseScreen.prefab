@@ -686,8 +686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 516a9a3b472a00747bf7eb24be1326ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
   scoreText: {fileID: 2921681851715070123}
+  resumeButton: {fileID: 93265220987212780}
 --- !u!1 &8622556837662336405
 GameObject:
   m_ObjectHideFlags: 0

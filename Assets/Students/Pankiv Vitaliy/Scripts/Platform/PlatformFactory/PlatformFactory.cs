@@ -8,6 +8,7 @@ namespace PVitaliy.Platform
     [CreateAssetMenu(fileName = "Platform", menuName = "Platform/Factory")]
     public class PlatformFactory : FactoryBase<PlatformBase, PlatformType>
     {
+        public string DropdownName;
         [Header("Platform Factory")]
         public PlatformBase startingPlatform;
         public MinMax<float> verticalDistance;

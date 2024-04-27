@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace PVitaliy.Actions
 {
-    public class GameLoseAction : ActionBase
+    public class CustomEventsExecutorAction : ActionBase
     {
         [SerializeField] private UnityEvent events;
         protected override void ExecuteInternal()

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using PVitaliy.Core;
 using PVitaliy.Factory;
 using UnityEngine;
 
@@ -29,6 +30,21 @@ namespace PVitaliy.Platform
         {
             _platformQueue = new Queue<PlatformBase>();
             factory.Init();
+            GlobalEvents.AddAction(EventNames.LevelGeneratorChanged, OnLevelGeneratorChanged);
+        }
+
+        private void OnLevelGeneratorChanged(object value)
+        {
+            var newFactory = value as PlatformFactory;
+            if (!newFactory)
+            {
+                Debug.LogError("[Platform Generator] Value is not the instance of PlatformFactory");
+                return;
+            }
+
+            factory = newFactory;
+            factory.Init();
+            PreGeneratePlatforms();
         }
 
         public void PreGeneratePlatforms()

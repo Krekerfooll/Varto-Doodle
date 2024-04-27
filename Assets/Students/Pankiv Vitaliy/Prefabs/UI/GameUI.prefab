@@ -686,3 +686,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 5714444432028358574}
+  pauseButton: {fileID: 4621311327494038792}

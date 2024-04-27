@@ -10,7 +10,7 @@ namespace PVitaliy
         [SerializeField] private PlatformGenerator generator;
         [SerializeField] private PlayerMovement player;
         [SerializeField] private Transform losingPoint;
-        [SerializeField] private GameUI gameUI;
+        [SerializeField] private UIManager uiManager;
         [SerializeField] private Camera mainCamera;
         private float _maxPlayerHeight;
         private Vector3 _playerStartPosition;
@@ -20,10 +20,10 @@ namespace PVitaliy
             generator.Init();
             _playerStartPosition = player.transform.position;
             _cameraStartPosition = mainCamera.transform.position;
-            RestartGame();
+            GenerateNewLevel();
         }
 
-        public void RestartGame() // Used at UI buttons
+        public void GenerateNewLevel()
         {
             mainCamera.transform.position = _cameraStartPosition;
             player.transform.position = _playerStartPosition;
@@ -33,13 +33,14 @@ namespace PVitaliy
             SetTimeScale(1);
         }
 
+        public void SetPlayerActive(bool active)
+        {
+            player.gameObject.SetActive(active);
+        }
+
         private void Update()
         {
             var playerY = player.transform.position.y;
-            if (playerY < losingPoint.position.y)
-            {
-                return;
-            }
             if (_maxPlayerHeight < playerY)
                 UpdateMaxPlayerHeight(playerY);
         }
@@ -53,12 +54,17 @@ namespace PVitaliy
         {
             losingPoint.position += Vector3.up * (value - _maxPlayerHeight);
             _maxPlayerHeight = value;
-            gameUI.UpdateScore(ConvertHeightToScore());
+            uiManager.GameScore = ConvertHeightToScore();
         }
 
         public int ConvertHeightToScore()
         {
             return Mathf.RoundToInt(_maxPlayerHeight * generator.GameScoreMultiplier);
+        }
+
+        public void OnLosingPointTriggered() // used in LosingTrigger
+        {
+            uiManager.OnGameOver();
         }
     }
 }

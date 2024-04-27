@@ -15,6 +15,7 @@ MonoBehaviour:
   Values:
   - {fileID: 6096099500834720225, guid: 4210c6d6d573c1c4190a39f3254724e8, type: 3}
   - {fileID: -6313985008643099376, guid: 69f052b155386f8458e0cea4cd0a110f, type: 3}
+  DropdownName: Maraphon
   startingPlatform: {fileID: 1797740374321707943, guid: ce31b44381694f64c8a1b088f05c5828, type: 3}
   verticalDistance:
     min: 1.5
@@ -22,13 +23,12 @@ MonoBehaviour:
   horizontalDistance:
     min: -2.3
     max: 2.3
-  maxPlatformCount: 16
   preferredPlatformAmount: 8
   scoreMultiplier: 1.5
   duplicateChance: 0
   weights:
     weights:
     - data: 3
-      weight: 0.1
-    - data: 3
+      weight: 0.5
+    - data: 2
       weight: 1

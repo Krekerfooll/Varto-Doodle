@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Values:
   - {fileID: 5478645995520309443, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
+  DropdownName: Do Not Fall
   startingPlatform: {fileID: 1797740374321707943, guid: ce31b44381694f64c8a1b088f05c5828, type: 3}
   verticalDistance:
     min: 3.5
@@ -21,7 +22,6 @@ MonoBehaviour:
   horizontalDistance:
     min: -2.3
     max: 2.3
-  maxPlatformCount: 5
   preferredPlatformAmount: 4
   scoreMultiplier: 2
   duplicateChance: 0

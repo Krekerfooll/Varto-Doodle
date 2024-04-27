@@ -1,16 +1,18 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace PVitaliy.UI
 {
     public class PauseUI : MonoBehaviour
     {
-        [SerializeField] private GameController gameController;
         [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private Button resumeButton;
+        public Button.ButtonClickedEvent ResumeButtonClick => resumeButton.onClick;
 
-        private void OnEnable()
+        public string ScoreText
         {
-            scoreText.text = gameController.ConvertHeightToScore() + "";
+            set => scoreText.text = value;
         }
     }
 }
