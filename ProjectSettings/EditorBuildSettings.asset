@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Varto/Scenes/Varto_Example_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Students/Ustich Arthur/Scenes/Main Menu.unity
+    guid: cfb6072e5562c19438f2f239bc2bb204
+  - enabled: 1
+    path: Assets/Students/Ustich Arthur/Scenes/Game.unity
+    guid: 8dd89658c33fa0f4b8f0d2e4379f9a23
   m_configObjects: {}
