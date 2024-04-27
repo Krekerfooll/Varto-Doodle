@@ -28,6 +28,11 @@ namespace PVitaliy.Player
             return rigidBody.transform.position + Vector3.right * (rayDirectionX * rayDistanceFromCenter * .35f) + Vector3.up * rayCastingOffsetY;
         }
 
+        public void ResetRigidBody()
+        {
+            rigidBody.velocity = Vector2.zero;
+        }
+
         private void Update()
         {
             UpdateMovement();

@@ -12,7 +12,6 @@ namespace PVitaliy.Platform
         public PlatformBase startingPlatform;
         public MinMax<float> verticalDistance;
         public MinMax<float> horizontalDistance;
-        [Min(2)] public int maxPlatformCount = 16;
         [Min(1)] public int preferredPlatformAmount = 6;
         [Min(0)] public float scoreMultiplier = 1;
         [Range(0, 1)] public float duplicateChance;

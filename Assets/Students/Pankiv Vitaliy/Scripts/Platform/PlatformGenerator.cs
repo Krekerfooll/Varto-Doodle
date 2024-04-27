@@ -27,19 +27,28 @@ namespace PVitaliy.Platform
 
         public void Init()
         {
-            _platformQueue = new Queue<PlatformBase>(factory.maxPlatformCount);
+            _platformQueue = new Queue<PlatformBase>();
             factory.Init();
-            PreGeneratePlatforms();
         }
 
-        private void PreGeneratePlatforms()
+        public void PreGeneratePlatforms()
         {
-            _nonDuplicatesCount = 0;
-            _highestPlatformPosition = transform.position + startPlatformPosition;
+            ClearGenerator();
             SpawnPlatformAt(factory.startingPlatform, _highestPlatformPosition);
             for (var i = 0; i < factory.preferredPlatformAmount - 1; i++)
             {
                 SpawnNewPlatform();
+            }
+        }
+
+        private void ClearGenerator()
+        {
+            _nonDuplicatesCount = 0;
+            _highestPlatformPosition = transform.position + startPlatformPosition;
+            _platformQueue.Clear();
+            foreach (Transform child in container.transform)
+            {
+                Destroy(child.gameObject);
             }
         }
 
@@ -55,17 +64,12 @@ namespace PVitaliy.Platform
 
         private PlatformBase SpawnPlatformAt(PlatformBase platform, Vector2 position, bool isDuplicated = false)
         {
-            if (container.childCount == factory.maxPlatformCount)
-            {
-                Debug.LogWarning("[Platform Controller]. Platform limit is reached");
-                return null;
-            }
             var instance = Instantiate(platform, position, Quaternion.identity, container);
             instance.Init(this, !isDuplicated);
             NewPlatformInitiatedHandler(instance);
             
-            if (!isDuplicated) _nonDuplicatesCount++;
-            else instance.name += " D";
+            if (isDuplicated) instance.name = "D " + instance.name;
+            else _nonDuplicatesCount++;
             
             return instance;
         }
@@ -78,6 +82,7 @@ namespace PVitaliy.Platform
 
         private void FixedUpdate()
         {
+            if (_platformQueue.Count == 0) return;
             var bottomPlatform = _platformQueue.Peek();
             if (bottomPlatform.transform.position.y < removeAtPoint.position.y)
             {
