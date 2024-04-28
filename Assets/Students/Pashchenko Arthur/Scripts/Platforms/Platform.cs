@@ -1,47 +1,33 @@
+using Artur.Pashchenko.Conditions;
+using Artur.Pashchenko.Player;
 using Artur.Pashchenko.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 namespace Artur.Pashchenko.Platform
 {
-    public class Platform : MonoBehaviour
+    public abstract class Platform : MonoBehaviour
     {
-        [SerializeField] private Transform _target;
-        [SerializeField] private GameObject _collider;
-        [SerializeField] protected bool _staysActive = true;
-        protected bool _enabled;
-        [SerializeField] protected List<ActionBase> _doOnCollisionActivated;
-        [SerializeField] protected List<ActionBase> _doOnCollisionDeactivated;
-
-       
-        public void Init (Transform target) 
+        [SerializeField] protected GameObject _player;
+        [SerializeField] protected Rigidbody2D _playerRigidbody;
+        [SerializeField] protected Collider2D _playerCollider;
+        [SerializeField] protected GameObject _targetPlatform;
+        [SerializeField] protected CompareHightCondition _compareHightCondition;
+        [SerializeField] protected CollisionCondition _collisionCondition;
+        public void Init (PlayerData playerData) 
         {
-            _target = target;
-            _enabled = true;
-        }
-        private void Update()
-        {
-            if (_enabled)
+            _player = playerData._player;
+            _playerCollider = playerData._playerCollider;
+            _playerRigidbody = playerData._playerRigidbody;
+            _targetPlatform = playerData._targetPlatform;
+            if (_compareHightCondition != null)
             {
-                UpdatePlatformCollider();
+                _compareHightCondition._target = _targetPlatform;
+            }
+            if (_collisionCondition != null)
+            {
+                _collisionCondition._target = playerData._player;
             }
         }
-
-        protected virtual void UpdatePlatformCollider() 
-        {
-            if (_target.transform.position.y > transform.position.y)
-            {
-                _collider.SetActive(true);
-                foreach (var action in _doOnCollisionActivated)
-                    action.Execute();
-
-            }
-            else
-            {
-                _collider.SetActive(false);
-                foreach (var action in _doOnCollisionDeactivated)
-                    action.Execute();
-
-            }
-        }
+      
     }
 }
