@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 4837556886575025041}
   - component: {fileID: 2272238065751043273}
   - component: {fileID: 1897929711724498396}
+  - component: {fileID: 3282836832399462820}
   m_Layer: 8
   m_Name: Varto_Example_Player
   m_TagString: Untagged
@@ -288,6 +289,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _groundCheckDistance: 0.55
+  _onPlayerDie: {fileID: 3282836832399462820}
 --- !u!50 &2272238065751043273
 Rigidbody2D:
   serializedVersion: 4
@@ -350,6 +352,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &3282836832399462820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6167981315381350313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84c79f2b45ca0440bab44b63105827a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 0
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 0
+  _isTrigger: 0
+  _eventName: game_over
 --- !u!1 &7677947687336018341
 GameObject:
   m_ObjectHideFlags: 0
