@@ -37,6 +37,7 @@ namespace PVitaliy.Core
     }
     public enum EventNames
     {
-        LevelGeneratorChanged
+        LevelGeneratorChanged,
+        NewRecordSet
     }
 }

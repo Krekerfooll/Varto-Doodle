@@ -1,3 +1,4 @@
+using PVitaliy.Core;
 using PVitaliy.Platform;
 using PVitaliy.Player;
 using PVitaliy.UI;
@@ -15,8 +16,11 @@ namespace PVitaliy
         private float _maxPlayerHeight;
         private Vector3 _playerStartPosition;
         private Vector3 _cameraStartPosition;
+
+        private int _localRecord; 
         private void Awake()
         {
+            _localRecord = PlayerPrefs.GetInt(MaxRecordView.RecordKey);
             generator.Init();
             _playerStartPosition = player.transform.position;
             _cameraStartPosition = mainCamera.transform.position;
@@ -65,6 +69,11 @@ namespace PVitaliy
         public void OnLosingPointTriggered() // used in LosingTrigger
         {
             uiManager.OnGameOver();
+            var score = ConvertHeightToScore();
+            if (_localRecord < score)
+            {
+                GlobalEvents.CallEvent(EventNames.NewRecordSet, score);
+            }
         }
     }
 }
