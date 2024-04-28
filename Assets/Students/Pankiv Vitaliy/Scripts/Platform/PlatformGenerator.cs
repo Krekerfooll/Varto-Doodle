@@ -29,7 +29,6 @@ namespace PVitaliy.Platform
         public void Init()
         {
             _platformQueue = new Queue<PlatformBase>();
-            factory.Init();
             GlobalEvents.AddAction(EventNames.LevelGeneratorChanged, OnLevelGeneratorChanged);
         }
 
@@ -81,7 +80,7 @@ namespace PVitaliy.Platform
         private PlatformBase SpawnPlatformAt(PlatformBase platform, Vector2 position, bool isDuplicated = false)
         {
             var instance = Instantiate(platform, position, Quaternion.identity, container);
-            instance.Init(this, !isDuplicated);
+            instance.Init(this, !isDuplicated, factory.bonusSpawnChanceMultiplier);
             NewPlatformInitiatedHandler(instance);
             
             if (isDuplicated) instance.name = "D " + instance.name;

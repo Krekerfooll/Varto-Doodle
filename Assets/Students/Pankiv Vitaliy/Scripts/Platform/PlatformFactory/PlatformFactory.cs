@@ -15,6 +15,7 @@ namespace PVitaliy.Platform
         public MinMax<float> horizontalDistance;
         [Min(1)] public int preferredPlatformAmount = 6;
         [Min(0)] public float scoreMultiplier = 1;
+        [Min(0)] public float bonusSpawnChanceMultiplier = 1;
         [Range(0, 1)] public float duplicateChance;
         
         public override void Init() {}

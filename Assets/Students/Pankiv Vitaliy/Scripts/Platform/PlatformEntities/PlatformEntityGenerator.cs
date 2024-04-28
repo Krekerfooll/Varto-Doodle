@@ -8,6 +8,7 @@ namespace PVitaliy.Platform.Entities
     {
         [Header("Platform Entity Generator")]
         [SerializeField] private Transform entityContainer;
+        public float generationChanceMultiplier = 1;
         
         private void Start()
         {
@@ -16,7 +17,7 @@ namespace PVitaliy.Platform.Entities
 
         private void TryGenerateEntity()
         {
-            if (Random.value > factory.GenerationChance) return;
+            if (Random.value > factory.GenerationChance * generationChanceMultiplier) return;
             var prefab = GenerateRandom();
             if (!prefab) return;
             

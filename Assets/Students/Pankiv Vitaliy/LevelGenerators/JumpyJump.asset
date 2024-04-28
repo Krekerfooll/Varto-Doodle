@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29f3fe6d15fe412d81f0705857e5669e, type: 3}
-  m_Name: NoMistakesAllowed
+  m_Name: JumpyJump
   m_EditorClassIdentifier: 
   Values:
-  - {fileID: 5478645995520309443, guid: 9bf7eac9563c8b64d95792c109a9964a, type: 3}
-  DropdownName: Do Not Fall
-  startingPlatform: {fileID: 1797740374321707943, guid: ce31b44381694f64c8a1b088f05c5828, type: 3}
+  - {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
+  - {fileID: 6096099500834720225, guid: 4210c6d6d573c1c4190a39f3254724e8, type: 3}
+  DropdownName: Jumpy Jump
+  startingPlatform: {fileID: 1797740374321707943, guid: 19cdb051664df624c973f13a96a397ed, type: 3}
   verticalDistance:
-    min: 3.5
-    max: 3.5
+    min: 9
+    max: 10.5
   horizontalDistance:
     min: -2.3
     max: 2.3
-  preferredPlatformAmount: 4
-  scoreMultiplier: 2
-  bonusSpawnChanceMultiplier: 1
-  duplicateChance: 0
+  preferredPlatformAmount: 3
+  scoreMultiplier: 1.5
+  bonusSpawnChanceMultiplier: 9999999
+  duplicateChance: 0.4

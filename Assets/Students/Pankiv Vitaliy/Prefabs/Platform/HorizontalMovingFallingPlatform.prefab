@@ -5059,6 +5059,7 @@ MonoBehaviour:
   _collider: {fileID: 4479954099015371379}
   duplicateChanceMultiplier: 0
   type: 3
+  entityGenerator: {fileID: 0}
   slider: {fileID: 4734005545066275416}
 --- !u!114 &4734005545066275416
 MonoBehaviour:
@@ -5138,7 +5139,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5043924758013711008}

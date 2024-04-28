@@ -1,4 +1,5 @@
 using PVitaliy.Factory;
+using PVitaliy.Platform.Entities;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,6 +12,7 @@ namespace PVitaliy.Platform
         [SerializeField] protected Collider2D _collider;
         [SerializeField] private float duplicateChanceMultiplier = 1;
         [SerializeField] private PlatformType type;
+        [SerializeField] private PlatformEntityGenerator entityGenerator;
         
         private bool _initialized;
         private Transform _collisionEnablingPoint;
@@ -24,9 +26,13 @@ namespace PVitaliy.Platform
             return type;
         }
 
-        public void Init(PlatformGenerator controller, bool replaceWithNew)
+        public void Init(PlatformGenerator controller, bool replaceWithNew, float bonusMultiplier)
         {
             Generator = controller;
+            if (entityGenerator)
+            {
+                entityGenerator.generationChanceMultiplier = bonusMultiplier;
+            }
             _collisionEnablingPoint = controller.CollisionStartTarget;
             ReplaceWithNewWhenDestroyed = replaceWithNew;
             AfterInit();

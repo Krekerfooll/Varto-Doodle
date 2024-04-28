@@ -4964,7 +4964,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8766308355070873371}
@@ -5149,6 +5149,7 @@ MonoBehaviour:
   _collider: {fileID: 3070242920027127660}
   duplicateChanceMultiplier: 1
   type: 0
+  entityGenerator: {fileID: 4130134407285815213}
 --- !u!114 &1941883143327624901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5212,3 +5213,4 @@ MonoBehaviour:
   factory: {fileID: 11400000, guid: 89e67d4768a1a0e47ba985bca90deff9, type: 2}
   OnGenerated: {fileID: 0}
   entityContainer: {fileID: 7678300578335678880}
+  generationChanceMultiplier: 1

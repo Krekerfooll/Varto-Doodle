@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5923823094328137944}
@@ -214,6 +214,7 @@ MonoBehaviour:
   _collider: {fileID: 1356390930225027520}
   duplicateChanceMultiplier: 0
   type: 2
+  entityGenerator: {fileID: 7623030283187729826}
   slider: {fileID: 2151762186590216718}
 --- !u!114 &2151762186590216718
 MonoBehaviour:
@@ -306,6 +307,7 @@ MonoBehaviour:
   factory: {fileID: 11400000, guid: 89e67d4768a1a0e47ba985bca90deff9, type: 2}
   OnGenerated: {fileID: 0}
   entityContainer: {fileID: 2875225587903282502}
+  generationChanceMultiplier: 1
 --- !u!1 &5883680006386794710
 GameObject:
   m_ObjectHideFlags: 0
