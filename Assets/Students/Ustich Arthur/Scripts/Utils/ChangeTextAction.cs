@@ -15,10 +15,9 @@ namespace Ustich.Arthur.DoodleJump
             _scoreText.text = _score.ToString();
         }
 
-        public override void ExecuteInternal()
-        {
-            ChangeText();
-        }
+        private void Update() => ExecuteInternal();
+
+        public override void ExecuteInternal() => ChangeText();
 
         private void ChangeText()
         {

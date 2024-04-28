@@ -7,10 +7,7 @@ namespace Ustich.Arthur.DoodleJump
     {
         [SerializeField] private ListOfScene _scene;
 
-        public override void ExecuteInternal()
-        {
-            SceneManager.LoadScene((int)_scene);
-        }
+        public override void ExecuteInternal() => SceneManager.LoadScene((int)_scene);
     }
 }
 

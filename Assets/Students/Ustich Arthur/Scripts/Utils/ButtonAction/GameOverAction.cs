@@ -3,13 +3,18 @@ using UnityEngine;
 
 namespace Ustich.Arthur.DoodleJump
 {
-    public class GameOverAction : ButtonActionBase
+    public class GameOverAction : MonoBehaviour
     {
         [SerializeField] private GameObject _target;
-        public override void ExecuteInternal()
+        [SerializeField] private List<ActionBase> _actions = new List<ActionBase>();
+
+        private void Update()
         {
             if (_target == null)
-                DisableEnableObjects();
+            {
+                foreach (var action in _actions)
+                    action.Execute();
+            }
         }
     }
 }
