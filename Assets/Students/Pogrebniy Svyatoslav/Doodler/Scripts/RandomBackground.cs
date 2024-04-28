@@ -5,10 +5,11 @@ using UnityEngine;
 public class RandomBackground : MonoBehaviour
 {
     [SerializeField] public Camera myCamera;
-
+    [SerializeField] private float _saturation;
+    [SerializeField] private float _value;
 
     public void ChangeColor()
     {
-    myCamera.backgroundColor = Random.ColorHSV(0f, 1f, 0.25f, 0.25f, 0.9f, 0.9f);  
+    myCamera.backgroundColor = Random.ColorHSV(0f, 1f, _saturation, _saturation, _value, _value);  
     }
 }
