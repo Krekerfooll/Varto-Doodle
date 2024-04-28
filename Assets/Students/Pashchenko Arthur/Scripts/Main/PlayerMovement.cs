@@ -1,3 +1,4 @@
+using Artur.Pashchenko.Conditions;
 using UnityEngine;
 namespace Artur.Pashchenko.Player
 {
@@ -6,12 +7,9 @@ namespace Artur.Pashchenko.Player
         [SerializeField] private float _jumpPower;
         [SerializeField] Rigidbody2D _playerRigidbody;
         [SerializeField] float _movementSpeed;
-        [SerializeField] float _distanceForCast;
-        [SerializeField] LayerMask _groundMask;
         [SerializeField] float _rotationSpeed;
         Quaternion _targetRotation;
-        private static bool _isGrounded;
-        public static bool IsGrounded { get { return _isGrounded; } }
+        [SerializeField] private IsGroudedCondition _isGroudedCondition;
 
         private void Update()
         {
@@ -20,14 +18,14 @@ namespace Artur.Pashchenko.Player
         } 
         private void Jump()
 {
-            if (InputController.IsJumped && _isGrounded)
+            if (InputController.IsJumped && _isGroudedCondition.CheckCondition())
             {
                _playerRigidbody.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
             }
         }
         private void Move()
         {
-            if (!_isGrounded)
+            if (!_isGroudedCondition.CheckCondition())
             {
                 _playerRigidbody.velocity = new Vector2(InputController.Direction * _movementSpeed, _playerRigidbody.velocity.y);
 
@@ -49,11 +47,7 @@ namespace Artur.Pashchenko.Player
         } 
     private void FixedUpdate()
         {
-            _isGrounded = Physics2D.Raycast(_playerRigidbody.position, Vector2.down, _distanceForCast, _groundMask);
-            Debug.DrawLine(_playerRigidbody.position, _playerRigidbody.position + Vector2.down * _distanceForCast, Color.red);
-
-
-            if (_isGrounded)
+            if (_isGroudedCondition.CheckCondition())
             {
                 if (transform.rotation.eulerAngles.y < 90f) transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                 else if (transform.rotation.eulerAngles.y >= 90f) transform.rotation = Quaternion.Euler(0f, -180f, 0f);

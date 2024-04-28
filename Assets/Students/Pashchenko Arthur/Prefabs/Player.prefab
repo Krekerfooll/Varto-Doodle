@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3521884386006980537}
   - component: {fileID: 7238382565631716533}
   - component: {fileID: 6168323233514128094}
+  - component: {fileID: 8151973440666420784}
   - component: {fileID: 5445638505256263330}
   - component: {fileID: 6744154003659014624}
   - component: {fileID: 8644030707589267518}
@@ -155,6 +156,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06, y: -0.09}
   m_Size: {x: 0.8, y: 1.03}
   m_Direction: 0
+--- !u!114 &8151973440666420784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230810249997240764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc687f97e4cc64043865080bc41b7910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerRigidbody: {fileID: 7238382565631716533}
+  _groundMask:
+    serializedVersion: 2
+    m_Bits: 8
+  _distanceForRaycast: 0.9
 --- !u!114 &5445638505256263330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,10 +188,6 @@ MonoBehaviour:
   _jumpPower: 12.02
   _playerRigidbody: {fileID: 7238382565631716533}
   _movementSpeed: 6.23
-  _distanceForCast: 0.9
-  _groundMask:
-    serializedVersion: 2
-    m_Bits: 8
   _rotationSpeed: 14.1
 --- !u!114 &6744154003659014624
 MonoBehaviour:
@@ -187,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3ebda1662c98446abd9ffa4c5d8119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
+  _player: {fileID: 7238382565631716533}
 --- !u!114 &8644030707589267518
 MonoBehaviour:
   m_ObjectHideFlags: 0
