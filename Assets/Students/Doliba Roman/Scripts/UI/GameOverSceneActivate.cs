@@ -12,7 +12,7 @@ namespace RomanDoliba.UI
             OnTrigerEventSender.OnEvent += OnPlayerDeath;
         }
 
-        private void OnPlayerDeath(string eventName)
+        public void OnPlayerDeath(string eventName)
         {
             if(eventName == "playerDead")
             {
