@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 1462583617673035390}
   - component: {fileID: 3043099121169309419}
   - component: {fileID: 6917735844794722665}
+  - component: {fileID: 8402255811526618822}
   m_Layer: 5
   m_Name: CoinsCounterText
   m_TagString: Untagged
@@ -268,6 +269,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8402255811526618822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299176342677236991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d8e751ead339a42aadc6e7f116685e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinCollectEventName: coinTaken
+  _diamondCollectEventName: diamondTaken
+  _coinsCounter: {fileID: 6917735844794722665}
 --- !u!1 &466171557374900333
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2865276523634903014
 RectTransform:
   m_ObjectHideFlags: 0

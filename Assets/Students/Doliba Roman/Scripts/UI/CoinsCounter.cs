@@ -14,6 +14,7 @@ namespace RomanDoliba.UI
 
         private void Awake()
         {
+            OnTrigerEventSender.OnEvent -= OnTrigerEvent;
             _coinsCounter.text = _coinsCount.ToString();
             OnTrigerEventSender.OnEvent += OnTrigerEvent;
         }
