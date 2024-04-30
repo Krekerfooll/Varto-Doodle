@@ -13,7 +13,7 @@ namespace Varto.Examples.Player
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private float _groundCheckDistance;
         [Space]
-        [SerializeField] private Varto_ActionBase _onPlayerDie;
+        // [SerializeField] private Varto_ActionBase _onPlayerDie;
 
         private Vector3 _lookLeft;
         private Vector3 _lookRight;
@@ -64,15 +64,15 @@ namespace Varto.Examples.Player
             _moveDirection = Input.GetAxis("Horizontal");
 
             if (_moveDirection < 0f)
-                _player.transform.localScale = _lookLeft;
-            else if (_moveDirection > 0f)
                 _player.transform.localScale = _lookRight;
+            else if (_moveDirection > 0f)
+                _player.transform.localScale = _lookLeft;
         }
 
 
-        private void OnDestroy()
-        {
-            _onPlayerDie.Execute();
-        }
+        // private void OnDestroy()
+        // {
+        //     _onPlayerDie.Execute();
+        // }
     }
 }
