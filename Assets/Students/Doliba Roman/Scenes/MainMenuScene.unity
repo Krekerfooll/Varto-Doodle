@@ -291,6 +291,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8377709142599452293, guid: ad3e0c6028b01f249b48c6254d30d578, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d2a8283297ec2145995167477834885, type: 3}
     - target: {fileID: 8590473815063843243, guid: ad3e0c6028b01f249b48c6254d30d578, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
