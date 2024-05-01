@@ -4,30 +4,19 @@ using UnityEngine;
 
 public class colorChanger : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer spRender0;
-    [SerializeField] private SpriteRenderer spRender1;
-    [SerializeField] private SpriteRenderer spRender2;
-    [SerializeField] private SpriteRenderer spRender3;
-    private List<SpriteRenderer> spriteRenderers = new List<SpriteRenderer>();
+
+    [SerializeField] private List<ColorInfo> spriteColors = new List<ColorInfo>();
     private bool colorChangerActive = true;
 
-    void Start()
-    {
-        spriteRenderers.Add(spRender0);
-        spriteRenderers.Add(spRender1);
-        spriteRenderers.Add(spRender2);
-        spriteRenderers.Add(spRender3);
-    }
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player" && colorChangerActive) 
         {
-            foreach (SpriteRenderer sr in spriteRenderers)
+            foreach (ColorInfo sr in spriteColors)
             {
-                Color currentColor = sr.color;
-                Color newColor = new Color(currentColor.r + 0.4f, currentColor.g + 0.4f, currentColor.b + 0.4f, currentColor.a);
-                sr.color = newColor;
+                sr.SpriteRenderer.color = sr.activeColor;
                 colorChangerActive = false;
             }
             
@@ -38,14 +27,23 @@ public class colorChanger : MonoBehaviour
     {
         if (collision.gameObject.name == "Player" && colorChangerActive == false) 
         {
-            foreach (SpriteRenderer sr in spriteRenderers)
+            foreach (ColorInfo sr in spriteColors)
             {
-                Color currentColor = sr.color;
-                Color newColor = new Color(currentColor.r - 0.4f, currentColor.g - 0.4f, currentColor.b - 0.4f, currentColor.a);
-                sr.color = newColor;
+                sr.SpriteRenderer.color = sr.startColor;
                 colorChangerActive = true;
             }
             
         }
     }
+    
+}
+
+
+[System.Serializable]
+public struct ColorInfo 
+{
+    public SpriteRenderer SpriteRenderer;
+    public Color startColor;
+    public Color activeColor;
+    
 }

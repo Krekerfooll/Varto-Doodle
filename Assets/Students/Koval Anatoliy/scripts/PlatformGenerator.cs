@@ -10,7 +10,7 @@ public class PlatformGenerator : MonoBehaviour
     [Space]
     [Header("Spawn Settings")]
     [Space]
-    [SerializeField] private Platform _platformPrefab;
+    [SerializeField] private ColliderSwitcher _platformPrefab;
     [SerializeField] private int _stepsCountToSpawn;
     [SerializeField] private int _stepHeight;
     [SerializeField] private Vector2 _bounds;
@@ -44,6 +44,6 @@ public class PlatformGenerator : MonoBehaviour
         var platformPosition = new Vector3(platformPositionX, platformPositionY, transform.position.z); 
 
         var spawnedPlatform = Instantiate(_platformPrefab, platformPosition, Quaternion.identity, this.transform);
-        spawnedPlatform.Init(_target); 
+        spawnedPlatform.GetComponent<ColliderSwitcher>().Init(_target); 
     }
 }

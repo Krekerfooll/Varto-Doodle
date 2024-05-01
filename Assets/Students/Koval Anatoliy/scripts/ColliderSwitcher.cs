@@ -2,22 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platform : MonoBehaviour
+public class ColliderSwitcher : ActionBase
 {
     [SerializeField] protected Transform _target;
-    //[SerializeField] protected GameObject _collider;
+    [SerializeField] protected GameObject _collider;
 
     public void Init(Transform target)
     {
         _target = target;
     }
-/*
-    void Update()
-    {
-        OnUpdatePlatform();
-    }
-
-    protected virtual void OnUpdatePlatform()
+    
+     public override void Execute()
     {
         if (_target.transform.position.y > transform.position.y)
         {
@@ -28,8 +23,4 @@ public class Platform : MonoBehaviour
             _collider.SetActive(false);
         }
     }
-*/
-
-
-
 }

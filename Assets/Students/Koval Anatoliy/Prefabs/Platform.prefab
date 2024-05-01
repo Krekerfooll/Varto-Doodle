@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 6228507063584595099}
   - component: {fileID: 4948896871584949746}
   - component: {fileID: 3226396937127862523}
-  - component: {fileID: 3921332027546752833}
+  - component: {fileID: 4981153162869789365}
   m_Layer: 7
   m_Name: PlatformCollider
   m_TagString: Untagged
@@ -264,7 +264,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3921332027546752833
+--- !u!114 &4981153162869789365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -276,10 +276,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa6da22477bac44db3df2d033ed9d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spRender0: {fileID: 1441548489382979126}
-  spRender1: {fileID: 2508520931199042038}
-  spRender2: {fileID: 3880731218048078623}
-  spRender3: {fileID: 2767441848071747004}
+  spriteColors:
+  - SpriteRenderer: {fileID: 1441548489382979126}
+    startColor: {r: 0.34901962, g: 0.7647059, b: 0.5764706, a: 1}
+    activeColor: {r: 0.06897471, g: 0.40342808, b: 0.5849056, a: 1}
+  - SpriteRenderer: {fileID: 2508520931199042038}
+    startColor: {r: 0.7137255, g: 0.9607843, b: 0.8509804, a: 1}
+    activeColor: {r: 0.11614455, g: 0.5341072, b: 0.5471698, a: 1}
+  - SpriteRenderer: {fileID: 3880731218048078623}
+    startColor: {r: 0.49411765, g: 0.8784314, b: 0.7019608, a: 1}
+    activeColor: {r: 0.40792987, g: 0.6702165, b: 0.8396226, a: 1}
+  - SpriteRenderer: {fileID: 2767441848071747004}
+    startColor: {r: 0.7137255, g: 0.9607843, b: 0.8509804, a: 1}
+    activeColor: {r: 0.36862755, g: 0.3011748, b: 0.4528302, a: 1}
 --- !u!1 &5928335775996577341
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +467,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3713193537833087810}
   - component: {fileID: 3058090578572858648}
-  - component: {fileID: 7782167587086032744}
+  - component: {fileID: 7563740053222842831}
+  - component: {fileID: 7906052514974636084}
   m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
@@ -513,7 +523,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7782167587086032744
+--- !u!114 &7563740053222842831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -522,7 +532,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8270460673798097131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96434a5e7e69d914f9440e83b880c324, type: 3}
+  m_Script: {fileID: 11500000, guid: a8e304e8fdc11a943871fa2ffb841968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _action: {fileID: 7906052514974636084}
+--- !u!114 &7906052514974636084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8270460673798097131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529cc448aef19d746899b46d4378a8ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
