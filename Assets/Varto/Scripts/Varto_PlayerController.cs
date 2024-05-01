@@ -62,7 +62,6 @@ namespace Varto.Examples.Player
         private void CalculateSpeed()
         {
             _moveDirection = Input.GetAxis("Horizontal");
-
             if (_moveDirection < 0f)
                 _player.transform.localScale = _lookRight;
             else if (_moveDirection > 0f)
