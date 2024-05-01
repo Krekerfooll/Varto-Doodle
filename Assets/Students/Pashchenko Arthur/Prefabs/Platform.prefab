@@ -54,6 +54,7 @@ MonoBehaviour:
   _playerCollider: {fileID: 0}
   _targetPlatform: {fileID: 0}
   _compareHightCondition: {fileID: 2522158573653950043}
+  _collisionCondition: {fileID: 0}
 --- !u!114 &2522158573653950043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +73,7 @@ MonoBehaviour:
   - {fileID: 203484921310046457}
   _targetIsHighterAction:
   - {fileID: 8160998963794481923}
+  _distanceForExecute: 2
 --- !u!114 &203484921310046457
 MonoBehaviour:
   m_ObjectHideFlags: 0

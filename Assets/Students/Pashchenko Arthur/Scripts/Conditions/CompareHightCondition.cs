@@ -11,13 +11,14 @@ namespace Artur.Pashchenko.Conditions
         [SerializeField] private GameObject _instance;
         [SerializeField] private ActionBase[] _instanceIsHighterAction;
         [SerializeField] private ActionBase[] _targetIsHighterAction;
+        [SerializeField] private float _distanceForExecute;
 
         private void Update()
         {
             float _targetPositionY = _target.transform.position.y;
             float _instancePositionY = _instance.transform.position.y;
 
-            if (_instancePositionY > _targetPositionY) 
+            if (_instancePositionY > _targetPositionY + _distanceForExecute) 
             {
                 for (int i = 0; i < _instanceIsHighterAction.Length; i++)
                 {
