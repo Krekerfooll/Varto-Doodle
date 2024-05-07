@@ -30,7 +30,7 @@ public class Person : MonoBehaviour
 
     void Start()
     {
-        // начальные настройки
+
     }
 
     void Update()

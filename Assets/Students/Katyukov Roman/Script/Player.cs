@@ -6,16 +6,15 @@ public class Player : Person
     private bool isGrounded; //
     public float groundCheckDistance = 0.5f;
     public LayerMask groundMask; //
-    public Transform groundCheck; // Объект, Raycast
+    public Transform groundCheck; // Raycast
 
     void Update()
     {
         isGrounded = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundMask);
 
-        // Выводим луч для дебага
         Debug.DrawRay(groundCheck.position, Vector2.down * groundCheckDistance, Color.red);
 
-        // Проверяем условие для прыжка: нажатие кнопки "Jump" и наличие земли под объектом "groundCheck"
+        // "groundCheck"
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
@@ -36,7 +35,6 @@ public class Player : Person
 
     private void Jump()
     {
-        // Применяем силу прыжка
         GetComponent<Rigidbody2D>().AddForce(jumpForce);
     }
 }
