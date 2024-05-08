@@ -58,7 +58,7 @@ namespace Scripts
 
         private void PowerJump()
         {
-            _isJump = true;
+            _isJump = _player.velocity.y == 0f;
         }
 
         private void PowerSpeed()

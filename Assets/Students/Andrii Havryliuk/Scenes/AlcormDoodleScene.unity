@@ -265,11 +265,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startPosition: {x: 0, y: 0}
   _countPlatforms: 15
-  _maxHigthStep: 2
+  _maxHigthStep: 4
   _listPrefabPlatform:
-  - {fileID: 71460181941341009, guid: 7355a2b6d8846d9499bc3a4c238eaac3, type: 3}
+  - {fileID: 4812796687366424404, guid: 7355a2b6d8846d9499bc3a4c238eaac3, type: 3}
+  - {fileID: 42510127616777737, guid: 1179112e387bb9a45b3d5b35249227ee, type: 3}
   _player: {fileID: 1697355251}
-  _cameraLowerTarget: {fileID: 0}
+  _cameraLowerTarget: {fileID: 1912846881}
 --- !u!4 &1105754948
 Transform:
   m_ObjectHideFlags: 0
@@ -320,7 +321,7 @@ Transform:
   m_GameObject: {fileID: 1912846880}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.62, z: 0}
+  m_LocalPosition: {x: 0, y: -10.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,9 +339,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7213336169719118631, guid: 317f119efdcc04b45ae4d056b33bbfa0, type: 3}
-      propertyPath: _jumpPower
-      value: 8.66
+    - target: {fileID: 3567450784139420455, guid: 317f119efdcc04b45ae4d056b33bbfa0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7285856196273019365, guid: 317f119efdcc04b45ae4d056b33bbfa0, type: 3}
       propertyPath: m_LocalPosition.x

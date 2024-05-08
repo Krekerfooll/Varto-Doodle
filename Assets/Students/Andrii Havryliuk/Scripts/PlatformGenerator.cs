@@ -8,18 +8,19 @@ public class PlatformGenerator : MonoBehaviour
     [SerializeField] private int _countPlatforms;
     [SerializeField] private float _maxHigthStep;
     [Space]
-    [SerializeField] private List<PlatformBase> _listPrefabPlatform;
+    [SerializeField] private List<ObjectBase> _listPrefabPlatform;
+    
 
     [SerializeField] private Transform _player;
     [SerializeField] private Transform _cameraLowerTarget;
 
-    PlatformBase[] _platforms;
+    ObjectBase[] _platforms;
 
     private int _indexPlatform = 0;
     private static float _lastRandomStepY = 0;
     private void Awake()
     {
-        _platforms = new PlatformBase[_countPlatforms];
+        _platforms = new ObjectBase[_countPlatforms];
     }
 
     private void Start()
@@ -58,8 +59,5 @@ public class PlatformGenerator : MonoBehaviour
         
         _indexPlatform = (_indexPlatform == (_countPlatforms - 1)) ? 0 : ++_indexPlatform;  
     }
-
-
-
 
 }
