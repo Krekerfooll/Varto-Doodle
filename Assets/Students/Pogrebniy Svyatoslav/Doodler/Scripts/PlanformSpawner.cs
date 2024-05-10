@@ -7,9 +7,10 @@
 
 public class PlatformSpawner : MonoBehaviour
 {
-    [SerializeField] private float _plarformHeight;
-    [SerializeField] private Vector2 _planformEdges;
-    [SerializeField] private GameObject _prefabPlatform;
+    [SerializeField] private float _platformHeight;
+    [SerializeField] private Vector2 _platformEdges;
+    [SerializeField] private List<GameObject> _prefabPlatformVariats;
+    [SerializeField] private GameObject _Platform;
     [SerializeField] private Transform _target;
     [SerializeField] private int _platformsCount;
     [SerializeField] private float _positionSpawnY = -5;
@@ -21,11 +22,11 @@ public class PlatformSpawner : MonoBehaviour
     private void Start()
     {
         _spawnedPlatforms = new Queue<GameObject>();
-        var spawnedPlatform = Instantiate(_prefabPlatform, new Vector3(0, _positionSpawnY, 0), Quaternion.identity);
+        var spawnedPlatform = Instantiate(_Platform, new Vector3(0, _positionSpawnY, 0), Quaternion.identity);
         _spawnedPlatforms.Enqueue(spawnedPlatform);
-        _positionSpawnY = _positionSpawnY + _plarformHeight;
+        _positionSpawnY = _positionSpawnY + _platformHeight;
         _positionTriggerSpawn = _target.position.y;
-        _positionTriggerDestroy = _positionTriggerDestroy + _plarformHeight;
+        _positionTriggerDestroy = _positionTriggerDestroy + _platformHeight;
         
     }
 
@@ -34,20 +35,21 @@ public class PlatformSpawner : MonoBehaviour
         
         if (_platformsCount > 0)
             {
-           var spawnedPlatform = Instantiate(_prefabPlatform, new Vector3(Random.Range(_planformEdges.x, _planformEdges.y), _positionSpawnY, 0), Quaternion.identity);
+           var randomPlatform = _prefabPlatformVariats[Random.Range(0,_prefabPlatformVariats.Count)];
+           var spawnedPlatform = Instantiate(randomPlatform, new Vector3(Random.Range(_platformEdges.x, _platformEdges.y), _positionSpawnY, 0), Quaternion.identity);
             _spawnedPlatforms.Enqueue(spawnedPlatform);
             _platformsCount--;
-            _positionSpawnY = _positionSpawnY + _plarformHeight;
+            _positionSpawnY = _positionSpawnY + _platformHeight;
             }
 
         else if (_target.position.y >_positionTriggerSpawn ) 
             { 
             _platformsCount++;
-            _positionTriggerSpawn = _positionTriggerSpawn + _plarformHeight;
+            _positionTriggerSpawn = _positionTriggerSpawn + _platformHeight;
             }
         else if (_target.position.y > _positionTriggerDestroy)
         {
-            _positionTriggerDestroy += _plarformHeight;
+            _positionTriggerDestroy += _platformHeight;
             var destroyPlatform = _spawnedPlatforms.Dequeue();
             Destroy(destroyPlatform.gameObject);
         }
