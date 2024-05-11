@@ -367,6 +367,12 @@ MonoBehaviour:
   _platformEdges: {x: -3, y: 3}
   _prefabPlatformVariats:
   - {fileID: 7820707930922862741, guid: 86072de06d1223542a70df919b03b418, type: 3}
+  - {fileID: 7820707930922862741, guid: 8e747685919cebf498ce9dd61cff3f0a, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
   _Platform: {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
   _target: {fileID: 1675152718}
   _platformsCount: 3
@@ -396,6 +402,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1796740797934260, guid: 57ab169a0a1054044ad6b2506bda0d61, type: 3}
+      propertyPath: _time
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1796740797934260, guid: 57ab169a0a1054044ad6b2506bda0d61, type: 3}
       propertyPath: myCamera
       value: 
