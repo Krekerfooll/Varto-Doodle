@@ -3,28 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Alokhin.Stanislav.DropPlat
+namespace Alokhin.Stanislav.PlatformGenerator
 {
     public class DropsPlatforms : Platforms
     {
-        [SerializeField] private float _ffallPlatf = 1f;
-        [SerializeField] private float _destroyPlatf = 2f;
-        [Space]
         [SerializeField] private Rigidbody2D _rb;
+
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if ( collision.gameObject.CompareTag("Player"))
             {
-                StartCoroutine(Fall());
+                Invoke("DropPlatform", 0.5f);
+                Destroy(gameObject, 2f);
             }
         }
 
-        private IEnumerator Fall()
+        private void DropPlatform()
         {
-            yield return new WaitForSeconds(_ffallPlatf);
-            _rb.bodyType = RigidbodyType2D.Dynamic;
-            Destroy(gameObject,_destroyPlatf);
+            _rb.isKinematic = false;
         }
     }
 }

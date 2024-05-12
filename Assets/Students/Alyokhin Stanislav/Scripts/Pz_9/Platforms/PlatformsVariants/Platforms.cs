@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Alokhin.Stanislav.PlatformGround
+namespace Alokhin.Stanislav.PlatformGenerator
 {
     public class Platforms : MonoBehaviour
     {

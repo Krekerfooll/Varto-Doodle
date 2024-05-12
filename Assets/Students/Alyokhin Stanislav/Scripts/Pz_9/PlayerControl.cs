@@ -9,7 +9,6 @@ namespace Alokhin.Stanislav
         [Space]
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpPower;
-        //[SerializeField] private float _maxSpeed;
         [Space]
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private float _groundCheckDistance;
@@ -17,15 +16,15 @@ namespace Alokhin.Stanislav
 
         private Vector3 _lookLeft;
         private Vector3 _lookRight;
-       //private bool _lookLeft;
-       //private bool _lookRight;
 
-        //private float _moveDiraction;
+        private Animator anim;
+
         private bool _isJump;
         private bool _isGrounded;
 
         private void Start()
         {
+            anim = GetComponent<Animator>();
             _lookLeft = _rb2.transform.localScale;
             _lookRight = new Vector3(-_lookLeft.x, _lookLeft.y, _lookLeft.z);
         }
@@ -33,6 +32,7 @@ namespace Alokhin.Stanislav
         {
             CalculateJump();
             CalculateSpeed();
+
         }
 
         void FixedUpdate()
@@ -40,29 +40,26 @@ namespace Alokhin.Stanislav
             _isGrounded = Physics2D.Raycast(_rb2.position, Vector2.down, _groundCheckDistance, _groundMask);
             Debug.DrawLine(_rb2.position,_rb2.position + Vector2.down * _groundCheckDistance, Color.yellow);
 
-            //var _moveDiraction = Input.GetAxis("Horizontal");
-
-          //  if (_isGrounded)
-          // {
-          //     if (_isJump )
-          //     {
-          //         _rb2.AddForce(Vector2.up * _jumpPower,ForceMode2D.Impulse);
-          //         _isJump = false;
-          //     }
-          // }
-          // else
-          // {
-          //     _rb2.velocity = new Vector2(_speed * _moveDiraction, _rb2.velocity.y);
-          // }
         }
 
         private void CalculateJump()
         {
             if(_isGrounded && Input.GetKeyDown(KeyCode.Space))
             {
+                anim.SetTrigger("takeOf");
                 _rb2.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
                 _isJump = true;
                 CreateDust();
+            }
+            if ( _isGrounded == true)
+            {
+                anim.SetBool("isJumping", true);
+                //anim.SetBool("isJumpimg", false);
+            }
+            else
+            {
+                anim.SetBool("isJumping", false);
+                //anim.SetBool("isJumpimg",true);
             }
 
         }
@@ -70,6 +67,14 @@ namespace Alokhin.Stanislav
         {
             var _moveDiraction = Input.GetAxis("Horizontal");
             _rb2.velocity = new Vector2(_speed * _moveDiraction, _rb2.velocity.y);
+            if(_moveDiraction == 0)
+            {
+                anim.SetBool("isRunning",false);
+            }
+            else
+            {
+                anim.SetBool("isRunning", true);
+            }
 
             if (_moveDiraction < 0f)
             {
