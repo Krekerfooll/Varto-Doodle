@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8683198646319392718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3742721011780959393}
+  - component: {fileID: 5746100784544626006}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3742721011780959393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683198646319392718}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5746100784544626006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683198646319392718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 204da817c09300646a4261efe069705e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _platformHeight: 3.5
+  _platformEdges: {x: -3, y: 3}
+  _prefabPlatformVariats:
+  - {fileID: 7820707930922862741, guid: 86072de06d1223542a70df919b03b418, type: 3}
+  - {fileID: 7820707930922862741, guid: 8e747685919cebf498ce9dd61cff3f0a, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  - {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  _Platform: {fileID: 7820707930922862741, guid: 9b48b7947af0ed742bade3969c7efbf4, type: 3}
+  _target: {fileID: 6599595903147912968, guid: 57ab169a0a1054044ad6b2506bda0d61, type: 3}
+  _deathTrigger: {fileID: 7820707930922862741, guid: c616f87c4aa21e54ca9048e93a7ef1f5, type: 3}
+  _platformsCount: 3
+  _positionSpawnY: -5
+  _positionTriggerSpawn: 0
+  _positionTriggerDestroy: 0
+  endGameTrigger: 0

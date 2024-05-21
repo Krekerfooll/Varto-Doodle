@@ -8,7 +8,7 @@ public class Destroyer : CollisionEvent
 
     [SerializeField] private DestructionType _destructionType;
     [SerializeField] private GameObject _objectToDestroy;
-    [SerializeField] private float _delay;
+    [SerializeField] private int _delay;
 
     public void Destroy()
     {
@@ -17,7 +17,9 @@ public class Destroyer : CollisionEvent
             switch (_destructionType)
             {
                 case DestructionType.Self:
-                    Destroy(gameObject, _delay);
+                    Delay();
+                    //gameObject.SetActive(false);
+                    //Destroy(gameObject, _delay);
                     break;
 
                 case DestructionType.TargetObject:
@@ -36,4 +38,15 @@ public class Destroyer : CollisionEvent
         Destroy();
     }
 
+    void Delay()
+    
+       {
+           StartCoroutine(RemoveAfterSeconds(_delay, gameObject));
+       }
+    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
+    {
+        yield return new WaitForSeconds(_delay);
+        obj.SetActive(false);
+    }
+    
 }

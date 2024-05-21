@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _reyLength;
     [SerializeField] private Vector2 _playerEdges;
     [SerializeField] private float _maxSpead;
-    [SerializeField] private float _playerSpeed;
 
     void FixedUpdate()
     {   
@@ -43,13 +42,9 @@ public class PlayerController : MonoBehaviour
             {
             _rb.velocity = new Vector2(direction * _moveSpeed, _rb.velocity.y);
             }
-        WallsTeleport();
-        maxSpead();
-    }
 
-    private void Update()
-    {
-        _playerSpeed = _rb.velocity.y;
+        WallsTeleport();
+        MaxSpead();
     }
 
     void WallsTeleport()
@@ -57,9 +52,15 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x < _playerEdges.x) gameObject.transform.position = new Vector3(_playerEdges.y, transform.position.y);
         else if (transform.position.x > _playerEdges.y) gameObject.transform.position = new Vector3(_playerEdges.x, transform.position.y);
     }
-    void maxSpead()
+    void MaxSpead()
     { 
         if (_rb.velocity.y > _maxSpead) _rb.velocity = new Vector2 (_rb.velocity.x, _maxSpead);
         
     }
+    void EndGame() 
+    {
+  // float _endGameTrigger = 
+  // if (_playerPosition.y < endGameTrigger)
+    }
+
 }

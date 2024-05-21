@@ -1,9 +1,8 @@
  using System.Collections;
  using System.Collections.Generic;
  using UnityEngine;
-// using Varto.Examples.Platforms;
-// using static UnityEngine.GraphicsBuffer;
-// using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.UIElements;
+
 
 public class PlatformSpawner : MonoBehaviour
 {
@@ -12,10 +11,12 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField] private List<GameObject> _prefabPlatformVariats;
     [SerializeField] private GameObject _Platform;
     [SerializeField] private Transform _target;
+    [SerializeField] private GameObject _deathTriggerPlatform;
     [SerializeField] private int _platformsCount;
     [SerializeField] private float _positionSpawnY = -5;
     [SerializeField] private float _positionTriggerSpawn;
     [SerializeField] private float _positionTriggerDestroy;
+
 
     private Queue<GameObject> _spawnedPlatforms;
 
@@ -23,6 +24,7 @@ public class PlatformSpawner : MonoBehaviour
     {
         _spawnedPlatforms = new Queue<GameObject>();
         var spawnedPlatform = Instantiate(_Platform, new Vector3(0, _positionSpawnY, 0), Quaternion.identity);
+        _deathTriggerPlatform = Instantiate(_deathTriggerPlatform, new Vector3 (0, -10, 0), Quaternion.identity);
         _spawnedPlatforms.Enqueue(spawnedPlatform);
         _positionSpawnY = _positionSpawnY + _platformHeight;
         _positionTriggerSpawn = _target.position.y;
@@ -51,8 +53,12 @@ public class PlatformSpawner : MonoBehaviour
         {
             _positionTriggerDestroy += _platformHeight;
             var destroyPlatform = _spawnedPlatforms.Dequeue();
+            _deathTriggerPlatform.transform.position = new Vector3(0, destroyPlatform.transform.position.y, 0);
             Destroy(destroyPlatform.gameObject);
+
+           // _deathTriggerPlatform.position.y = _positionTriggerDestroy;
         }
+
     }
     
 

@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 4478197759389294099}
   - component: {fileID: 7745033440586414943}
   - component: {fileID: 5662407350281485527}
+  - component: {fileID: 576306856599913795}
   m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
@@ -438,6 +439,25 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &576306856599913795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7820707930922862741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f409865c03a0cc4f958219b266b0021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnleOnes: 1
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 256
+  _isTrigger: 0
+  _eventName: score
 --- !u!1 &8643692790349066774
 GameObject:
   m_ObjectHideFlags: 0
