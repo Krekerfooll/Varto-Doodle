@@ -94,6 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1366307959083804891}
   - component: {fileID: 8001261744017033817}
+  - component: {fileID: 4882651687946530437}
+  - component: {fileID: 1219001417755825021}
   m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
@@ -151,6 +153,125 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00000047683716, y: -0.00000023841858}
   m_Size: {x: 1.02, y: 0.4}
   m_Direction: 1
+--- !u!114 &4882651687946530437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463279747692914631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0c64b49a7973a4c95f22a3d0b042ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 0
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 256
+  _isTrigger: 0
+  _audioSource: {fileID: 1219001417755825021}
+  _audioClip: {fileID: 8300000, guid: 324f37f870f50604d80b70c959237374, type: 3}
+  _volume: 0.9
+  _loop: 0
+  _playWithoutSource: 0
+--- !u!82 &1219001417755825021
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463279747692914631}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2420851860891217866, guid: a322781498e507e4182db04cd4f14bcf, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7990151874966119391
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,9 +339,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cb6e910258f9f449a06becb21cbe5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 0
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 0
+  _isTrigger: 0
   _objectToChangeColor: {fileID: 4885913635209999258}
   _color: {r: 0.53333336, g: 0.4509804, b: 0.23921569, a: 1}
 --- !u!114 &7236943660306423895
@@ -235,8 +359,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cb6e910258f9f449a06becb21cbe5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 0
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 0
+  _isTrigger: 0
   _objectToChangeColor: {fileID: 4885913635209999258}
   _color: {r: 0.7294118, g: 0.6117647, b: 0.30980393, a: 1}
