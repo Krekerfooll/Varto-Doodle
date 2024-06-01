@@ -140,6 +140,8 @@ MonoBehaviour:
   _objectToDestroy: {fileID: 0}
   _objectToDestroyType: 0
   _delay: 1.7
+  _checkDistance: 0
+  _explosionDistance: 0
 --- !u!1 &7755968512434015335
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,4 +334,6 @@ MonoBehaviour:
   _destroyAction: {fileID: 1430409289934324390}
   _objectToDestroy: {fileID: 0}
   _objectToDestroyType: 2
-  _delay: 1.7
+  _delay: 1.6
+  _checkDistance: 1
+  _explosionDistance: 2
