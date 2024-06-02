@@ -19,7 +19,7 @@ namespace Ustich.Arthur.DoodleJump
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (CheckTags( collision.gameObject.tag))
+            if (CheckTags(collision.gameObject.tag))
             {
                 LastCollision = collision;
                 Execute();

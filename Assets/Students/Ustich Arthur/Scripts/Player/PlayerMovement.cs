@@ -15,6 +15,8 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private float _groundCheckDistance;
         [SerializeField] private LayerMask _groundMask;
 
+        [SerializeField] private ActionBase _actionIfJump;
+
         private float _moveDirection;
         private bool _isGrounded;
         public bool IsJumping { get; private set; }
@@ -41,7 +43,11 @@ namespace Ustich.Arthur.DoodleJump
             IsJumping = !_isGrounded;
             Debug.DrawLine(_playerRB2D.position, _playerRB2D.position + Vector2.down * _groundCheckDistance, Color.green);
             if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)
+            {
                 _playerRB2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+                _actionIfJump.Execute();
+            }
+                
                 
         }
 
