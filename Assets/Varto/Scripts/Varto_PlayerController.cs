@@ -14,6 +14,7 @@ namespace Varto.Examples.Player
         [SerializeField] private float _groundCheckDistance;
         [Space]
         [SerializeField] private Varto_ActionBase _onPlayerDie;
+        [SerializeField] private Varto_ActionBase _onPlayerJump;
 
         private Vector3 _lookLeft;
         private Vector3 _lookRight;
@@ -42,6 +43,7 @@ namespace Varto.Examples.Player
             {
                 if (_isJump)
                 {
+                    _onPlayerJump.Execute();
                     _player.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
                     _isJump = false;
                 }

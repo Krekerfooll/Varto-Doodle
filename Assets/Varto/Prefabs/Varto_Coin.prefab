@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8008148691188836756}
   - component: {fileID: 8430401467079097944}
   - component: {fileID: 4714026641000476017}
+  - component: {fileID: 5746976471795901259}
   m_Layer: 0
   m_Name: Varto_Coin
   m_TagString: Untagged
@@ -159,6 +160,29 @@ MonoBehaviour:
   _isTrigger: 1
   _objectToChangeColor: {fileID: 8835023379011599113}
   _color: {r: 1, g: 0.97713137, b: 0.62578607, a: 1}
+--- !u!114 &5746976471795901259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4385925216608706505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0c64b49a7973a4c95f22a3d0b042ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 0
+  _executeOnlyOnes: 1
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 256
+  _isTrigger: 1
+  _audioSource: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: 574af3d2c8bb6844db9f7f3efebaa84b, type: 3}
+  _volume: 1
+  _loop: 0
+  _playWithoutSource: 1
 --- !u!1 &5724035018989690155
 GameObject:
   m_ObjectHideFlags: 0
