@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4921220378787444135}
   - component: {fileID: 2640962827446221559}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fireplace (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 706717486331787955}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.43375722, y: -0.65138906, z: 0.025754828}
-  m_LocalScale: {x: 1.197698, y: 1.4088665, z: 1.8214369}
+  m_LocalPosition: {x: -0.32536098, y: -0.4013811, z: 0.02575483}
+  m_LocalScale: {x: 0.7500869, y: 1.1110059, z: 1.821437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8345744829313461466}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6203361720954307719}
   - component: {fileID: 8559027747869798901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fireplace (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,8 +110,8 @@ Transform:
   m_GameObject: {fileID: 1748541226791295997}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.407989, y: -0.54938865, z: 0.025754828}
-  m_LocalScale: {x: 1.197698, y: 1.4088665, z: 1.8214369}
+  m_LocalPosition: {x: -0.9354968, y: -0.3209455, z: 0.02575483}
+  m_LocalScale: {x: 0.7500869, y: 1.1110059, z: 1.821437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8345744829313461466}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 616682446438377097}
   - component: {fileID: 8460978258803497473}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fireplace (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,8 +194,8 @@ Transform:
   m_GameObject: {fileID: 1914040290722413972}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.3461254, y: -0.6362405, z: 0.025754828}
-  m_LocalScale: {x: 1.197698, y: 1.4088665, z: 1.8214369}
+  m_LocalPosition: {x: 2.0418806, y: -0.3894352, z: 0.02575483}
+  m_LocalScale: {x: 0.7500869, y: 1.1110059, z: 1.821437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8345744829313461466}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2265794727793285543}
   - component: {fileID: 7095474367894948174}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9038703981039202017}
   - component: {fileID: 5771988699916357596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fireplace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,8 +362,8 @@ Transform:
   m_GameObject: {fileID: 3402909344851724642}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.2187526, y: -0.6170524, z: 0.025754828}
-  m_LocalScale: {x: 1.197698, y: 1.4088665, z: 1.8214369}
+  m_LocalPosition: {x: -2.069531, y: -0.37430385, z: 0.02575483}
+  m_LocalScale: {x: 0.7500869, y: 1.1110059, z: 1.821437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8345744829313461466}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2968855497947311453}
   - component: {fileID: 8591817969749816775}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,8 +446,8 @@ Transform:
   m_GameObject: {fileID: 3992449648228046964}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.56285137, y: -0.40194243, z: 0.025754828}
-  m_LocalScale: {x: 1.3785098, y: 1.4299438, z: 1.8214369}
+  m_LocalPosition: {x: 0.2987889, y: -0.20467208, z: 0.02575483}
+  m_LocalScale: {x: 0.86332464, y: 1.1276269, z: 1.821437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8345744829313461466}
@@ -514,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7736656822121520403}
   - component: {fileID: 536872768171661899}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,8 +530,8 @@ Transform:
   m_GameObject: {fileID: 5569440702430206974}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.468284, y: -0.3090311, z: 0.025754828}
-  m_LocalScale: {x: 1.3785098, y: 1.4299438, z: 1.8214369}
+  m_LocalPosition: {x: -1.5995318, y: -0.13140403, z: 0.02575483}
+  m_LocalScale: {x: 0.86332464, y: 1.1276269, z: 1.821437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8345744829313461466}
@@ -598,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8345744829313461466}
   - component: {fileID: 8897031496621040819}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,8 +614,8 @@ Transform:
   m_GameObject: {fileID: 5876946144631228332}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.204, y: 0.92, z: -0.014139841}
-  m_LocalScale: {x: 0.51421696, y: 0.87641865, z: 0.48593506}
+  m_LocalPosition: {x: 0.2481, y: 0.7952, z: -0.014139841}
+  m_LocalScale: {x: 0.82107365, y: 1.1113865, z: 0.48593506}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7736656822121520403}
@@ -689,7 +689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4428947772801217557}
   - component: {fileID: 784210079941781259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,8 +705,8 @@ Transform:
   m_GameObject: {fileID: 7577498241128484267}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4596775, y: -0.41911083, z: 0.025754828}
-  m_LocalScale: {x: 1.3785098, y: 1.4299438, z: 1.8214369}
+  m_LocalPosition: {x: 1.4867214, y: -0.21821088, z: 0.02575483}
+  m_LocalScale: {x: 0.86332464, y: 1.1276269, z: 1.821437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8345744829313461466}
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 7936124550872214876}
   - component: {fileID: 6034549708071072686}
   - component: {fileID: 493325835533915022}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: FirePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8275948658854304612}
   - component: {fileID: 1782885654399647261}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fireplace (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,8 +856,8 @@ Transform:
   m_GameObject: {fileID: 8862668430152467986}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4940516, y: -0.65138906, z: 0.025754828}
-  m_LocalScale: {x: 1.197698, y: 1.4088665, z: 1.8214369}
+  m_LocalPosition: {x: 0.88197535, y: -0.4013811, z: 0.02575483}
+  m_LocalScale: {x: 0.7500869, y: 1.1110059, z: 1.821437}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8345744829313461466}
