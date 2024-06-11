@@ -23,7 +23,14 @@ namespace Varto.Examples.Utils
                     break;
 
                 case DestructionType.CollidedObject:
-                    Destroy(LastCollision.gameObject, _delay);
+                    if (LastCollision?.gameObject)
+                    {
+                        Destroy(LastCollision.gameObject, _delay);
+                    }
+                    else if (LastTrigger?.gameObject) { }
+                    {
+                        Destroy(LastTrigger.gameObject, _delay);
+                    }
                     break;
             }
         }
