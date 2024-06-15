@@ -890,6 +890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 767906872}
+  _platformsDatabase: {fileID: 11400000, guid: d22ea6590c2a98a4d8190c259143d5ee, type: 2}
   _spawnPattern: {fileID: 11400000, guid: 08bc52414afe3414ea848cf6254d66a6, type: 2}
   _spawnOffset: 5
   _destroyOffset: 5
