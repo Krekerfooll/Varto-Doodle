@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Varto.Examples.Utils;
+using static Varto.Examples.Platforms.Varto_PlatformGenerator;
 
 namespace Varto.Examples.Platforms
 {
+    [System.Serializable]
     public class Varto_Platform : MonoBehaviour
     {
         [SerializeField] protected Transform _target;
@@ -15,13 +18,24 @@ namespace Varto.Examples.Platforms
         [SerializeField] protected List<Varto_ActionBase> _executeOnCollisionActivated;
         [SerializeField] protected List<Varto_ActionBase> _executeOnCollisionDeactivated;
 
+        public bool IsPlatformActivated => _collider.activeSelf;
+
         protected bool _isInitiated;
         protected bool _isActivatedOnes;
 
-        public void Init(Transform target)
+        public void Init(Transform target, bool forceActive = false)
         {
             _target = target;
             _isInitiated = true;
+
+            if (forceActive)
+            {
+                _collider.SetActive(true);
+                _isActivatedOnes = true;
+
+                foreach (var action in _executeOnCollisionActivated)
+                    action.Execute();
+            }
         }
 
         void Update()

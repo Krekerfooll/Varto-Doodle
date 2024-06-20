@@ -1,5 +1,6 @@
 using UnityEngine;
 using Varto.Examples.Utils;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Varto.Examples.Player
 {
@@ -27,12 +28,20 @@ namespace Varto.Examples.Player
         {
             _lookLeft = _player.transform.localScale;
             _lookRight = new Vector3(-_lookLeft.x, _lookLeft.y, _lookLeft.z);
+
+            if (PlayerPrefs.HasKey("VARTO_DOODLE_PLAYER_POSITION"))
+            {
+                transform.position = JsonUtility.FromJson<Vector3>(PlayerPrefs.GetString("VARTO_DOODLE_PLAYER_POSITION"));
+            }
         }
 
         private void Update()
         {
             CalculateJump();
             CalculateSpeed();
+
+            var playerPosition = JsonUtility.ToJson(transform.position);
+            PlayerPrefs.SetString("VARTO_DOODLE_PLAYER_POSITION", playerPosition);
         }
         private void FixedUpdate()
         {

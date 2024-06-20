@@ -890,19 +890,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 767906872}
-  _platformPrefabVariants:
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
-  - {fileID: 443534209096285633, guid: f5fba5a863d247a4c96cd111ff9df3ce, type: 3}
-  - {fileID: 443534209096285633, guid: 71df30999810fb74790646de60e4da63, type: 3}
-  _platformsSpawnedPerStepCount: {x: 1, y: 3}
-  _stepsCountToSpawn: 4
-  _stepsCountToDelete: 2.22
-  _stepHeight: 2.8
+  _platformsDatabase: {fileID: 11400000, guid: d22ea6590c2a98a4d8190c259143d5ee, type: 2}
+  _spawnPattern: {fileID: 11400000, guid: 08bc52414afe3414ea848cf6254d66a6, type: 2}
+  _spawnOffset: 5
+  _destroyOffset: 5
+  _groupStepHeight: 2.8
   _bounds: {x: -2.2, y: 2.2}
 --- !u!1001 &3658370765008350767
 PrefabInstance:

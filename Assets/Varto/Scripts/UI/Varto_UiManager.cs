@@ -35,6 +35,8 @@ namespace Varto.Examples.UI
 
         private void Awake()
         {
+            _coinsCount = PlayerPrefs.GetInt("VARTO_DOODLE_COINS_COUNT", 0);
+
             _gameScreenCoinsCounter.text = _coinsCount.ToString();
             _gameOverScreenCoinsCounter.text = _coinsCount.ToString();
 
@@ -70,6 +72,8 @@ namespace Varto.Examples.UI
             if (eventName == _onCollectCoinEventName)
             {
                 _coinsCount += _coinsAmountPerEvent;
+                PlayerPrefs.SetInt("VARTO_DOODLE_COINS_COUNT", _coinsCount);
+                PlayerPrefs.Save();
 
                 _gameScreenCoinsCounter.text = _coinsCount.ToString();
                 _gameOverScreenCoinsCounter.text = _coinsCount.ToString();
