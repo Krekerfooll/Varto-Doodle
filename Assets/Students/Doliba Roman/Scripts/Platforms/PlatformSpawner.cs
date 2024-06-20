@@ -6,20 +6,20 @@ namespace RomanDoliba.Platform
     public class PlatformSpawner : SpawnerBase
     {
         [SerializeField] private Transform _platformTarget;
-        [SerializeField] private List<Platform> _platformsTypes;
+        [SerializeField] private List<PlatformBase> _platformsTypes;
         [SerializeField] private Vector2Int _platformsOnOneHeight;
         [SerializeField] private int _stepsToSpawn;
         [SerializeField] private float _stepsToDelete;
         [SerializeField] private float _stepHeight;
         [SerializeField] private Vector2 _boundsX;
         [SerializeField] private Vector2 _boundsY;
-        private Queue<Platform[]> _spawnedPlatforms;
+        private Queue<PlatformBase[]> _spawnedPlatforms;
         private float _lastPlatformsSpawnedPosition;
         private float _lastPlatformsDeletedPosition;
 
         protected override void SpawnOnAwake()
         {
-            _spawnedPlatforms = new Queue<Platform[]>();
+            _spawnedPlatforms = new Queue<PlatformBase[]>();
 
             _lastPlatformsDeletedPosition = _lastPlatformsSpawnedPosition = _platformTarget.position.y;
             for (int i = 0; i < _stepsToSpawn; i++)
@@ -60,7 +60,7 @@ namespace RomanDoliba.Platform
         {
             var platformPositionY = 0f;
             var platformsToSpawnCount = Random.Range(_platformsOnOneHeight.x, _platformsOnOneHeight.y +1);
-            var platformGroup = new Platform[platformsToSpawnCount];
+            var platformGroup = new PlatformBase[platformsToSpawnCount];
 
             for(int i = 0; i < platformsToSpawnCount; i++)
             {

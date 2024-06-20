@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07b0b039d237bc448456bacd7b10c19, type: 3}
+  m_Name: PlatformDataBase
+  m_EditorClassIdentifier: 
+  _platforms:
+  - Key: Platform
+    Platform: {fileID: 6034549708071072686, guid: c5e70dbc571e5eb45a1208435b5d592c, type: 3}
+  - Key: SmallPlatform
+    Platform: {fileID: 3945216902740497925, guid: e44ff342a9ee6994286ca5c1289bb130, type: 3}
+  - Key: SpikesPlatformType1
+    Platform: {fileID: 6034549708071072686, guid: 96a9ec33fdf7ffb47a9694f4fe8eaec6, type: 3}
+  - Key: SpikesPlatformType2
+    Platform: {fileID: 6034549708071072686, guid: 7caab601c429eb042984126fa0ccf26e, type: 3}

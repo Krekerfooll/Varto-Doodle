@@ -5,10 +5,10 @@ namespace RomanDoliba.Platform
 {
     public abstract class SpawnerBase : MonoBehaviour
     {
-        public List<Platform> PlatformsTypes { get; protected set; }
+        public List<PlatformBase> PlatformsTypes { get; protected set; }
         private void Awake()
         {
-            PlatformsTypes = new List<Platform>();
+            PlatformsTypes = new List<PlatformBase>();
             SpawnOnAwake();
         }
 
