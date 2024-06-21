@@ -18,6 +18,11 @@ namespace RomanDoliba.Player
         private void Start()
         {
             _lookLeftRight.flipX = true;
+
+            if (PlayerPrefs.HasKey("PLAYER_POSITION"))
+            {
+                transform.position = JsonUtility.FromJson<Vector3>(PlayerPrefs.GetString("PLAYER_POSITION"));
+            }
         }
         
         private void FixedUpdate()
@@ -45,6 +50,8 @@ namespace RomanDoliba.Player
                     _lookLeftRight.flipX = true;
                 }
             }
+            var playerPosition = JsonUtility.ToJson(transform.position);
+            PlayerPrefs.SetString("PLAYER_POSITION", playerPosition);
         }
 
         private void Jump()
