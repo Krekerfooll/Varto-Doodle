@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 333c565ddcb6ed64facc72c194f4fba9, type: 3}
+  m_Name: PlatformsGroup_03
+  m_EditorClassIdentifier: 
+  _platformsGroup:
+  - Platforms:
+    - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+    - {fileID: 443534209096285633, guid: 71df30999810fb74790646de60e4da63, type: 3}
+    - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+    - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+  - Platforms:
+    - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+    - {fileID: 443534209096285633, guid: f5fba5a863d247a4c96cd111ff9df3ce, type: 3}
+  - Platforms:
+    - {fileID: 2569584704516397851, guid: 384436006622d0c4e8c32feddd885650, type: 3}
+  _heightBounds: {x: 1.8, y: 2.8}
