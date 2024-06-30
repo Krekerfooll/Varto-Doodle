@@ -9,10 +9,14 @@ public class BackgroundMusics : MonoBehaviour
 
     private int _currentClipIndex = 0;
 
-    private bool _IsEnoughTimeToPlayClip  => _audioSource.clip.length - _mixRate <= _audioSource.time;
+    //private bool _IsEnoughTimeToPlayClip  => _audioSource.clip.length - _mixRate <= _audioSource.time;
+    [SerializeField] private bool _IsEnoughTimeToPlayClip;
 
     private void Start()
     {
+        _audioSource.clip = _audioClips[Random.Range(0, _audioClips.Length - 1)];
+        _audioSource.Play();
+
         if (_shuffle)
         {
             for (int i = _audioClips.Length - 1; i > 0; i--)
@@ -28,6 +32,7 @@ public class BackgroundMusics : MonoBehaviour
 
     private void Update()
     {
+        CheckTimeToPlay();
         PlayAudio();
     }
 
@@ -45,5 +50,13 @@ public class BackgroundMusics : MonoBehaviour
     {
         var next = currentID + 1;
         return next < lenght ? next : 0;
+    }
+
+    private void CheckTimeToPlay()
+    {
+        if (_audioSource.clip.length - _mixRate <= _audioSource.time)
+            _IsEnoughTimeToPlayClip = true;
+        else
+            _IsEnoughTimeToPlayClip = false;
     }
 }

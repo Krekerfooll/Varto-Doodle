@@ -14,8 +14,29 @@ namespace Ustich.Arthur.DoodleJump
 
         private void Start()
         {
-            _bounceLeft = _gameSettingsManager.LeftBounce;
-            _bounceRight = _gameSettingsManager.RightBounce;
+            if (_objectRigidbody == null)
+            {
+                _objectRigidbody = gameObject.GetComponent<Rigidbody2D>();
+                _objectRigidbody.isKinematic = false;
+                _objectRigidbody.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+
+            }
+            if (_gameSettingsManager)
+            {
+                _bounceLeft = _gameSettingsManager.LeftBounce;
+                _bounceRight = _gameSettingsManager.RightBounce;
+            }
+            else
+            {
+                _bounceLeft = -4;
+                _bounceRight = 4;
+            }
+
+            if (_moveSpeed == 0)
+            {
+                _moveSpeed = 5;
+            }
+            
             ChangeMoveDirectiom();
         }
         private void Update()

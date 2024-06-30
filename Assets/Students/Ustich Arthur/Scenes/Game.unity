@@ -320,6 +320,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e46a512ba76ec47469d7ebabd3e419be, type: 3}
   _mixRate: 1
   _shuffle: 1
+  _IsEnoughTimeToPlayClip: 0
 --- !u!82 &113851804
 AudioSource:
   m_ObjectHideFlags: 0
