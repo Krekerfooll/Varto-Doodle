@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Ustich.Arthur.DoodleJump
 {
     public abstract class ActionBaseCollisionEvent : ActionBase
     {
-        [SerializeField] private string[] _tags;
+        [SerializeField] protected List<string> _tags = new List<string>();
         protected Collider2D LastCollision { get; private set; }
 
         private void OnCollisionEnter2D(Collision2D collision)

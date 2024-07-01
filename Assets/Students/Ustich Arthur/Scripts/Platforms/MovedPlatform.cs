@@ -61,5 +61,10 @@ namespace Ustich.Arthur.DoodleJump
             if (!_moveRight)
                 _moveSpeed *= -1;
         }
+
+        public void SetDirection(bool isRightDirection)
+        {
+            _moveRight = isRightDirection;
+        }
     }
 }

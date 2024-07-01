@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Ustich.Arthur.DoodleJump
@@ -11,6 +12,15 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private float _delay;
         [SerializeField] private bool _checkDistance;
         [SerializeField] private float _explosionDistance;
+
+        public List<string> Tags { get { return _tags; } set { _tags = value; } }
+        public GameObject _ObjectToDestroy { get { return _objectToDestroy; } set { _objectToDestroy = value; } }
+        public ObjectToDestroyType _ObjectToDestroyType { get { return _objectToDestroyType; } set { _objectToDestroyType = value; } }
+        public float _Delay { get { return _delay; } set { _delay = value; } }
+        public bool _CheckDistance { get { return _checkDistance; } set { _checkDistance = value; } }
+        public float _ExplosionDistance { get { return _explosionDistance; } set { _explosionDistance = value; } }
+
+
 
         public override void ExecuteInternal()
         {

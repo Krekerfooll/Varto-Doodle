@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a02bf06385e414449b022c19306fff9f, type: 3}
-  m_Name: PlatformType2Test
+  m_Script: {fileID: 11500000, guid: 5210753e330a84844a92f4474fbef2dc, type: 3}
+  m_Name: PlatformBase
   m_EditorClassIdentifier: 
   _objectPrefab: {fileID: 1969011324178302711, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
-  _platformType: 1
-  _executorBaseSO: {fileID: 0}
-  _position: {x: 0, y: 2, z: 0}
-  _sprite: {fileID: 21300000, guid: 8628d3e55853484cacf82fb1af61eacb, type: 3}
+  _platformType: 0
+  _colorChangeble: 1

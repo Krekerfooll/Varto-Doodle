@@ -2,19 +2,18 @@ using UnityEngine;
 
 namespace Ustich.Arthur.DoodleJump
 {
-    [CreateAssetMenu(fileName = "PlatformType", menuName = "Ustich/PlatformType", order = 1)]
     public class PlatformData : ScriptableObject
     {
-        [SerializeField] private GameObject _objectPrefab;
-        [SerializeField] private PlatformType _platformType;
-        [SerializeField] private ExecutorBaseSO _executorBaseSO;
-        [SerializeField] private Vector3 _position;
-        [SerializeField] private Sprite _sprite;
+        [SerializeField] protected GameObject _objectPrefab;
+        [SerializeField] protected PlatformType _platformType;
+        [SerializeField] protected bool _colorChangeble;
 
-        public TestStruct SpawnPrefab()
+        public virtual GameObject SpawnPlatform(GameObject Target, Vector2 SpawnedPosition, Transform Parent)
         {
-            var SpawnedGameObject = Instantiate(_objectPrefab, _position, Quaternion.identity);
-            return new TestStruct(_sprite, SpawnedGameObject, _platformType);
+            var _object = Instantiate(_objectPrefab, SpawnedPosition, Quaternion.identity, Parent);
+            _object.GetComponent<ColorChangable>().CanChangeColor = _colorChangeble;
+            _object.GetComponent<EnableCollider>().ColliderInit(Target.transform);
+            return _object;
         }
 
         [System.Serializable]
