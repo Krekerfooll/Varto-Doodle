@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 177776696e605664c868ad4936872594, type: 3}
-  m_Name: PlatformBroken
+  m_Script: {fileID: 11500000, guid: 82149c9d101bb3e4fba65fe6dba7ec1d, type: 3}
+  m_Name: PlatformMovedRight
   m_EditorClassIdentifier: 
   _objectPrefab: {fileID: 1969011324178302711, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
-  _platformType: 2
-  _colorChangeble: 0
-  _sprite: {fileID: 21300000, guid: 264edd1170aab4746a49b06e83211f5e, type: 3}
-  _executeOnAwake: 0
-  _tag: Player
-  _objectToDestroyType: 0
-  _delay: 1
-  _clip: {fileID: 8300000, guid: 504510844ccf84e4f82525321f05078b, type: 3}
+  _platformType: 1
+  _colorChangeble: 1
+  _moveSpeed: 5
+  _moveRight: 1
+  _gameSettingsManager: {fileID: 3717538472232204169, guid: 083f1e7093ba8ea42bbd8b940601767e, type: 3}

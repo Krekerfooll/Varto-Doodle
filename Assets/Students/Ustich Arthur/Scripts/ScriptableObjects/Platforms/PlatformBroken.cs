@@ -15,7 +15,6 @@ namespace Ustich.Arthur.DoodleJump
 
         [Space]
         [Header("Play Audio Collision Action Settings")]
-        [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioClip _clip;
 
         public override GameObject SpawnPlatform(GameObject Target, Vector2 SpawnedPosition, Transform Parent)
@@ -25,6 +24,7 @@ namespace Ustich.Arthur.DoodleJump
             _object.GetComponent<SpriteRenderer>().sprite = _sprite;
             _object.GetComponent<EnableCollider>().ColliderInit(Target.transform);
             AddDestoyAction(ref _object);
+            AddPlayAudioCollisionAction(ref _object);
             return _object;
         }
 
@@ -37,6 +37,18 @@ namespace Ustich.Arthur.DoodleJump
             gameObject.GetComponent<ActionDestroy>()._ObjectToDestroyType = _objectToDestroyType;
             gameObject.GetComponent<ActionDestroy>()._Delay = _delay;
         }
+
+        private void AddPlayAudioCollisionAction(ref GameObject gameObject)
+        {
+            if(gameObject.GetComponent<AudioSource>() == null)
+                gameObject.AddComponent<AudioSource>();
+
+            if (gameObject.GetComponent<PlayAudioCollisionAction>() == null)
+                gameObject.AddComponent<PlayAudioCollisionAction>();
+
+            gameObject.GetComponent<PlayAudioCollisionAction>().AudioSource = gameObject.GetComponent<AudioSource>();
+            gameObject.GetComponent<PlayAudioCollisionAction>().AudioClip = _clip;
+            gameObject.GetComponent<PlayAudioCollisionAction>().Tags.Add(_tag);
+        }
     }
 }
-

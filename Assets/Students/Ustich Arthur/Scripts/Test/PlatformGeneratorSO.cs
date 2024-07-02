@@ -6,15 +6,18 @@ namespace Ustich.Arthur.DoodleJump
 {
     public class PlatformGeneratorSO : MonoBehaviour
     {
-        [SerializeField] private PlatformData platform;
-        [SerializeField] private Vector2 _position;
+        [SerializeField] private PlatformData[] platform;
+        [SerializeField] private Vector2[] _position;
         [SerializeField] private GameObject _target;
+
+        [SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
 
         private void Start()
         {
-            _position = new Vector2(0, 0);
-            var gb = platform.SpawnPlatform(_target, _position, this.transform);
-            Debug.Log(gb);
+            for (int i = 0; i < platform.Length; i++)
+            {
+                gameObjects.Add(platform[i].SpawnPlatform(_target, _position[i], this.transform));
+            }
         }
     }
 }

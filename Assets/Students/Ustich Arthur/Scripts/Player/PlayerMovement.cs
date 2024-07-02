@@ -53,10 +53,13 @@ namespace Ustich.Arthur.DoodleJump
 
         private void TeleportOnBounde()
         {
-            if (transform.position.x < _gameSettingsManager.LeftBounce)
-                transform.position = new Vector2(_gameSettingsManager.RightBounce, transform.position.y);
-            if (transform.position.x > _gameSettingsManager.RightBounce)
-                transform.position = new Vector2(_gameSettingsManager.LeftBounce, transform.position.y);
+            if (_gameSettingsManager != null)
+            {
+                if (transform.position.x < _gameSettingsManager.LeftBounce)
+                    transform.position = new Vector2(_gameSettingsManager.RightBounce, transform.position.y);
+                if (transform.position.x > _gameSettingsManager.RightBounce)
+                    transform.position = new Vector2(_gameSettingsManager.LeftBounce, transform.position.y);
+            }
         }
     }
 }

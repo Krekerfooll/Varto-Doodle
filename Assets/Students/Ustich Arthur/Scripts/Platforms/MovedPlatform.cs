@@ -12,6 +12,10 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private Rigidbody2D _objectRigidbody;
         [SerializeField] private bool _moveRight;
 
+        public float MoveSpeed { get { return _moveSpeed; } set { _moveSpeed = value; } }
+        public bool MoveRight { get { return _moveRight;} set { _moveRight = value; } }
+
+
         private void Start()
         {
             if (_objectRigidbody == null)
@@ -19,8 +23,8 @@ namespace Ustich.Arthur.DoodleJump
                 _objectRigidbody = gameObject.GetComponent<Rigidbody2D>();
                 _objectRigidbody.isKinematic = false;
                 _objectRigidbody.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
-
             }
+
             if (_gameSettingsManager)
             {
                 _bounceLeft = _gameSettingsManager.LeftBounce;
@@ -33,9 +37,7 @@ namespace Ustich.Arthur.DoodleJump
             }
 
             if (_moveSpeed == 0)
-            {
                 _moveSpeed = 5;
-            }
             
             ChangeMoveDirectiom();
         }

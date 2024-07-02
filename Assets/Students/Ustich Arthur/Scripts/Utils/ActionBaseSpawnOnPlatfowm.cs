@@ -6,6 +6,8 @@ namespace Ustich.Arthur.DoodleJump
     {
         [SerializeField] private GameObject _objectPrefab;
 
+        public GameObject ObjectPrefab { get { return _objectPrefab; }  set { _objectPrefab = value; } }
+
         public override void ExecuteInternal()
         {
             SpawnOnPlatform();

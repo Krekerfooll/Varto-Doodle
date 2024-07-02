@@ -7,6 +7,7 @@ namespace Ustich.Arthur.DoodleJump
     {
         [SerializeField] protected List<string> _tags = new List<string>();
         protected Collider2D LastCollision { get; private set; }
+        public List<string> Tags { get { return _tags; } set { _tags = value; } }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {

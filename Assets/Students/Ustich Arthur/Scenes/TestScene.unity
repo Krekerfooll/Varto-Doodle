@@ -306,9 +306,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8def396e27bb8ae4781306a118d66026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 11400000, guid: cd04e0ade6d83194dad2b57cf159c19f, type: 2}
-  _position: {x: 0, y: 0}
+  platform:
+  - {fileID: 11400000, guid: cd04e0ade6d83194dad2b57cf159c19f, type: 2}
+  - {fileID: 11400000, guid: 0c134546882cd7f48ace63480b7e0d59, type: 2}
+  - {fileID: 11400000, guid: 3bf723d91ca9feb469c400522638cdaa, type: 2}
+  - {fileID: 11400000, guid: 2f6ad263356841f43bc2509b3d7f1473, type: 2}
+  - {fileID: 11400000, guid: 3aa492e87df27ad4bb3a46980fd58d17, type: 2}
+  _position:
+  - {x: 0, y: 0}
+  - {x: 0, y: -2}
+  - {x: 0, y: -3}
+  - {x: 2, y: 3}
+  - {x: -2, y: 2}
   _target: {fileID: 504709318}
+  gameObjects: []
 --- !u!4 &2083203333
 Transform:
   m_ObjectHideFlags: 0
