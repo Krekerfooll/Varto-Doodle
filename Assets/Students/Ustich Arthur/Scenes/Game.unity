@@ -718,12 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a114021b86425049926a4f31babd1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabsForSpawn:
-  - {fileID: 1969011324178302711, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
-  - {fileID: 4270143383703278370, guid: 19a2a170915a1964bbf1c5aebfb6cae2, type: 3}
-  - {fileID: 2386350729383283264, guid: 5b75731ae6e30534799ff278551b5ae5, type: 3}
-  - {fileID: 1056184628628858551, guid: 57a2e797365baff43b0a523342853ab7, type: 3}
-  - {fileID: 2782978958265248368, guid: 431b8cab6f897c74d85bfa0e02b049fd, type: 3}
+  _getRandomPlatformPattern: {fileID: 11400000, guid: 622ce3f87e8c6364d970eae5f746da1e, type: 2}
   _gameSettingsManager: {fileID: 1027519313}
   _height: 3
   _target: {fileID: 1040830340}
@@ -1418,6 +1413,14 @@ PrefabInstance:
     - target: {fileID: 1712427341301237583, guid: 083f1e7093ba8ea42bbd8b940601767e, type: 3}
       propertyPath: m_Name
       value: GameSettingsManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717538472232204169, guid: 083f1e7093ba8ea42bbd8b940601767e, type: 3}
+      propertyPath: _leftBounce
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3717538472232204169, guid: 083f1e7093ba8ea42bbd8b940601767e, type: 3}
+      propertyPath: _rightBounce
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4014043308736217688, guid: 083f1e7093ba8ea42bbd8b940601767e, type: 3}
       propertyPath: m_LocalPosition.x

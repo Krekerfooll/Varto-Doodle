@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817032e0b44400f46bec87ca3acb324e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftBounce: -4
-  _rightBounce: 4
+  _leftBounce: -3
+  _rightBounce: 3
 --- !u!1 &6836945094197952400
 GameObject:
   m_ObjectHideFlags: 0

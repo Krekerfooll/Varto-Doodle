@@ -15,6 +15,6 @@ MonoBehaviour:
   _objectPrefab: {fileID: 1969011324178302711, guid: f3cd9fea88934a6f94a9cfc1112c10b0, type: 3}
   _platformType: 1
   _colorChangeble: 1
-  _moveSpeed: 5
+  _moveSpeed: 3
   _moveRight: 0
   _gameSettingsManager: {fileID: 3717538472232204169, guid: 083f1e7093ba8ea42bbd8b940601767e, type: 3}

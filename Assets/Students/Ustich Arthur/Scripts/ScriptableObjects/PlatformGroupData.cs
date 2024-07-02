@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Ustich.Arthur.DoodleJump
 {
-    [CreateAssetMenu(fileName = "Platform Group", menuName = "Ustich/Platform Group", order = 1)]
+    //[CreateAssetMenu(fileName = "Platform Group", menuName = "Ustich/Platform Group", order = 1)]
     public class PlatformGroupData : ScriptableObject
     {
         [SerializeField] private PlatfowmRow[] _platfornsGroup;

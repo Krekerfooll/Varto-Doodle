@@ -4,7 +4,7 @@ using static Ustich.Arthur.DoodleJump.PlatformGroupData;
 
 namespace Ustich.Arthur.DoodleJump
 {
-    [CreateAssetMenu(fileName = "Platform Generation Pattern", menuName = "Ustich/Platform Generation Pattern", order = 0)]
+    //[CreateAssetMenu(fileName = "Platform Generation Pattern", menuName = "Ustich/Platform Generation Pattern", order = 0)]
 
     public class PlatformGenerationPattern : ScriptableObject
     {
