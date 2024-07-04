@@ -1415,13 +1415,9 @@ PrefabInstance:
       value: GameSettingsManager
       objectReference: {fileID: 0}
     - target: {fileID: 3717538472232204169, guid: 083f1e7093ba8ea42bbd8b940601767e, type: 3}
-      propertyPath: _leftBounce
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3717538472232204169, guid: 083f1e7093ba8ea42bbd8b940601767e, type: 3}
-      propertyPath: _rightBounce
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: _changeTextAction
+      value: 
+      objectReference: {fileID: 1864956353}
     - target: {fileID: 4014043308736217688, guid: 083f1e7093ba8ea42bbd8b940601767e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

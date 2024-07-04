@@ -9,6 +9,7 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private GameObject _target;
         [SerializeField] private TextMeshProUGUI _scoreText;
         [SerializeField] private int _score;
+        public System.Action<int> ChangeScore;
 
         private void Awake()
         {
@@ -24,6 +25,7 @@ namespace Ustich.Arthur.DoodleJump
             if (_target != null && _target.transform.position.y > _score)
             {
                 _score = (int)_target.transform.position.y;
+                ChangeScore?.Invoke(_score);
                 _scoreText.text = _score.ToString();
             }
         }
