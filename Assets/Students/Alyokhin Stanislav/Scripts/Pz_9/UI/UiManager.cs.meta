@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 12f25266ad867b242bfbf1320d62df78
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _gameScreen: {fileID: 6176950861829521076, guid: bb7c79505e66dba41ac14c9ca3ba2407, type: 3}
+  - _gameScreenCoinsCounter: {instanceID: 0}
+  - _pauseButton: {fileID: 1356867235454058043, guid: e19c8da93fe843b4795c963ec835404e, type: 3}
+  - _pauseScreen: {fileID: 3265460232179225523, guid: 57863d250107e90468be7ae4045290d6, type: 3}
+  - _resumeButton: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

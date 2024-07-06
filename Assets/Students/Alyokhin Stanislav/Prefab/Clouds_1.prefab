@@ -98,4 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _endPosX: 10
+  _endPosX: 20
+  initiaalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
+  finalColor: {r: 1, g: 1, b: 1, a: 1}

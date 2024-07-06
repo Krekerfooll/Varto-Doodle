@@ -19,7 +19,7 @@ namespace Alokhin.Stanislav
 
         private Animator anim;
 
-        private bool _isJump;
+        //private bool _isJump;
         private bool _isGrounded;
 
         private void Start()
@@ -48,17 +48,17 @@ namespace Alokhin.Stanislav
             {
                 anim.SetTrigger("takeOf");
                 _rb2.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-                _isJump = true;
+                //_isJump = true;
                 CreateDust();
             }
-            if ( _isGrounded == true)
+            if ( _isGrounded)
             {
-                anim.SetBool("isJumping", true);
+                anim.SetBool("isJumping", false);
                 //anim.SetBool("isJumpimg", false);
             }
             else
             {
-                anim.SetBool("isJumping", false);
+                anim.SetBool("isJumping", true);
                 //anim.SetBool("isJumpimg",true);
             }
 
