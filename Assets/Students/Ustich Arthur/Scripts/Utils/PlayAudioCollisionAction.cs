@@ -15,7 +15,18 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private bool _playWithDelay;
         [SerializeField] private bool _playWithotSource;
 
-        public AudioSource AudioSource { get { return _audioSource; } set { _audioSource = value; } }
+        public AudioSource AudioSource 
+        { 
+            get 
+            { 
+                return _audioSource;
+            } 
+            set 
+            { 
+                if (_audioSource == null)
+                    _audioSource = value;
+            } 
+        }
         public AudioClip AudioClip { get { return _audioClip; } set { _audioClip = value; } }
 
         public override void ExecuteInternal()

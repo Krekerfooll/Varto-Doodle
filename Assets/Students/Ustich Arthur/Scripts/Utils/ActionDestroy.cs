@@ -10,15 +10,48 @@ namespace Ustich.Arthur.DoodleJump
         [SerializeField] private GameObject _objectToDestroy;
         [SerializeField] private ObjectToDestroyType _objectToDestroyType;
         [SerializeField] private float _delay;
-        [SerializeField] private bool _checkDistance;
         [SerializeField] private float _explosionDistance;
+        public bool _CheckDistance;
 
-        //public List<string> Tags { get { return _tags; } set { _tags = value; } }
-        public GameObject _ObjectToDestroy { get { return _objectToDestroy; } set { _objectToDestroy = value; } }
+        private float _minDelay = 0f;
+        private float _maxDelay = 5.0f;
+
+        public GameObject _ObjectToDestroy 
+        { 
+            get { return _objectToDestroy; } 
+            set 
+            { 
+                if(_objectToDestroy == null)
+                    _objectToDestroy = value;
+            } 
+        }
         public ObjectToDestroyType _ObjectToDestroyType { get { return _objectToDestroyType; } set { _objectToDestroyType = value; } }
-        public float _Delay { get { return _delay; } set { _delay = value; } }
-        public bool _CheckDistance { get { return _checkDistance; } set { _checkDistance = value; } }
-        public float _ExplosionDistance { get { return _explosionDistance; } set { _explosionDistance = value; } }
+
+        public float _Delay 
+        { 
+            get 
+            { 
+                return _delay;
+            }
+            set
+            {
+                if (value >= _minDelay && value <= _maxDelay)
+                    _delay = value;
+            } 
+        }
+        
+        public float _ExplosionDistance 
+        { 
+            get 
+            { 
+                return _explosionDistance;
+            } 
+            set 
+            {
+                if(value >= 0)
+                    _explosionDistance = value; 
+            } 
+        }
 
 
 
@@ -34,12 +67,12 @@ namespace Ustich.Arthur.DoodleJump
                 case ObjectToDestroyType.CollidedObject:
                     Debug.Log("Colleded object");
                     _objectToDestroy = LastCollision.gameObject;
-                    if (_checkDistance)
+                    if (_CheckDistance)
                     {
                         Debug.Log("CHECK");
                         StartCoroutine(DestroyAtRangeWithDelay());
                     }  
-                    if(!_checkDistance)
+                    if(!_CheckDistance)
                         Destroy(_objectToDestroy, _delay);
                     break;
                 case ObjectToDestroyType.Self:

@@ -23,6 +23,10 @@ namespace Ustich.Arthur.DoodleJump
         public bool IsGrounded { get { return _isGrounded; } }
         public float MoveDirection { get { return _moveDirection; } }
 
+        private void Awake()
+        {
+            _gameSettingsManager = GameSettingsManager.Instance;
+        }
 
         private void Update()
         {

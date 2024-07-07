@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 namespace Ustich.Arthur.DoodleJump
 {
+    //TESTING SCRIPT
     public class UserdataButtonController : MonoBehaviour
     {
         [SerializeField] private GameSettingsManager _gameSettingsManager;

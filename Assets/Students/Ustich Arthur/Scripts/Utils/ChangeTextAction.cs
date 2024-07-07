@@ -16,6 +16,11 @@ namespace Ustich.Arthur.DoodleJump
             _scoreText.text = _score.ToString();
         }
 
+        private void OnEnable()
+        {
+            GameSettingsManager.Instance.ChangeTextAction = this;
+        }
+
         private void Update() => ExecuteInternal();
 
         public override void ExecuteInternal() => ChangeText();

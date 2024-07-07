@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System.Linq;
 
 namespace Ustich.Arthur.DoodleJump
 {
@@ -21,6 +22,8 @@ namespace Ustich.Arthur.DoodleJump
                 _maxScorePlace = _saveData.Count;
             }
 
+            _saveData = _saveData.OrderByDescending(saveData => saveData.Score).ToList();
+            _maxScorePlace = Mathf.Min(_saveData.Count, _maxScorePlace);
 
             for (int i = 0; i < _maxScorePlace; i++)
             {

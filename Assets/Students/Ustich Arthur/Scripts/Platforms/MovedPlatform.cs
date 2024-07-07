@@ -10,10 +10,23 @@ namespace Ustich.Arthur.DoodleJump
         [Header("Moved Platform variables:")]
         [SerializeField] private float _moveSpeed;
         [SerializeField] private Rigidbody2D _objectRigidbody;
-        [SerializeField] private bool _moveRight;
 
-        public float MoveSpeed { get { return _moveSpeed; } set { _moveSpeed = value; } }
-        public bool MoveRight { get { return _moveRight;} set { _moveRight = value; } }
+        private float _minSpeed = 0.3f;
+        private float _maxSpeed = 5f;
+
+        public float MoveSpeed 
+        { 
+            get 
+            { 
+                return _moveSpeed;
+            } 
+            set 
+            {
+                if (value >= _minSpeed && value <= _maxSpeed)
+                    _moveSpeed = value;
+            } 
+        }
+        public bool MoveRight;
 
 
         private void Start()
@@ -37,7 +50,7 @@ namespace Ustich.Arthur.DoodleJump
             }
 
             if (_moveSpeed == 0)
-                _moveSpeed = 5;
+                _moveSpeed = 3;
             
             ChangeMoveDirectiom();
         }
@@ -60,13 +73,13 @@ namespace Ustich.Arthur.DoodleJump
 
         private void ChangeMoveDirectiom()
         {
-            if (!_moveRight)
+            if (!MoveRight)
                 _moveSpeed *= -1;
         }
 
         public void SetDirection(bool isRightDirection)
         {
-            _moveRight = isRightDirection;
+            MoveRight = isRightDirection;
         }
     }
 }
