@@ -312,8 +312,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 648748834}
-  _platformPrefab: {fileID: 268500514933541070, guid: 7333f5a8ee673c1458394eb51e55bd2c, type: 3}
-  _stepsCountToSpawn: 2
+  _platformPrefabs:
+  - {fileID: 268500514933541070, guid: 7333f5a8ee673c1458394eb51e55bd2c, type: 3}
+  - {fileID: 268500514933541070, guid: 445cc05fab737ca4fad05abc067717e2, type: 3}
+  _platformsSpawnedPerStepCount: {x: 1, y: 3}
+  _stepsCountToSpawn: 5
   _stepsCountToDelete: 2
   _stepHeight: 2
   _bounds: {x: -2, y: 2}
@@ -362,7 +365,7 @@ GameObject:
   m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -733,7 +736,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 150
+  m_SortingOrder: 50
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9056604, g: 0.5746972, b: 0.18369527, a: 1}
   m_FlipX: 0
