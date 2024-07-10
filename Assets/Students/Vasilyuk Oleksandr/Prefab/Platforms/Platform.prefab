@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3811222100656934900}
   - component: {fileID: 4761263328713398946}
   - component: {fileID: 268500514933541070}
-  - component: {fileID: 5142626208829252722}
+  - component: {fileID: 7970128167254976599}
+  - component: {fileID: 9222084115931890598}
   m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _collider: {fileID: 3325128661837724134}
---- !u!114 &5142626208829252722
+--- !u!114 &7970128167254976599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,16 +88,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 2144653770145674859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541beb84e04dbb045b10b5a3541b0c6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7848e8d87864cda479de2e569705f433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _platformPrefabs: []
-  _platformsSpawnedPerStepCount: {x: 0, y: 0}
-  _stepsCountToSpawn: 4
-  _stepsCountToDelete: 4
-  _stepHeight: 2
-  _bounds: {x: -2, y: 2}
+  _executeOnAwake: 0
+  _executeOnlyOnes: 1
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 256
+  _object: {fileID: 6959257479987402443}
+  _color: {r: 0.9433962, g: 0.04004982, b: 0.04004982, a: 0}
+--- !u!114 &9222084115931890598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144653770145674859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7848e8d87864cda479de2e569705f433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeOnAwake: 1
+  _executeOnlyOnes: 0
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 0
+  _object: {fileID: 6959257479987402443}
+  _color: {r: 0.4528302, g: 0.019223915, b: 0.019223915, a: 0}
 --- !u!1 &3325128661837724134
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +268,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 50
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9056604, g: 0.5746972, b: 0.18369527, a: 1}
+  m_Color: {r: 0.90588236, g: 0.73306185, b: 0.18431371, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
