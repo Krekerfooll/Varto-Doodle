@@ -6,10 +6,7 @@ namespace RomanDoliba.Player
     {
         public bool _isGrounded;
 
-        [SerializeField] private float _jumpPower;
-        [SerializeField] private float _moveSpeed;
         [SerializeField] private float _groundCheckDistance;
-        private bool _backgroundTriger;
         [SerializeField] private Rigidbody2D _playerRigidbody;
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private InputManager inputManager;
@@ -19,9 +16,9 @@ namespace RomanDoliba.Player
         {
             _lookLeftRight.flipX = true;
 
-            if (PlayerPrefs.HasKey("PLAYER_POSITION"))
+            if (PlayerPrefs.HasKey(GlobalData.PLAYER_POSITION))
             {
-                transform.position = JsonUtility.FromJson<Vector3>(PlayerPrefs.GetString("PLAYER_POSITION"));
+                transform.position = JsonUtility.FromJson<Vector3>(PlayerPrefs.GetString(GlobalData.PLAYER_POSITION));
             }
         }
         
@@ -51,16 +48,16 @@ namespace RomanDoliba.Player
                 }
             }
             var playerPosition = JsonUtility.ToJson(transform.position);
-            PlayerPrefs.SetString("PLAYER_POSITION", playerPosition);
+            PlayerPrefs.SetString(GlobalData.PLAYER_POSITION, playerPosition);
         }
 
         private void Jump()
         {
-            _playerRigidbody.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
+            _playerRigidbody.AddForce(Vector2.up * GlobalData.PlayerJumpPower, ForceMode2D.Impulse);
         }
         private void Move()
         {
-            _playerRigidbody.velocity = new Vector2(_moveSpeed * inputManager.MoveInput, _playerRigidbody.velocity.y);
+            _playerRigidbody.velocity = new Vector2(GlobalData.PlayerMoveSpeed * inputManager.MoveInput, _playerRigidbody.velocity.y);
         }
     }
 }

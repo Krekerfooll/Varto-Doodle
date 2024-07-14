@@ -15,7 +15,6 @@ namespace RomanDoliba.Platform
         [SerializeField] private float _spawnOffset;
         [SerializeField] private float _destroyOffset;
         [SerializeField] private float _groupStepHeight;
-        [SerializeField] private Vector2 _bounds;
         private List<PlatformBase> _spawnedPlatforms;
         private float _lastPlatformSpawnedOnPosition;
 
@@ -23,7 +22,7 @@ namespace RomanDoliba.Platform
         {
             _spawnedPlatforms = new List<PlatformBase>();
             _lastPlatformSpawnedOnPosition = _target.position.y;
-            _spawnPattern.Init(_target, transform, _bounds);
+            _spawnPattern.Init(_target, transform, GlobalData.PlatformsSpawnBounds);
 
             if (!TryLoadData())
             {
@@ -53,10 +52,10 @@ namespace RomanDoliba.Platform
 
         private bool TryLoadData()
         {
-            if (PlayerPrefs.HasKey("LAST_PLATFORM_SPAWNED_POSITION"))
+            if (PlayerPrefs.HasKey(GlobalData.LAST_PLATFORM_SPAWNED_POSITION))
             {
-                _lastPlatformSpawnedOnPosition = PlayerPrefs.GetFloat("LAST_PLATFORM_SPAWNED_POSITION");
-                var loadedGeneratedPlatformsData = PlayerPrefs.GetString("SPAWNED_PLATFORMS");
+                _lastPlatformSpawnedOnPosition = PlayerPrefs.GetFloat(GlobalData.LAST_PLATFORM_SPAWNED_POSITION);
+                var loadedGeneratedPlatformsData = PlayerPrefs.GetString(GlobalData.SPAWNED_PLATFORMS);
                 var platformsDataList = JsonUtility.FromJson<PlatformsSaveDataList>(loadedGeneratedPlatformsData);
 
                 foreach (var platformData in platformsDataList.PlatformsSaveData)
@@ -91,8 +90,8 @@ namespace RomanDoliba.Platform
             }
             var spawnedPlatforms = JsonUtility.ToJson(new PlatformsSaveDataList(platformsSaveDataList));
 
-            PlayerPrefs.SetString("SPAWNED_PLATFORMS", spawnedPlatforms);
-            PlayerPrefs.SetFloat("LAST_PLATFORM_SPAWNED_POSITION", _lastPlatformSpawnedOnPosition);
+            PlayerPrefs.SetString(GlobalData.SPAWNED_PLATFORMS, spawnedPlatforms);
+            PlayerPrefs.SetFloat(GlobalData.LAST_PLATFORM_SPAWNED_POSITION, _lastPlatformSpawnedOnPosition);
             PlayerPrefs.Save();
         }
 
