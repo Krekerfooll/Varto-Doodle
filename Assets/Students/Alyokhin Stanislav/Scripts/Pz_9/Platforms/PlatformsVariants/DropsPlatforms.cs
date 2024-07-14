@@ -1,27 +1,37 @@
-using Alokhin.Stanislav.PlatformGround;
-using System.Collections;
-using System.Collections.Generic;
+using Alokhin.Stanislav.Utils;
 using UnityEngine;
 
 namespace Alokhin.Stanislav.PlatformGenerator
 {
-    public class DropsPlatforms : Platforms
+    public class DropsPlatforms : OnCollisionEventsActionBase
     {
-        [SerializeField] private Rigidbody2D _rb;
+        public enum DestructionType { Self, TargetObject, CollidedObject }
 
+        [SerializeField] private DestructionType _destructionType;
+        [SerializeField] private GameObject _objectToDestroy;
+        [SerializeField] private float _delay;
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        public void Destroy()
         {
-            if ( collision.gameObject.CompareTag("Player"))
+            switch (_destructionType)
             {
-                Invoke("DropPlatform", 0.5f);
-                Destroy(gameObject, 2f);
+                case DestructionType.Self:
+                    Destroy(gameObject, _delay);
+                    break;
+
+                case DestructionType.TargetObject:
+                    Destroy(_objectToDestroy, _delay);
+                    break;
+
+                case DestructionType.CollidedObject:
+                    Destroy(LastCollision.gameObject, _delay);
+                    break;
             }
         }
 
-        private void DropPlatform()
+        protected override void ExecuteInternal()
         {
-            _rb.isKinematic = false;
+            Destroy();
         }
     }
 }

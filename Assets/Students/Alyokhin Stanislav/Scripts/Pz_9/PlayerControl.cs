@@ -1,3 +1,4 @@
+using Stanislav.Alokhin.Utils;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace Alokhin.Stanislav
         [Space]
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private float _groundCheckDistance;
+        [SerializeField] private ActionBase _onPlayerDie;
         [SerializeField] private ParticleSystem _dust;
 
         private Vector3 _lookLeft;
@@ -90,6 +92,11 @@ namespace Alokhin.Stanislav
         private void CreateDust()
         {
             _dust.Play();
+        }
+
+        private void OnDestroy()
+        {
+            _onPlayerDie.Execute();
         }
     }
 

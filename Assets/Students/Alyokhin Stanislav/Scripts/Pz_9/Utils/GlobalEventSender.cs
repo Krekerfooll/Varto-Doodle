@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Alokhin.Stanislav.Utils
 {
-    public class GlobalEventSender : MonoBehaviour
+    public class GlobalEventSender : OnCollisionEventsActionBase
     {
         public static Action<string> OnEvent;
 
@@ -14,6 +14,10 @@ namespace Alokhin.Stanislav.Utils
         public static void FireEvent(string eventName)
         {
             OnEvent?.Invoke(eventName);
+        }
+        protected override void ExecuteInternal()
+        {
+            FireEvent(_eventName);
         }
     }
 }
