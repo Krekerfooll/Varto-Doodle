@@ -14,30 +14,44 @@ namespace Ustich.Arthur.DoodleJump
 
         private void Awake()
         {
-            if (PlayerPrefs.GetString("ASTRODOODLE_SAVE") != null)
+            var data = PlayerPrefs.GetString("ASTRODOODLE_SAVE");
+            if (data != "")
             {
-                var data = PlayerPrefs.GetString("ASTRODOODLE_SAVE");
                 SaveDataList loadedData = JsonUtility.FromJson<SaveDataList>(data);
                 _saveData = loadedData.SaveData;
                 _maxScorePlace = _saveData.Count;
+
+                _saveData = _saveData.OrderByDescending(saveData => saveData.Score).ToList();
+                _maxScorePlace = Mathf.Min(_saveData.Count, _maxScorePlace);
+
+                GenerateTable(_maxScorePlace, false);
             }
+            else 
+            {
+                GenerateTable(1, true);
+            }
+        }
 
-            _saveData = _saveData.OrderByDescending(saveData => saveData.Score).ToList();
-            _maxScorePlace = Mathf.Min(_saveData.Count, _maxScorePlace);
-
-            for (int i = 0; i < _maxScorePlace; i++)
+        public void GenerateTable(int placeCount, bool emptyTable)
+        {
+            for (int i = 0; i < placeCount; i++)
             {
                 var _currentScorePosition = i + 1;
-                Vector3 _position = transform.position;             
+                Vector3 _position = transform.position;
                 _scoreList.Add(Instantiate(_scorePrefab, _position, Quaternion.identity, this.transform));
                 TextMeshProUGUI[] components = _scoreList[i].GetComponentsInChildren<TextMeshProUGUI>();
-               
+
                 foreach (var component in components)
                 {
-                    if (component.gameObject.name == "PlaceNumber")
+                    if (component.gameObject.name == "PlaceNumber" && !emptyTable)
                         component.text = _currentScorePosition.ToString();
-                    if (component.gameObject.name == "Score" && _saveData.Count > 0)
+                    else if (component.gameObject.name == "PlaceNumber" && emptyTable)
+                        component.text = "";
+
+                    if (component.gameObject.name == "Score" && _saveData.Count > 0 && !emptyTable)
                         component.text = $"{_saveData[i].Username}: {_saveData[i].Score}";
+                    else if(component.gameObject.name == "Score" && emptyTable)
+                        component.text = "You can be first!";
                 }
             }
         }

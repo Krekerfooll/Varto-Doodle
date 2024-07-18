@@ -111,16 +111,35 @@ namespace Ustich.Arthur.DoodleJump
                 LoadedData.Add(_currentGameData);
             }
 
-            SaveDataList dataForSave = new SaveDataList(LoadedData);
-            var data = JsonUtility.ToJson(dataForSave);
-            PlayerPrefs.SetString("ASTRODOODLE_SAVE", data);
+            SaveGame(LoadedData);
         }
 
         private SaveDataList LoadGame()
         {
             var data = PlayerPrefs.GetString("ASTRODOODLE_SAVE");
-            SaveDataList loadedData = JsonUtility.FromJson<SaveDataList>(data);
-            return loadedData;
+            if (data != "")
+            {
+                SaveDataList loadedData = JsonUtility.FromJson<SaveDataList>(data);
+                return loadedData;
+            }
+            else
+            {
+                List<SaveData> saveData = new List<SaveData>();
+                SaveGame(saveData);
+                data = PlayerPrefs.GetString("ASTRODOODLE_SAVE");
+                SaveDataList loadedData = JsonUtility.FromJson<SaveDataList>(data);
+                return loadedData;
+            }
+        }
+
+        private void SaveGame(List<SaveData> saveData)
+        {
+            if (saveData != null)
+            {
+                SaveDataList dataForSave = new SaveDataList(saveData);
+                var data = JsonUtility.ToJson(dataForSave);
+                PlayerPrefs.SetString("ASTRODOODLE_SAVE", data);
+            }
         }
     }
 }
