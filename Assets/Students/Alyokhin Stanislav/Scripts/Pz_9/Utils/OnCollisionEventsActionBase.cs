@@ -9,6 +9,7 @@ namespace Alokhin.Stanislav.Utils
         [SerializeField] private LayerMask _onCollisionEnterWith;
         [SerializeField] private bool _isTrigger;
 
+        protected bool isTrigger => _isTrigger;
         protected Collision2D LastCollision {  get; private set; }
         protected Collider2D LastTrigger { get; private set; }
 
@@ -16,7 +17,7 @@ namespace Alokhin.Stanislav.Utils
         {
             if (!_isTrigger && (_onCollisionEnterWith.value & ( 1<< collision.gameObject.layer )) != 0)
             {
-                LastCollision= collision;
+                LastCollision = collision;
                 Execute();
             }
         }

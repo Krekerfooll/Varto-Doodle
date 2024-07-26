@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2656837025328766578}
   - component: {fileID: 8124245361385127209}
   - component: {fileID: 6587141638646869193}
+  - component: {fileID: 8990702873491369424}
   m_Layer: 0
   m_Name: Player&Enemy_10
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3674456046431365768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 7.5, z: 0}
+  m_LocalPosition: {x: -4.612, y: 7.919, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,7 +103,42 @@ MonoBehaviour:
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 256
-  _isTrigger: 0
+  _isTrigger: 1
   _destructionType: 2
   _objectToDestroy: {fileID: 0}
   _delay: 0.1
+--- !u!58 &8990702873491369424
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3674456046431365768}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04, y: -0.41}
+  serializedVersion: 2
+  m_Radius: 0.88

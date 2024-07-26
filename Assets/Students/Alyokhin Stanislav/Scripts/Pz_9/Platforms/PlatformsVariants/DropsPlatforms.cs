@@ -20,11 +20,18 @@ namespace Alokhin.Stanislav.PlatformGenerator
                     break;
 
                 case DestructionType.TargetObject:
-                    Destroy(_objectToDestroy, _delay);
+                    if (_objectToDestroy != null)
+                    {
+                        Destroy(_objectToDestroy, _delay);
+                    }
                     break;
 
+
                 case DestructionType.CollidedObject:
-                    Destroy(LastCollision.gameObject, _delay);
+                    if (LastCollision != null)
+                    {
+                        Destroy(LastCollision.gameObject, _delay);
+                    }
                     break;
             }
         }

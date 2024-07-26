@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6642133480393517788}
   - component: {fileID: 1540738824198953174}
   - component: {fileID: -5317249609413829484}
+  - component: {fileID: -2201569745818129438}
   m_Layer: 7
   m_Name: DropPlatforms
   m_TagString: Platform
@@ -103,6 +104,27 @@ MonoBehaviour:
   _staysActive: 0
   _executeOnCollisionActivated: []
   _executeOnCollisionDeactivated: []
+--- !u!114 &-2201569745818129438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258963043031275433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cb9f8c1509015c4e8942d0c1d51043c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _excuteOnAwake: 0
+  _excuteOnlyOnes: 0
+  _onCollisionEnterWith:
+    serializedVersion: 2
+    m_Bits: 256
+  _isTrigger: 1
+  _destructionType: 0
+  _objectToDestroy: {fileID: 0}
+  _delay: 1
 --- !u!1 &6940748095302967723
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +186,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
