@@ -45,7 +45,7 @@ namespace Varto.Examples.Player
             }
             else
             {
-                _player.velocity = new Vector2(_speed * _moveDirection, _player.velocity.y);
+                _player.linearVelocity = new Vector2(_speed * _moveDirection, _player.linearVelocity.y);
             }
         }
 

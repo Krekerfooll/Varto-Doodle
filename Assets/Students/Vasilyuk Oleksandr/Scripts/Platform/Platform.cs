@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using 
 
 public class Platform : MonoBehaviour
 {
@@ -10,8 +9,8 @@ public class Platform : MonoBehaviour
     [Space]
     [SerializeField] protected bool _staysActive = true;
     [Space]
-    [SerializeField] protected List<ActionBase> _executeOnColissionActivated;
-    [SerializeField] protected List<ActionBase> _executeOnColissionDeactivated;
+    [SerializeField] protected List<ActionBase> _executeOnCollisionActivated;
+    [SerializeField] protected List<ActionBase> _executeOnCollisionDeactivated;
 
     protected bool _isInitiated;
     protected bool _isActivatedOnes;
@@ -32,14 +31,16 @@ public class Platform : MonoBehaviour
     protected virtual void OnPlatform()
     {
         if (_staysActive && _isActivatedOnes)
-            return;
+            return;
+
         if (_target.position.y > transform.position.y)
         {
             _collider.SetActive(true);
             _isActivatedOnes = true;
 
             foreach (var action in _executeOnCollisionActivated)
-                action.Execute();
+                action.Execute();
+
         }
         else
         {
@@ -47,6 +48,7 @@ public class Platform : MonoBehaviour
 
             foreach (var action in _executeOnCollisionDeactivated)
                 action.Execute();
-        }
+        }
+
     }
 }

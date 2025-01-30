@@ -23,12 +23,12 @@ public class PlayerMovement : MonoBehaviour
         if (direction>=0f)
         {
             _player.localScale = new Vector3(1f, 1f);
-            _rigidbody.velocity = new Vector2(direction * _moveSpeed, _rigidbody.velocity.y);
+            _rigidbody.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody.linearVelocity.y);
         }
         else
         {
             _player.localScale = new Vector3(-1f, 1f);
-            _rigidbody.velocity = new Vector2(direction * _moveSpeed, _rigidbody.velocity.y);
+            _rigidbody.linearVelocity = new Vector2(direction * _moveSpeed, _rigidbody.linearVelocity.y);
         }
 
         if (Physics2D.Raycast(_player.position, Vector3.down, _groundCheckDistance, _isGroundedMask))
