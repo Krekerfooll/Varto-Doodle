@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7848e8d87864cda479de2e569705f433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _executeOnAwake: 1
-  _executeOnlyOnes: 0
+  _executeOnAwake: 0
+  _executeOnlyOnes: 1
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 256
@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7848e8d87864cda479de2e569705f433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _executeOnAwake: 0
-  _executeOnlyOnes: 1
+  _executeOnAwake: 1
+  _executeOnlyOnes: 0
   _onCollisionEnterWith:
     serializedVersion: 2
     m_Bits: 0
