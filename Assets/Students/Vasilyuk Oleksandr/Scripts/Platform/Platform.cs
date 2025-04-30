@@ -33,22 +33,24 @@ public class Platform : MonoBehaviour
         if (_staysActive && _isActivatedOnes)
             return;
 
-        if (_target.position.y > transform.position.y)
+        if (_target != null)
         {
-            _collider.SetActive(true);
-            _isActivatedOnes = true;
+            if (_target.position.y > transform.position.y)
+            {
+                _collider.SetActive(true);
+                _isActivatedOnes = true;
 
-            foreach (var action in _executeOnCollisionActivated)
-                action.Execute();
+                foreach (var action in _executeOnCollisionActivated)
+                    action.Execute();
 
+            }
+            else
+            {
+                _collider.SetActive(false);
+
+                foreach (var action in _executeOnCollisionDeactivated)
+                    action.Execute();
+            }
         }
-        else
-        {
-            _collider.SetActive(false);
-
-            foreach (var action in _executeOnCollisionDeactivated)
-                action.Execute();
-        }
-
     }
 }
