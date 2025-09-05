@@ -371,7 +371,7 @@ MonoBehaviour:
   _executeOnlyOnes: 0
   _onCollisionEnterWith:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   _isTrigger: 0
   _eventName: game_over
 --- !u!114 &1170012175291781831

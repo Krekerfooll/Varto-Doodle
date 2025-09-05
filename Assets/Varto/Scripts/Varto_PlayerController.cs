@@ -1,6 +1,5 @@
 using UnityEngine;
 using Varto.Examples.Utils;
-using static UnityEngine.GraphicsBuffer;
 
 namespace Varto.Examples.Player
 {
@@ -24,7 +23,7 @@ namespace Varto.Examples.Player
         private bool _isJump;
         private bool _isGrounded;
 
-        private void Start()
+        public void Init()
         {
             _lookLeft = _player.transform.localScale;
             _lookRight = new Vector3(-_lookLeft.x, _lookLeft.y, _lookLeft.z);
@@ -78,12 +77,6 @@ namespace Varto.Examples.Player
                 _player.transform.localScale = _lookLeft;
             else if (_moveDirection > 0f)
                 _player.transform.localScale = _lookRight;
-        }
-
-
-        private void OnDestroy()
-        {
-            _onPlayerDie.Execute();
         }
     }
 }

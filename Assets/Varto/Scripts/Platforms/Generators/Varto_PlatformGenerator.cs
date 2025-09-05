@@ -19,10 +19,12 @@ namespace Varto.Examples.Platforms
         [SerializeField] private float _groupStepHeight;
         [SerializeField] private Vector2 _bounds;
 
+        public bool IsActive { get; private set; }
+
         private List<Varto_Platform> _spawnedPlatforms;
         private float _lastPlatformSpawnedOnPosition;
 
-        private void Awake()
+        public void Init()
         {
             _spawnedPlatforms = new List<Varto_Platform>();
             _lastPlatformSpawnedOnPosition = _target.position.y;
@@ -34,9 +36,15 @@ namespace Varto.Examples.Platforms
                 SpawnPlatform();
             }
         }
+        public void SetActive(bool active)
+        {
+            IsActive = active;
+        }
 
         private void Update()
         {
+            if (!IsActive) return;
+
             if (IsCanSpawnPlatforms())
             {
                 SpawnPlatform();

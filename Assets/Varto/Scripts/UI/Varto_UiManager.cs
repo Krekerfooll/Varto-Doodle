@@ -1,18 +1,13 @@
+using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Varto.Examples.Utils;
 
 namespace Varto.Examples.UI
 {
     public class Varto_UiManager : MonoBehaviour
     {
-        [Header("Global Settings")]
-        [SerializeField] private string _onCollectCoinEventName;
-        [SerializeField] private string _onGameOverEventName;
-        [Space]
-        [SerializeField] private int _coinsAmountPerEvent;
+        public event Action OnRestartRequested;
 
         [Space]
         [Header("Game Screen")]
@@ -31,23 +26,42 @@ namespace Varto.Examples.UI
         [SerializeField] private TextMeshProUGUI _gameOverScreenCoinsCounter;
         [SerializeField] private Button _restartButton;
 
-        private int _coinsCount = 0;
+        public int CoinsCount { get; private set; } = 0;
 
-        private void Awake()
+        public void Init(int coinsAmount)
         {
-            _coinsCount = PlayerPrefs.GetInt("VARTO_DOODLE_COINS_COUNT", 0);
+            CoinsCount = coinsAmount;
 
-            _gameScreenCoinsCounter.text = _coinsCount.ToString();
-            _gameOverScreenCoinsCounter.text = _coinsCount.ToString();
+            _gameScreenCoinsCounter.text = CoinsCount.ToString();
+            _gameOverScreenCoinsCounter.text = CoinsCount.ToString();
 
             _pauseScreen.gameObject.SetActive(false);
             _gameOverScreen.gameObject.SetActive(false);
+        }
 
+        private void OnEnable()
+        {
             _pauseButton.onClick.AddListener(OpenPauseScreen);
             _resumeButton.onClick.AddListener(ClosePauseScreen);
-            _restartButton.onClick.AddListener(RestartCurrentScene);
+            _restartButton.onClick.AddListener(() => OnRestartRequested?.Invoke());
+        }
+        private void OnDisable()
+        {
+            _pauseButton.onClick.RemoveAllListeners();
+            _resumeButton.onClick.RemoveAllListeners();
+            _restartButton.onClick.RemoveAllListeners();
+        }
 
-            Varto_GlobalEventSender.OnEvent += OnAnyGlobalEvent;
+        public void AddCoins(int amount)
+        {
+            CoinsCount += amount;
+            _gameScreenCoinsCounter.text = CoinsCount.ToString();
+            _gameOverScreenCoinsCounter.text = CoinsCount.ToString();
+        }
+
+        public void ShowGameOverScreen()
+        {
+            _gameOverScreen.gameObject.SetActive(true);
         }
 
         private void OpenPauseScreen()
@@ -57,31 +71,6 @@ namespace Varto.Examples.UI
         private void ClosePauseScreen()
         {
             _pauseScreen.gameObject.SetActive(false);
-        }
-
-        private void RestartCurrentScene()
-        {
-            Varto_GlobalEventSender.OnEvent -= OnAnyGlobalEvent;
-
-            var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
-        }
-
-        private void OnAnyGlobalEvent(string eventName)
-        {
-            if (eventName == _onCollectCoinEventName)
-            {
-                _coinsCount += _coinsAmountPerEvent;
-                PlayerPrefs.SetInt("VARTO_DOODLE_COINS_COUNT", _coinsCount);
-                PlayerPrefs.Save();
-
-                _gameScreenCoinsCounter.text = _coinsCount.ToString();
-                _gameOverScreenCoinsCounter.text = _coinsCount.ToString();
-            }
-            else if(eventName == _onGameOverEventName)
-            {
-                _gameOverScreen.gameObject.SetActive(true);
-            }
         }
     }
 }

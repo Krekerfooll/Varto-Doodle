@@ -27,7 +27,7 @@ namespace Varto.Examples.Data
             return new GropSpawnResult(spawnedPlatforms, lastSpawnedHeight);
         }
 
-        public struct GropSpawnResult
+        public readonly struct GropSpawnResult
         {
             public readonly List<Varto_Platform> SpawnedPlatforms;
             public readonly float LastSpawnedHeight;

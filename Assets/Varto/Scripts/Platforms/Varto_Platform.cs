@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Varto.Examples.Utils;
-using static Varto.Examples.Platforms.Varto_PlatformGenerator;
 
 namespace Varto.Examples.Platforms
 {
@@ -18,7 +17,7 @@ namespace Varto.Examples.Platforms
         [SerializeField] protected List<Varto_ActionBase> _executeOnCollisionActivated;
         [SerializeField] protected List<Varto_ActionBase> _executeOnCollisionDeactivated;
 
-        public bool IsPlatformActivated => _collider.activeSelf;
+        public bool IsPlatformActivated => _collider != null && _collider.activeSelf;
 
         protected bool _isInitiated;
         protected bool _isActivatedOnes;
