@@ -696,12 +696,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa76478eeb3f634f936a0646006fb91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _firebase: {fileID: 685284069}
   _player: {fileID: 1727111898}
-  _uiManager: {fileID: 1327981788}
-  _platformGenerator: {fileID: 1480967829}
+  _ui: {fileID: 1327981788}
+  _platforms: {fileID: 1480967829}
   _onCollectCoinEventName: coin_add
   _onGameOverEventName: game_over
-  _coinsAmountPerEvent: 1
+  _coinsPerEvent: 1
+  _autoSaveIntervalSec: 1
 --- !u!4 &652788377
 Transform:
   m_ObjectHideFlags: 0
@@ -709,6 +711,50 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652788375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5013163, y: 7.5644813, z: -0.14182022}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &685284068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 685284070}
+  - component: {fileID: 685284069}
+  m_Layer: 0
+  m_Name: FirebaseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &685284069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685284068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfc7ea7cf65ef14ca1a42f284e81ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &685284070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685284068}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.5013163, y: 7.5644813, z: -0.14182022}
@@ -1184,3 +1230,4 @@ SceneRoots:
   - {fileID: 1280234568}
   - {fileID: 1418829060}
   - {fileID: 652788377}
+  - {fileID: 685284070}

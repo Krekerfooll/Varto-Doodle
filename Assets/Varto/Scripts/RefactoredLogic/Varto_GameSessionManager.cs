@@ -5,13 +5,15 @@ namespace Varto.Examples.Managers
 {
     public static class Varto_GameSessionManager
     {
+        public static bool IsRestarting { get; private set; } = false;
+
         public static void RestartGameSession()
         {
-            PlayerPrefs.DeleteAll();
-            PlayerPrefs.Save();
-
-            var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
+            IsRestarting = true;
+            var scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.buildIndex);
         }
+
+        public static void ClearRestartFlag() => IsRestarting = false;
     }
 }

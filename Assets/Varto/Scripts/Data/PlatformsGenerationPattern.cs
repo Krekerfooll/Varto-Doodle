@@ -40,12 +40,10 @@ namespace Varto.Examples.Data
 
                 if (randomValue < currentChance)
                 {
-                    Debug.Log($"Platforms Group with index: {i} was spawned");
                     return _platformsPattern[i].Group;
                 }
             }
 
-            Debug.Log($"Platforms Group with index: {_platformsPattern.Length - 1} was spawned");
             return _platformsPattern.Last().Group;
         }
 
